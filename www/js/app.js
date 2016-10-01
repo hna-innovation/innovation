@@ -81,12 +81,8 @@ angular.module('starter')
 
   .state('innovation', {
     url: '/innovation',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/innovation.html',
-        controller: 'AccountCtrl'
-      }
-    }
+    templateUrl: 'templates/innovation.html',
+    controller: 'InnovationCtrl'
   });
 
   // if none of the above states are matched, use this as the fallback

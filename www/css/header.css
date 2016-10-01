@@ -1,0 +1,24 @@
+.bar {
+  height: 38px;
+}
+
+.bar .title {
+  height: 38px;
+  line-height: 38px;
+}
+
+.bar .button-img img:nth-child(1) {
+  width: 20px;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-right: 2px;
+}
+
+.bar .button-img img:nth-child(2) {
+  width: 18px;
+  margin-right: 4px;
+}
+
+.content-header {
+  margin-top: 38px;
+}
