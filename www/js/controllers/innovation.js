@@ -3,7 +3,6 @@ angular.module('starter.controllers')
   .controller('InnovationCtrl', InnovationCtrl)
 
 function InnovationCtrl($scope, Chats) {
-    console.log(1);
   // init banner carousel
   new Swiper('.swiper-container', {
     // Optional parameters
