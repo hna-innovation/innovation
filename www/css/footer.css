@@ -1,0 +1,87 @@
+.bar-footer {
+  color: #de6262;
+}
+
+.button-clear.active {
+  opacity: 1;
+}
+
+.bar-footer .button {
+  color: #de6262;
+  min-height: 33px;
+}
+
+.bar-footer:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -20px;
+  top: -10px;
+  background-color: #fff;
+}
+
+
+.bar-footer:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 38px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 1;
+  top: 1px;
+}
+
+.bar-footer .title {
+  z-index: 2;
+}
+
+.bar-footer .title img {
+  width: 34px;
+  margin-top: 0px;
+}
+
+.bar-footer .button.button-clear {
+  font-size: 14px;
+}
+
+.bar-footer .button.button-left {
+  left: 20px;
+}
+
+.bar .title + .button:last-child {
+  right: 25px;
+}
+
+.bar-footer .button.active {
+  border-radius: 0;
+  border-bottom: 1px solid #de6262;
+}
+
+.bar-footer .button.active:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #de6262;
+  top: 28px;
+  left: 18px;
+}
+
+
+.bar-footer .button.button-left img,
+.bar-footer .button.button-right img {
+  width: 20px;
+  vertical-align: top;
+  margin-top: 8px;
+}

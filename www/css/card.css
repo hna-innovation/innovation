@@ -1,0 +1,103 @@
+.card {
+  margin: 6px 0 0 0;
+}
+
+.item-avatar {
+  padding: 0;
+  height: 30px;
+  min-height: 100%;
+  padding-left: 37px;
+  padding-top: 9px;
+}
+
+.item-avatar img:first-child {
+  top: 6px;
+  left: 13px;
+  max-width: 19px;
+  max-height: 19px;
+}
+
+.item h2 {
+  font-size: 12px;
+  margin: 0;
+}
+
+.item-avatar .process {
+  position: absolute;
+  right: 11px;
+  top: 8px;
+  font-size: 0;
+}
+
+.item-avatar .process span {
+  width: 14px;
+  height: 3px;
+  display: inline-block;
+  background-color: #ebebeb;
+}
+
+.item-avatar .process span:not(:last-child) {
+  margin-right: 2px;
+}
+
+.item-avatar .process span.active {
+  background-color: #de6262;
+}
+
+.item-image {
+  border: none;
+}
+
+.item-image img:first-child {
+  width: 94%;
+  height: 145px;
+  margin-top: 3px;
+}
+
+.item.item-title {
+  font-size: 14px;
+  padding: 9px 11px 0;
+  border: none;
+}
+
+.card .description {
+  padding: 0 11px;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 4px;
+}
+
+.card .info .label-list {
+  padding: 5px 11px;
+}
+
+.card .info .label-list span {
+  background-color: #fdf9f5;
+  color: #cdabaa;
+  border: 1px solid #cdabaa;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 0px 2px;
+}
+
+.card .info .label-list {
+  float: left;
+}
+
+.card .info .action {
+  float: right;
+  margin-top: 4px;
+  margin-right: 11px;
+}
+
+.card .info .action span img {
+  width: 12px;
+  margin-right: 3px;
+  margin-top: 4px;
+  vertical-align: top;
+
+}
+
+.card .info .action span:first-child {
+  margin-right: 3px;
+}

@@ -2,6 +2,10 @@
   height: 38px;
 }
 
+.bar-header {
+  background-color: #fff;
+}
+
 .bar .title {
   height: 38px;
   line-height: 38px;

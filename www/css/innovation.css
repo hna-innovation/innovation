@@ -1,0 +1,34 @@
+.content {
+  background-color: #faf9fb;
+}
+.nav-list {
+  margin-top: 5px;
+}
+
+.nav-list ul {
+  display: flex;
+  padding: 0 12px;
+}
+
+.nav-list ul li {
+  flex: 1;
+  border: 1px solid #f4f4f4;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-bottom: 4px;
+  background-color: #fff;
+}
+
+.nav-list ul li:nth-child(2n+1) {
+  margin-right: 4px;
+}
+
+.nav-list ul li img {
+  width: 20px;
+  margin-top: 16px;
+  vertical-align: top;
+  margin-right: 6px;
+}
+
+
