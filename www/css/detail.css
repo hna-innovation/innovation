@@ -8,6 +8,9 @@
 	width: 100%;
 	top: 0;
 }
+.detail-special-info{
+	border-bottom: #e5e5e5 solid 1px;
+}
 .detail-special-info div:nth-child(1){
 	height: 30px;
 	line-height: 30px;
