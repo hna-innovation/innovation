@@ -51,6 +51,13 @@ angular.module('starter')
         templateUrl: 'templates/user.html',
         controller: 'UserCtrl'
 
+      })
+
+      .state('step-1', {
+        url: '/step-1',
+        templateUrl: 'templates/step-1.html',
+        controller: 'StepFirstCtrl'
+
       });
 
     // if none of the above states are matched, use this as the fallback

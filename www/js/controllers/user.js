@@ -4,4 +4,4 @@ angular.module('starter')
 
 function UserCtrl($scope) {
 
-}
+};

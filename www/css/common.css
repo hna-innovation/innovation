@@ -42,12 +42,21 @@ li{
 
 /* border */
 .border-b1{
-	border-bottom: #e5e5e5 dashed    1px;
+	border-bottom: #e5e5e5 dashed 1px;
 }
 
 /* color */
 .color-88{
 	color: #888;
+}
+.color-pink{
+    color: #E0615F;
+}
+.color-white{
+    color: #fff;
+}
+.color-grey{
+    color: #F8E1E1;
 }
 
 /* background-color */
@@ -57,11 +66,31 @@ li{
 .bg-ff{
 	background-color: #fff;
 }
+.bg-pink{
+    background-color: #E0615F!important;
+}
 
 /* font */
-.font-16{
-	font-size: 16px;
+.font-12{
+    font-size: 12px;
 }
+
+.font-14{
+    font-size: 14px;
+}
+
+.font-16{
+    font-size: 16px;
+}
+
+.font-18{
+    font-size: 18px;
+}
+
+.font-20{
+    font-size: 20px;
+}
+
 
 /* tag */
 .tag{
