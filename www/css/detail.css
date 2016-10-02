@@ -1,0 +1,41 @@
+.detail-banner{
+	position: relative;
+
+	overflow: hidden;
+}
+.detail-banner li{
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.radius{
+	border-radius: 50%;
+}
+.mg-r15{
+	margin-right: 15px;
+}
+.pd-lr{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.pd-tb{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.border-b1{
+	border-bottom: #e5e5e5 dashed    1px;
+}
+.color-88{
+	color: #888;
+}
+.detail-special-info div:nth-child(1){
+	height: 30px;
+	line-height: 30px;
+	box-sizing: content-box;
+}
