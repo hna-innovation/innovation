@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('DetailCtrl', function($scope, $stateParams, Chats) {
+	.controller('DetailCtrl', function($scope, $stateParams) {
 
 		   var mySwiper = new Swiper ('.swiper-container', {
 				    direction: 'horizontal',
