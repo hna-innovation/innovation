@@ -17,7 +17,7 @@ angular.module('starter.resources', [])
 					onSlideChangeEnd: function(swiper){
 						var obj = angular.element(document.getElementById("swiper2-nav")).find("li");
 						var index = swiper.activeIndex;
-						if(index==5){
+						if(index==(obj.length+1)){
 							index=1;
 						}else if(index==0){
 							index = obj.length;
