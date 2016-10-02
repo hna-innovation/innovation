@@ -46,6 +46,13 @@ angular.module('starter')
 
       })
 
+      .state('resources', {
+        url: '/resources',
+        templateUrl: 'templates/resources.html',
+        controller: 'resourcesCtrl'
+
+      })
+
       .state('user', {
         url: '/user',
         templateUrl: 'templates/user.html',

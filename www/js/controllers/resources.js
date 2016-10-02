@@ -1,19 +1,7 @@
-angular.module('starter.controllers', [])
+angular.module('starter.resources', [])
 
-	.controller('DetailCtrl', function($scope, $stateParams) {
-	
-		   var mySwiper1 = new Swiper ('#swiper1', {
-				    direction: 'horizontal',
-				    loop: true,	
-				    autoplay: 0,
-				    autoplayDisableOnInteraction: false,    
-				    // 如果需要分页器
-				    pagination: '.swiper-pagination',
-				    paginationType: "fraction"
-
-			})
-
-		   var mySwiper2 = new Swiper ('#swiper2', {
+	.controller('resourcesCtrl', function($scope, $stateParams) {
+		   var mySwiper3 = new Swiper ('#swiper-container', {
 				    direction: 'horizontal',
 				    loop: true,	
 				    autoplay: 0,
@@ -21,11 +9,9 @@ angular.module('starter.controllers', [])
 					paginationClickable: true,
 					paginationBulletRender: function (index,tag) {
 						var tag = [
-						   	{name:"提案介绍"},
-							{name:"市场分析"},
-							{name:"商业模式"},
-							{name:"资源需求"}
-						]
+						   	{name:"资源介绍"},
+							{name:"创业导师"}
+						]						 
 						return "	<li class='swiper-pagination-bullet'><span>"+tag[index].name+"</span></li>"
 					},
 					onSlideChangeEnd: function(swiper){
