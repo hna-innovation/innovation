@@ -1,0 +1,33 @@
+<div>
+  <form name="loginForm" ng-submit="login(credentials)" ng-if="isLogin">
+    <div class="banner">
+      <img src="../../img/banner/banner-1.jpg" alt="">
+    </div>
+    <input type="text"
+           ng-model="credentials.username" placeholder="邮箱">
+    <input type="password"
+           ng-model="credentials.password" placeholder="密码">
+    <div class="btn-action">
+      <button ng-class="{active: !isLogin}" ng-click="changeRegister()" >注册</button>
+      <button ng-class="{active: isLogin}" ng-click="changeLogin()">登陆</button>
+    </div>
+    <div class="close" ng-click="closePopup()">X</div>
+  </form>
+  <form name="RegisterForm" ng-submit="register(credentials)" ng-if="!isLogin">
+    <div class="banner">
+      <img src="../../img/banner/banner-1.jpg" alt="">
+    </div>
+    <input type="text"
+           ng-model="credentials.username" placeholder="邮箱">
+    <input type="password"
+           ng-model="credentials.password" placeholder="密码">
+    <input type="password"
+           ng-model="credentials.password" placeholder="确认密码">
+    <div class="btn-action">
+      <button ng-class="{active: !isLogin}" ng-click="changeRegister()" >注册</button>
+      <button ng-class="{active: isLogin}" ng-click="changeLogin()">登陆</button>
+    </div>
+    <div class="close" ng-click="closePopup()">X</div>
+  </form>
+</div>
+
