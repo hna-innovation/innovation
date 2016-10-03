@@ -1,21 +1,33 @@
 angular.module('starter.controllers')
 
-	.controller('DetailCtrl', function($scope, $stateParams) {
+	.controller('DetailCtrl', function($scope, $stateParams, $http) {
+	
 
-		   var mySwiper1 = new Swiper ('#swiper1', {
+			var _baseUrl = "http://172.16.0.178";
+			var _projectId = "57c9682d8b41fa2905e97f29";
+			
+			//项目详情		
+			$http.get( _baseUrl + "/api/project/info/"+_projectId+"").success(function(result){
+				$scope.detail = result.data;
+				console.log(result)
+			});			
+
+			
+			setTimeout(function(){
+			   Swiper('#swiper1', {
 				    direction: 'horizontal',
-				    loop: true,
+				    loop: true,	
 				    autoplay: 0,
 				    autoplayDisableOnInteraction: false,
-				    // 如果需要分页器
 				    pagination: '.swiper-pagination',
 				    paginationType: "fraction"
+				})				
+			},500)
 
-			})
-
-		   var mySwiper2 = new Swiper ('#swiper2', {
+			setTimeout(function(){
+				Swiper('#swiper2', {
 				    direction: 'horizontal',
-				    loop: true,
+				    loop: true,	
 				    autoplay: 0,
 				    pagination: '.tab-nav',
 					paginationClickable: true,
@@ -38,8 +50,8 @@ angular.module('starter.controllers')
 						}
 						index--;
 						obj.removeClass("active");
-						obj.eq(index).addClass("active");
+						obj.eq(index).addClass("active");					    		
 					}
-
-			})
+				}) 
+			},500)	
 	})

@@ -1,4 +1,4 @@
-angular.module('starter.resources', [])
+angular.module('starter.controllers')
 
 	.controller('resourcesCtrl', function($scope, $stateParams) {
 		   var mySwiper3 = new Swiper ('#swiper-container', {

@@ -35,6 +35,33 @@ a{
 	height: 20px;
 	line-height: 20px;
 }
+.text1{
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	box-sizing: content-box;
+}
+.text1>img{
+	position: absolute;
+	z-index: 2;
+	left: 0;
+}
+.text1>span{
+	position: absolute;
+	right: 0;
+	z-index: 2;
+}
+.text1>div{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	padding-left: 40px;
+	padding-right: 120px;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;	
+	z-index: 1;	
+}
 
 
 /* margin */
@@ -150,7 +177,7 @@ a{
 	height: 20px;
 	line-height: 20px;
 	text-align: center;
-	padding: 2px 7px;
+	padding: 2px 6px;
 	border-radius: 3px;
 	margin-bottom: 10px;
 	margin-right: 5px;
@@ -168,7 +195,7 @@ a{
 .tag-lan{
 	color: #4188da;
 	border: #4188da solid 1px;
-	background-color: #f5f9fc;
+	background-color: #f5f9fc;	
 }
 .tag-lv{
 	color: #61ad0c;
@@ -225,10 +252,6 @@ a{
 	left: auto;
 	right: 10px;
 	padding: 0 5px;
-}
-
-.swiper-slide > img {
-  width: 100%;
 }
 
 /* box-table */
@@ -309,6 +332,3 @@ a{
   text-align: center;
   font-size: 20px;
 }
-
-
-
