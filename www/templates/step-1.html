@@ -1,19 +1,52 @@
 <header class="bar bar-header bg-pink step-header">
-    <a ui-sref="user" class="ion-android-close color-white"></a>
+    <a ui-sref="innovation" class="ion-android-close color-white"></a>
     <h1 class="title color-grey">记录新点子</h1>
 </header>
 <main id="step-1" class="content has-header">
-    <div id="imgUpload">
-        <img class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload($event)">
-        <input id="photoUpload" type="file" name="photo" ng-model="photo" onChange="photoChange(event)" accept="image/*" ng-show="false">
+    <div ng-show="ItemList == false">
+        <div id="imgUpload">
+            <img class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload()">
+            <input id="photoUpload" type="file" name="photo" ng-model="photo" onChange="photoChange(event)" accept="image/*" ng-show="false">
+        </div>
+        <textarea placeholder="在此记录你的灵感..." ng-model="description" ng-trim="true" ng-required="true" required></textarea>
     </div>
-    <textarea placeholder="在此记录你的灵感..." ng-model="description" ng-trim="true" ng-required="true" required></textarea>
+    <div ng-hide="ItemList == false">
+        <ul class="step-container clearfix">
+            <li class="step-item left">
+                <img src="../img/step/max.png" width="100%">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            </li>
+            <li class="step-item left">
+                <img src="../img/step/max.png" width="100%">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            </li>
+            <li class="step-item left">
+                <img src="../img/step/max.png" width="100%">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            </li>
+            <li class="step-item left">
+                <img src="../img/step/max.png" width="100%">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            </li>
+            <li class="step-item left">
+                <img src="../img/step/max.png" width="100%">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            </li>
+            <li class="step-item left" ng-click="ItemList = false">
+                <img src="../img/step/step-add.png" alt="添加" width="100%">
+            </li>
+        </ul>
+        <em class="color-6d">新的办公方式，新的工作模式，打破传统...</em>
+    </div>
+
+
 </main>
 <footer class="bar bar-footer step-footer pointer">
     <div class="title">
-        <img src="../img/step/iconfont-save.png" alt="保存">
-        <a ui-sref="step-2" class="color-88">保存我的点子</a>
+        <a ui-sref="step-2"> 
+            <img ng-if="ItemList == false" src="../img/step/step-save1.png" alt="保存">
+            <img ng-if="ItemList == true" src="../img/step/step-save2.png" alt="保存">
+            <span ng-class="ItemList ? '' : 'color-88'">保存我的点子</span>
+        </a>
     </div>
 </footer>
-
-       

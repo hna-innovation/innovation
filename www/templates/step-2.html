@@ -1,19 +1,27 @@
-<header class="bar bar-header bg-pink step-header">
-    <a ui-sref="user" class="ion-android-close color-white"></a>
-    <h1 class="title color-grey">记录新点子2</h1>
-</header>
-<main id="step-1" class="content has-header">
-    <div id="imgUpload">
-        <img class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload($event)">
-        <input id="photoUpload" type="file" name="photo" ng-model="photo" onChange="photoChange(event)" accept="image/*" ng-show="false">
+<main id="step-2">
+    <div class="swiper-container bg-ff" id="swiper-step">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <img src="../img/banner/banner-2.jpg" width="100%" height="180" />
+            </li>
+            <li class="swiper-slide">
+                <img src="../img/banner/banner-1.jpg" width="100%" height="180" />
+            </li>
+            <li class="swiper-slide">
+                <img src="../img/banner/banner-3.jpg" width="100%" height="180" />
+            </li>
+        </ul>
+        <div class="swiper-pagination"></div>
     </div>
-    <textarea placeholder="在此记录你的灵感..." ng-model="description" ng-trim="true" ng-required="true" required></textarea>
+    <div>
+        <em class="color-6d">新的办公方式，新的工作模式，打破传统,让办公更有趣，更生动...</em>
+    </div>
 </main>
-<footer class="bar bar-footer step-footer pointer">
+<footer class="bar bar-footer step-footer pointer" ui-sref="step-3">
     <div class="title">
-        <img src="../img/step/iconfont-save.png" alt="保存">
-        <a ui-sref="step-2" class="color-88">保存我的点子</a>
+        <a ui-sref="step-3">
+            <img src="../img/step/step-edit.png" alt="编辑">
+            <span>&nbsp;编辑完善你的点子</span>
+        </a>
     </div>
 </footer>
-
-       

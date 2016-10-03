@@ -1,1 +1,8 @@
+#step-2 > div:nth-child(2){
+    margin: 0 15px;
+    margin-top: 10px;
+}
 
+#swiper-step{
+    height: auto;
+}

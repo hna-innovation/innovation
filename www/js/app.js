@@ -70,7 +70,12 @@ angular.module('starter')
         url: '/step-2',
         templateUrl: 'templates/step-2.html',
         controller: 'StepSecondCtrl'
+      })
 
+      .state('step-3', {
+        url: '/step-3',
+        templateUrl: 'templates/step-3.html',
+        controller: 'StepThirdCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
