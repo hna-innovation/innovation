@@ -1,8 +1,8 @@
 angular.module('starter.controllers')
 
-	.controller('DetailCtrl', function($scope, $stateParams, $http) {
+	.controller('DetailCtrl', function($scope, $stateParams, $http, $location) {
 	
-
+//			var _projectId = $location.search()['projectid'];
 			var _baseUrl = "http://172.16.0.178";
 			var _projectId = "57c9682d8b41fa2905e97f29";
 			
