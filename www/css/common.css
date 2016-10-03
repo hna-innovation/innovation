@@ -71,7 +71,7 @@ a{
 	color: #888;
 }
 .color-pink{
-    color: #E0615F;
+    color: #e16a68;
 }
 .color-white{
     color: #fff;
@@ -88,7 +88,7 @@ a{
 	background-color: #fff;
 }
 .bg-pink{
-    background-color: #E0615F!important;
+    background-color: #e16a68!important;
 }
 
 /* font */
@@ -111,6 +111,12 @@ a{
 .font-20{
     font-size: 20px;
 }
+
+/* cursor */
+.pointer{
+	cursor: pointer;
+}
+
 /* tag */
 .tag{
 	display: inline-block;

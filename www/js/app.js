@@ -64,6 +64,12 @@ angular.module('starter')
         url: '/step-1',
         templateUrl: 'templates/step-1.html',
         controller: 'StepFirstCtrl'
+      })
+      
+      .state('step-2', {
+        url: '/step-2',
+        templateUrl: 'templates/step-2.html',
+        controller: 'StepSecondCtrl'
 
       });
 
