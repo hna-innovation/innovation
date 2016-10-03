@@ -1,12 +1,12 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers')
 
 	.controller('DetailCtrl', function($scope, $stateParams) {
-	
+
 		   var mySwiper1 = new Swiper ('#swiper1', {
 				    direction: 'horizontal',
-				    loop: true,	
+				    loop: true,
 				    autoplay: 0,
-				    autoplayDisableOnInteraction: false,    
+				    autoplayDisableOnInteraction: false,
 				    // 如果需要分页器
 				    pagination: '.swiper-pagination',
 				    paginationType: "fraction"
@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
 
 		   var mySwiper2 = new Swiper ('#swiper2', {
 				    direction: 'horizontal',
-				    loop: true,	
+				    loop: true,
 				    autoplay: 0,
 				    pagination: '.tab-nav',
 					paginationClickable: true,
@@ -38,8 +38,8 @@ angular.module('starter.controllers', [])
 						}
 						index--;
 						obj.removeClass("active");
-						obj.eq(index).addClass("active");					    		
+						obj.eq(index).addClass("active");
 					}
 
-			}) 		   
+			})
 	})

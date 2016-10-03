@@ -168,7 +168,7 @@ a{
 .tag-lan{
 	color: #4188da;
 	border: #4188da solid 1px;
-	background-color: #f5f9fc;	
+	background-color: #f5f9fc;
 }
 .tag-lv{
 	color: #61ad0c;
@@ -225,6 +225,10 @@ a{
 	left: auto;
 	right: 10px;
 	padding: 0 5px;
+}
+
+.swiper-slide > img {
+  width: 100%;
 }
 
 /* box-table */

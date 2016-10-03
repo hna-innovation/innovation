@@ -14,7 +14,6 @@ function InnovationCtrl($scope, Services) {
   // Get Projects
   Services.getProjects(function (data) {
     $scope.projects = data.data.content;
-    console.log(data);
   }, function (error) {
     console.log(error);
   })
