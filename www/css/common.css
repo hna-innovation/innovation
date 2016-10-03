@@ -80,6 +80,9 @@ img{
 .mg-b20{
 	margin-bottom: 20px;
 }
+.mg-b50{
+	margin-bottom: 50px;
+}
 
 /* padding */
 .pd-lr{
@@ -400,4 +403,8 @@ img{
 }
 .detail-footer-nav>li i{
 	font-size: 23px;
+}
+.detail-footer-nav>li .i-xiaoxi{
+	-webkit-text-stroke-width: 0.8px;
+	font-size: 25px;
 }
