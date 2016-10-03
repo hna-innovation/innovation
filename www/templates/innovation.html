@@ -47,67 +47,33 @@
         </li>
       </ul>
     </div>
-    <div class="list card">
+    <div class="list card" ng-repeat="project in projects">
 
       <div class="item item-avatar">
-        <img src="../img/adam.jpg">
-        <h2><span>Tao</span><span>.</span><span>生态科技研究院</span></h2>
+        <img ng-src="{{project.user.headerIcon}}">
+        <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span></h2>
         <div class="process">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
+          <span ng-class="{active: project.status >=2 }"></span>
+          <span ng-class="{active: project.status >=3 }"></span>
+          <span ng-class="{active: project.status ==4 }"></span>
         </div>
       </div>
 
       <div class="item item-image">
-        <img src="../img/cover.jpg">
+        <img ng-src="http://172.16.0.178/{{project.image}}">
       </div>
 
-      <a class="item item-title" href="#">
-        货物DNA完整性校验平台
-      </a>
-      <div class="description">
-        提供特质的RFID标签及读写卡设备给用户；企业客户使用标签对化武进行封装，将货物信息及标签对应录入SaaS平台；在货物...
-      </div>
+      <a class="item item-title" href="#" ng-bind="project.name"></a>
+      <div class="description" ng-bind="project.description"></div>
       <div class="info clearfix">
         <div class="label-list">
-          <span><i>＃</i>科技</span>
+          <span ng-repeat="tagName in project.tagNames">
+            <i>＃</i><span ng-bind="tagName"></span>
+          </span>
         </div>
         <div class="action">
-          <span><img src="../img/time.png" alt="">2</span>
-          <span><img src="../img/time.png" alt="">0</span>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-
-      <div class="item item-avatar">
-        <img src="../img/adam.jpg">
-        <h2><span>Tao</span><span>.</span><span>生态科技研究院</span></h2>
-        <div class="process">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="item item-image">
-        <img src="../img/cover.jpg">
-      </div>
-
-      <a class="item item-title" href="#">
-        货物DNA完整性校验平台
-      </a>
-      <div class="description">
-        提供特质的RFID标签及读写卡设备给用户；企业客户使用标签对化武进行封装，将货物信息及标签对应录入SaaS平台；在货物...
-      </div>
-      <div class="info clearfix">
-        <div class="label-list">
-          <span><i>＃</i>科技</span>
-        </div>
-        <div class="action">
-          <span><img src="../img/time.png" alt="">2</span>
-          <span><img src="../img/time.png" alt="">0</span>
+          <span><img src="../img/time.png" alt=""><span ng-bind="project.favoriteCount"></span></span>
+          <span><img src="../img/time.png" alt=""><span ng-bind="project.commentCount"></span></span>
         </div>
       </div>
     </div>

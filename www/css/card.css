@@ -71,13 +71,16 @@
   padding: 5px 11px;
 }
 
-.card .info .label-list span {
+.card .info .label-list > span {
   background-color: #fdf9f5;
   color: #cdabaa;
   border: 1px solid #cdabaa;
   border-radius: 2px;
   font-size: 12px;
   padding: 0px 2px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
 }
 
 .card .info .label-list {
