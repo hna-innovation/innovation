@@ -7,26 +7,14 @@ angular.module('starter.services')
         restrict: "EAC",
         replace: true,
         transclude: false,
-        link: function (scope, element) {
-        		var html = '<ul class="detail-footer-nav">';
-        			html+=    '<li><i class="if i-collect" id="like"></i></li>';
-        			html+=    '<li><i class="if i-star" id="favorite"></i></li>';
-        			html+=    '<li><i class="if i-xiaoxi"></i></li>';
-        			html+=    '<li><i class="if i-fenxiang"></i></li>';
-        			html+= '</ul>';
-        		element.append(html);
-
-        		jQuery(document).on("click","#like",function(){
-        			console.log("cccc")
-        		})
-        		
-			jQuery(document).on("click","#favorite",function(){
-        			console.log("aaa")
-        		})        	
-		}
+        template : "<ul class='detail-footer-nav'>"+
+        				"<li><i class='if' ng-class=\"{true:'i-zan',false:'i-collect'}[detail.like]\" ng-click='like(detail)'></i></li>"+
+        				"<li><i class='if i-star' ng-click='favorite(detail)'></i></li>"+
+        				"<li><i class='if i-xiaoxi'></i></li>"+
+        				"<li><i class='if i-fenxiang'></i></li>"+
+        			  "</ul>"
 	}
 })
-
 
 function Services($http, LOCAL_TEST_URL) {
 

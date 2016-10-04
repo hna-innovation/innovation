@@ -1,10 +1,46 @@
 angular.module('starter.controllers')
 
-	.controller('DetailCtrl', function($scope, $stateParams, $http, $location) {
+	.controller('DetailCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 	
 //			var _projectId = $location.search()['projectid'];
-			var _baseUrl = "http://172.16.0.178";
+			var _baseUrl = "http://172.16.2.7:8080";
 			var _projectId = "57c9682d8b41fa2905e97f29";
+			var _userId = "57c96c19d9f2822078df18b9";
+			
+			//获取用户信息
+			$scope.getUserInfo = function(){				
+				$http.get(_baseUrl+"/api/user?userId="+_userId).success(function(result){			
+						$scope.userinfo=result.data;	
+				});	
+			}
+			$scope.getUserInfo();
+			
+			
+			var myPopup;
+			$scope.like = function(item){
+				if(item.like){
+					$http({
+						method:"POST",
+						url:_baseUrl+"/api/user/likeProject?="+item.id+"&add=false"
+					}).success(function(result){	
+						console.log(result.code);
+					
+					})
+				}else{
+					$http({
+						method:"POST",
+						url:_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=true"
+					}).success(function(result){			
+						console.log(result.code);
+					})					
+				}
+				console.log(item.like)
+				
+			}
+			$scope.favorite = function(){
+				console.log(item)
+			}
+			
 			
 			//项目详情		
 			$http.get( _baseUrl + "/api/project/info/"+_projectId+"").success(function(result){
