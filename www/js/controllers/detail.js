@@ -9,9 +9,14 @@ angular.module('starter.controllers')
 			//项目详情		
 			$http.get( _baseUrl + "/api/project/info/"+_projectId+"").success(function(result){
 				$scope.detail = result.data;
+				
+				//share
+				/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
+				$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
+				$scope.shareUrl = encodeURIComponent($location.absUrl());
+				
 				console.log(result)
-			});			
-
+			});
 			
 			setTimeout(function(){
 			   Swiper('#swiper1', {

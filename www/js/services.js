@@ -9,12 +9,20 @@ angular.module('starter.services')
         transclude: false,
         link: function (scope, element) {
         		var html = '<ul class="detail-footer-nav">';
-        			html+=    '<li><i class="if i-collect"></i></li>';
-        			html+=    '<li><i class="if i-star"></i></li>';
+        			html+=    '<li><i class="if i-collect" id="like"></i></li>';
+        			html+=    '<li><i class="if i-star" id="favorite"></i></li>';
         			html+=    '<li><i class="if i-xiaoxi"></i></li>';
         			html+=    '<li><i class="if i-fenxiang"></i></li>';
         			html+= '</ul>';
         		element.append(html);
+
+        		jQuery(document).on("click","#like",function(){
+        			console.log("cccc")
+        		})
+        		
+			jQuery(document).on("click","#favorite",function(){
+        			console.log("aaa")
+        		})        	
 		}
 	}
 })
