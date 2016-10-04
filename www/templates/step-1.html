@@ -6,31 +6,18 @@
     <div ng-show="ItemList == false">
         <div id="imgUpload">
             <img class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload()">
-            <input id="photoUpload" type="file" name="photo" ng-model="photo" onChange="photoChange(event)" accept="image/*" ng-show="false">
+            <form id="photo-form" method="POST" action="/api/media/image" enctype="multipart/form-data">
+                <input id="photoUpload" type="file" name="photo" accept="image/*" ng-show="false">
+            </form>
         </div>
-        <textarea placeholder="在此记录你的灵感..." ng-model="description" ng-trim="true" ng-required="true" required></textarea>
+        <textarea placeholder="在此记录你的灵感..." name="description" ng-model="description" validator="isDescription === true" invalid-message="'记录未通过验证'"
+            required-message="'记录不能为空！'" required></textarea>
     </div>
     <div ng-hide="ItemList == false">
         <ul class="step-container clearfix">
-            <li class="step-item left">
-                <img src="../img/step/max.png" width="100%">
-                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
-            </li>
-            <li class="step-item left">
-                <img src="../img/step/max.png" width="100%">
-                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
-            </li>
-            <li class="step-item left">
-                <img src="../img/step/max.png" width="100%">
-                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
-            </li>
-            <li class="step-item left">
-                <img src="../img/step/max.png" width="100%">
-                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
-            </li>
-            <li class="step-item left">
-                <img src="../img/step/max.png" width="100%">
-                <img class="item-del" src="../img/step/step-close.png" alt="删除" width="12" height="12">
+            <li class="step-item left" ng-repeat="item in ItemListContent">
+                <img src="../img/step/max.png" ng-src="{{item.photos[0].url}}" width="100%" ng-click="edit(item.projectDraft.id)">
+                <img class="item-del" src="../img/step/step-close.png" alt="删除" ng-click="del(item.projectDraft.id)" width="12" height="12">
             </li>
             <li class="step-item left" ng-click="ItemList = false">
                 <img src="../img/step/step-add.png" alt="添加" width="100%">
@@ -41,11 +28,11 @@
 
 
 </main>
-<footer class="bar bar-footer step-footer pointer">
+<footer class="bar bar-footer step-footer pointer" ng-click="create()">
     <div class="title">
-        <a ui-sref="step-2"> 
-            <img ng-if="ItemList == false" src="../img/step/step-save1.png" alt="保存">
-            <img ng-if="ItemList == true" src="../img/step/step-save2.png" alt="保存">
+        <a>
+            <img ng-if="ItemList === false" src="../img/step/step-save1.png" alt="保存">
+            <img ng-if="ItemList === true" src="../img/step/step-save2.png" alt="保存">
             <span ng-class="ItemList ? '' : 'color-88'">保存我的点子</span>
         </a>
     </div>

@@ -1,20 +1,17 @@
 <main id="step-2">
     <div class="swiper-container bg-ff" id="swiper-step">
         <ul class="swiper-wrapper">
-            <li class="swiper-slide">
-                <img src="../img/banner/banner-2.jpg" width="100%" height="180" />
+            <li class="swiper-slide" ng-repeat="item in ItemContent.photos">
+                <img src="../img/banner/banner-2.jpg" ng-src="{{item.url}}" width="100%" height="180" />
             </li>
             <li class="swiper-slide">
                 <img src="../img/banner/banner-1.jpg" width="100%" height="180" />
-            </li>
-            <li class="swiper-slide">
-                <img src="../img/banner/banner-3.jpg" width="100%" height="180" />
             </li>
         </ul>
         <div class="swiper-pagination"></div>
     </div>
     <div>
-        <em class="color-6d">新的办公方式，新的工作模式，打破传统,让办公更有趣，更生动...</em>
+        <em class="color-6d" ng-bind="ItemContent.projectDraft.description"></em>
     </div>
 </main>
 <footer class="bar bar-footer step-footer pointer" ui-sref="step-3">
