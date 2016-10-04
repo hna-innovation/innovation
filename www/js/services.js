@@ -26,10 +26,27 @@ function Services($http, LOCAL_TEST_URL) {
     return LOCAL_TEST_URL + api;
   }
   return {
+
+    //get all projects
     getProjects: function(success, error) {
       return $http.get(getUrl('/api/show/project'))
         .success(success)
         .error(error);
+    },
+
+    //login
+    login: function (data, success, error) {
+      return $http.post(getUrl('/api/login'), data)
+        .success(success)
+        .error(error)
+    },
+
+    //register
+    register: function (data, success, error) {
+      return $http.post(getUrl('/api/reg'), data)
+        .success(success)
+        .error(error)
     }
+
   };
 }

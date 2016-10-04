@@ -384,6 +384,19 @@ img{
   font-size: 20px;
 }
 
+/*remove yellow color*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+label.has-error {
+  width: 230px;
+  margin: 0 auto;
+  display: block;
+  color: #de6262;
+  font-size: 12px;
+}
+
 
 /* detail-footer-nav */
 .detail-footer-nav{

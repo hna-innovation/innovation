@@ -9,7 +9,7 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
   new Swiper('.swiper-container', {
     // Optional parameters
     autoplay: 2000,
-    autoplayDisableOnInteraction: false,
+    autoplayDisableOnInteraction: false,//false的话用户操作后还会继续轮播，否则中断
     loop: true
   });
 
@@ -33,16 +33,53 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
   // close modal
   $scope.closePopup = function () {
     myPopup.close();
-  }
+  };
 
   // change form view
   $scope.isLogin = true;
-  $scope.changeRegister =function () {
+  $scope.changeRegister =function (event) {
+    if($scope.isLogin){
+      event.preventDefault();
+    }
     $scope.isLogin = false;
-  }
+  };
 
-  $scope.changeLogin =function () {
+  $scope.changeLogin =function (event) {
+    if(!$scope.isLogin){
+      event.preventDefault();
+    }
     $scope.isLogin = true;
-  }
-  
+  };
+
+  // form login or register
+  $scope.loginOrRegister =  function (data) {
+    var passData = {
+      email: data.email,
+      password: data.password
+    }
+    console.log(passData)
+    if($scope.isLogin){
+      Services.login(passData, function (res) {
+        if(res.error){
+          console.log(res.error);
+        } else {
+          myPopup.close();
+        }
+      }, function (error) {
+        console.log('error');
+      })
+    } else {
+      Services.register(passData, function (res) {
+        if(res.error){
+          console.log(res.error);
+        } else {
+          myPopup.close();
+        }
+      }, function (error) {
+        console.log('error');
+      })
+    }
+
+  };
+
 }
