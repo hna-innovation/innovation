@@ -63,8 +63,8 @@ img{
 	padding-right: 120px;
 	white-space:nowrap;
 	text-overflow: ellipsis;
-	overflow: hidden;	
-	z-index: 1;	
+	overflow: hidden;
+	z-index: 1;
 }
 
 
@@ -246,7 +246,7 @@ img{
 .tag-lan{
 	color: #4188da;
 	border: #4188da solid 1px;
-	background-color: #f5f9fc;	
+	background-color: #f5f9fc;
 }
 .tag-lv{
 	color: #61ad0c;
@@ -421,4 +421,8 @@ label.has-error {
 .detail-footer-nav>li .i-xiaoxi{
 	-webkit-text-stroke-width: 0.8px;
 	font-size: 25px;
+}
+
+.swiper-slide > img {
+  width: 100%;
 }
