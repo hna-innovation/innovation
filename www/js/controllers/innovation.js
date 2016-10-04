@@ -52,13 +52,16 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
   };
 
   // form login or register
+  $scope.isUnique = true;
   $scope.loginOrRegister =  function (data) {
     var passData = {
       email: data.email,
       password: data.password
     }
-    console.log(passData)
     if($scope.isLogin){
+      if(!data.email || !data.password){
+        return;
+      }
       Services.login(passData, function (res) {
         if(res.error){
           console.log(res.error);
@@ -69,9 +72,13 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
         console.log('error');
       })
     } else {
+      if(!data.email || !data.password || !data.passwordRepeat){
+        return;
+      }
       Services.register(passData, function (res) {
         if(res.error){
           console.log(res.error);
+          $scope.isUnique = false;
         } else {
           myPopup.close();
         }

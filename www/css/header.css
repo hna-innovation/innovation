@@ -18,11 +18,16 @@
   margin-right: 2px;
 }
 
-.bar .button-img img:nth-child(2) {
+.bar.bar-header .button-img img:nth-child(2) {
   width: 18px;
   margin-right: 4px;
+  margin-top: 4px;
 }
 
 .content-header {
   margin-top: 38px;
+}
+
+.bar.bar-header .title + .button:last-child {
+  right: 4px;
 }

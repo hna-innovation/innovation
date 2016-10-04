@@ -3,17 +3,28 @@
     <div class="banner">
       <img src="../../img/banner/banner-1.jpg" alt="">
     </div>
-    <input type="email" name="email"
-           ng-model="credentials.email" placeholder="邮箱"
-           required-message="'请输入您的邮箱'"
-           invalid-message="'请输入正确的邮箱'"
-           required>
-    <input type="password" name="password"
-           ng-model="credentials.password" placeholder="密码" required>
-    <input type="password"
-           ng-model="credentials.passwordRepeat" placeholder="确认密码"
-           validator = "credentials.password === credentials.passwordRepeat"
-           invalid-message = "'密码不一致'" required ng-if="!isLogin">
+    <div class="form-group">
+      <input type="email" name="email"
+             ng-model="credentials.email" placeholder="邮箱"
+             validator="isUnique === true"
+             invalid-message = "'邮箱已存在'"
+             required-message="'请输入您的邮箱'"
+             required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password"
+             ng-model="credentials.password" placeholder="密码"
+             required-message="'请输入您的密码'"
+             required>
+    </div>
+    <div class="form-group">
+      <input type="password" name="passwordRepeat"
+             ng-model="credentials.passwordRepeat" placeholder="确认密码"
+             validator = "credentials.password === credentials.passwordRepeat"
+             invalid-message = "'密码不一致'"
+             required-message="'请再次输入您的密码'" required ng-if="!isLogin">
+    </div>
+
     <div class="btn-action">
       <button ng-class="{active: !isLogin}" ng-click="changeRegister($event)" type="submit">注册</button>
       <button ng-class="{active: isLogin}" ng-click="changeLogin($event)" type="submit">登陆</button>
