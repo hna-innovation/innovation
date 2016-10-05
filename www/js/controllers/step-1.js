@@ -96,9 +96,9 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
         window.location.href = '/#/step-2'
     };
     // 触发file input
-    // $scope.photoUpload = function () {
-    //     jQuery('#photoUpload').trigger('click');
-    // };
+     $scope.photoUpload = function () {
+         jQuery('#photoUpload').trigger('click');
+     };
     // 添加或更换图片事件
 
     // $scope.photoChange = function (event) {

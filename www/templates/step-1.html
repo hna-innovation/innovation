@@ -9,7 +9,7 @@
                 <div id="imgUpload">
                     <img class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload()">
                     <form id="photo-form" method="POST" action="/api/media/image" enctype="multipart/form-data">
-                        <input id="photoUpload" type="file" name="photo" accept="image/*" ng-show="false">
+                        <input id="photoUpload" type="file" name="photo" accept="image/*" ng-show="true" style="width:0px;">
                     </form>
                 </div>
                 <textarea placeholder="在此记录你的灵感..." name="description" ng-model="formdata.description" validator="isDescription === true" invalid-message="'记录未通过验证'"
