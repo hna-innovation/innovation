@@ -4,7 +4,6 @@ angular.module('starter.controllers')
 	
 			var _projectId = $location.search()['projectid'];
 			var _baseUrl = "http://172.16.2.7:8080";
-//			var _projectId = "57c9682d8b41fa2905e97f29";
 			var _userId = "57c96c19d9f2822078df18b9";
 			
 			//获取用户信息
@@ -14,45 +13,63 @@ angular.module('starter.controllers')
 				});	
 			}
 			$scope.getUserInfo();
-			
+
+			//项目详情
+			$scope.getProjectDetail = function(){
+				$http.get( _baseUrl + "/api/project/info/"+_projectId+"").success(function(result){
+					$scope.detail = result.data;
+					
+					//share
+					/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
+					$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
+					$scope.shareUrl = encodeURIComponent($location.absUrl());
+					
+					console.log(result)
+				});				
+			}
+			$scope.getProjectDetail();
 			
 			var myPopup;
 			$scope.like = function(item){
-				if(item.like){
+				if(item.like==true){
 					$http({
 						method:"POST",
-						url:_baseUrl+"/api/user/likeProject?="+item.id+"&add=false"
+						url:_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=false"
 					}).success(function(result){	
-						console.log(result.code);
-					
+						$scope.getProjectDetail();
 					})
 				}else{
 					$http({
 						method:"POST",
 						url:_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=true"
 					}).success(function(result){			
-						console.log(result.code);
+						$scope.getProjectDetail();
 					})					
-				}
-				console.log(item.like)
-				
+				}	
 			}
-			$scope.favorite = function(){
-				console.log(item)
+			$scope.favorite = function(item){
+				if(item.favorite==true){
+					$http({
+						method:"POST",
+						url:_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=false"
+					}).success(function(result){	
+						$scope.getProjectDetail();
+						console.log(item.favorite)
+					})
+				}else{
+					$http({
+						method:"POST",
+						url:_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=true"
+					}).success(function(result){			
+						$scope.getProjectDetail();
+						console.log(item.favorite)
+					})					
+				}	
 			}
 			
 			
-			//项目详情		
-			$http.get( _baseUrl + "/api/project/info/"+_projectId+"").success(function(result){
-				$scope.detail = result.data;
+
 				
-				//share
-				/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
-				$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
-				$scope.shareUrl = encodeURIComponent($location.absUrl());
-				
-				console.log(result)
-			});
 			
 			setTimeout(function(){
 			   Swiper('#swiper1', {
