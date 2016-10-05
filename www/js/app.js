@@ -41,6 +41,7 @@ angular.module('starter')
 
       .state('detail', {
         url: '/detail',
+        cache: false,
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
 
