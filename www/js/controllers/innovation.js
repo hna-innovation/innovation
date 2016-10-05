@@ -93,6 +93,8 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
   $scope.dianzi = function(){
     if(localStorage.userId){
       window.location.href = "/#/step-1"
+    } else {
+      alert('请先登录！');
     }
   };
 
