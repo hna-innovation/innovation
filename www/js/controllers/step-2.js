@@ -23,6 +23,7 @@ function StepSecondCtrl($scope, Services) {
             }
         }
         else if (result.code == 0) {
+            console.log(result)
             $scope.ItemContent = result.data;
         } else {
             console.log(result);

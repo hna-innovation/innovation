@@ -1,4 +1,10 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angularValidator' ]);
+angular.module('starter', [
+    'ionic', 
+    'starter.controllers', 
+    'starter.services', 
+    'angularValidator',
+    'angularFileUpload'
+    ]);
 
 angular.module('starter.controllers', []);
 

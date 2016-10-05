@@ -2,8 +2,12 @@ angular.module('starter.controllers')
 
     .controller('StepFirstCtrl', StepFirstCtrl)
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader) {
+    // 初始化表单数据
     $scope.formdata = {};
+    $scope.formdata.image = [];
+    $scope.formdata.imageUrl = [];
+
     // 获取点子列表
     $scope.getList = function () {
         Services.dianziList(localStorage.userId, function (result) {
@@ -32,11 +36,47 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
     };
     $scope.getList();
 
-
+    // 转换页面
     $scope.change = function () {
         $scope.ItemList = false;
     }
-    
+
+    // 触发file input
+    $scope.photoUpload = function () {
+        jQuery('#photoUpload').trigger('click');
+    };
+
+    // 图片上传接口
+    $scope.uploader = new FileUploader({
+        url: '/api/media/image'
+    });
+
+    //自动上传图片
+    $scope.uploader.onAfterAddingFile = function (fileItem) {
+        setTimeout(function () {
+            jQuery('#automatic-upload').click();
+        }, 100)
+    };
+
+    // 上传成功
+    $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
+        if (status != 200) return alert('登录状态已失效，图片上传失败！');
+        if ($scope.formdata.image.indexOf(response.data.id) == -1) {
+            $scope.formdata.image.push(response.data.id);
+        }
+    };
+    // 添加或更换图片事件
+    $scope.photoChange = function (event) {
+        var fileInput = event.target.files;
+        var windowURL = window.URL || window.webkitURL;
+        var picURL = windowURL.createObjectURL(fileInput[0]);
+        jQuery('#img-view').attr('src', picURL)
+        if ($scope.formdata.imageUrl.indexOf(picURL) == -1) {
+            $scope.formdata.imageUrl.push(picURL);
+        }
+    };
+    angular.element(jQuery('#photoUpload')).on('change', $scope.photoChange);
+
     // 点子创建
     $scope.create = function () {
         if ($scope.ItemList) return;
@@ -47,10 +87,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
             "name": "我的点子" + num,
             "description": $scope.formdata.description,
             "creator": localStorage.userId,
-            "images": [
-                "57ec85e53f798a26e4994fa1",
-                "57ec85e53f798a26e4994fa1"
-            ]
+            "images": $scope.images
         }, function (result) {
             if (result.code == 401) {
                 if (confirm('请先登陆！')) {
@@ -95,51 +132,6 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
         localStorage.draftId = draftId;
         window.location.href = '/#/step-2'
     };
-    // 触发file input
-     $scope.photoUpload = function () {
-         jQuery('#photoUpload').trigger('click');
-     };
-    // 添加或更换图片事件
-
-    // $scope.photoChange = function (event) {
-
-    //     var passData = {
-    //         email: "fyc@haihangyun.com",
-    //         password: "123456"
-    //     }
-
-    //     Services.login(passData, function (res) {
-    //         var fileInput = event.target.files;
-    //         console.log(fileInput)
-    //         // var formdata = new FormData();
-    //         // formdata.append("file", fileInput[0]);
-    //         // console.log(formdata)
-
-    //         jQuery('#photo-form').submit(function (ev) {
-    //             ev.preventDefault();
-    //             console.log(this)
-    //             var formdata = new FormData();
-    //             formdata.append("file", fileInput[0]);
-    //             console.log(formdata)
-    //             Services.imgUpload(formdata, function (result) {
-    //                 console.log(result)
-    //             }, function (error) {
-    //                 console.log(result)
-    //             })
-    //         })
-    //         jQuery('#photo-form').trigger('submit');
-    //         var windowURL = window.URL || window.webkitURL;
-    //         var picURL = windowURL.createObjectURL(fileInput[0]);
-    //         jQuery('#imgUpload img').attr('src', picURL);
-
-
-    //     }, function (error) {
-    //         console.log('error');
-    //     })
-
-
-    // };
-    // angular.element(jQuery('#photoUpload')).on('change', $scope.photoChange);
 };
 
 
