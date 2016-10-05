@@ -63,18 +63,21 @@ angular.module('starter')
 
       .state('step-1', {
         url: '/step-1',
+        cache: false,
         templateUrl: 'templates/step-1.html',
         controller: 'StepFirstCtrl'
       })
       
       .state('step-2', {
         url: '/step-2',
+        cache: false,
         templateUrl: 'templates/step-2.html',
         controller: 'StepSecondCtrl'
       })
 
       .state('step-3', {
         url: '/step-3',
+        cache: false,
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl'
       });

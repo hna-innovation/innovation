@@ -88,7 +88,7 @@ function StepThirdCtrl($scope, $timeout, Services) {
             else if (result.code == 0) {
                 localStorage.removeItem('draftId');
                 console.log(result);
-                window.location.href = '/#/detail?projectId=' + $scope.draftId;
+                window.location.href = '/#/detail?projectid=' + result.data.id;
             } else {
                 console.log(result);
             }
