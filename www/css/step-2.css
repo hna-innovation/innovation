@@ -6,3 +6,17 @@
 #swiper-step{
     height: auto;
 }
+
+.go-back{
+    width: 30px;
+    height: 30px;
+    background: rgba(3, 3, 3, 0.5);
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
+    cursor: pointer;
+}

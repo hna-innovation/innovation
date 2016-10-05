@@ -3,8 +3,7 @@ angular.module('starter.controllers')
     .controller('StepFirstCtrl', StepFirstCtrl)
 
 function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
-    localStorage.userId = "57c96c19d9f2822078df18b9";
-
+    $scope.formdata = {};
     // 获取点子列表
     $scope.getList = function () {
         Services.dianziList(localStorage.userId, function (result) {
@@ -33,6 +32,11 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
     };
     $scope.getList();
 
+
+    $scope.change = function () {
+        $scope.ItemList = false;
+    }
+    
     // 点子创建
     $scope.create = function () {
         if ($scope.ItemList) return;
@@ -41,7 +45,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
         console.log(num)
         Services.dianziCreate({
             "name": "我的点子" + num,
-            "description": $scope.description,
+            "description": $scope.formdata.description,
             "creator": localStorage.userId,
             "images": [
                 "57ec85e53f798a26e4994fa1",
@@ -85,9 +89,9 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services) {
             });
         }
     };
-    
+
     // 点子编辑
-    $scope.edit = function(draftId){
+    $scope.edit = function (draftId) {
         localStorage.draftId = draftId;
         window.location.href = '/#/step-2'
     };

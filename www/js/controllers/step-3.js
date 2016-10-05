@@ -15,8 +15,11 @@ function StepThirdCtrl($scope, $timeout, Services) {
 
     });
 
+    $scope.draftId =  localStorage.draftId;
+    $scope.formdata = {};
+
     // 获取点子详情
-    Services.dianziDetail(localStorage.draftId, function (result) {
+    Services.dianziDetail($scope.draftId, function (result) {
         if (result.code == 401) {
             if (confirm('请先登陆！')) {
                 window.location.href = '/#/innovation';
@@ -24,7 +27,7 @@ function StepThirdCtrl($scope, $timeout, Services) {
         }
         else if (result.code == 0) {
             $scope.ItemContent = result.data;
-            $scope.description = result.data.projectDraft.description
+            $scope.formdata.description = result.data.projectDraft.description
         } else {
             console.log(result);
         }
@@ -34,7 +37,6 @@ function StepThirdCtrl($scope, $timeout, Services) {
 
     // 标签列表
     Services.getTags(function (result) {
-        console.log(result);
         $scope.tagList = result.data;
         $timeout(function () {
             var buttonColor = ['button-pink', 'button-gray', 'button-green', 'button-blue']
@@ -64,14 +66,14 @@ function StepThirdCtrl($scope, $timeout, Services) {
 
     // 点子发布
     $scope.release = function () {
-        console.log(localStorage.draftId);
-        console.log($scope.title)
-        console.log($scope.description)
+        console.log($scope.draftId);
+        console.log($scope.formdata.title)
+        console.log($scope.formdata.description)
         console.log($scope.tags)
         Services.dianziRelease({
-            "draftId": localStorage.draftId,
-            "name": $scope.title,
-            "description": $scope.description,
+            "draftId": $scope.draftId,
+            "name": $scope.formdata.title,
+            "description": $scope.formdata.description,
             "tags": $scope.tags,
             "introduction": "",
             "marketAnalysis": "",
@@ -86,6 +88,7 @@ function StepThirdCtrl($scope, $timeout, Services) {
             else if (result.code == 0) {
                 localStorage.removeItem('draftId');
                 console.log(result);
+                window.location.href = '/#/detail?projectId=' + $scope.draftId;
             } else {
                 console.log(result);
             }

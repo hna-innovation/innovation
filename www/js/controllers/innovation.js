@@ -66,6 +66,7 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
         if(res.error){
           console.log(res.error);
         } else {
+          localStorage.userId = res.data.id;
           myPopup.close();
         }
       }, function (error) {
@@ -87,6 +88,12 @@ function InnovationCtrl($scope, Services, $ionicPopup) {
       })
     }
 
+  };
+
+  $scope.dianzi = function(){
+    if(localStorage.userId){
+      window.location.href = "/#/step-1"
+    }
   };
 
 }
