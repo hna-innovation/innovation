@@ -4,16 +4,17 @@ angular.module('starter.controllers')
 
 function StepThirdCtrl($scope, $timeout, Services) {
     // 轮播图
-    var mySwiper1 = new Swiper('#swiper-step2', {
-        direction: 'horizontal',
-        loop: true,
-        autoplay: 0,
-        autoplayDisableOnInteraction: false,
-        // 如果需要分页器
-        pagination: '.swiper-pagination',
-        paginationType: "fraction"
-
-    });
+    $timeout(function () {
+        Swiper('#swiper-step2', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: 0,
+            autoplayDisableOnInteraction: false,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            paginationType: "fraction"
+        });
+    }, 500)
 
     $scope.draftId =  localStorage.draftId;
     $scope.formdata = {};

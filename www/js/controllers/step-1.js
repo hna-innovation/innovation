@@ -5,7 +5,7 @@ angular.module('starter.controllers')
 function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader) {
     // 初始化表单数据
     $scope.formdata = {};
-    $scope.formdata.image = [];
+    $scope.formdata.images = [];
     $scope.formdata.imageUrl = [];
 
     // 获取点子列表
@@ -61,8 +61,9 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
         if (status != 200) return alert('登录状态已失效，图片上传失败！');
-        if ($scope.formdata.image.indexOf(response.data.id) == -1) {
-            $scope.formdata.image.push(response.data.id);
+        console.log(response)
+        if ($scope.formdata.images.indexOf(response.data.id) == -1) {
+            $scope.formdata.images.push(response.data.id);
         }
     };
     // 添加或更换图片事件
@@ -82,12 +83,12 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         if ($scope.ItemList) return;
         var num = $scope.itemCount;
         num++;
-        console.log(num)
+        console.log($scope.formdata.images)
         Services.dianziCreate({
             "name": "我的点子" + num,
             "description": $scope.formdata.description,
             "creator": localStorage.userId,
-            "images": $scope.images
+            "images": $scope.formdata.images
         }, function (result) {
             if (result.code == 401) {
                 if (confirm('请先登陆！')) {
