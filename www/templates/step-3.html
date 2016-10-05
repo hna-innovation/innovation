@@ -40,12 +40,7 @@
         </em>
     </div>
     <div id="step-tag-list">
-        <button class="button-init button-pink" ng-repeat="item in tagList">#&nbsp;<span ng-bind="item"></span></button>
-        <button class="button-init button-green">#&nbsp;生活</button>
-        <button class="button-init button-gray">#&nbsp;音乐</button>
-        <button class="button-init button-gray">#&nbsp;创意生活</button>
-        <button class="button-init button-blue">#&nbsp;教育</button>
-        <button class="button-init button-gray">#&nbsp;旅游智慧</button>
+        <button class="button-init" ng-repeat="item in tagList" ng-click="tagArr(item.id)">#&nbsp;<span ng-bind="item.name"></span></button>
         <button class="button-init button-red" ng-click="addNew = true">+&nbsp;添加新标签</button>
         <div id="tag-addNew" class="row" ng-show="addNew == true">
             <input type="text" class="col col-60" ng-model="tag" placeholder="请输入标签内容">

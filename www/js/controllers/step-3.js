@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepThirdCtrl', StepThirdCtrl)
 
-function StepThirdCtrl($scope, Services) {
+function StepThirdCtrl($scope, $timeout, Services) {
     // 轮播图
     var mySwiper1 = new Swiper('#swiper-step2', {
         direction: 'horizontal',
@@ -33,13 +33,24 @@ function StepThirdCtrl($scope, Services) {
     });
 
     // 标签列表
-    Services.getTags(function(result){
+    Services.getTags(function (result) {
         console.log(result);
         $scope.tagList = result.data;
-    }, function(error){
+        $timeout(function () {
+            var buttonColor = ['button-pink', 'button-gray', 'button-green', 'button-blue']
+            var count = null;
+            function random(){
+                return  count = parseInt(Math.random() * buttonColor.length)
+            }
+            for (var i = 0; i <= result.data.length; i++) {
+                random();
+                angular.element(document.querySelectorAll('#step-tag-list>button:nth-child(' + i + ')')).addClass(buttonColor[count])
+            }
+        })
+    }, function (error) {
         console.log(error);
     });
-    
+
     // 获取标签数组
     $scope.tags = [];
     $scope.tagArr = function (id) {
@@ -56,6 +67,7 @@ function StepThirdCtrl($scope, Services) {
         console.log(localStorage.draftId);
         console.log($scope.title)
         console.log($scope.description)
+        console.log($scope.tags)
         Services.dianziRelease({
             "draftId": localStorage.draftId,
             "name": $scope.title,
@@ -72,6 +84,7 @@ function StepThirdCtrl($scope, Services) {
                 }
             }
             else if (result.code == 0) {
+                localStorage.removeItem('draftId');
                 console.log(result);
             } else {
                 console.log(result);

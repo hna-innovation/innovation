@@ -95,7 +95,7 @@ function Services($http, LOCAL_TEST_URL) {
 
     // 获取标签
     getTags: function(success,error){
-      return $http.get(getUrl('/api/tags?type=1'))
+      return $http.get(getUrl('/api/tags?type=0'))
       .success(success)
       .error(error);
     },
