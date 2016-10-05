@@ -60,7 +60,9 @@
       </div>
 
       <div class="item item-image">
-        <img ng-src="{{project.image}}">
+      	<a ng-href="#detail?projectid={{project.id}}">
+           <img ng-src="{{project.image}}">     		
+      	</a>
       </div>
 
       <a class="item item-title" href="#" ng-bind="project.name"></a>

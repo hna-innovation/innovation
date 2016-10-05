@@ -2,9 +2,9 @@ angular.module('starter.controllers')
 
 	.controller('DetailCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 	
-//			var _projectId = $location.search()['projectid'];
+			var _projectId = $location.search()['projectid'];
 			var _baseUrl = "http://172.16.2.7:8080";
-			var _projectId = "57c9682d8b41fa2905e97f29";
+//			var _projectId = "57c9682d8b41fa2905e97f29";
 			var _userId = "57c96c19d9f2822078df18b9";
 			
 			//获取用户信息
