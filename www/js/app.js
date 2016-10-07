@@ -23,7 +23,29 @@ angular.module('starter')
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
+    var httpInterceptor = {
+      'response': function (response) {
+        if (response.data.code == 401) {
+          var modalServices = $injector.get('modalServices');
+          // var rootScope = $injector.get('$rootScope');
+          // var state = $injector.get('$rootScope').$state.current.name;
+          // rootScope.stateBeforLogin = state;
+          // rootScope.$state.go("login");
+          modalServices.showPopup();
+          return $q.reject(response);
+        } else if (response.status === 404) {
+          alert("404!");
+          return $q.reject(response);
+        }
+        return response;
+      }
+    }
+    return httpInterceptor;
+  }
+  ])
+
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -31,7 +53,7 @@ angular.module('starter')
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-      // setup an abstract state for the tabs directive
+    // setup an abstract state for the tabs directive
 
       .state('innovation', {
         url: '/innovation',
@@ -67,7 +89,7 @@ angular.module('starter')
         templateUrl: 'templates/step-1.html',
         controller: 'StepFirstCtrl'
       })
-      
+
       .state('step-2', {
         url: '/step-2',
         cache: false,
@@ -85,4 +107,7 @@ angular.module('starter')
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/innovation');
 
+    $httpProvider.interceptors.push('httpInterceptor');
+
   });
+
