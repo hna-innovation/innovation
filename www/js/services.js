@@ -15,7 +15,7 @@ angular.module('starter.services')
 	        			  "<ul class='detail-footer-nav'>"+
 	        				"<li>{{detail.likeCount}}<i class='if' ng-class=\"{true:'i-aixinhover',false:'i-collect'}[detail.like]\" ng-click='like(detail)'></i></li>"+
 	        				"<li><i class='if i-xiaoxi'></i></li>"+
-	        				"<li>{{detail.favoriteCount}}<i class='if' ng-class=\"{true:'i-star1',false:'i-star'}[detail.favorite]\" ng-click='favorite(detail)'></i></li>"+        				
+	        				"<li>{{detail.favoriteCount}}<i class='if' ng-class=\"{true:'i-star1',false:'i-star'}[detail.favorite]\" ng-click='favorite(detail)'></i></li>"+
 	        				"<li><i class='if i-fenxiang' id='share'></i></li>"+
 	        			  "</ul>"+
         			  "</div>",
@@ -30,7 +30,7 @@ angular.module('starter.services')
         			if(topNumber=="-60px"){
         				jQuery(".detail-footer-share").animate({
         					top:"0px"
-        				})        				
+        				})
         			}
         		})
         	}
@@ -42,6 +42,7 @@ function Services($http, LOCAL_TEST_URL) {
   function getUrl(api) {
     return LOCAL_TEST_URL + api;
   }
+
   return {
 
     //get all projects
