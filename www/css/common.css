@@ -194,6 +194,12 @@ img{
 .bg-pink{
     background-color: #e16a68!important;
 }
+.bg-success{
+	background-color: green;
+}
+.bg-error{
+	background-color: red;
+}
 
 /* font */
 .font-12{
@@ -456,4 +462,19 @@ label.has-error {
 }
 .swiper-slide > img {
   width: 100%;
+}
+
+/* 提示框 */
+#alert{
+	position: fixed;
+	top: 45px;
+	left: 10%;
+	display: none;
+	width: 80%;
+	height: 35px;
+	color: #fff;
+	line-height: 35px;
+	border-radius: 5px;
+	text-align: center;
+	z-index: 100000;
 }

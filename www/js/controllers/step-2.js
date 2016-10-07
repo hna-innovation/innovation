@@ -14,17 +14,11 @@ function StepSecondCtrl($scope, $timeout, Services) {
             pagination: '.swiper-pagination',
             paginationType: "fraction"
         });
-    }, 500)
+    }, 500);
 
     // 获取点子详情
     Services.dianziDetail(localStorage.draftId, function (result) {
-        if (result.code == 401) {
-            if (confirm('请先登陆！')) {
-                window.location.href = '/#/innovation';
-            }
-        }
-        else if (result.code == 0) {
-            console.log(result)
+        if (result.code == 0) {
             $scope.ItemContent = result.data;
         } else {
             console.log(result);

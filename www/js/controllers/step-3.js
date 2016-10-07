@@ -14,19 +14,14 @@ function StepThirdCtrl($scope, $timeout, Services) {
             pagination: '.swiper-pagination',
             paginationType: "fraction"
         });
-    }, 500)
+    }, 500);
 
     $scope.draftId =  localStorage.draftId;
     $scope.formdata = {};
 
     // 获取点子详情
     Services.dianziDetail($scope.draftId, function (result) {
-        if (result.code == 401) {
-            if (confirm('请先登陆！')) {
-                window.location.href = '/#/innovation';
-            }
-        }
-        else if (result.code == 0) {
+        if (result.code == 0) {
             $scope.ItemContent = result.data;
             $scope.formdata.description = result.data.projectDraft.description
         } else {
@@ -81,12 +76,7 @@ function StepThirdCtrl($scope, $timeout, Services) {
             "businessModel": "",
             "resourceRequired": ""
         }, function (result) {
-            if (result.code == 401) {
-                if (confirm('请先登陆！')) {
-                    window.location.href = '/#/innovation';
-                }
-            }
-            else if (result.code == 0) {
+            if (result.code == 0) {
                 localStorage.removeItem('draftId');
                 console.log(result);
                 window.location.href = '/#/detail?projectid=' + result.data.id + '&pageName=innovation';
