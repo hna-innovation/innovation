@@ -51,6 +51,7 @@
     height: calc((100vw - 60px) / 4);
     margin: 5px 10px 5px 0;
     position: relative;
+    overflow: hidden;
 }
 
 #step-1 .step-item:nth-child(4n){

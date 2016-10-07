@@ -32,6 +32,7 @@ angular.module('starter')
           // var state = $injector.get('$rootScope').$state.current.name;
           // rootScope.stateBeforLogin = state;
           // rootScope.$state.go("login");
+          localStorage.removeItem('userId');
           modalServices.showPopup();
           return $q.reject(response);
         } else if (response.status === 404) {

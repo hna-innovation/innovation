@@ -3,8 +3,6 @@ angular.module('starter.controllers')
   .controller('InnovationCtrl', InnovationCtrl)
 
 function InnovationCtrl($scope, Services, modalServices) {
-
-
   // init banner carousel
   new Swiper('.swiper-container', {
     // Optional parameters
@@ -26,7 +24,7 @@ function InnovationCtrl($scope, Services, modalServices) {
     if(localStorage.userId){
       window.location.href = "/#/step-1"
     } else {
-      alert('请先登录！');
+      $scope.showPopup();
     }
   };
 
