@@ -9,7 +9,7 @@ angular.module('starter.services')
         transclude: false,
         template :"<div class='detail-footer'>"+
         				  "<div class='detail-footer-share'>"+
-        				  	"<a href='http://service.weibo.com/share/share.php?title={{detail.name}}&url={{shareUrl}}&pic={{imageUrls}}'><img src='../img/sina.png'></a>"+
+        				  	"<a href='http://v.t.sina.com.cn/share/share.php?title={{detail.name}}&url={{shareUrl}}&pic={{imageUrls}}'><img src='../img/sina.png'></a>"+
         				  	"<a href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{shareUrl}}&title={{detail.name}}&summary={{detail.description}}&pics={{imageUrls}}'><img src='../img/qzone.png'></a>"+
         				  "</div>"+
 	        			  "<ul class='detail-footer-nav'>"+

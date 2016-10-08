@@ -23,10 +23,9 @@ angular.module('starter.controllers')
 					//share
 					/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
 					$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
-					$scope.shareUrl = encodeURIComponent($location.absUrl());
-					
+					$scope.shareUrl = encodeURIComponent($location.absUrl());					
 					console.log(result)
-				});				
+				});
 			}
 			$scope.getProjectDetail();
 			
@@ -55,7 +54,6 @@ angular.module('starter.controllers')
 						url:_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=false"
 					}).success(function(result){	
 						$scope.getProjectDetail();
-						console.log(item.favorite)
 					})
 				}else{
 					$http({
@@ -63,14 +61,9 @@ angular.module('starter.controllers')
 						url:_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=true"
 					}).success(function(result){			
 						$scope.getProjectDetail();
-						console.log(item.favorite)
 					})					
 				}	
 			}
-			
-			
-
-				
 			
 			setTimeout(function(){
 			   Swiper('#swiper1', {
