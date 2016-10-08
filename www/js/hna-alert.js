@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter.services').factory("hnaAlert", function () {
+angular.module('starter.services').factory("HnaAlert", function () {
     function msgAnimation(status, msg) {
         jQuery('#alert').addClass(status).text(msg).fadeIn(500).delay(2000).fadeOut(500);
     }
@@ -9,6 +9,9 @@ angular.module('starter.services').factory("hnaAlert", function () {
         },
         error: function (msg) {
             msgAnimation("bg-error", msg)
+        },
+        default: function (msg) {
+            msgAnimation("bg-default", msg)
         }
     }
 

@@ -103,7 +103,14 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl'
-      });
+      })
+      
+      .state('step-4', {
+        url: '/step-4',
+        cache: false,
+        templateUrl: 'templates/step-4.html',
+        controller: 'StepFourthCtrl'
+      });;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/innovation');

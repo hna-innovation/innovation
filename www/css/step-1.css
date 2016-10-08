@@ -35,9 +35,10 @@
 
 #step-1 textarea{
     width: 100%;
-    height: 25vh;
+    height: 150px;
     resize: none;
     padding-top: 15px;
+    margin-bottom: 50px;
 }
 
 #step-1 .step-container{

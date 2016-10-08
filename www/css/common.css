@@ -164,6 +164,20 @@ img{
     border-color: #ABE9F1;
 }
 
+.button-normal{
+    min-height: 20px!important;
+    height: 30px;
+    margin-top: 7.5px;
+}
+
+.button-grays{
+    background-color: #e4e4e4;
+}
+.button-reds{
+	background-color: #E0615F;
+    color: #fff;
+}
+
 /* color */
 .color-88{
 	color: #888;
@@ -199,6 +213,9 @@ img{
 }
 .bg-error{
 	background-color: red;
+}
+.bg-default{
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* font */
@@ -473,6 +490,7 @@ label.has-error {
 	width: 80%;
 	height: 35px;
 	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
 	line-height: 35px;
 	border-radius: 5px;
 	text-align: center;
