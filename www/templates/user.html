@@ -1,55 +1,128 @@
-<header id="user-header">
-    <div id="user-bar">
-        <div id="user-bar-left">
-            <img src="../img/user/iconfont-shouye.png" alt="主页" width="24" height="22">
-        </div>
 
-        <div id="user-bar-right" ng-click="edit()">
-            <img src="../img/user/edit.png" alt="编辑" width="12">
-            <span>编辑个人中心</span>
-        </div>
-    </div>
-    <div id="user-material" class="row">
-        <div class="col-25" id="user-photo">
-            <img src="../img/user/user.jpg" alt="头像" width="80" height="80">
-        </div>
-        <div class="col-75">
-            <div id="user-name">
-                <em>马涛</em>
-            </div>
-            <div id="user-company">
-                <span>海航生态科技研究院</span>&#x3000;
-                <span>项目经理</span>
-            </div>
-            <div id="user-interest">
-                <div>博物馆爱好者</div>
-                <div>会写代码的好厨子</div>
-            </div>
-        </div>
-    </div>
-</header>
+<ion-view view-title="个人中心">
+	<ion-content class="bg-fb">
+		<header id="user-header">
+		    <div id="user-bar">
+		        <div id="user-bar-left">
+		            <img src="../img/user/iconfont-shouye.png" alt="主页" width="24" height="22">
+		        </div>
+		
+		        <div id="user-bar-right" ng-click="edit()">
+		            <img src="../img/user/edit.png" alt="编辑" width="12">
+		            <span>编辑个人中心</span>
+		        </div>
+		    </div>
+		    <ul class="box-table">
+		        <li class="box-table-row" id="user-photo">
+		        		<div class="box-table-cell" style="width: 80px;">	
+		        			<img src="../img/user/user.jpg" alt="头像" width="80" height="80" class="user-img"> 					 
+		        		</div>
+		        		<div class="box-table-cell pd-l10 color-white">
+			            <div id="user-name">
+			                <span>马涛</span>
+			            </div>
+			            <div id="user-company">
+			                <span>海航生态科技研究院</span>&#x3000;
+			                <span>项目经理</span>
+			            </div>
+			            <div id="user-interest">
+			                <div>博物馆爱好者</div>
+			                <div>会写代码的好厨子</div>
+			            </div>
+		        		</div>
+		        </li>
+		    </ul>
+		</header>
+		
+		<main id="user-main" class="bg-fb">
+		    <ul class="row user-row mg-b10 bg-ff">
+		        <li class="col-25 text-center">
+		        		<p>
+		        			<i class="if i-chuangyizhishixin font-30" style="color: #ffab3c;"></i>
+		        		</p>
+		        		<p>我的创意</p>
+		        		<p>
+		        			<strong>26</strong>
+		        		</p>
+		        </li>
+		        <li class="col-25 text-center">
+		        		<p>
+		        			<i class="if i-aixinhover font-20" style="color: #e06968;"></i>
+		        		</p>
+		        		<p>我的获赞</p>
+		        		<p>
+		        			<strong>26<small>16</small></strong>	
+		        		</p>
+		        </li>
+		        <li class="col-25 text-center">
+		        		<p>
+		        			<i class="if i-star1 font-20" style="color: #3ba5e4;"></i>
+		        		</p>
+		        		<p>我的收藏</p>
+		        		<p>
+		        			<strong>26</strong>
+		        		</p>
+		        </li>
+		        <li class="col-25 text-center">
+		        		<p>
+		        			<i class="if i-pinglun1 font-20" style="color: #67af18;"></i>
+		        		</p>
+		        		<p>我的评论</p>
+		        		<p>
+		        			<strong>26</strong>
+		        		</p>
+		        </li>
+		    </ul>
+		    
+		    <div class="business-row mg-b10 bg-ff pd-l15">
+		    		<a href="#draft">
+					<i class="if i-caogaoxiang font-24 color-3d"></i>
+					<strong class="color-3d">草稿箱</strong>
+					<small class="color-red font-24 small-radio">&bull;</small>
+					<span class="color-88 pd-l10">你有一个七天前的草稿</span>		    			
+		    		</a> 		
+		    </div>
+		
+		    <div class="business-row mg-b10 bg-ff pd-l15">
+			    	<a href="#">
+					<i class="if i-xiaoxi font-24 color-3d"></i>
+					<strong class="color-3d">我的评论</strong>
+					<small class="color-red font-24 small-radio">&bull;</small>
+					<span class="color-88 pd-l10">你的评论有人回复,快去看看吧</span>
+				</a>	
+		    </div>
+		    
+		    <ul class="type-row bg-ff">
+			    <li>    				
+					<p>
+						<span>支持的创意</span>
+						<small class="color-red font-24 small-radio">&bull;</small>
+					</p>
+					<p><small class="color-6d">对支持的创意的描述</small></p>		
+			    </li>
+			    <li>    				
+					<p>
+						<span>支持的创意</span>
+						<small class="color-red font-24 small-radio">&bull;</small>
+					</p>
+					<p><small class="color-6d">对支持的创意的描述</small></p>		
+			    </li>
+			    <li>    				
+					<p>
+						<span>支持的创意</span>
+						<small class="color-red font-24 small-radio">&bull;</small>
+					</p>
+					<p><small class="color-6d">对支持的创意的描述</small></p>	
+			    </li>
+			    <li>    				
+					<p>
+						<span>支持的创意</span>
+						<small class="color-red font-24 small-radio">&bull;</small>
+					</p>
+					<p><small class="color-6d">对支持的创意的描述</small></p> 		
+			    </li>
+		    </ul>
+		</main>
 
-<main id="user-main">
-    <ul id="user-message" class="row">
-        <li class="col-25">
-            <i class="user-mesIcon col ion-lightbulb"></i>
-            <span class="user-mesTitle col">我的创意</span>
-            <strong class="user-mesCount col">26</strong>
-        </li>
-        <li class="col-25">
-            <i class="user-mesIcon col ion-heart"></i>
-            <span class="user-mesTitle col">我的获赞</span>
-            <strong class="user-mesCount col">173</strong>
-        </li>
-        <li class="col-25">
-            <i class="user-mesIcon col ion-star"></i>
-            <span class="user-mesTitle col">我的收藏</span>
-            <strong class="user-mesCount col">39</strong>
-        </li>
-        <li class="col-25">
-            <i class="user-mesIcon col ion-chatbox-working"></i>
-            <span class="user-mesTitle col">我的评论</span>
-            <strong class="user-mesCount col">12</strong>
-        </li>
-    </ul>
-</main>
+	</ion-content>
+</ion-view>

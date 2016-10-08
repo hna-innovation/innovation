@@ -78,6 +78,9 @@ img{
 .mg-t10{
 	margin-top: 10px !important;
 }
+.mg-b10{
+	margin-bottom: 10px;
+}
 .mg-b20{
 	margin-bottom: 20px;
 }
@@ -122,7 +125,12 @@ img{
 .pd-b50{
 	padding-bottom: 50px;
 }
-
+.pd-10{
+	padding: 10px;
+}
+.pd-15{
+	padding: 15px;
+}
 /* border */
 .border-b1{
 	border-bottom: #e5e5e5 dashed    1px;
@@ -163,7 +171,6 @@ img{
 	color: #ABE9F1;
     border-color: #ABE9F1;
 }
-
 .button-normal{
     min-height: 20px!important;
     height: 30px;
@@ -196,6 +203,9 @@ img{
 }
 .color-grey{
     color: #F8E1E1;
+}
+.color-red{
+	color: #e06968;
 }
 
 /* background-color */
@@ -490,7 +500,6 @@ label.has-error {
 	width: 80%;
 	height: 35px;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.7);
 	line-height: 35px;
 	border-radius: 5px;
 	text-align: center;

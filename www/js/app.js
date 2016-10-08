@@ -84,6 +84,13 @@ angular.module('starter')
 
       })
 
+      .state('user-draft', {
+        url: '/user-draft',
+        templateUrl: 'templates/user-draft.html',
+        controller: 'UserCtrl'
+        
+      })
+      
       .state('step-1', {
         url: '/step-1',
         cache: false,
