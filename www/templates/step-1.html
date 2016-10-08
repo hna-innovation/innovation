@@ -6,7 +6,7 @@
     <ion-content>
         <main id="step-1" class="content has-header">
             <div id="imgUpload">
-                <ion-spinner id="step-loading" ng-show="loading == true" icon="ios"></ion-spinner>
+                <ion-spinner class="step-loading" ng-show="loading == true" icon="ios"></ion-spinner>
                 <img id="img-view" class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload()">
                 <input id="photoUpload" type="file" accept="image/*" ng-show="true" nv-file-select uploader="uploader">
                 <ul>

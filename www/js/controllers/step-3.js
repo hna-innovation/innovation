@@ -21,6 +21,7 @@ function StepThirdCtrl($scope, $timeout, Services, Page) {
     // 获取点子详情
     Services.dianziDetail(localStorage.draftId, function (result) {
         if (result.code == 0) {
+            $scope.loading = false;
             $scope.ItemContent = result.data;
         } else {
             console.log(result);

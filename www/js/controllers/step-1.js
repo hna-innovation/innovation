@@ -34,7 +34,10 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
 
     // 图片上传接口
     $scope.uploader = new FileUploader({
-        url: '/api/media/image'
+        url: '/api/media/image',
+        isUploading:true,
+        autoUpload:true,
+        removeAfterUpload: true
     });
 
     //自动上传图片

@@ -14,7 +14,7 @@
             <div>
                 <ul class="step-container clearfix">
                     <li class="step-item left" ng-repeat="item in ItemContent">
-                        <ion-spinner id="step-loading" ng-show="loading == true" icon="ios"></ion-spinner>
+                        <ion-spinner class="step-loading2" ng-show="loading == true" icon="ios"></ion-spinner>
                         <img ng-src="{{item.url}}" src="../img/step/step-default.jpg">
                         <img class="item-del" src="../img/step/step-close.png" alt="删除" ng-click="del(item.id)" width="12" height="12">
                     </li>

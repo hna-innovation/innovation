@@ -69,6 +69,11 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         removeAfterUpload: true
     });
 
+    // loading
+    $scope.uploader.onAfterAddingFile = function (fileItem) {
+        $scope.loading = true;
+    };
+
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
         if (status != 200) return HnaAlert.default('图片上传失败！');

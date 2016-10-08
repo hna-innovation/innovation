@@ -24,6 +24,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
     // 获取点子详情
     Services.dianziDetail($scope.draftId, function (result) {
         if (result.code == 0) {
+            $scope.loading = false;
             $scope.ItemContent = result.data;
             $scope.formdata.description = result.data.projectDraft.description
         } else {

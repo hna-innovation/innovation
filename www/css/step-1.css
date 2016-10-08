@@ -41,42 +41,6 @@
     margin-bottom: 50px;
 }
 
-#step-1 .step-container{
-    width: 100%;
-    margin-bottom: 10px;
-    font-size: 12px;
-}
-
-#step-1 .step-item{
-    width: calc((100vw - 60px) / 4);
-    height: calc((100vw - 60px) / 4);
-    margin: 5px 10px 5px 0;
-    position: relative;
-    overflow: hidden;
-}
-step-item img{
-    height: calc((100vw - 60px) / 4);    
-}
-
-#step-1 .step-item:nth-child(4n){
-    margin-right: 0;
-}
-#step-1 .step-item:nth-child(1), #step-1 .step-item:nth-child(2), #step-1 .step-item:nth-child(3), #step-1 .step-item:nth-child(4){
-    margin-top: 0;
-}
-
-#step-1 .step-item img:first-child{
-    border-radius: 4px;
-}
-
-#step-1 .item-del{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 4vw;
-    height: 4vw;
-}
-
 #photoUpload{
     display: none;
 }
@@ -85,7 +49,7 @@ step-item img{
     position: relative;
 }
 
-#step-loading{
+.step-loading{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -93,26 +57,7 @@ step-item img{
     margin-left: -20px;
 }
 
-#step-loading svg{
+.step-loading svg{
     width: 40px;
     height: 40px;
-}
-
-.confirm-msg{
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    font-size: 16px;
-    color: #666;
-}
-
-.button-normal{
-    min-height: 20px!important;
-    height: 30px;
-    margin-top: 7.5px;
-}
-
-.button-bg-gray{
-    background-color: #888;
-    color: #fff;
 }
