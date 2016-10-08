@@ -1,7 +1,7 @@
 angular.module('starter.services')
-  .factory('modalServices', modalServices);
+  .factory('ModalServices', ModalServices);
 
-function modalServices($rootScope, $ionicPopup, Services) {
+function ModalServices($rootScope, $ionicPopup, Services) {
   // show modal
   var myPopup;
   var showPopup = function() {

@@ -31,4 +31,13 @@
   margin-right: 6px;
 }
 
+.personal-like {
+  position: absolute;
+  z-index: 12;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  height: 100%;
+}
+
 

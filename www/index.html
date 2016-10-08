@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="starter" ng-controller="MainCtrl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title></title>
+  <title ng-bind="Page.title()"></title>
 
   <link rel="manifest" href="manifest.json">
 
@@ -51,6 +51,7 @@
   <script src="js/app.js"></script>
 
   <!--verdor js-->
+  <script src="js/controllers/main.js"></script>
   <script src="js/config.js"></script>
   <script src="js/vendor/swiper.min.js"></script>
   <script src="js/vendor/angular-file-upload.min.js"></script>
@@ -64,7 +65,8 @@
   <script src="js/controllers/resources.js" ></script>
   <script src="js/services.js"></script>
   <script src="js/hna-alert.js"></script>
-  <script src="js/modalServices.js"></script>
+  <script src="js/modal-services.js"></script>
+  <script src="js/page-services.js"></script>
 
   <!--<style>-->
   <!--body {-->
@@ -74,7 +76,7 @@
   <!--}-->
   <!--</style>-->
 </head>
-<body ng-app="starter">
+<body>
 <div id="alert"></div>
 <!--
   The views will be rendered in the <ion-nav-view> directive below

@@ -2,7 +2,12 @@ angular.module('starter.controllers')
 
   .controller('InnovationCtrl', InnovationCtrl)
 
-function InnovationCtrl($scope, Services, modalServices) {
+function InnovationCtrl($scope, Services, ModalServices, Page) {
+
+
+  // set title
+  // Page.setTitle('创新平台');
+  
   // init banner carousel
   new Swiper('.swiper-container', {
     // Optional parameters
@@ -18,7 +23,7 @@ function InnovationCtrl($scope, Services, modalServices) {
     console.log(error);
   });
 
-  $scope.showPopup = modalServices.showPopup;
+  $scope.showPopup = ModalServices.showPopup;
 
   $scope.dianzi = function(){
     if(localStorage.userId){
