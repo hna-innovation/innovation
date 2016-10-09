@@ -4,7 +4,7 @@ angular.module('starter.services')
 function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
   // show modal
   var myPopup;
-  var showPopup = function() {
+  var showPopup = function () {
     // An elaborate, custom popup
     myPopup = $ionicPopup.show({
       templateUrl: '../templates/form/login-register.html',
@@ -19,15 +19,15 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
 
   // change form view
   $rootScope.isLogin = true;
-  $rootScope.changeRegister =function (event) {
-    if($rootScope.isLogin){
+  $rootScope.changeRegister = function (event) {
+    if ($rootScope.isLogin) {
       event.preventDefault();
     }
     $rootScope.isLogin = false;
   };
 
-  $rootScope.changeLogin =function (event) {
-    if(!$rootScope.isLogin){
+  $rootScope.changeLogin = function (event) {
+    if (!$rootScope.isLogin) {
       event.preventDefault();
     }
     $rootScope.isLogin = true;
@@ -35,17 +35,17 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
 
   // form login or register
   $rootScope.isUnique = true;
-  $rootScope.loginOrRegister =  function (data) {
+  $rootScope.loginOrRegister = function (data) {
     var passData = {
       email: data.email,
       password: data.password
     }
-    if($rootScope.isLogin){
-      if(!data.email || !data.password){
+    if ($rootScope.isLogin) {
+      if (!data.email || !data.password) {
         return;
       }
       Services.login(passData, function (res) {
-        if(res.error){
+        if (res.error) {
           console.log(res.error);
         } else {
           localStorage.userId = res.data.id;
@@ -56,14 +56,15 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
         console.log('error');
       })
     } else {
-      if(!data.email || !data.password || !data.passwordRepeat){
+      if (!data.email || !data.password || !data.passwordRepeat) {
         return;
       }
       Services.register(passData, function (res) {
-        if(res.error){
+        if (res.error) {
           console.log(res.error);
           $rootScope.isUnique = false;
         } else {
+          HnaAlert.default('注册成功！');
           myPopup.close();
         }
       }, function (error) {
