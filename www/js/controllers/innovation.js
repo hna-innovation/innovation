@@ -13,7 +13,8 @@ function InnovationCtrl($scope, Services, ModalServices, Page) {
     // Optional parameters
     autoplay: 2000,
     autoplayDisableOnInteraction: false,//false的话用户操作后还会继续轮播，否则中断
-    loop: true
+    loop: true,
+    pagination: '.swiper-pagination'
   });
 
   // Get Projects

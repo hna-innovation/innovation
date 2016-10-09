@@ -48,9 +48,14 @@
   border: none;
 }
 
-.item-image img:first-child {
+.item-image a {
   width: 94%;
+  display: inline-block;
   height: 145px;
+  overflow: hidden;
+}
+
+.item-image img:first-child {
   margin-top: 3px;
 }
 
