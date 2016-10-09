@@ -20,6 +20,7 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
   // change form view
   $rootScope.isLogin = true;
   $rootScope.changeRegister = function (event) {
+    $rootScope.isUnique = true;
     if ($rootScope.isLogin) {
       event.preventDefault();
     }
@@ -27,6 +28,7 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
   };
 
   $rootScope.changeLogin = function (event) {
+    $rootScope.isUnique = true;
     if (!$rootScope.isLogin) {
       event.preventDefault();
     }
@@ -44,11 +46,15 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
       if (!data.email || !data.password) {
         return;
       }
+        $rootScope.isUnique = true;
       Services.login(passData, function (res) {
         if (res.error) {
           console.log(res.error);
+          $rootScope.isUnique = false;
+          $rootScope.msg =  res.error;
         } else {
           localStorage.userId = res.data.id;
+          $rootScope.isUnique = true;
           HnaAlert.default('登录成功！');
           myPopup.close();
         }
@@ -62,8 +68,10 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
       Services.register(passData, function (res) {
         if (res.error) {
           console.log(res.error);
+          $rootScope.msg =  res.error;
           $rootScope.isUnique = false;
         } else {
+          $rootScope.isUnique = true;
           HnaAlert.default('注册成功！');
           myPopup.close();
         }

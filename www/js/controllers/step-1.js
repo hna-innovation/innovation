@@ -40,13 +40,6 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         removeAfterUpload: true
     });
 
-    //自动上传图片
-    $scope.uploader.onAfterAddingFile = function (fileItem) {
-        setTimeout(function () {
-            jQuery('#automatic-upload').click();
-        }, 100)
-    };
-
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
         if (status != 200) return HnaAlert.default('图片上传失败！');
@@ -56,15 +49,6 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         $scope.picURL = response.data[0].url;
         jQuery('#img-view').attr('src', $scope.picURL)
     };
-    // // 添加或更换图片事件
-    // $scope.photoChange = function (event) {
-    //     $scope.loading = true;
-    //     var fileInput = event.target.files;
-    //     var windowURL = window.URL || window.webkitURL;
-    //     $scope.picURL = windowURL.createObjectURL(fileInput[0]);
-    //     jQuery('#img-view').attr('src', $scope.picURL)
-    // };
-    // angular.element(jQuery('#photoUpload')).on('change', $scope.photoChange);
 
     // 创意创建
     $scope.create = function () {

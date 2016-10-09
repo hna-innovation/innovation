@@ -1,11 +1,11 @@
 <ion-view>
     <header class="bar bar-header bg-pink step-header">
         <a ui-sref="step-1" class="ion-android-close color-white"></a>
-        <h1 class="title color-grey">记录新创意</h1>
+        <h1 class="title color-grey">创意编辑</h1>
     </header>
     <ion-content>
         <main id="step-2" class="content has-header">
-            <input id="photoUpload2" type="file" accept="image/*" ng-show="true" multiple nv-file-select uploader="uploader">
+            <input id="photoUpload2" type="file" accept="image/*" ng-show="true" nv-file-select uploader="uploader">
             <ul>
                 <li ng-repeat="item in uploader.queue">
                     <button id="automatic-upload2" ng-click="item.upload()" ng-show="false">上传</button>
@@ -14,12 +14,14 @@
             <div>
                 <ul class="step-container clearfix">
                     <li class="step-item left" ng-repeat="item in ItemContent">
-                        <ion-spinner class="step-loading2" ng-show="loading == true" icon="ios"></ion-spinner>
-                        <img ng-src="{{item.url}}" src="../img/step/step-default.jpg">
+                        <img ng-src="{{item.url}}">
                         <img class="item-del" src="../img/step/step-close.png" alt="删除" ng-click="del(item.id)" width="12" height="12">
                     </li>
-                    <li class="step-item left" ng-click="photoUpload()">
+                    <li class="step-item left" ng-click="photoUpload()" ng-show="addShow == true">
                         <img src="../img/step/step-add.png" width="100%" alt="添加">
+                    </li>
+                    <li>
+                        <ion-spinner class="step-loading" ng-show="loading == true" icon="ios"></ion-spinner>
                     </li>
                 </ul>
             </div>
