@@ -44,6 +44,7 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
     }
     if ($rootScope.isLogin) {
       if (!data.email || !data.password) {
+        $rootScope.msg =  "邮箱不存在或密码错误"
         return;
       }
         $rootScope.isUnique = true;
