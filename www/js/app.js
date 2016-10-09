@@ -106,13 +106,20 @@ angular.module('starter')
         controller: 'UserCtrl'
         
       })        
-       .state('user-like', {
+      .state('user-like', {
         url: '/user-like',
         cache: false,
         templateUrl: 'templates/user-like.html',
         controller: 'UserCtrl'
         
-      })       
+      })
+      .state('user-favorite', {
+        url: '/user-favorite',
+        cache: false,
+        templateUrl: 'templates/user-favorite.html',
+        controller: 'UserCtrl'
+        
+      })      
       .state('step-1', {
         url: '/step-1',
         cache: false,
