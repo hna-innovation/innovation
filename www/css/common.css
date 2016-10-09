@@ -34,6 +34,14 @@ img{
 	text-align: center;
 	border-radius: 17.5px;
 }
+.a-btn-2{
+	display: inline-block; 
+	text-align: center; 
+	width: 100%; 
+	height: 100%; 
+	border: #dedede solid 1px; 
+	border-radius: 5px;
+}
 .p-20{
 	margin: 0;
 	height: 20px;
@@ -136,10 +144,14 @@ img{
 }
 /* border */
 .border-b1{
-	border-bottom: #e5e5e5 dashed    1px;
+	border-bottom: #e5e5e5 dashed 1px;
 }
 .border-0{
 	border: 0 !important;
+}
+.border-tb{
+	border-bottom: #dedede solid 1px;
+	border-top: #dedede solid 1px;
 }
 
 /* button */
@@ -364,6 +376,7 @@ img{
 	display: table-row;
 }
 .box-table>.box-table-row>.box-table-cell{
+	position: relative;
 	display: table-cell;
 	vertical-align: top;
 }

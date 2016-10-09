@@ -79,6 +79,7 @@ angular.module('starter')
 
       .state('user', {
         url: '/user',
+        cache: false,
         templateUrl: 'templates/user.html',
         controller: 'UserCtrl'
 
@@ -86,17 +87,32 @@ angular.module('starter')
 
       .state('user-draft', {
         url: '/user-draft',
+        cache: false,
         templateUrl: 'templates/user-draft.html',
         controller: 'UserCtrl'
         
       })
-      .state('user-mycomment', {
-        url: '/user-mycomment',
-        templateUrl: 'templates/user-mycomment.html',
+      .state('user-comment', {
+        url: '/user-comment',
+        cache: false,
+        templateUrl: 'templates/user-comment.html',
         controller: 'UserCtrl'
         
-      })      
-      
+      })
+      .state('user-comment2', {
+        url: '/user-comment2',
+        cache: false,
+        templateUrl: 'templates/user-comment2.html',
+        controller: 'UserCtrl'
+        
+      })        
+       .state('user-like', {
+        url: '/user-like',
+        cache: false,
+        templateUrl: 'templates/user-like.html',
+        controller: 'UserCtrl'
+        
+      })       
       .state('step-1', {
         url: '/step-1',
         cache: false,

@@ -1,7 +1,28 @@
 angular.module('starter.controllers')
 
-  .controller('UserCtrl', UserCtrl)
+	.controller('UserCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
+			
+			
+//			var _userId = $location.search()['userid'];
+			var _baseUrl = "http://172.16.2.7:8080";
+			
+			var _userId = "57c96c19d9f2822078df18b9";
+			
+			$scope.commentType = $location.search()['commentType'];
+			//获取用户信息
+			$scope.getUserInfo = function(){				
+				$http.get(_baseUrl+"/api/user?userId="+_userId).success(function(result){			
+						$scope.userinfo=result.data;	
+				});	
+			}
+			$scope.getUserInfo();
 
-function UserCtrl($scope) {
+//			$http({
+//				method:"POST",
+//				url:_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=true"
+//			}).success(function(result){			
+//				$scope.getProjectDetail();
+//			})					
+	
 
-};
+	})
