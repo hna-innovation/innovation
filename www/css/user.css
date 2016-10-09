@@ -105,32 +105,42 @@
 .user-list>li{
 	position: relative;
 	width: 100%;
-	height: 75px;
+	min-height: 75px;
 	background-color: #fff;
 	border: #dedede solid 1px;
 	margin-bottom: 10px;
 }
 .user-list>li>div:nth-child(1) {
+	position: relative;
 	width: 110px;
-	height: 100%;
+	height: 75px;
 	z-index: 2;
 }
 .user-list>li>div:nth-child(2) {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 75px;
 	left: 0;
 	top: 0;
-	padding: 5px 10px 5px 120px;
+	padding: 7px 10px 7px 120px;
 	z-index: 1;
 }
 .user-list>li>div:nth-child(2) p{
-	height: 22px;
-	line-height: 22px;
+	line-height: 18px;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.user-list>li>div:nth-child(2) .text-title{
+	height: 24px;
+	line-height: 18px;
+}
+.user-list>li>div:nth-child(2) .text-row2{
+	height: 36px;
+}
+.user-list>li>div:nth-child(2) .text-ellipsis{
 	white-space:nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	margin-bottom: 0;
 }
 .user-list>li>div:nth-child(2) .text-bottom{
 	position: absolute;
@@ -144,5 +154,13 @@
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
-	background: url(../img/add.png) no-repeat center cover;
+	
+}
+.bg-img-left{
+	background: url(../img/icon-left.svg) no-repeat 10px center;
+	background-size: 22px;
+}
+.bg-img-reomve{
+	background: url(../img/icon-remove.svg) no-repeat 12px center;
+	background-size: 18px;
 }

@@ -90,6 +90,12 @@ angular.module('starter')
         controller: 'UserCtrl'
         
       })
+      .state('user-mycomment', {
+        url: '/user-mycomment',
+        templateUrl: 'templates/user-mycomment.html',
+        controller: 'UserCtrl'
+        
+      })      
       
       .state('step-1', {
         url: '/step-1',
