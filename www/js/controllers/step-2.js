@@ -25,6 +25,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     };
     $scope.getDetail();
 
+    // 更新点子
     $scope.ItemUpdate = function (status, msg) {
         console.log($scope.images)
         Services.dianziEdit(localStorage.draftId,
