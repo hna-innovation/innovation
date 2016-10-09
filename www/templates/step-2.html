@@ -20,7 +20,7 @@
                     <li class="step-item left" ng-click="photoUpload()" ng-show="addShow == true">
                         <img src="../img/step/step-add.png" width="100%" alt="添加">
                     </li>
-                    <li class="spinners">
+                    <li class="spinners" ng-show="loading == true">
                         <ion-spinner class="step-loading" icon="ios"></ion-spinner>
                     </li>
                 </ul>

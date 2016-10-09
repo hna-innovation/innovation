@@ -136,6 +136,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
 
     // 创意创建
     $scope.create = function () {
+        if($scope.loading == true) return;
         if ($scope.images == undefined || $scope.images.length == 0) {
             HnaAlert.default('图片不能为空！');
             return;
