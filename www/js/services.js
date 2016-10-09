@@ -52,6 +52,19 @@ function Services($http, LOCAL_TEST_URL) {
         .error(error);
     },
 
+    getProjectsByTags: function(tags, success, error) {
+      return $http.get(getUrl('/api/show/project?tag='+tags))
+        .success(success)
+        .error(error);
+    },
+
+    //get all tags
+    getTags: function (success, error) {
+      return $http.get(getUrl('/api/tags?type=0'))
+        .success(success)
+        .error(error);
+    },
+
     //login
     login: function (data, success, error) {
       return $http.post(getUrl('/api/login'), data)

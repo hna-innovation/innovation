@@ -15,7 +15,11 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
                 $scope.images = result.data.projectDraft.images;
                 $scope.formdata.description = result.data.projectDraft.description;
                 $scope.formdata.name = result.data.projectDraft.name;
-                console.log(result);
+                if ($scope.images.length < 8) {
+                    $scope.addShow = true;
+                } else {
+                    $scope.addShow = false;
+                }
             } else {
                 console.log(result);
             }
@@ -59,25 +63,52 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     // 图片上传接口
     $scope.uploader = new FileUploader({
         url: '/api/media/image',
-        isUploading:true,
-        autoUpload:true,
+        isUploading: true,
+        autoUpload: true,
         removeAfterUpload: true
     });
 
+    // 限制上传类型和文件大小
+    $scope.uploader.filters.push({
+        name: 'imageTypeFilter',
+        fn: function (item) {
+            return item.type.indexOf('image/') !== -1;
+        }
+    });
+    $scope.uploader.filters.push({
+        name: 'imageSizeFilter',
+        fn: function (item) {
+            return item.size <= 5242880;
+        }
+    });
+    $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
+        console.log(filter)
+        if (filter.name == 'imageTypeFilter') {
+            HnaAlert.default('请选择正确的图片类型！')
+        }
+        if (filter.name == 'imageSizeFilter') {
+            HnaAlert.default('图片大小不能超过5M！')
+        }
+    };
+
     // loading
     $scope.uploader.onAfterAddingFile = function (fileItem) {
-        console.log(fileItem)
         $scope.loading = true;
     };
+
 
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
         if (response.code != 0) return HnaAlert.default('图片上传失败！');
         $scope.loading = false;
-        response.data.forEach(function(item){
+        response.data.forEach(function (item) {
             $scope.images.push(item.id);
         });
-        console.log($scope.images);
+        if ($scope.images.length < 8) {
+            $scope.addShow = true;
+        } else {
+            $scope.addShow = false;
+        }
         $scope.ItemUpdate(0, '图片上传成功！');
         $scope.getDetail();
     };

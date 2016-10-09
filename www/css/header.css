@@ -11,17 +11,26 @@
   line-height: 38px;
 }
 
+.bar .button-img {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.bar .button-img:after {
+  display: none;
+}
+
 .bar .button-img img:nth-child(1) {
   width: 20px;
   vertical-align: top;
-  margin-top: 5px;
+  padding: 5px 0;
   margin-right: 2px;
 }
 
 .bar.bar-header .button-img img:nth-child(2) {
   width: 18px;
   margin-right: 4px;
-  margin-top: 4px;
+  padding: 4px 0;
 }
 
 .content-header {
