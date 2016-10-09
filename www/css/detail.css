@@ -11,4 +11,7 @@
 .detail-special-info{
 	border-bottom: #e5e5e5 solid 1px;
 }
+.detail-special .go-back{
+	line-height: 28px !important;
+}
 

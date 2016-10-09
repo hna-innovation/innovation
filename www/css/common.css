@@ -81,7 +81,7 @@ img{
 	margin-right: 15px;
 }
 .mg-b0{
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 .mg-t10{
 	margin-top: 10px !important;
