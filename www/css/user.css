@@ -135,8 +135,8 @@
 .user-list>li>div:nth-child(2) .text-bottom{
 	position: absolute;
 	bottom: 5px;
-	height: 20px;
-	line-height: 20px;
+	height: 15px;
+	line-height: 9px;
 }
 .user-list-title{
 	height: 50px;
@@ -144,4 +144,5 @@
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
+	background: url(../img/add.png) no-repeat center cover;
 }
