@@ -54,15 +54,6 @@
     display: none;
 }
 
-.step-loading2{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -14px;
-    margin-left: -14px;
-}
-
-
 .confirm-msg{
     height: 80px;
     text-align: center;

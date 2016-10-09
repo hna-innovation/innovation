@@ -51,6 +51,9 @@ function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
         if (res.error) {
           console.log(res.error);
           $rootScope.isUnique = false;
+          if(res.error == '登录错误'){
+            return $rootScope.msg =  "邮箱不存在或密码错误"
+          }
           $rootScope.msg =  res.error;
         } else {
           localStorage.userId = res.data.id;

@@ -14,14 +14,14 @@
             <div>
                 <ul class="step-container clearfix">
                     <li class="step-item left" ng-repeat="item in ItemContent">
-                        <img ng-src="{{item.url}}">
+                        <img ng-src="{{item.url}}" ng-click="del(item.id)">
                         <img class="item-del" src="../img/step/step-close.png" alt="删除" ng-click="del(item.id)" width="12" height="12">
                     </li>
                     <li class="step-item left" ng-click="photoUpload()" ng-show="addShow == true">
                         <img src="../img/step/step-add.png" width="100%" alt="添加">
                     </li>
-                    <li>
-                        <ion-spinner class="step-loading" ng-show="loading == true" icon="ios"></ion-spinner>
+                    <li class="spinners">
+                        <ion-spinner class="step-loading" icon="ios"></ion-spinner>
                     </li>
                 </ul>
             </div>

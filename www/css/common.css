@@ -532,4 +532,27 @@ label.has-error {
 	z-index: 100000;
 }
 
+.spinners{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+	z-index: 100000000;
+}
+
+.step-loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.step-loading svg{
+    width: 40px;
+    height: 40px;
+}
+
 
