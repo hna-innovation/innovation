@@ -4,7 +4,7 @@ angular.module('starter.controllers')
 
 function StepThirdCtrl($scope, $timeout, Services, Page) {
     // set title
-    Page.setTitle('点子预览');
+    Page.setTitle('创意预览');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step', {
@@ -18,7 +18,7 @@ function StepThirdCtrl($scope, $timeout, Services, Page) {
         });
     }, 500);
 
-    // 获取点子详情
+    // 获取创意详情
     Services.dianziDetail(localStorage.draftId, function (result) {
         if (result.code == 0) {
             $scope.loading = false;

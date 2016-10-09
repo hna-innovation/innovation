@@ -4,11 +4,11 @@ angular.module('starter.controllers')
 
 function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
     // set title
-    Page.setTitle('记录新点子');
+    Page.setTitle('记录新创意');
     // 初始化表单数据
     $scope.formdata = {};
 
-    // 获取点子列表
+    // 获取创意列表
     $scope.getList = function () {
         Services.dianziList(localStorage.userId, function (result) {
             if (result.code == 0) {
@@ -52,19 +52,21 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         if (status != 200) return HnaAlert.default('图片上传失败！');
         $scope.loading = false;
         HnaAlert.default('图片上传成功！');
-        $scope.imagesChild = response.data.id;
-    };
-    // 添加或更换图片事件
-    $scope.photoChange = function (event) {
-        $scope.loading = true;
-        var fileInput = event.target.files;
-        var windowURL = window.URL || window.webkitURL;
-        $scope.picURL = windowURL.createObjectURL(fileInput[0]);
+        $scope.imagesChild = response.data[0].id;
+        $scope.picURL = response.data[0].url;
         jQuery('#img-view').attr('src', $scope.picURL)
     };
-    angular.element(jQuery('#photoUpload')).on('change', $scope.photoChange);
+    // // 添加或更换图片事件
+    // $scope.photoChange = function (event) {
+    //     $scope.loading = true;
+    //     var fileInput = event.target.files;
+    //     var windowURL = window.URL || window.webkitURL;
+    //     $scope.picURL = windowURL.createObjectURL(fileInput[0]);
+    //     jQuery('#img-view').attr('src', $scope.picURL)
+    // };
+    // angular.element(jQuery('#photoUpload')).on('change', $scope.photoChange);
 
-    // 点子创建
+    // 创意创建
     $scope.create = function () {
         if ($scope.imagesChild == undefined) {
             HnaAlert.default('图片不能为空！');
@@ -79,7 +81,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         var num = $scope.itemCount || '';
         num++;
         Services.dianziCreate({
-            "name": "我的点子" + num,
+            "name": "我的创意" + num,
             "description": $scope.formdata.description,
             "creator": localStorage.userId,
             "images": [$scope.imagesChild]

@@ -1,14 +1,14 @@
 <ion-view>
     <header class="bar bar-header bg-pink step-header">
         <a ui-sref="step-3" class="ion-ios-arrow-left font-24 color-white"></a>
-        <h1 class="title color-grey">编辑完善点子</h1>
+        <h1 class="title color-grey">编辑完善创意</h1>
     </header>
     <ion-content>
         <main id="step-4">
             <div id="step-title" class="step-public">
-                <input class="step-public-input" type="text" ng-show="titleShow == true" ng-model="formdata.title" placeholder="用一句话描述你的点子">
+                <input class="step-public-input" type="text" ng-show="titleShow == true" ng-model="formdata.title" placeholder="用一句话描述你的创意">
                 <em class="step-public-em" ng-click="edit(0)" ng-show="titleShow != true">
-            <i class="step-public-i"></i>用一句话描述你的点子
+            <i class="step-public-i"></i>用一句话描述你的创意
             <span class="step-public-span">(点击输入)</span>
         </em>
             </div>
@@ -25,17 +25,17 @@
 
             <div id="step-description" class="step-public">
                 <em class="step-public-em" ng-click="edit(1)">
-                    <i class="step-public-i"></i>详细描述你的点子
+                    <i class="step-public-i"></i>详细描述你的创意
                     <span class="step-public-span">(点击编辑)</span>
                 </em>
             </div>
             <div class="step-description" ng-click="edit(1)">
-                <textarea class="step-public-textarea" ng-readonly="descriptionShow != true" ng-model="formdata.description" placeholder="用一句话描述你的点子"></textarea>
+                <textarea class="step-public-textarea" ng-readonly="descriptionShow != true" ng-model="formdata.description" placeholder="用一句话描述你的创意"></textarea>
             </div>
 
             <div id="step-tag" class="step-public">
                 <em class="step-public-em">
-                <i class="step-public-i"></i>给你的点子加个标签吧
+                <i class="step-public-i"></i>给你的创意加个标签吧
                 <span class="step-public-span">(可多选)</span>
             </em>
             </div>

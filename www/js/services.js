@@ -73,42 +73,42 @@ function Services($http, LOCAL_TEST_URL) {
         .error(error);
     },
 
-    // 点子列表
+    // 创意列表
     dianziList: function (userId, success, error) {
       return $http.get(getUrl('/api/draft?userId=' + userId + '&page=0&size=8&sort=createdDate,desc'))
         .success(success)
         .error(error);
     },
 
-    // 点子创建
+    // 创意创建
     dianziCreate: function (data, success, error) {
       return $http.post(getUrl('/api/draft'), data)
         .success(success)
         .error(error);
     },
 
-    // 点子删除
+    // 创意删除
     dianziDelete: function (draftId, success, error) {
       return $http.delete(getUrl('/api/draft/' + draftId))
         .success(success)
         .error(error);
     },
 
-    // 点子详情
+    // 创意详情
     dianziDetail: function (draftId, success, error) {
       return $http.get(getUrl('/api/draft/' + draftId))
         .success(success)
         .error(error);
     },
 
-    // 点子编辑
+    // 创意编辑
     dianziEdit: function (draftId, data, success, error) {
       return $http.put(getUrl('/api/draft/' + draftId), data)
         .success(success)
         .error(error);
     },
 
-    // 点子发布
+    // 创意发布
     dianziRelease: function (data, success, error) {
       return $http.post(getUrl('/api/project'), data)
         .success(success)

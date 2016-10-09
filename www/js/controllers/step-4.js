@@ -4,7 +4,7 @@ angular.module('starter.controllers')
 
 function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
     // set title
-    Page.setTitle('编辑完善点子');
+    Page.setTitle('编辑完善创意');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step2', {
@@ -21,7 +21,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
     $scope.draftId = localStorage.draftId;
     $scope.formdata = {};
 
-    // 获取点子详情
+    // 获取创意详情
     Services.dianziDetail($scope.draftId, function (result) {
         if (result.code == 0) {
             $scope.loading = false;
@@ -83,7 +83,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
         console.log($scope.tags);
     };
 
-    // 点子发布
+    // 创意发布
     $scope.release = function () {
         if ($scope.formdata.title == undefined || $scope.formdata.title == '') {
             HnaAlert.default('标题不能为空！');

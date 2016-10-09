@@ -1,7 +1,7 @@
 angular.module('starter.services')
   .factory('ModalServices', ModalServices);
 
-function ModalServices($rootScope, $ionicPopup, Services) {
+function ModalServices($rootScope, $ionicPopup, Services, HnaAlert) {
   // show modal
   var myPopup;
   var showPopup = function() {
@@ -49,6 +49,7 @@ function ModalServices($rootScope, $ionicPopup, Services) {
           console.log(res.error);
         } else {
           localStorage.userId = res.data.id;
+          HnaAlert.default('登录成功！');
           myPopup.close();
         }
       }, function (error) {

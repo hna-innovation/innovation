@@ -4,10 +4,10 @@ angular.module('starter.controllers')
 
 function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
     // set title
-    Page.setTitle('点子编辑');
+    Page.setTitle('创意编辑');
     var img = null;
 
-    // 获取点子详情
+    // 获取创意详情
     $scope.getDetail = function () {
         Services.dianziDetail(localStorage.draftId, function (result) {
             if (result.code == 0) {
@@ -25,9 +25,8 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     };
     $scope.getDetail();
 
-    // 更新点子
+    // 更新创意
     $scope.ItemUpdate = function (status, msg) {
-        console.log($scope.images)
         Services.dianziEdit(localStorage.draftId,
             {
                 "name": $scope.formdata.name,
@@ -56,11 +55,6 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     $scope.photoUpload = function () {
         jQuery('#photoUpload2').trigger('click');
     };
-    jQuery('#photoUpload2').change(function (ev) {
-
-        console.log(ev.target.files)
-        console.log($scope.uploader)
-    })
 
     // 图片上传接口
     $scope.uploader = new FileUploader({
@@ -72,18 +66,20 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
 
     // loading
     $scope.uploader.onAfterAddingFile = function (fileItem) {
+        console.log(fileItem)
         $scope.loading = true;
     };
 
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
-        if (status != 200) return HnaAlert.default('图片上传失败！');
+        if (response.code != 0) return HnaAlert.default('图片上传失败！');
         $scope.loading = false;
-        $scope.images.push(response.data.id);
+        response.data.forEach(function(item){
+            $scope.images.push(item.id);
+        });
         console.log($scope.images);
         $scope.ItemUpdate(0, '图片上传成功！');
         $scope.getDetail();
-        fileItem = null
     };
 
     // 图片删除
@@ -98,7 +94,6 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         confirmPopup.then(function (res) {
             if (res) {
                 $scope.images.splice($scope.images.indexOf(imgId), 1);
-                console.log($scope.images);
                 $scope.ItemUpdate(0, '删除成功！');
                 $scope.getDetail();
 
@@ -108,7 +103,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         });
     };
 
-    // 点子创建
+    // 创意创建
     $scope.create = function () {
         if ($scope.images == undefined || $scope.images.length == 0) {
             HnaAlert.default('图片不能为空！');
