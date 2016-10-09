@@ -6,9 +6,23 @@
   background-color: #fff;
 }
 
+.bar-header div:nth-child(1).button {
+  padding: 4px 5px;
+  background-color: transparent;
+}
+
+.bar-header div.button img {
+  width: 17px;
+}
+
 .bar .title {
   height: 38px;
   line-height: 38px;
+}
+
+.bar .title .logo img {
+  width: 120px;
+  margin-top: 11px;
 }
 
 .bar .button-img {
@@ -29,7 +43,7 @@
 
 .bar.bar-header .button-img img:nth-child(2) {
   width: 18px;
-  margin-right: 4px;
+  margin-right: 0;
   padding: 4px 0;
 }
 

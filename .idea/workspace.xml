@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f33c0f36-4c25-45f3-880d-cb08bb3fd03f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/selected.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/user.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/card.css" afterPath="$PROJECT_DIR$/www/css/card.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/header.css" afterPath="$PROJECT_DIR$/www/css/header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/innovation.css" afterPath="$PROJECT_DIR$/www/css/innovation.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/innovation.js" afterPath="$PROJECT_DIR$/www/js/controllers/innovation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/innovation.html" afterPath="$PROJECT_DIR$/www/templates/innovation.html" />
+    </list>
+    <list id="9e4f6c74-7c75-4ec5-98d5-3f6c166c9b0c" name="Revert: update step" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/innovation.png" />
     </list>
     <ignored path="myApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,42 +38,17 @@
       <file leaf-file-name="innovation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/innovation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+            <state relative-caret-position="304">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step-1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/controllers/step-1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1475979325000" expanded="true" signature="2889:2895" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="innovation.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/innovation.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="innovation.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/innovation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="102" column="47" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="48" />
-              <folding />
-            </state>
+      <file leaf-file-name="interest.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/img/interest.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -80,45 +59,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="save.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/img/save.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="close.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/img/close.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <file leaf-file-name="innovation.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/css/innovation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-921">
-              <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+            <state relative-caret-position="228">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/config.js">
+      <file leaf-file-name="logo.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/img/logo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/css/card.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="182">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="innovation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/innovation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qzone.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/img/qzone.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selected.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/img/selected.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+            <state relative-caret-position="190">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -149,7 +145,6 @@
         <option value="$PROJECT_DIR$/www/js/controllers/chats.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/chats-detail.js" />
         <option value="$PROJECT_DIR$/www/js/config.js" />
-        <option value="$PROJECT_DIR$/www/css/card.css" />
         <option value="$PROJECT_DIR$/www/js/controllers/detail.js" />
         <option value="$PROJECT_DIR$/www/js/controllers/resources.js" />
         <option value="$PROJECT_DIR$/www/templates/form/register.html" />
@@ -172,11 +167,12 @@
         <option value="$PROJECT_DIR$/www/js/page-services.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/css/header.css" />
-        <option value="$PROJECT_DIR$/www/css/innovation.css" />
+        <option value="$PROJECT_DIR$/www/css/card.css" />
         <option value="$PROJECT_DIR$/www/templates/innovation.html" />
         <option value="$PROJECT_DIR$/www/js/controllers/innovation.js" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/css/innovation.css" />
       </list>
     </option>
   </component>
@@ -338,6 +334,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -429,6 +443,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f33c0f36-4c25-45f3-880d-cb08bb3fd03f" name="Default" comment="" />
+      <changelist id="9e4f6c74-7c75-4ec5-98d5-3f6c166c9b0c" name="Revert: update step" comment="" />
       <created>1475233862331</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -438,12 +453,12 @@
       <workItem from="1475391042499" duration="25999000" />
       <workItem from="1475806457937" duration="5813000" />
       <workItem from="1475814786123" duration="2632000" />
-      <workItem from="1475994341438" duration="6230000" />
+      <workItem from="1475994341438" duration="8569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86755000" />
+    <option name="totallyTimeSpent" value="89094000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -462,7 +477,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564482" sideWeight="0.49239543" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16942675" sideWeight="0.12426036" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23184714" sideWeight="0.87573963" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34140128" sideWeight="0.87573963" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12544045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17070064" sideWeight="0.4944238" order="7" side_tool="false" content_ui="tabs" />
@@ -527,37 +542,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js" />
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/chats-detail.js" />
-    <entry file="file://$PROJECT_DIR$/www/js/vendor/swiper.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/vendor/swiper.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/img/adam.jpg" />
-    <entry file="file://$PROJECT_DIR$/www/img/innovation.png" />
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/chats.js" />
     <entry file="file://$PROJECT_DIR$/www/js/controllers/account.js" />
     <entry file="file://$PROJECT_DIR$/www/js/controllers/dash.js" />
     <entry file="file://$PROJECT_DIR$/www/img/banner/banner-2.jpg">
@@ -573,13 +565,6 @@
     <entry file="file://$PROJECT_DIR$/www/img/banner/banner-1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/card.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/resources.html">
@@ -625,32 +610,32 @@
         <state relative-caret-position="304">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
-            <marker date="1475899301000" expanded="true" signature="389:525" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="601:986" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="689:986" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="749:853" ph="/*...*/" />
-            <marker date="1475899301000" expanded="true" signature="1116:1541" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1141:1333" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1154:1258" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1475899301000" expanded="true" signature="1284:1326" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1337:1535" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1350:1453" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1475899301000" expanded="true" signature="1479:1523" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1577:2080" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1606:1835" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1619:1727" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1475899301000" expanded="true" signature="1753:1828" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1839:2074" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="1852:1959" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1475899301000" expanded="true" signature="1985:2062" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="2038:2279" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="2065:2269" ph="{&quot;direction&quot;: 'horizontal'...}" />
-            <marker date="1475899301000" expanded="true" signature="2335:3127" ph="{&quot;direction&quot;: 'horizontal'...}" />
-            <marker date="1475899301000" expanded="true" signature="2526:2741" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="2544:2643" ph="[...]" />
-            <marker date="1475899301000" expanded="true" signature="2782:3121" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="2937:2962" ph="{...}" />
-            <marker date="1475899301000" expanded="true" signature="2979:3015" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="389:525" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="601:986" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="689:986" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="749:853" ph="/*...*/" />
+            <marker date="1476003802000" expanded="true" signature="1116:1541" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1141:1333" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1154:1258" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1476003802000" expanded="true" signature="1284:1326" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1337:1535" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1350:1453" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1476003802000" expanded="true" signature="1479:1523" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1577:2080" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1606:1835" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1619:1727" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1476003802000" expanded="true" signature="1753:1828" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1839:2074" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="1852:1959" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1476003802000" expanded="true" signature="1985:2062" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2038:2279" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2065:2269" ph="{&quot;direction&quot;: 'horizontal'...}" />
+            <marker date="1476003802000" expanded="true" signature="2335:3127" ph="{&quot;direction&quot;: 'horizontal'...}" />
+            <marker date="1476003802000" expanded="true" signature="2526:2741" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2544:2643" ph="[...]" />
+            <marker date="1476003802000" expanded="true" signature="2782:3121" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2937:2962" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2979:3015" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -767,7 +752,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475979325000" expanded="true" signature="523:554" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="523:554" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -800,7 +785,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475979325000" expanded="true" signature="2889:2895" ph="{...}" />
+            <marker date="1476003802000" expanded="true" signature="2415:2421" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -813,43 +798,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/img/like.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/img/save.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/img/close.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/innovation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="106" column="11" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/innovation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services.js">
@@ -860,10 +811,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/sina.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/add.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/find.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/close.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/cover.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/interest.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/like.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/qzone.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/selected.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/card.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/innovation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/innovation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="102" column="47" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="48" />
+        <state relative-caret-position="304">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/innovation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding />
         </state>
       </provider>

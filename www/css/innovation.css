@@ -1,8 +1,11 @@
 .content {
   background-color: #faf9fb;
 }
+.content.content-header .swiper-container-horizontal>.swiper-pagination {
+  background-color: transparent;
+}
 .nav-list {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .nav-list ul {
