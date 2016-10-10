@@ -67,7 +67,7 @@
 
           <div class="item item-image">
             <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
-              <img ng-src="{{Page.getImageUrl(project.image)}}">
+              <img ng-src="{{project.image}}">
             </a>
           </div>
           <a class="item item-title" href="#" ng-bind="project.name"></a>
@@ -120,7 +120,7 @@
       </div>
       <ul class="tag-list">
         <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
-          <img ng-src="{{Page.getImageUrl(tag.imageUrl)}}" alt="">
+          <img ng-src="{{tag.imageUrl}}" alt="">
           <div class="cover" ng-show="tag.status">
             <img src="../img/selected.png" alt="">
           </div>

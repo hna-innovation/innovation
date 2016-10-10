@@ -9,9 +9,6 @@ function Page(LOCAL_TEST_URL) {
     },
     setTitle: function (newTitle) {
       title = newTitle;
-    },
-    getImageUrl: function(url) {
-      return url ? LOCAL_TEST_URL + '' + url: url;
     }
   }
 }
