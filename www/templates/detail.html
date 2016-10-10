@@ -2,7 +2,7 @@
 <ion-view view-title="项目详情">
 	<ion-content class="bg-fb">
 		<div class="detail-special">
-			<i class="if i-remove1 go-back radius" ng-if="pageName==undefined" onclick="history.go(-1)"></i>
+			<i class="if i-remove1 go-back radius" ng-if="pageName==undefined" onclick="window.location.href=document.referrer"></i>
 			<a class="if i-remove1 go-back radius" ng-if="pageName!=undefined" href="#{{pageName}}"></a>
 			<div class="swiper-container bg-ff" id="swiper1">
 				<ul class="swiper-wrapper">
@@ -29,7 +29,7 @@
 					<span class="tag tag-hong" ng-repeat="tag in detail.tagNames" ng-bind="tag"></span>
 				</div>
 				
-				<p class="color-88" ng-bind="detail.description"></p>
+				<pre class="color-88" ng-bind="detail.description"></pre>
 			</div>
 			
 			<div class="swiper-container bg-ff mg-t10" id="swiper2">

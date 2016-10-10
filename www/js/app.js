@@ -126,6 +126,13 @@ angular.module('starter')
         templateUrl: 'templates/user-resources.html',
         controller: 'UserCtrl'
         
+      })
+      .state('user-edit', {
+        url: '/user-edit',
+        cache: false,
+        templateUrl: 'templates/user-edit.html',
+        controller: 'UserCtrl'
+        
       })      
       .state('step-1', {
         url: '/step-1',
