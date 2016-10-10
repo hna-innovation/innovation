@@ -34,7 +34,7 @@ angular.module('starter.controllers')
 			setTimeout(function(){
 			   Swiper('#swiper1', {
 				    direction: 'horizontal',
-				    loop: true,	
+				    loop: false,	
 				    autoplay: 0,
 				    autoplayDisableOnInteraction: false,
 				    pagination: '.swiper-pagination',
@@ -45,7 +45,7 @@ angular.module('starter.controllers')
 			setTimeout(function(){
 				Swiper('#swiper2', {
 				    direction: 'horizontal',
-				    loop: true,	
+				    loop: false,	
 				    autoplay: 0,
 				    pagination: '.tab-nav',
 					paginationClickable: true,
