@@ -44,6 +44,7 @@ function Services($http, LOCAL_TEST_URL) {
   }
 
   return {
+    getUrl: getUrl,
 
     //get all projects
     getProjects: function(success, error) {

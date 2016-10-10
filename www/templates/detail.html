@@ -7,12 +7,12 @@
 			<div class="swiper-container bg-ff" id="swiper1">
 				<ul class="swiper-wrapper">
 					<li class="swiper-slide" ng-repeat="img in detail.imageUrls">
-						<img ng-src="{{img}}"/>
+						<img ng-src="{{Page.getImageUrl(img)}}"/>
 					</li>
 				</ul>
 				<div class="swiper-pagination"></div>
 			</div>
-			
+
 			<div class="detail-special-info pd-lr bg-ff">
 				<div class="border-b1 pd-tb text1 text-word">
 					<img ng-src="{{detail.user.headerIcon}}" width="30" height="30" class="radius mg-r15 left"/>
@@ -22,16 +22,15 @@
 					</div>
 					<span class="right color-88" ng-bind="detail.createdDate.substring(0,detail.createdDate.length-3)"></span>
 				</div>
-				
+
 				<div class="font-16 pd-tb" ng-bind="detail.name"></div>
-				
+
 				<div>
 					<span class="tag tag-hong" ng-repeat="tag in detail.tagNames" ng-bind="tag"></span>
 				</div>
-				
 				<pre class="color-88" ng-bind="detail.description"></pre>
 			</div>
-			
+
 			<div class="swiper-container bg-ff mg-t10" id="swiper2">
 				<ul class="tab-nav" id="swiper2-nav"></ul>
 				<ul class="swiper-wrapper tab-list">
@@ -49,21 +48,21 @@
 					</li>
 				</ul>
 			</div>
-			
+
 			<div class="pd-t20 text-center pd-b50">
 				<div class="mg-b20"  ng-if="false">
-					<a class="a-btn tag-hong" href="#">生成BP计划书</a>				
+					<a class="a-btn tag-hong" href="#">生成BP计划书</a>
 				</div>
 				<div class="mg-b20">
-					<a class="a-btn tag-hong" >申请加入Bim讨论组</a>	
-				</div>			
+					<a class="a-btn tag-hong" >申请加入Bim讨论组</a>
+				</div>
 			</div>
-			
+
 		</div>
 	</ion-content>
-	
+
 	<hna-footernav></hna-footernav>
-	
+
 </ion-view>
 
 

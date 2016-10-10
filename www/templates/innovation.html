@@ -53,22 +53,23 @@
         </li>
       </ul>
     </div>
-    <div class="list card" ng-repeat="project in projects">
+    <ion-list>
+      <div class="list card" ng-repeat="project in projects">
 
-      <div class="item item-avatar">
-        <img ng-src="{{project.user.headerIcon}}">
-        <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
-        </h2>
-        <div class="process">
-          <span ng-class="{active: project.status >=2 }"></span>
-          <span ng-class="{active: project.status >=3 }"></span>
-          <span ng-class="{active: project.status ==4 }"></span>
+        <div class="item item-avatar">
+          <img ng-src="{{project.user.headerIcon}}">
+          <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
+          </h2>
+          <div class="process">
+            <span ng-class="{active: project.status >=2 }"></span>
+            <span ng-class="{active: project.status >=3 }"></span>
+            <span ng-class="{active: project.status ==4 }"></span>
+          </div>
         </div>
-      </div>
 
       <div class="item item-image">
         <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
-          <img ng-src="{{project.image}}">
+          <img ng-src="{{Page.getImageUrl(project.image)}}">
         </a>
       </div>
       <a class="item item-title" href="#" ng-bind="project.name"></a>
@@ -78,13 +79,20 @@
           <span ng-repeat="tagName in project.tagNames">
             <i>＃</i><span ng-bind="tagName"></span>
           </span>
-        </div>
-        <div class="action">
-          <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
-          <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
+          </div>
+          <div class="action">
+            <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
+            <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
+          </div>
         </div>
       </div>
-    </div>
+    </ion-list>
+
+    <ion-infinite-scroll
+      ng-if="moreDataCanBeLoaded()"
+      icon="ion-loading-c"
+      on-infinite="loadMoreData()">
+    </ion-infinite-scroll>
   </div>
 </ion-content>
 <div class="bar bar-footer">
@@ -118,7 +126,7 @@
     </div>
     <ul class="tag-list">
       <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
-        <img ng-src="{{tag.imageUrl}}" alt="">
+        <img ng-src="{{Page.getImageUrl(tag.imageUrl)}}" alt="">
         <div class="cover" ng-show="tag.status">
           <img src="../img/selected.png" alt="">
         </div>
