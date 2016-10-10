@@ -126,14 +126,7 @@ function Services($http, LOCAL_TEST_URL) {
       return $http.post(getUrl('/api/project'), data)
         .success(success)
         .error(error);
-    },
-
-    // 获取标签
-    getTags: function(success,error){
-      return $http.get(getUrl('/api/tags?type=0'))
-      .success(success)
-      .error(error);
-    },
+    }
 
   };
 }
