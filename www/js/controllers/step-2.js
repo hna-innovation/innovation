@@ -30,7 +30,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     $scope.getDetail();
 
     // 更新创意
-    $scope.ItemUpdate = function (status, msg) {
+    $scope.ItemUpdate = function (status, msg, msg2) {
         Services.dianziEdit(localStorage.draftId,
             {
                 "name": $scope.formdata.name,
@@ -45,10 +45,13 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
                     } else {
                         HnaAlert.default(msg);
                     }
+                    $scope.getDetail();
                 } else {
+                    HnaAlert.default(msg2);
                     console.log(result);
                 }
             }, function (error) {
+                HnaAlert.default(msg2);
                 console.log(error);
             });
     }
@@ -109,8 +112,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         } else {
             $scope.addShow = false;
         }
-        $scope.ItemUpdate(0, '图片上传成功！');
-        $scope.getDetail();
+        $scope.ItemUpdate(0, '图片上传成功！', '图片上传失败！');
     };
 
     // 图片删除
@@ -125,9 +127,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         confirmPopup.then(function (res) {
             if (res) {
                 $scope.images.splice($scope.images.indexOf(imgId), 1);
-                $scope.ItemUpdate(0, '删除成功！');
-                $scope.getDetail();
-
+                $scope.ItemUpdate(0, '删除成功！', '删除失败！');
             } else {
                 console.log('已取消');
             }
