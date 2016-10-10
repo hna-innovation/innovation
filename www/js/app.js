@@ -23,17 +23,20 @@ angular.module('starter')
     });
   })
 
-  .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
+  .factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
-          var ModalServices = $injector.get('ModalServices');
+          var modalServices = $injector.get('ModalServices');
           // var rootScope = $injector.get('$rootScope');
           // var state = $injector.get('$rootScope').$state.current.name;
           // rootScope.stateBeforLogin = state;
           // rootScope.$state.go("login");
           localStorage.removeItem('userId');
           ModalServices.showPopup();
+          return $q.reject(response);
+        } else if (response.status === 404) {
+          alert("404!");
           return $q.reject(response);
         }
         return response;
@@ -77,6 +80,14 @@ angular.module('starter')
 
       })
 
+      .state('search', {
+        url: '/search',
+        cache: false,
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
+
+      })
+
       .state('resources', {
         url: '/resources',
         templateUrl: 'templates/resources.html',
@@ -97,62 +108,49 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/user-draft.html',
         controller: 'UserCtrl'
-
+        
       })
       .state('user-comment', {
         url: '/user-comment',
         cache: false,
         templateUrl: 'templates/user-comment.html',
         controller: 'UserCtrl'
-
+        
       })
       .state('user-comment2', {
         url: '/user-comment2',
         cache: false,
         templateUrl: 'templates/user-comment2.html',
         controller: 'UserCtrl'
-
-      })
+        
+      })        
       .state('user-like', {
         url: '/user-like',
         cache: false,
         templateUrl: 'templates/user-like.html',
         controller: 'UserCtrl'
-
+        
       })
       .state('user-favorite', {
         url: '/user-favorite',
         cache: false,
         templateUrl: 'templates/user-favorite.html',
         controller: 'UserCtrl'
-
-      })
+        
+      })    
       .state('user-resources', {
         url: '/user-resources',
         cache: false,
         templateUrl: 'templates/user-resources.html',
         controller: 'UserCtrl'
-
+        
       })
       .state('user-edit', {
         url: '/user-edit',
         cache: false,
         templateUrl: 'templates/user-edit.html',
         controller: 'UserCtrl'
-
-      })
-      .state('user-creative', {
-        url: '/user-creative',
-        cache: false,
-        templateUrl: 'templates/user-creative.html',
-        controller: 'UserCtrl'
-
-      })
-      .state('lookuser', {
-        url: '/lookuser',
-        templateUrl: 'templates/lookuser.html',
-        controller: 'lookuserCtrl'
-
+        
       })      
       .state('step-1', {
         url: '/step-1',
@@ -174,13 +172,13 @@ angular.module('starter')
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl'
       })
-
+      
       .state('step-4', {
         url: '/step-4',
         cache: false,
         templateUrl: 'templates/step-4.html',
         controller: 'StepFourthCtrl'
-      });
+      });;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/innovation');
