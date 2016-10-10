@@ -54,3 +54,7 @@
 .bar.bar-header .title + .button:last-child {
   right: 4px;
 }
+
+.bar.item-input-inset .item-input-wrapper input {
+  height: 24px;
+}
