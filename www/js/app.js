@@ -96,7 +96,7 @@ angular.module('starter')
       })
 
       .state('user', {
-        url: '/user',
+        url: '/user/:userid',
         cache: false,
         templateUrl: 'templates/user.html',
         controller: 'UserCtrl'
@@ -108,50 +108,63 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/user-draft.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-comment', {
         url: '/user-comment',
         cache: false,
         templateUrl: 'templates/user-comment.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-comment2', {
         url: '/user-comment2',
         cache: false,
         templateUrl: 'templates/user-comment2.html',
         controller: 'UserCtrl'
-        
-      })        
+
+      })
       .state('user-like', {
         url: '/user-like',
         cache: false,
         templateUrl: 'templates/user-like.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-favorite', {
         url: '/user-favorite',
         cache: false,
         templateUrl: 'templates/user-favorite.html',
         controller: 'UserCtrl'
-        
-      })    
+
+      })
       .state('user-resources', {
         url: '/user-resources',
         cache: false,
         templateUrl: 'templates/user-resources.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-edit', {
         url: '/user-edit',
         cache: false,
         templateUrl: 'templates/user-edit.html',
         controller: 'UserCtrl'
-        
-      })      
+
+      })
+      .state('user-creative', {
+        url: '/user-creative',
+        cache: false,
+        templateUrl: 'templates/user-creative.html',
+        controller: 'UserCtrl'
+
+      })
+      .state('lookuser', {
+        url: '/lookuser',
+        templateUrl: 'templates/lookuser.html',
+        controller: 'lookuserCtrl'
+
+      })
       .state('step-1', {
         url: '/step-1',
         cache: false,
@@ -172,7 +185,7 @@ angular.module('starter')
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl'
       })
-      
+
       .state('step-4', {
         url: '/step-4',
         cache: false,

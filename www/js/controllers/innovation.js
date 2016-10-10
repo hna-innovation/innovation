@@ -2,11 +2,19 @@ angular.module('starter.controllers')
 
   .controller('InnovationCtrl', InnovationCtrl)
 
-function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, Page) {
+function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, Page, $state) {
 
 
   // set title
-  // Page.setTitle('创新平台');
+  Page.setTitle('创新平台');
+
+  function isLogin() {
+    return localStorage.userId ? true : false;
+  }
+
+  function getUserId() {
+    return localStorage.userId;
+  }
 
   // init banner carousel
   new Swiper('.swiper-container', {
@@ -24,7 +32,14 @@ function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, P
     console.log(error);
   });
 
-  $scope.showPopup = ModalServices.showPopup;
+  $scope.showPopup = function () {
+    if(isLogin()){
+      $state.go('user', {userid: getUserId()});
+    } else {
+      ModalServices.showPopup;
+    }
+
+  }
 
   $scope.dianzi = function(){
     if(localStorage.userId){
