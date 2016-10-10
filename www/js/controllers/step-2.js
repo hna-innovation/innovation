@@ -4,8 +4,7 @@ angular.module('starter.controllers')
 
 function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
     // set title
-    Page.setTitle('创意编辑');
-    var img = null;
+    // Page.setTitle('创意编辑');
 
     // 获取创意详情
     $scope.getDetail = function () {

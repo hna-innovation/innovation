@@ -4,7 +4,7 @@ angular.module('starter.controllers')
 
 function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
     // set title
-    Page.setTitle('记录新创意');
+    // Page.setTitle('记录新创意');
     // 初始化表单数据
     $scope.formdata = {};
 

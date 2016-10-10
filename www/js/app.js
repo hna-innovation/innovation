@@ -40,7 +40,7 @@ angular.module('starter')
       },
       'responseError': function (responseErr) {
         if (responseErr.status === 404) {
-          HnaAlert.default('404,页面不存在！');
+          HnaAlert.default('404,资源不存在！');
           return $q.reject(responseErr);
         } else if (responseErr.status === 504) {
           HnaAlert.default('请求超时！');

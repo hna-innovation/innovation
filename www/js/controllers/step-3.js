@@ -4,7 +4,7 @@ angular.module('starter.controllers')
 
 function StepThirdCtrl($scope, $timeout, Services, Page) {
     // set title
-    Page.setTitle('创意预览');
+    // Page.setTitle('创意预览');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step', {

@@ -6,7 +6,7 @@ function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, P
 
 
   // set title
-  Page.setTitle('创新平台');
+  // Page.setTitle('创新平台');
 
   // init banner carousel
   new Swiper('.swiper-container', {

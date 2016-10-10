@@ -4,7 +4,7 @@ angular.module('starter.controllers')
 
 function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
     // set title
-    Page.setTitle('编辑完善创意');
+    // Page.setTitle('编辑完善创意');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step2', {
@@ -110,7 +110,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
             if (result.code == 0) {
                 localStorage.removeItem('draftId');
                 console.log(result);
-                window.location.href = '/#/detail?projectid=' + result.data.id + '&pageName=innovation';
+                location.href = '#detail?projectid=' + result.data.id + '&pageName=innovation';
             } else {
                 console.log(result);
             }

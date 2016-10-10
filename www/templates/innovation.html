@@ -1,144 +1,131 @@
 <!--<img src="../img/innovation.png" style="width: 100%;height: auto; z-index: 10; position: absolute;opacity: 0.4">-->
-<div class="bar bar-header">
-  <div class="button" ng-click="showPopup()">
-    <img src="../img/user.png" alt="">
-  </div>
-  <div class="h1 title">
-    <div class="logo">
-      <img src="../img/logo.png" alt="">
+<ion-view view-title="创新平台">
+  <div class="bar bar-header">
+    <div class="button" ng-click="showPopup()">
+      <img src="../img/user.png" alt="">
     </div>
-  </div>
-  <div class="button button-img">
-    <img ng-click="slideUpInterest()" src="../img/interest.png" alt="">
-    <img src="../img/search.png" alt="">
-  </div>
-</div>
-<ion-content>
-  <div class="content content-header">
-    <div class="swiper-container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="../img/banner/banner-1.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="../img/banner/banner-2.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="../img/banner/banner-3.jpg" alt="">
-        </div>
+    <div class="h1 title">
+      <div class="logo">
+        <img src="../img/logo.png" alt="">
       </div>
-      <div class="swiper-pagination"></div>
     </div>
-    <div class="nav-list">
-      <ul>
-        <li>
-          <img src="../img/nav/nav-1.png" alt="">
-          <span>热门创意</span>
-        </li>
-        <li>
-          <img src="../img/nav/nav-1.png" alt="">
-          最新项目
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <img src="../img/nav/nav-1.png" alt="">
-          热门资源
-        </li>
-        <li>
-          <img src="../img/nav/nav-1.png" alt="">
-          创新明星
-        </li>
-      </ul>
+    <div class="button button-img">
+      <img ng-click="slideUpInterest()" src="../img/interest.png" alt="">
+      <img src="../img/search.png" alt="">
     </div>
-    <ion-list>
-      <div class="list card" ng-repeat="project in projects">
-
-        <div class="item item-avatar">
-          <img ng-src="{{project.user.headerIcon}}">
-          <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
-          </h2>
-          <div class="process">
-            <span ng-class="{active: project.status >=2 }"></span>
-            <span ng-class="{active: project.status >=3 }"></span>
-            <span ng-class="{active: project.status ==4 }"></span>
+  </div>
+  <ion-content>
+    <div class="content content-header">
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="../img/banner/banner-1.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/banner/banner-2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/banner/banner-3.jpg" alt="">
           </div>
         </div>
-
-      <div class="item item-image">
-        <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
-          <img ng-src="{{Page.getImageUrl(project.image)}}">
-        </a>
+        <div class="swiper-pagination"></div>
       </div>
-      <a class="item item-title" href="#" ng-bind="project.name"></a>
-      <div class="description" ng-bind="project.description"></div>
-      <div class="info clearfix">
-        <div class="label-list">
-          <span ng-repeat="tagName in project.tagNames">
+      <div class="nav-list">
+        <ul>
+          <li>
+            <img src="../img/nav/nav-1.png" alt="">
+            <span>热门创意</span>
+          </li>
+          <li>
+            <img src="../img/nav/nav-1.png" alt=""> 最新项目
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <img src="../img/nav/nav-1.png" alt=""> 热门资源
+          </li>
+          <li>
+            <img src="../img/nav/nav-1.png" alt=""> 创新明星
+          </li>
+        </ul>
+      </div>
+      <ion-list>
+        <div class="list card" ng-repeat="project in projects">
+
+          <div class="item item-avatar">
+            <img ng-src="{{project.user.headerIcon}}">
+            <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
+            </h2>
+            <div class="process">
+              <span ng-class="{active: project.status >=2 }"></span>
+              <span ng-class="{active: project.status >=3 }"></span>
+              <span ng-class="{active: project.status ==4 }"></span>
+            </div>
+          </div>
+
+          <div class="item item-image">
+            <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
+              <img ng-src="{{Page.getImageUrl(project.image)}}">
+            </a>
+          </div>
+          <a class="item item-title" href="#" ng-bind="project.name"></a>
+          <div class="description" ng-bind="project.description"></div>
+          <div class="info clearfix">
+            <div class="label-list">
+              <span ng-repeat="tagName in project.tagNames">
             <i>＃</i><span ng-bind="tagName"></span>
-          </span>
-          </div>
-          <div class="action">
-            <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
-            <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
+              </span>
+            </div>
+            <div class="action">
+              <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
+              <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
+            </div>
           </div>
         </div>
-      </div>
-    </ion-list>
+      </ion-list>
 
-    <ion-infinite-scroll
-      ng-if="moreDataCanBeLoaded()"
-      icon="ion-loading-c"
-      on-infinite="loadMoreData()">
-    </ion-infinite-scroll>
-  </div>
-</ion-content>
-<div class="bar bar-footer">
-  <div class="button button-clear button-left active">
-    <img src="../img/find.png" alt="">
-    <span>发现创意</span>
-  </div>
-  <div class="title">
-    <img src="../img/add.png" ng-click="dianzi()">
-  </div>
-  <div class="button button-clear button-right">
-    <img src="../img/find.png" alt="">
-    寻找资源
-  </div>
-</div>
-<ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}">
-  <div>
-    <div class="header">
-      <div class="btn-action">
-        <div class="close" ng-click="slideDownInterest()">
-          <img src="../img/close.png" alt="">
-        </div>
-        <div class="save" ng-click="saveInterest()">
-          <img src="../img/save.png" alt="">
-        </div>
-      </div>
-      <div class="title">
-        <div>喜好</div>
-        <div>我们将为你展示更多你选择的类型</div>
-      </div>
+      <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" icon="ion-loading-c" on-infinite="loadMoreData()">
+      </ion-infinite-scroll>
     </div>
-    <ul class="tag-list">
-      <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
-        <img ng-src="{{Page.getImageUrl(tag.imageUrl)}}" alt="">
-        <div class="cover" ng-show="tag.status">
-          <img src="../img/selected.png" alt="">
-        </div>
-      </li>
-    </ul>
+  </ion-content>
+  <div class="bar bar-footer">
+    <div class="button button-clear button-left active">
+      <img src="../img/find.png" alt="">
+      <span>发现创意</span>
+    </div>
+    <div class="title">
+      <img src="../img/add.png" ng-click="dianzi()">
+    </div>
+    <div class="button button-clear button-right">
+      <img src="../img/find.png" alt=""> 寻找资源
+    </div>
   </div>
-</ion-scroll>
-
-
-
-
-
-
-
-
+  <ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}">
+    <div>
+      <div class="header">
+        <div class="btn-action">
+          <div class="close" ng-click="slideDownInterest()">
+            <img src="../img/close.png" alt="">
+          </div>
+          <div class="save" ng-click="saveInterest()">
+            <img src="../img/save.png" alt="">
+          </div>
+        </div>
+        <div class="title">
+          <div>喜好</div>
+          <div>我们将为你展示更多你选择的类型</div>
+        </div>
+      </div>
+      <ul class="tag-list">
+        <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
+          <img ng-src="{{Page.getImageUrl(tag.imageUrl)}}" alt="">
+          <div class="cover" ng-show="tag.status">
+            <img src="../img/selected.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-scroll>
+</ion-view>
