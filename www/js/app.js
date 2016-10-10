@@ -140,7 +140,14 @@ angular.module('starter')
         templateUrl: 'templates/user-creative.html',
         controller: 'UserCtrl'
 
-      })      
+      })
+      .state('lookuser', {
+        url: '/lookuser',
+        cache: false,
+        templateUrl: 'templates/lookuser.html',
+        controller: 'LookuserCtrl'
+
+      })       
       .state('step-1', {
         url: '/step-1',
         cache: false,
