@@ -291,3 +291,19 @@
 .line-30{
 	line-height: 30px !important;
 }
+.creative-list{
+	overflow: hidden;
+}
+.creative-list{
+	overflow: hidden;
+}
+.creative-list>li{
+	float: left;
+	width: 50%;
+	height: 200px;
+	border: #dedede solid 1px;
+	margin-right: 10px;
+}
+.creative-list>li:nth-child(even){
+	margin-right: 0;
+}

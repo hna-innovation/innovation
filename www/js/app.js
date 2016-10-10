@@ -134,6 +134,13 @@ angular.module('starter')
         controller: 'UserCtrl'
 
       })
+      .state('user-creative', {
+        url: '/user-creative',
+        cache: false,
+        templateUrl: 'templates/user-creative.html',
+        controller: 'UserCtrl'
+
+      })      
       .state('step-1', {
         url: '/step-1',
         cache: false,
