@@ -9,7 +9,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
     $timeout(function () {
         Swiper('#swiper-step2', {
             direction: 'horizontal',
-            loop: true,
+            loop: false,
             autoplay: 0,
             autoplayDisableOnInteraction: false,
             // 如果需要分页器

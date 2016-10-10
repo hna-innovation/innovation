@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
   .controller('InnovationCtrl', InnovationCtrl)
 
-function InnovationCtrl($scope, Services, ModalServices, Page) {
+function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, Page) {
 
 
   // set title
@@ -53,6 +53,7 @@ function InnovationCtrl($scope, Services, ModalServices, Page) {
       console.log(data);
       $scope.projects = data.data.content;
       $scope.slideDownInterest();
+      $ionicScrollDelegate.scrollTop();
     }, function (error) {
       console.log(error);
     });
