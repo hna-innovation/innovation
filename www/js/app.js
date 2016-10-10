@@ -23,7 +23,7 @@ angular.module('starter')
     });
   })
 
-  .factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
+  .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
@@ -36,8 +36,10 @@ angular.module('starter')
           ModalServices.showPopup();
           return $q.reject(response);
         } else if (response.status === 404) {
-          alert("404!");
+          HnaAlert.default('404,页面不存在！');
           return $q.reject(response);
+        } else if (response.status === 504){
+          HnaAlert.default('请求超时！');
         }
         return response;
       }

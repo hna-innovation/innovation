@@ -41,41 +41,41 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
     });
 
     // 限制上传类型和文件大小
-    // $scope.uploader.filters.push({
-    //     name: 'imageTypeFilter',
-    //     fn: function (item) {
-    //         return item.type.indexOf('image/') !== -1;
-    //     }
-    // });
-    // $scope.uploader.filters.push({
-    //     name: 'imageSizeFilter',
-    //     fn: function (item) {
-    //         return item.size <= 5242880;
-    //     }
-    // });
-    // $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
-    //     console.log(filter)
-    //     if (filter.name == 'imageTypeFilter') {
-    //         HnaAlert.default('请选择正确的图片类型！')
-    //     }
-    //     if (filter.name == 'imageSizeFilter') {
-    //         HnaAlert.default('图片大小不能超过5M！')
-    //     }
-    // };
+    $scope.uploader.filters.push({
+        name: 'imageTypeFilter',
+        fn: function (item) {
+            return item.type.indexOf('image/') !== -1;
+        }
+    });
+    $scope.uploader.filters.push({
+        name: 'imageSizeFilter',
+        fn: function (item) {
+            return item.size <= 5242880;
+        }
+    });
+    $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
+        console.log(filter)
+        if (filter.name == 'imageTypeFilter') {
+            HnaAlert.default('请选择正确的图片类型！')
+        }
+        if (filter.name == 'imageSizeFilter') {
+            HnaAlert.default('图片大小不能超过5M！')
+        }
+    };
 
-    // // loading
-    // $scope.uploader.onAfterAddingFile = function (fileItem) {
-    //     $scope.loading = true;
-    // };
+    // loading
+    $scope.uploader.onAfterAddingFile = function (fileItem) {
+        $scope.loading = true;
+    };
 
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
-        if (status != 200) return HnaAlert.default('图片上传失败！');
+        if (response.code != 0) return HnaAlert.default('图片上传失败！');
         $scope.loading = false;
-        HnaAlert.default('图片上传成功！');
         $scope.imagesChild = response.data[0].id;
         $scope.picURL = response.data[0].url;
         jQuery('#img-view').attr('src', $scope.picURL)
+        HnaAlert.default('图片上传成功！');
     };
 
     // 创意创建
