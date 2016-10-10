@@ -145,11 +145,10 @@ angular.module('starter')
       })
       .state('lookuser', {
         url: '/lookuser',
-        cache: false,
         templateUrl: 'templates/lookuser.html',
         controller: 'lookuserCtrl'
 
-      })       
+      })      
       .state('step-1', {
         url: '/step-1',
         cache: false,
@@ -176,7 +175,7 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/step-4.html',
         controller: 'StepFourthCtrl'
-      });;
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/innovation');
