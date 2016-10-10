@@ -1,9 +1,48 @@
-<div class="bar bar-header item-input-inset">
-  <label class="item-input-wrapper">
-    <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" placeholder="搜索...">
-  </label>
-  <button class="button button-clear">
-    取消
-  </button>
+<form ng-submit="search(keyword)" novalidate>
+    <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" ng-model="keyword" placeholder="搜索..." autofocus>
+        </label>
+        <a href="#innovation">取消</a>
+    </div>
+</form>
+<div ng-show="isResultTextShown && searchResults.length === 0" >
+    {{ NO_SEARCH_RESULT }}
 </div>
+<ion-content>
+    <ion-list>
+        <div class="list card" ng-repeat="project in searchResults">
+            <div class="item item-avatar">
+                <img ng-src="{{project.user.headerIcon}}">
+                <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
+            </h2>
+                <div class="process">
+                    <span ng-class="{active: project.status >=2 }"></span>
+                    <span ng-class="{active: project.status >=3 }"></span>
+                    <span ng-class="{active: project.status ==4 }"></span>
+                </div>
+            </div>
+            <div class="item item-image">
+                <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
+                    <img ng-src="{{project.image}}">
+                </a>
+            </div>
+            <a class="item item-title" href="#" ng-bind="project.name"></a>
+            <div class="description" ng-bind="project.description"></div>
+            <div class="info clearfix">
+                <div class="label-list">
+                    <span ng-repeat="tagName in project.tagNames">
+            <i>＃</i><span ng-bind="tagName"></span>
+                    </span>
+                </div>
+                <div class="action">
+                    <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
+                    <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
+                </div>
+            </div>
+        </div>
+    </ion-list>
+
+    
+</ion-content>
