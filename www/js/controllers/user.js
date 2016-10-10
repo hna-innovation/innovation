@@ -8,7 +8,27 @@ angular.module('starter.controllers')
 			
 			var _userId = "57c96c19d9f2822078df18b9";
 			
-			$scope.commentType = $location.search()['commentType'];
+			var resourcesType = $location.search()['type'];
+			
+			$scope.getResources = function(){
+				
+			}
+			
+			if(resourcesType!=undefined){
+				if(resourcesType==1){
+					$scope.title = "支持的创意"
+				}
+				if(resourcesType==2){
+					$scope.title = "支持的资源"
+				}
+				if(resourcesType==3){
+					$scope.title = "收藏的创意"
+				}
+				if(resourcesType==4){
+					$scope.title = "收藏的资源"
+				}
+			}
+			
 			//获取用户信息
 			$scope.getUserInfo = function(){				
 				$http.get(_baseUrl+"/api/user?userId="+_userId).success(function(result){			

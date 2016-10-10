@@ -119,6 +119,13 @@ angular.module('starter')
         templateUrl: 'templates/user-favorite.html',
         controller: 'UserCtrl'
         
+      })    
+      .state('user-resources', {
+        url: '/user-resources',
+        cache: false,
+        templateUrl: 'templates/user-resources.html',
+        controller: 'UserCtrl'
+        
       })      
       .state('step-1', {
         url: '/step-1',

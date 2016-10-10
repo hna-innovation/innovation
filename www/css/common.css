@@ -365,6 +365,14 @@ img{
 	right: 10px;
 	padding: 0 5px;
 }
+.swiper-slide{
+	height: 145px !important;
+	overflow: hidden;
+}
+.swiper-slide > img {
+	width: 100%;
+	vertical-align: middle;
+}
 
 /* box-table */
 .box-table{
@@ -513,8 +521,8 @@ label.has-error {
 	height: 30px;
 	vertical-align: middle;
 }
-.swiper-slide > img {
-  width: 100%;
+.detail-special .go-back{
+	line-height: 28px !important;
 }
 
 /* 提示框 */
