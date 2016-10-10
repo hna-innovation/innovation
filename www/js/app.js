@@ -27,7 +27,7 @@ angular.module('starter')
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
-          var modalServices = $injector.get('ModalServices');
+          var ModalServices = $injector.get('ModalServices');
           // var rootScope = $injector.get('$rootScope');
           // var state = $injector.get('$rootScope').$state.current.name;
           // rootScope.stateBeforLogin = state;
@@ -90,50 +90,50 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/user-draft.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-comment', {
         url: '/user-comment',
         cache: false,
         templateUrl: 'templates/user-comment.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-comment2', {
         url: '/user-comment2',
         cache: false,
         templateUrl: 'templates/user-comment2.html',
         controller: 'UserCtrl'
-        
-      })        
+
+      })
       .state('user-like', {
         url: '/user-like',
         cache: false,
         templateUrl: 'templates/user-like.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-favorite', {
         url: '/user-favorite',
         cache: false,
         templateUrl: 'templates/user-favorite.html',
         controller: 'UserCtrl'
-        
-      })    
+
+      })
       .state('user-resources', {
         url: '/user-resources',
         cache: false,
         templateUrl: 'templates/user-resources.html',
         controller: 'UserCtrl'
-        
+
       })
       .state('user-edit', {
         url: '/user-edit',
         cache: false,
         templateUrl: 'templates/user-edit.html',
         controller: 'UserCtrl'
-        
-      })      
+
+      })
       .state('step-1', {
         url: '/step-1',
         cache: false,
@@ -154,7 +154,7 @@ angular.module('starter')
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl'
       })
-      
+
       .state('step-4', {
         url: '/step-4',
         cache: false,
