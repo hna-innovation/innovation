@@ -37,6 +37,17 @@ angular.module('starter.services')
 	}
 })
 
+.directive('hnaGoback', function(){
+	return {
+		restrict: "EAC",
+		link : function(scope, element){
+			element.on("click",function(){
+				window.location.href = history.go(-1);
+			})
+        }
+	}
+})
+
 function Services($http, LOCAL_TEST_URL) {
 
   function getUrl(api) {
