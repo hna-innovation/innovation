@@ -63,10 +63,10 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
     //     }
     // };
 
-    // loading
-    $scope.uploader.onAfterAddingFile = function (fileItem) {
-        $scope.loading = true;
-    };
+    // // loading
+    // $scope.uploader.onAfterAddingFile = function (fileItem) {
+    //     $scope.loading = true;
+    // };
 
     // 上传成功
     $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
