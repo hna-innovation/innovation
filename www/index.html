@@ -5,23 +5,20 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title ng-bind="Page.title()"></title>
 
-  <link rel="manifest" href="manifest.json">
-
   <!-- un-comment this code to enable service worker
+  <link rel="manifest" href="offline/manifest.json">
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('offline/service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.log('Error', err));
     }
   </script>-->
 
   <link rel="stylesheet" href="lib/ionic/css/ionic.min.css" >
-
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
-
   <link rel="stylesheet" href="css/innovation.css">
   <link rel="stylesheet" href="css/card.css">
   <link rel="stylesheet" href="css/user.css">
@@ -42,9 +39,6 @@
   <!--document https://github.com/turinggroup/angular-validator-->
   <script src="js/vendor/angular-validator.js"></script>
   <!--<script src="js/vendor/angular-validation-rules.js"></script>-->
-
-  <!-- cordova script (this will be a 404 during development) -->
-  <script src="cordova.js"></script>
 
   <!-- your app's js -->
   <script src="js/module.js"></script>
@@ -68,14 +62,7 @@
   <script src="js/hna-alert.js"></script>
   <script src="js/modal-services.js"></script>
   <script src="js/page-services.js"></script>
-
-  <!--<style>-->
-  <!--body {-->
-  <!--background: url("img/innovation.png") no-repeat;-->
-  <!--width: 100%;-->
-  <!--height: 1000px;-->
-  <!--}-->
-  <!--</style>-->
+  
 </head>
 <body>
 <div id="alert"></div>
