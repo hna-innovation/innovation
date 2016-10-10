@@ -35,13 +35,18 @@ angular.module('starter')
           localStorage.removeItem('userId');
           ModalServices.showPopup();
           return $q.reject(response);
-        } else if (response.status === 404) {
-          HnaAlert.default('404,页面不存在！');
-          return $q.reject(response);
-        } else if (response.status === 504){
-          HnaAlert.default('请求超时！');
         }
         return response;
+      },
+      'responseError': function (responseErr) {
+        if (responseErr.status === 404) {
+          HnaAlert.default('404,页面不存在！');
+          return $q.reject(responseErr);
+        } else if (responseErr.status === 504) {
+          HnaAlert.default('请求超时！');
+          return $q.reject(responseErr);
+        }
+        return responseErr;
       }
     }
     return httpInterceptor;

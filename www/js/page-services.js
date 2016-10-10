@@ -11,7 +11,7 @@ function Page(LOCAL_TEST_URL) {
       title = newTitle;
     },
     getImageUrl: function(url) {
-      return url ? LOCAL_TEST_URL + '/' + url: url;
+      return url ? LOCAL_TEST_URL + '' + url: url;
     }
   }
 }
