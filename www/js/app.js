@@ -147,7 +147,7 @@ angular.module('starter')
         url: '/lookuser',
         cache: false,
         templateUrl: 'templates/lookuser.html',
-        controller: 'LookuserCtrl'
+        controller: 'lookuserCtrl'
 
       })       
       .state('step-1', {
