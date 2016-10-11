@@ -6,10 +6,8 @@ angular.module('starter.controllers')
 		
 		$http({
           method:"GET",
-          url: Services.getUrl('/api/draft?userId=' + _userId + '&page=0&size=8&sort=createdDate,desc')			
+          url: Services.getUrl('/api/draft?userId=' + _userId + '&page=0&size=8&sort=createdDate,desc')
 		}).success(function(){
-			
+
 		})
-		
-			
 	})

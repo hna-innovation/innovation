@@ -1,6 +1,6 @@
 #user-header{
     height:140px;
-    padding: 0 12px;    
+    padding: 0 12px;
 	background:url(../img/user/title_bg_mine.png) no-repeat center;
     background-size: cover;
     overflow: hidden;
@@ -79,22 +79,22 @@
 	top: 2px;
 }
 .type-row{
-	border-top: #ededed solid 1px;	
-	overflow: hidden;	
+	border-top: #ededed solid 1px;
+	overflow: hidden;
 }
 .type-row li{
-	float: left;	
+	float: left;
 	width: 50%;
 	height: 65px;
 	padding-left: 15px;
 	padding-top: 8px;
-	border-bottom: #ededed solid 1px;	
+	border-bottom: #ededed solid 1px;
 }
 .type-row li:nth-child(odd){
 	border-right: #ededed solid 1px;
 }
 .type-row li p{
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 
 .user-list{
@@ -148,7 +148,7 @@
 	line-height: 50px;
 	text-align: center;
 	color: #fff;
-	font-size: 16px;	
+	font-size: 16px;
 }
 .text-ellipsis{
 	white-space:nowrap;
@@ -191,10 +191,10 @@
   border-color: transparent transparent #f9f9f9 transparent;
 }
 .btn-position{
-	position: absolute; 
-	width: 60px;height: 40px; 
-	line-height: 40px; 
-	right: 0; 
+	position: absolute;
+	width: 60px;height: 40px;
+	line-height: 40px;
+	right: 0;
 	top: 0;
 }
 .small-radio2{
@@ -294,9 +294,6 @@
 .creative-list{
 	overflow: hidden;
 }
-.creative-list{
-	overflow: hidden;
-}
 .creative-list>li{
 	position: relative;
 	float: left;
@@ -304,7 +301,7 @@
 	height: 200px;
 	box-sizing: border-box;
 	background-color: #fff;
-	margin-bottom: 10px;	
+	margin-bottom: 10px;
 }
 .creative-list>li div{
 	position: relative;
@@ -343,5 +340,5 @@
 }
 .creative-list .info p:nth-child(2){
 	text-align: center;
-	line-height: 25px;	
+	line-height: 25px;
 }

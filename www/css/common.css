@@ -144,6 +144,9 @@ pre{
 .pd-10{
 	padding: 10px;
 }
+.pd-5{
+  padding: 5px;
+}
 .pd-15{
 	padding: 15px;
 }
@@ -602,4 +605,3 @@ label.has-error {
 	background: url(../img/icon-right.svg) no-repeat right center;
 	background-size: 18px;
 }
-
