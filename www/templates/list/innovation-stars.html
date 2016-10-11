@@ -4,22 +4,21 @@
             <span class="font-18">创新明星</span>
         </div>
         <section class="">
-            <div class="border-b" ng-repeat="star in stars" >
+            <div class="border-b" ng-repeat="star in stars">
                 <div class="box-table bg-ff">
-                    <li class="box-table-row" id="user-photo">
+                    <li class="box-table-row" >
                         <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
-                            <img src="../img/user/user.jpg" alt="头像" 
-                            width="35" height="35" class="user-img border-0">
+                            <img ng-src="{{ star.avator }}" alt="头像" width="35" height="35" class="user-img border-0">
                         </div>
                         <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
-                            <p class="font-14 border-b1" >{{ star.name }}</p>
+                            <p class="font-14 border-b1">{{ star.name }}</p>
                             <p class="font-16">
                                 共发布创新：
-                                <span class="color-88" >{{ star.ownedProductsCount }}个</span>
+                                <span class="color-88">{{ star.ownedProductsCount }}个</span>
                             </p>
                             <p class="font-16">
                                 获赞：
-                                <span class="color-88" >{{ star.likeTotalCount }}个</span>
+                                <span class="color-88">{{ star.likeTotalCount }}个</span>
                             </p>
                         </div>
                     </li>
