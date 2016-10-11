@@ -36,7 +36,7 @@ function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, P
     if(isLogin()){
       $state.go('user', {userid: getUserId()});
     } else {
-      ModalServices.showPopup;
+      ModalServices.showPopup();
     }
 
   }
