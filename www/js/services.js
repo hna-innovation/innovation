@@ -84,12 +84,20 @@ angular.module('starter.services')
         .error(error);
     },
 
-    clickLikeAdd: function (projectId) {
-      return $http.post(getUrl('/api/user/likeProject?projectId='+projectId+'&add=true'));
+    clickLikeAdd: function (item) {
+      return $http.post(getUrl('/api/user/likeProject?projectId=' + item.id + '&add=true'))
+        .success(function () {
+          item.like = true;
+          item.likeCount++
+        });
     },
 
-    clickLikeCancle: function (projectId) {
-      return $http.post(getUrl('/api/user/likeProject?projectId='+projectId+'&add=false'));
+    clickLikeCancle: function (item) {
+      return $http.post(getUrl('/api/user/likeProject?projectId=' + item.id + '&add=false'))
+        .success(function () {
+          item.like = false;
+          item.likeCount--
+        });
     },
 
     getUserInfo: function(userId) {

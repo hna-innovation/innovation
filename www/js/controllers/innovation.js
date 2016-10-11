@@ -105,15 +105,7 @@ angular.module('starter.controllers')
         };
 
         $scope.like = function(item) {
-          if(item.like == true) {
-            item.like = false;
-            item.likeCount--;
-            Services.clickLikeCancle(item.id);
-          } else {
-            item.like = true;
-            item.likeCount++;
-            Services.clickLikeAdd(item.id);
-          }
+          item.like ? Services.clickLikeCancle(item) : Services.clickLikeAdd(item);
         }
 
         Services.getTags(function (data) {
