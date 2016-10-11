@@ -27,7 +27,7 @@ angular.module('starter')
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
-          var modalServices = $injector.get('ModalServices');
+          var ModalServices = $injector.get('ModalServices');
           // var rootScope = $injector.get('$rootScope');
           // var state = $injector.get('$rootScope').$state.current.name;
           // rootScope.stateBeforLogin = state;
