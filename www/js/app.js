@@ -200,6 +200,13 @@ angular.module('starter')
         controller: 'PopularInnovationCtrl'
       })
 
+      .state('popular-resources', {
+        url: '/popular-resources',
+        cache: false,
+        templateUrl: 'templates/resources/popular-resources.html',
+        controller: 'PopularResourcesCtrl'
+      })
+
       .state('last-innovation', {
         url: '/last-innovation',
         cache: false,
