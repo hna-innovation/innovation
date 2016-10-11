@@ -198,6 +198,13 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/popular-innovation.html',
         controller: 'PopularInnovationCtrl'
+      })
+
+      .state('innovation-stars', {
+        url: '/innovation-stars',
+        cache: false,
+        templateUrl: 'templates/list/innovation-stars.html',
+        controller: 'InnovationStarsCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
