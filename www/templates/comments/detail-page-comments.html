@@ -1,0 +1,33 @@
+<ion-view view-title="评论">
+    <ion-content class="bg-f9">
+        <div class="user-list-title bg-pink bg-img-left" hna-goback>
+            <span class="font-18">评论</span>
+        </div>
+        <section class="">
+            <div class="border-b" ng-repeat="comment in comments">
+                <div class="box-table bg-ff">
+                    <li class="box-table-row">
+                        <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
+                            <img ng-src="{{ comment.avator }}" alt="头像" width="35" height="35" class="user-img border-0">
+                        </div>
+                        <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
+                            <p class="font-14">
+                                {{ comment.name }}
+                                <span class="right color-88">{{ comment.time }}</span>
+                            </p>
+                            <p class="font-16">
+                                {{ comment.content }}
+                            </p>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </section>
+        <div>
+            <form ng-submit="submitComment(newComment)" novalidate>
+                <input type="search" ng-model="newComment" placeholder="请输入评论" autofocus="autofocus">
+                <input type="submit" value="提交">
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

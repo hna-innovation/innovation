@@ -205,6 +205,13 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/list/innovation-stars.html',
         controller: 'InnovationStarsCtrl'
+      })
+
+      .state('detail-page-comments', {
+        url: '/detail-page-comments',
+        cache: false,
+        templateUrl: 'templates/comments/detail-page-comments.html',
+        controller: 'DetailPageCommentsCtrl'
       });
 
     // if none of the above states are matched, use this as the fallback
