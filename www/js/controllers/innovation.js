@@ -78,6 +78,10 @@ function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, P
     $state.go('popular-innovation');
   };
 
+  $scope.goLastInnovation = function() {
+    $state.go('last-innovation');
+  };
+
   $scope.goInnovationStars = function() {
     $state.go('innovation-stars');
   };

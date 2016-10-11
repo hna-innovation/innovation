@@ -22,7 +22,7 @@ angular.module('starter')
       }
     });
   })
-  
+
   .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
     var httpInterceptor = {
       'response': function (response) {
@@ -198,6 +198,13 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/popular-innovation.html',
         controller: 'PopularInnovationCtrl'
+      })
+
+      .state('last-innovation', {
+        url: '/last-innovation',
+        cache: false,
+        templateUrl: 'templates/last-innovation.html',
+        controller: 'LastInnovationCtrl'
       })
 
       .state('innovation-stars', {
