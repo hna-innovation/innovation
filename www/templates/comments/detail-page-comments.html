@@ -23,11 +23,17 @@
                 </div>
             </div>
         </section>
-        <div>
-            <form ng-submit="submitComment(newComment)" novalidate>
-                <input type="search" ng-model="newComment" placeholder="请输入评论" autofocus="autofocus">
-                <input type="submit" value="提交">
-            </form>
-        </div>
     </ion-content>
 </ion-view>
+<div class="bar bar-footer">
+    <form ng-submit="submitComment(newComment)" novalidate style="z-index: 9999">
+        <div class="item-input-inset">
+            <label class="item-input-wrapper">
+              <input type="text" ng-model="newComment" placeholder="请输入评论...">
+            </label>
+            <button class="button button-small">
+              提交
+            </button>
+          </div>
+    </form>
+</div>
