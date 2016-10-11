@@ -4,8 +4,6 @@ angular.module('starter.controllers')
 
     $scope.pageName = $location.search()['pageName'];
     var _projectId = $location.search()['projectid'];
-    var _baseUrl = "";
-    // var _baseUrl = "http://172.16.2.7:8080";
     var _userId = "57c96c19d9f2822078df18b9";
 
     //获取用户信息
@@ -79,14 +77,14 @@ angular.module('starter.controllers')
       if(item.like==true){
         $http({
           method:"POST",
-          url:Services.getUrl(_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=false")
+          url:Services.getUrl("/api/user/likeProject?projectId="+item.id+"&add=false")
         }).success(function(result){
           $scope.getProjectDetail();
         })
       }else{
         $http({
           method:"POST",
-          url:Services.getUrl(_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=true")
+          url:Services.getUrl("/api/user/likeProject?projectId="+item.id+"&add=true")
         }).success(function(result){
           $scope.getProjectDetail();
         })
@@ -96,19 +94,17 @@ angular.module('starter.controllers')
       if(item.favorite==true){
         $http({
           method:"POST",
-          url:Services.getUrl(_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=false")
+          url:Services.getUrl("/api/user/favoriteProject?projectId="+item.id+"&add=false")
         }).success(function(result){
           $scope.getProjectDetail();
         })
       }else{
         $http({
           method:"POST",
-          url:Services.getUrl(_baseUrl+"/api/user/favoriteProject?projectId="+item.id+"&add=true")
+          url:Services.getUrl("/api/user/favoriteProject?projectId="+item.id+"&add=true")
         }).success(function(result){
           $scope.getProjectDetail();
         })
       }
     }
-
-
   })

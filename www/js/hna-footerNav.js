@@ -5,8 +5,6 @@ angular.module('starter.services').directive("hnaFooterNav", function () {
         replace: true,
         transclude: false,
         link: function (scope, element) {
-        		  
-			console.log("xxxx")
 		}
 	};
 });

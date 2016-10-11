@@ -14,5 +14,4 @@ angular.module('starter.services').factory("HnaAlert", function () {
             msgAnimation("bg-default", msg)
         }
     }
-
 });
