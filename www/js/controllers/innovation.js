@@ -74,11 +74,13 @@ function InnovationCtrl($scope, $ionicScrollDelegate, Services, ModalServices, P
     });
   };
 
+  $scope.goPopularInnovation = function() {
+    $state.go('popular-innovation');
+  };
+
   Services.getTags(function (data) {
     $scope.tags = data.data;
   }, function () {
 
   });
-
-
 }

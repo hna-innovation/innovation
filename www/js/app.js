@@ -191,7 +191,14 @@ angular.module('starter')
         cache: false,
         templateUrl: 'templates/step-4.html',
         controller: 'StepFourthCtrl'
-      });;
+      })
+
+      .state('popular-innovation', {
+        url: '/popular-innovation',
+        cache: false,
+        templateUrl: 'templates/popular-innovation.html',
+        controller: 'PopularInnovationCtrl'
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/innovation');
@@ -199,4 +206,3 @@ angular.module('starter')
     $httpProvider.interceptors.push('httpInterceptor');
 
   });
-
