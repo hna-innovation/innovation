@@ -22,8 +22,8 @@ angular.module('starter')
       }
     });
   })
-
-  .factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
+  
+  .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
