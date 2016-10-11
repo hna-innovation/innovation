@@ -55,8 +55,10 @@
 
           <div class="item item-avatar">
             <img ng-src="{{project.user.headerIcon}}">
-            <h2><span ng-bind="project.user.nickName"></span><span>.</span><span
-              ng-bind="project.user.department"></span>
+            <h2>
+              <span ng-bind="project.user.nickName"></span>
+              <span ng-show="project.user.department" >&middot;</span>
+              <span ng-bind="project.user.department"></span>
             </h2>
             <div class="process">
               <span ng-class="{active: project.status >=2 }"></span>
@@ -70,8 +72,10 @@
               <img ng-src="{{project.image}}">
             </a>
           </div>
-          <a class="item item-title" href="#" ng-bind="project.name"></a>
-          <div class="description" ng-bind="project.description"></div>
+          <h2>
+            <a class="item item-title" ng-href="#detail?projectid={{project.id}}&pageName=innovation" ng-bind="project.name"></a>
+          </h2>
+          <p class="description color-88" ng-bind="project.description"></p>
           <div class="info clearfix">
             <div class="label-list">
               <span ng-repeat="tagName in project.tagNames">
