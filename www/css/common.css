@@ -154,6 +154,9 @@ pre{
 .border-b1{
 	border-bottom: #e5e5e5 dashed 1px;
 }
+.border-t1{
+  border-top: #e5e5e5 dashed 1px;
+}
 .border-b{
 	border-bottom: #e5e5e5 solid 1px;
 }
@@ -164,6 +167,7 @@ pre{
 	border-bottom: #dedede solid 1px;
 	border-top: #dedede solid 1px;
 }
+
 
 /* button */
 .button-init{

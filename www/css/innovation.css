@@ -128,7 +128,7 @@
 
 .popular-innovation-list> li > div{
 	height: 100%;
-	border: #dedede solid 1px;
+	border: #dcdcdc solid 1px;
 }
 
 .popular-innovation-list > li .popular-innovation-post {
@@ -142,13 +142,16 @@
 }
 
 .text-title3 {
-	height: 3em;
+  height: 2.6em;
   margin: 0.5em;
-	overflow : hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+  color: #333;
 }
 
 .popular-innovation-list .popular-innovation-info {
@@ -156,6 +159,12 @@
   display: flex;
   align-items: flex-start;
   margin: 0.5em;
+  padding: 0.5em 0 0;
+  color: #ff6469;
+}
+
+.popular-innovation-list .popular-innovation-info span.popular-innovation-inactive {
+  color: #666;
 }
 
 .popular-innovation-list .popular-innovation-info img{
