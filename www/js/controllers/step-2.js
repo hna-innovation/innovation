@@ -86,10 +86,12 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
         console.log(filter)
         if (filter.name == 'imageTypeFilter') {
-            HnaAlert.default('请选择正确的图片类型！')
+            HnaAlert.default('请选择正确的图片类型！');
+            jQuery('#photoUpload2').val('');
         }
         if (filter.name == 'imageSizeFilter') {
-            HnaAlert.default('图片大小不能超过5M！')
+            HnaAlert.default('图片大小不能超过5M！');
+            jQuery('#photoUpload2').val('');
         }
     };
 
@@ -112,6 +114,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
             $scope.addShow = false;
         }
         $scope.ItemUpdate(0, '图片上传成功！', '图片上传失败！');
+        jQuery('#photoUpload2').val('');
     };
 
     // 图片删除

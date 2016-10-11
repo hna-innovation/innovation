@@ -110,7 +110,8 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
             if (result.code == 0) {
                 localStorage.removeItem('draftId');
                 console.log(result);
-                location.href = '#detail?projectid=' + result.data.id + '&pageName=innovation';
+                window.location.replace('/#/innovation');
+                window.location.href = '/#/detail?projectid=' + result.data.id + '&pageName=innovation';
             } else {
                 console.log(result);
             }
