@@ -13,3 +13,4 @@ angular.module('configuration', []);
 angular.module('starter.services', ['configuration']);
 
 angular.module('starter.modalServices', []);
+

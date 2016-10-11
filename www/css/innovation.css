@@ -137,6 +137,11 @@
   overflow: hidden;
 }
 
+.innovation .list:last-child.card {
+  padding-bottom: 40px;
+}
+
+
 .popular-innovation-list > li .popular-innovation-post img {
   width: 100%;
 }

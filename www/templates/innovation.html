@@ -45,17 +45,18 @@
           <li ng-click="goPopularResources()">
             <img src="../img/nav/nav-1.png" alt=""> 热门资源
           </li>
-          <li ng-click="goInnovationStars()" >
+          <li ng-click="goInnovationStars()">
             <img src="../img/nav/nav-1.png" alt=""> 创新明星
           </li>
         </ul>
       </div>
-      <ion-list>
+      <load-more class="innovation">
         <div class="list card" ng-repeat="project in projects">
 
           <div class="item item-avatar">
             <img ng-src="{{project.user.headerIcon}}">
-            <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
+            <h2><span ng-bind="project.user.nickName"></span><span>.</span><span
+              ng-bind="project.user.department"></span>
             </h2>
             <div class="process">
               <span ng-class="{active: project.status >=2 }"></span>
@@ -76,18 +77,17 @@
               <span ng-repeat="tagName in project.tagNames">
             <i>＃</i><span ng-bind="tagName"></span>
           </span>
-          </div>
-          <div class="action">
-            <!--<span><i class="if" ng-class="{true:'i-aixinhover',false:'i-collect'}[project.like]" ng-click="like(project)"></i>{{project.likeCount}}</span>-->
-            <span ng-class="{true:'like-hover',false:'like-collect'}[project.like]"><i class="if" ng-click="like(project)"></i>{{project.likeCount}}</span>
-            <span><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
+            </div>
+            <div class="action">
+              <!--<span><i class="if" ng-class="{true:'i-aixinhover',false:'i-collect'}[project.like]" ng-click="like(project)"></i>{{project.likeCount}}</span>-->
+              <span ng-class="{true:'like-hover',false:'like-collect'}[project.like]"><i class="if"
+                                                                                         ng-click="like(project)"></i>{{project.likeCount}}</span>
+              <span><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </ion-list>
+      </load-more>
 
-      <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" icon="ion-loading-c" on-infinite="loadMoreData()">
-      </ion-infinite-scroll>
     </div>
   </ion-content>
   <div class="bar bar-footer home-footer">
@@ -102,7 +102,8 @@
       <img src="../img/find.png" alt=""> 寻找资源
     </div>
   </div>
-  <ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}">
+  <ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}"
+              ng-if="slideStatus">
     <div>
       <div class="header">
         <div class="btn-action">

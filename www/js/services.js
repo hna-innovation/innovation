@@ -1,33 +1,12 @@
 angular.module('starter.services')
 
-.factory('Services', Services)
-
-.directive('hnaGoback', function(){
-	return {
-		restrict: "EAC",
-		link : function(scope, element){
-			element.on("click",function(){
-				window.location.href = history.go(-1);
-			})
-        }
-	}
-})
-
-function Services($http, LOCAL_TEST_URL) {
-
+.factory('Services', ['$http', 'LOCAL_TEST_URL', function ($http, LOCAL_TEST_URL) {
   function getUrl(api) {
     return LOCAL_TEST_URL + api;
   }
 
   return {
     getUrl: getUrl,
-
-    //get all projects
-    getProjects: function(success, error) {
-      return $http.get(getUrl('/api/show/project'))
-        .success(success)
-        .error(error);
-    },
 
     getProjectsByTags: function(tags, success, error) {
       return $http.get(getUrl('/api/show/project?tag='+tags))
@@ -114,4 +93,4 @@ function Services($http, LOCAL_TEST_URL) {
     }
 
   };
-}
+}]);
