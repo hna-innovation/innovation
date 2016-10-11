@@ -57,8 +57,8 @@
             <img ng-src="{{project.user.headerIcon}}">
             <h2>
               <span ng-bind="project.user.nickName"></span>
-              <span ng-show="project.user.department" >&middot;</span>
-              <span ng-bind="project.user.department"></span>
+              <span>&middot;</span>
+              <span class="font-10 color-88" ng-bind="project.user.department || '生态科技研究院'"></span>
             </h2>
             <div class="process">
               <span ng-class="{active: project.status >=2 }"></span>
