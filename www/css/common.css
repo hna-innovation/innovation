@@ -125,6 +125,9 @@ pre{
 .pd-l15{
 	padding-left: 15px;
 }
+.pd-r15{
+	padding-right: 15px;
+}
 .pd-tb5{
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -147,6 +150,9 @@ pre{
 /* border */
 .border-b1{
 	border-bottom: #e5e5e5 dashed 1px;
+}
+.border-b{
+	border-bottom: #e5e5e5 solid 1px;
 }
 .border-0{
 	border: 0 !important;
