@@ -75,15 +75,16 @@
             <div class="label-list">
               <span ng-repeat="tagName in project.tagNames">
             <i>＃</i><span ng-bind="tagName"></span>
-              </span>
-            </div>
-            <div class="action">
-              <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
-              <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
-            </div>
+          </span>
+          </div>
+          <div class="action">
+            <!--<span><i class="if" ng-class="{true:'i-aixinhover',false:'i-collect'}[project.like]" ng-click="like(project)"></i>{{project.likeCount}}</span>-->
+            <span ng-class="{true:'like-hover',false:'like-collect'}[project.like]"><i class="if" ng-click="like(project)"></i>{{project.likeCount}}</span>
+            <span><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
           </div>
         </div>
-      </ion-list>
+      </div>
+    </ion-list>
 
       <ion-infinite-scroll ng-if="moreDataCanBeLoaded()" icon="ion-loading-c" on-infinite="loadMoreData()">
       </ion-infinite-scroll>

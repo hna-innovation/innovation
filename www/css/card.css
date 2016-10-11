@@ -96,6 +96,7 @@
   float: right;
   margin-top: 4px;
   margin-right: 11px;
+  line-height: 25px;
 }
 
 .card .info .action span img {
@@ -107,5 +108,45 @@
 }
 
 .card .info .action span:first-child {
-  margin-right: 3px;
+  margin-right: 12px;
+}
+
+.card .info .action span {
+  font-size: 18px;
+  line-height: 23px;
+  margin-right: 5px;
+}
+
+.card .info .action span i {
+  position: relative;
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.card .info .action span.like-hover {
+  color: #EB7D84;
+}
+
+.card .info .action span.like-hover i:before{
+  right: 1px;
+  position: absolute;
+  content: "\e668";
+  color: #F7DFDC;
+  font-size: 18px;
+}
+
+.card .info .action span.like-hover i:after{
+  content: "\e665";
+  color: #EB7D84;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.card .info .action span.like-collect {
+  color: #000;
+}
+
+.card .info .action span.like-collect i:before{
+  content: "\e665";
 }
