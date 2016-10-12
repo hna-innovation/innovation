@@ -1,8 +1,8 @@
 <div class="banner">
   <img src="../../img/banner/banner-1.jpg" alt="">
 </div>
-<form name="loginForm" ng-submit="login(credentials)" novalidate angular-validator>
 
+<form name="loginForm" ng-controller="LoginCtrl" ng-submit="login(credentials)" novalidate angular-validator>
 <div class="form-group">
   <input type="email" name="email-login"
          ng-model="credentials.email" placeholder="邮箱"

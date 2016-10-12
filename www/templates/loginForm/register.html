@@ -1,23 +1,19 @@
   <div class="banner">
     <img src="../../img/banner/banner-1.jpg" alt="">
   </div>
-<form name="registerForm" ng-submit="register(credentials)" novalidate angular-validator>
+<form name="registerForm" ng-controller="RegisterCtrl" ng-submit="register(credentials)" novalidate angular-validator>
 <div class="form-group">
   <input type="email" name="email"
          ng-model="credentials.email" placeholder="邮箱"
-         validator="isUnique === true"
-         invalid-message = "邮箱已存在"
+         invalid-message = "'请输入正确的邮箱格式'"
          required-message="'请输入您的邮箱'"
          ng-maxlength="32"
          ng-minlength="5"
          ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
          required>
-  <span class="errorMessage" ng-show="registerForm.email.$dirty && !registerForm.email.$error.required && registerForm.email.$error.minlength">
-          邮箱长度必须介于5位至32位之间</span>
-  <span class="errorMessage" ng-show="registerForm.email.$dirty && !registerForm.email.$error.required && registerForm.email.$error.maxlength">
-          邮箱长度必须介于5位至32位之间</span>
-  <span class="errorMessage" ng-show="!registerForm.email.$error.minlength && !registerForm.email.$error.maxlength && registerForm.email.$error.pattern">
-            请输入正确的邮箱格式</span>
+  <div ng-show="registerForm.email.$touched && !registerForm.email.$error.required">
+    <span class="errorMessage" ng-if="existedEmail">邮箱已存在</span>
+  </div>
 </div>
 <div class="form-group">
   <input type="password" name="password"
