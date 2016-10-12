@@ -2,9 +2,8 @@ angular.module('starter.controllers')
 
 .controller('DetailCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 
-	$scope.pageName = $location.search()['pageName'];
 	var _projectId = $location.search()['projectid'];
-	var _userId = "57c96c19d9f2822078df18b9";
+	var _userId = localStorage.userId;
 
 	//获取用户信息
 	$scope.getUserInfo = function() {
@@ -12,6 +11,7 @@ angular.module('starter.controllers')
 			$scope.userinfo = result.data;
 		});
 	}
+
 	$scope.getUserInfo();
 
 	//项目详情
