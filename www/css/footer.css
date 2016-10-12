@@ -67,6 +67,10 @@
 }
 
 /*home footer*/
+.home-footer .button {
+  z-index: 3;
+}
+
 .home-footer:after {
   content: "";
   display: block;

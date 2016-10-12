@@ -1,0 +1,43 @@
+<!--<img src="../img/innovation.png" style="width: 100%;height: auto; z-index: 10; position: absolute;opacity: 0.4">-->
+<ion-view view-title="创新平台">
+    <hna-home-header></hna-home-header>
+    <ion-content>
+        <div class="content content-header">
+            <div class="pd-10">
+                <ul class="list-img list-img-medium">
+                    <li ng-repeat="resource in resources">
+                        <div>
+                            <a ng-href="#">
+                                <img src="../img/user/list-1.jpg" width="130" height="90" />
+                            </a>
+                        </div>
+                        <div>
+                            <p class="color-3d font-14 text-ellipsis text-title">
+                                {{ resource.title }}
+                            </p>
+                            <div class="font-12">
+                                <a class="tag tag-lan mg-b0">科技</a>
+                                <a class="tag tag-lan mg-b0">科技</a>
+                                <a class="tag tag-lan mg-b0">科技</a>
+                                <a class="tag tag-lan mg-b0">科技</a>
+                            </div>
+                            <p class="color-88 text-bottom">
+                                <span>
+						<img src="../img/home/home-love2.png" width="15" />123
+					</span>
+                                <span class="pd-l10">
+						<img src="../img/star1.png"  width="15"/>123
+					</span>
+                                <span class="pd-l10">
+						<img src="../img/home/home-comment.png"  width="15"/>123
+					</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+    <hna-home-footer></hna-home-footer>
+    <hna-home-preferences></hna-home-edit-preferences>
+</ion-view>

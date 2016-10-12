@@ -93,6 +93,13 @@ angular.module('starter')
 
       })
 
+      .state('explore-resources', {
+        url: '/explore-resources',
+        templateUrl: 'templates/resources/explore-resources.html',
+        controller: 'ExploreResourcesCtrl'
+
+      })
+
       .state('search', {
         url: '/search',
         cache: false,
