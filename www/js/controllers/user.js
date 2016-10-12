@@ -1,11 +1,10 @@
 angular.module('starter.controllers')
 
-	.controller('UserCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
+	.controller('UserCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, $state, Services) {
 
 			var resourcesType = $location.search()['type'];
 
 			$scope.getResources = function(){
-
 			}
 
 			if(resourcesType!=undefined){
@@ -28,6 +27,30 @@ angular.module('starter.controllers')
 				$http.get(Services.getUrl("/api/user?userId=" + localStorage.userId)).success(function(result){
 						$scope.userinfo=result.data;
 				});
+			}
+
+
+			var userInfoConfig = {
+				name: {
+					text: '姓名',
+					length: 10
+				},
+				company: {
+					text: '公司',
+					length: 20
+				},
+				interest: {
+					text: '兴趣',
+					length: 20
+				},
+				skill: {
+					text: '特长',
+					length: 20
+				}
+			}
+
+			$scope.goEditUserInfo = function(target) {
+				$state.go('user-edit-info', userInfoConfig[target])
 			}
 
 			$scope.getUserInfo();

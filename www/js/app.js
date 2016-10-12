@@ -152,6 +152,17 @@ angular.module('starter')
         controller: 'UserCtrl'
 
       })
+      .state('user-edit-info', {
+        url: '/user-edit-info',
+        cache: false,
+        params: {
+            text: null,
+            length: null
+        },
+        templateUrl: 'templates/user-edit-info.html',
+        controller: 'UserCtrl'
+
+      })
       .state('user-creative', {
         url: '/user-creative',
         cache: false,
