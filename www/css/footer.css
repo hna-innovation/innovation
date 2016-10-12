@@ -59,6 +59,13 @@
   margin-top: 8px;
 }
 
+/*hna footer*/
+.hna-footer {
+    height:38px;
+    border-top: 1px solid #e16a68;
+    line-height: 100%;
+}
+
 /*home footer*/
 .home-footer:after {
   content: "";

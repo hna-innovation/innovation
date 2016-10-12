@@ -38,7 +38,7 @@
   width: 20px;
   vertical-align: top;
   padding: 5px 0;
-  margin-right: 2px;
+  margin-right: 12px;
 }
 
 .bar.bar-header .button-img img:nth-child(2) {
@@ -53,8 +53,4 @@
 
 .bar.bar-header .title + .button:last-child {
   right: 4px;
-}
-
-.bar.item-input-inset .item-input-wrapper input {
-  height: 24px;
 }
