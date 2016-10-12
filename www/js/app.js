@@ -112,7 +112,10 @@ angular.module('starter')
         url: '/user/:userid',
         cache: false,
         templateUrl: 'templates/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        data: {
+          requireAuth: true
+        }
 
       })
 

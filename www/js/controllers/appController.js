@@ -1,7 +1,13 @@
 angular.module('starter.controllers')
-  .controller('AppCtrl', ['$scope', 'AuthEvent', 'ModalServices', function($scope, AuthEvent, ModalServices) {
+  .controller('AppCtrl', ['$scope', 'AuthEvent', 'AuthService', 'ModalServices', function($scope, AuthEvent, AuthService, ModalServices) {
     'use strict';
 
-    $scope.$on(AuthEvent.NOT_AUTHENTICATED, ModalServices.showPopup);
+    $scope.currentUser = {
+      id: localStorage.userId
+    };
+
+    $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {
+      ModalServices.showPopup();
+    });
 
   }]);
