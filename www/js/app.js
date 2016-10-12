@@ -162,7 +162,7 @@ angular.module('starter')
       .state('lookuser', {
         url: '/lookuser',
         templateUrl: 'templates/lookuser.html',
-        controller: 'lookuserCtrl'
+        controller: 'LookUserCtrl'
 
       })
       .state('step-1', {
