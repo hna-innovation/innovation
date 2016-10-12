@@ -2,6 +2,7 @@ angular.module('starter.controllers')
 
 .controller('DetailCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 
+	$scope.pageName = $location.search()['pageName'];
 	var _projectId = $location.search()['projectid'];
 	var _userId = localStorage.userId;
 
