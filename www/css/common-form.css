@@ -2,12 +2,6 @@
  * Form Common Elements
  */
 
-
-/*base*/
-input[type=text] {
-	box-sizing: content-box;
-}
-
 /*bar form input*/
 .bar.item-input-inset .item-input-wrapper input {
 	height: 24px;
