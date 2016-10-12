@@ -49,6 +49,7 @@
   <!--verdor js-->
   <script src="js/controllers/main.js"></script>
   <script src="js/config.js"></script>
+  <script src="js/constants/authEventConstant.js"></script>
   <script src="js/constants/apiConstant.js"></script>
   <script src="js/constants/contentConstant.js"></script>
   <script src="js/constants/pageConstant.js"></script>
@@ -56,6 +57,7 @@
   <script src="js/vendor/swiper.min.js"></script>
   <script src="js/vendor/angular-file-upload.min.js"></script>
   <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/controllers/appController.js"></script>
   <script src="js/controllers/innovation.js"></script>
   <script src="js/controllers/detail.js"></script>
   <script src="js/controllers/user.js"></script>
@@ -88,8 +90,8 @@
   <script src="js/controllers/lookuser.js"></script>
 
 </head>
-<body>
-<div id="alert"></div>
+<body ng-controller="AppCtrl" >
+<div id="alert" ></div>
 <!--
   The views will be rendered in the <ion-nav-view> directive below
   Templates are in the /templates folder (but you could also

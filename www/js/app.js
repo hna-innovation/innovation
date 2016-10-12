@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter')
 
-  .run(function ($ionicPlatform, $rootScope) {
+  .run(function ($ionicPlatform, $rootScope, AuthEvent, AuthService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -23,11 +23,13 @@ angular.module('starter')
     });
 
     // Handle access control globally.
-    $rootScope.$on('$stateChangeStart', function (event, next, AuthService) {
+    $rootScope.$on('$stateChangeStart', function (event, next) {
+      if( !next.data ) return;
       var isAuthRequired = next.data.requireAuth;
 
-      if ( isAuthRequired && !AuthService.isAuthenticated) {
+      if ( isAuthRequired && !AuthService.isAuthenticated()) {
         event.preventDefault();
+        $rootScope.$broadcast(AuthEvent.NOT_AUTHENTICATED);
       }
     });
 
