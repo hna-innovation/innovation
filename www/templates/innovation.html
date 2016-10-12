@@ -86,31 +86,6 @@
   
   <hna-home-footer></hna-home-footer>
 
-  <ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}"
-              ng-if="slideStatus">
-    <div>
-      <div class="header">
-        <div class="btn-action">
-          <div class="close" ng-click="slideDownInterest()">
-            <img src="../img/close.png" alt="">
-          </div>
-          <div class="save" ng-click="saveInterest()">
-            <img src="../img/save.png" alt="">
-          </div>
-        </div>
-        <div class="title">
-          <div>喜好</div>
-          <div>我们将为你展示更多你选择的类型</div>
-        </div>
-      </div>
-      <ul class="tag-list">
-        <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
-          <img ng-src="{{tag.imageUrl}}" alt="">
-          <div class="cover" ng-show="tag.status">
-            <img src="../img/selected.png" alt="">
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ion-scroll>
+  <hna-home-preferences></hna-home-edit-preferences>
+  
 </ion-view>
