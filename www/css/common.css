@@ -440,20 +440,26 @@ pre{
 }
 
 .popup-body .btn-action button {
-  flex: 1;
   background-color: #e4e4e4;
   color: #7d7d7d;
   border: none;
   border-radius: 3px;
 }
 
-.popup-body .btn-action button:first-child {
-  margin-right: 16px;
-}
-
 .popup-body .btn-action button.active {
+  width: 50%;
   background-color: #de6262;
   color: #fff;
+}
+
+.popup-body .login {
+  position: absolute;
+  right: 20px;
+}
+
+.popup-body .btn-action button.register {
+  position: relative;
+  left: 0;
 }
 
 .popup-body .close {
@@ -509,7 +515,7 @@ label.has-error {
 	font-size: 23px;
 }
 .detail-footer-nav>li .if{
-	padding-left: 3px;
+  padding-right: 8px;
 }
 .detail-footer-nav>li .i-xiaoxi{
 	-webkit-text-stroke-width: 0.8px;
@@ -609,4 +615,9 @@ label.has-error {
 	background: url(../img/icon-right.svg) no-repeat right center;
 	background-size: 18px;
 	background-color: white !important;
+}
+.errorMessage {
+  color: #DD6162;
+  font-size: 12px;
+  padding-left: 18px;
 }
