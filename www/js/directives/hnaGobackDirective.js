@@ -5,8 +5,7 @@ angular.module('starter')
       link : function(scope, element){
         element.on("click",function(){
           $window.history.back();
-        })
+        });
       }
-    }
-  })
-
+    };
+  });
