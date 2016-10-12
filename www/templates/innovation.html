@@ -83,18 +83,9 @@
 
     </div>
   </ion-content>
-  <div class="bar bar-footer home-footer">
-    <div class="button button-clear button-left active">
-      <img src="../img/find.png" alt="">
-      <span>发现创意</span>
-    </div>
-    <div class="title">
-      <img src="../img/add.png" ng-click="dianzi()">
-    </div>
-    <div class="button button-clear button-right">
-      <img src="../img/find.png" alt=""> 寻找资源
-    </div>
-  </div>
+  
+  <hna-home-footer></hna-home-footer>
+
   <ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}"
               ng-if="slideStatus">
     <div>
