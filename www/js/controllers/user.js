@@ -2,12 +2,6 @@ angular.module('starter.controllers')
 
 	.controller('UserCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 
-
-//			var _userId = $location.search()['userid'];
-			var _baseUrl = "http://172.16.0.178:8080";
-
-			var _userId = "57c96c19d9f2822078df18b9";
-
 			var resourcesType = $location.search()['type'];
 
 			$scope.getResources = function(){
@@ -31,18 +25,10 @@ angular.module('starter.controllers')
 
 			//获取用户信息
 			$scope.getUserInfo = function(){
-				$http.get(_baseUrl+"/api/user?userId="+_userId).success(function(result){
+				$http.get(Services.getUrl("/api/user?userId=" + localStorage.userId)).success(function(result){
 						$scope.userinfo=result.data;
 				});
 			}
+
 			$scope.getUserInfo();
-
-//			$http({
-//				method:"POST",
-//				url:_baseUrl+"/api/user/likeProject?projectId="+item.id+"&add=true"
-//			}).success(function(result){
-//				$scope.getProjectDetail();
-//			})
-
-
 	})
