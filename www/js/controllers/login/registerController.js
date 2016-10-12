@@ -7,16 +7,15 @@ angular.module('starter.controllers')
         password: data.password
       }
 
-      if (!data.email || !data.password || !data.passwordRepeat) {
+      if (!data.email || !data.password || data.passwordRepeat !== data.password) {
         return;
       }
 
       LoginService.register(registerData, function (res) {
         if (res.error) {
-          // HnaAlert.error('注册失败!');
           $scope.existedEmail = true;
         } else {
-          HnaAlert.success('注册成功！');
+          HnaAlert.defaultSuccess('注册成功！');
         }
       });
     }

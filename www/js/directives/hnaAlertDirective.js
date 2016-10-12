@@ -12,6 +12,12 @@ angular.module('starter')
     },
     default: function (msg) {
       msgAnimation("bg-default", msg)
+    },
+    defaultSuccess: function (msg) {
+      msgAnimation("bg-default-dark success-check", msg)
+    },
+    defaultError: function (msg) {
+      msgAnimation("bg-default-dark error-check", msg)
     }
   }
 });

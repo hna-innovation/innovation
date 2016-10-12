@@ -263,6 +263,9 @@ pre{
 .bg-default{
 	background-color: rgba(0, 0, 0, 0.7);
 }
+.bg-default-dark{
+  background-color: #000;
+}
 .bg-f9{
 	background-color: #f9f9f9;
 }
@@ -424,42 +427,60 @@ pre{
 }
 
 .popup-body input {
-  width: 230px;
-  margin: 3px auto;
+  padding-left: 10%;
+  width: 85%;
+  margin: 15px auto;
   border-bottom: 1px solid #ddd;
 }
 
+.popup-body .form-group {
+  position: relative;
+}
+
+.popup-body .placeholder-icon {
+  font-size: 26px;
+  position: absolute;
+  left: 8%;
+  color: #A7A7A7;
+}
+
+.popup-body .ion-ios-email-outline {
+  top: 4px;
+}
+
 .popup-container .popup {
-  width: 265px;
+  min-height: 300px;
+  width: inherit;
+  margin: 0 30px;
 }
 
 .popup-body .btn-action {
-  padding: 0 17px;
-  display: flex;
-  margin: 20px 0;
+  font-size: 16px;
+  text-align: center;
+  width: 85%;
+  margin: 30px auto 10px;
 }
 
+.popup-body .btn-action span {
+  padding: 20px;
+  display: inline-block;
+}
+
+.popup-body .btn-action span a{
+  color: #2561E4;
+}
 .popup-body .btn-action button {
-  background-color: #e4e4e4;
   color: #7d7d7d;
   border: none;
   border-radius: 3px;
 }
 
 .popup-body .btn-action button.active {
-  width: 50%;
+  font-size: 16px;
+  height: 40px;
+  width: 100%;
   background-color: #de6262;
   color: #fff;
-}
-
-.popup-body .login {
-  position: absolute;
-  right: 20px;
-}
-
-.popup-body .btn-action button.register {
-  position: relative;
-  left: 0;
 }
 
 .popup-body .close {
@@ -481,7 +502,7 @@ input:-webkit-autofill {
 }
 
 label.has-error {
-  width: 230px;
+  width: 85%;
   margin: 0 auto;
   display: block;
   color: #de6262;
@@ -549,8 +570,8 @@ label.has-error {
 /* 提示框 */
 #alert{
 	position: fixed;
-	top: 45px;
-	left: 10%;
+	top: 6%;
+	margin: 0 10%;
 	display: none;
 	width: 80%;
 	height: 35px;
@@ -560,15 +581,27 @@ label.has-error {
 	text-align: center;
 	z-index: 100000;
 }
+ .success-check {
+   background-image: url('../img/login/success-check.png');
+   background-repeat: no-repeat;
+   background-size: 9%;
+   background-position: 28%;
+ }
+ .error-check {
+   background-image: url('../img/login/error-cross.png');
+   background-repeat: no-repeat;
+   background-size: 9%;
+   background-position: 19%;
+ }
 
-.spinners{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: -8px;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.5);
-	z-index: 100000;
+.spinners {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -8px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100000;
 }
 
 .step-loading{

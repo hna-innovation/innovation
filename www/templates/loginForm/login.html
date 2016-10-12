@@ -1,9 +1,10 @@
 <div class="banner">
-  <img src="../../img/banner/banner-1.jpg" alt="">
+  <img src="../../img/login/banner-login.jpg" alt="">
 </div>
 
 <form name="loginForm" ng-controller="LoginCtrl" ng-submit="login(credentials)" novalidate angular-validator>
 <div class="form-group">
+  <i class="icon ion-ios-email-outline placeholder-icon"></i>
   <input type="email" name="email-login"
          ng-model="credentials.email" placeholder="邮箱"
          required-message="'请输入您的邮箱'"
@@ -14,6 +15,7 @@
          required>
 </div>
 <div class="form-group">
+  <i class="icon ion-ios-locked-outline placeholder-icon"></i>
   <input type="password" name="password-login"
          ng-model="credentials.password" placeholder="密码"
          required-message="'请输入您的密码'"
@@ -21,8 +23,8 @@
 </div>
 
 <div class="btn-action">
-  <a ng-click="goToRegister()"> << 注册 </a>
-  <button class="active login" type="submit">登录</button>
+  <button class="active" type="submit">登录</button>
+  <span>还没有账号, 去<a ng-click="goToRegister()">注册</a></span>
 </div>
 
   <div class="close" ng-click="closePopup()">X</div>

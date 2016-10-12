@@ -52,7 +52,6 @@ angular.module('starter.controllers')
           } else {
             ModalServices.showPopup();
           }
-
         }
 
         $scope.dianzi = function () {

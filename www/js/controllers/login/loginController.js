@@ -12,10 +12,10 @@ angular.module('starter.controllers')
       }
       LoginService.login(loginData, function (res) {
         if (res.error) {
-          HnaAlert.error('登录信息不正确！');
+          HnaAlert.defaultError('登录信息不正确！');
         } else {
           localStorage.userId = res.data.id;
-          HnaAlert.success('登录成功！');
+          HnaAlert.defaultSuccess('登录成功！');
           $window.location.reload();
         }
       });
