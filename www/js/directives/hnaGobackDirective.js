@@ -1,10 +1,10 @@
 angular.module('starter')
-  .directive('hnaGoback', function(){
+  .directive('hnaGoback', function($window){
     return {
       restrict: "EAC",
       link : function(scope, element){
         element.on("click",function(){
-          window.location.href = history.go(-1);
+          $window.history.back();
         })
       }
     }
