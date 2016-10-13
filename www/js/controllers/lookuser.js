@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 	.controller('LookUserCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 
-		var _userId = "57c96c19d9f2822078df18b9";
+		var _userId = localStorage.userId;
 
 		$http({
           method:"GET",
