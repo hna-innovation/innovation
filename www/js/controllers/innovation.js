@@ -32,10 +32,18 @@ angular.module('starter.controllers')
         // Get Projects
 
         $scope.projects = [];
+        $scope.hasMoreData = function () {
+          return true;
+        }
         function getProductsByOffset(offset) {
           ProjectsService.getProductsByOffset(offset, function (data) {
-            $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
-            $scope.$broadcast('scroll.infiniteScrollComplete');
+            if(data.data.content && data.data.content.length){
+              $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
+              $scope.$broadcast('scroll.infiniteScrollComplete');
+            } else {
+              $scope.hasMoreData = false;
+            }
+
           }, function (error) {
             console.log(error);
           });

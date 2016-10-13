@@ -1,6 +1,6 @@
 <!--<img src="../img/innovation.png" style="width: 100%;height: auto; z-index: 10; position: absolute;opacity: 0.4">-->
 <ion-view view-title="创新平台">
-  
+
   <hna-home-header></hna-home-header>
 
   <ion-content>
@@ -78,13 +78,19 @@
             </div>
           </div>
         </div>
+        <ion-infinite-scroll
+          on-infinite="loadMore()"
+          ng-if="hasMoreData"
+          icon="ion-loading-a"
+          distance="15%">
+        </ion-infinite-scroll>
       </load-more>
 
     </div>
   </ion-content>
-  
+
   <hna-home-footer></hna-home-footer>
 
-  <hna-home-preferences></hna-home-edit-preferences>
-  
+  <hna-home-preferences></hna-home-preferences>
+
 </ion-view>
