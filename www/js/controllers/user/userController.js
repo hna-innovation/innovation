@@ -29,8 +29,12 @@ angular.module('starter.controllers')
 				});
 			}
 
+			$scope.goHome = function() {
+				$state.go('innovation');
+			}
+
 			$scope.goEditUserInfo = function(target) {
-				$state.go('user-edit-info', target)
+				$state.go('user-edit-info', target);
 			}
 
 			$scope.getUserInfo();
