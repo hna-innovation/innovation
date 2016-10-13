@@ -672,9 +672,11 @@ label.has-error {
 .errorMessage {
   color: #DD6162;
   font-size: 12px;
-  padding-left: 18px;
+  padding-left: 8%;
 }
-
+.dispear {
+  animation: dispear 1s;
+}
 .ql-editor {
   height: 300px;
 }

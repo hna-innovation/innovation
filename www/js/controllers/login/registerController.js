@@ -10,7 +10,7 @@ angular.module('starter.controllers')
     };
     $scope.register = function (data) {
       if(!data)
-        return
+        return;
 
       var registerData = {
         email: data.email,
