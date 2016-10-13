@@ -366,12 +366,12 @@
 .user-edit-text-part-title{
   color: #333;
   margin: 0 0 0 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .user-edit-text-part {
-  border-top: solid 1px #dcd9d9;
+  border-top: solid 1px #efefef;
   background-color: #fff;
-  border-bottom: solid 1px #dcd9d9;
+  border-bottom: solid 1px #efefef;
   margin: 10px 0 10px 0;
 }
 .user-edit-text-part input{
