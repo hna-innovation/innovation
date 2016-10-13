@@ -10,7 +10,7 @@
 				<li ng-repeat="resource in resources" >
 					<div>
 						<a ng-href="#">
-							<img src="../img/user/list-1.jpg" width="130" height="90"/>
+							<img ng-src="{{ resource.img }}" width="130" height="90"/>
 						</a>		
 					</div>
 					<div>
@@ -25,14 +25,14 @@
 						</div>
 						<p class="color-88 text-bottom">
 							<span>
-								<img src="../img/home/home-love2.png" width="15" />123
-							</span>
-							<span class="pd-l10">
-								<img src="../img/star1.png"  width="15"/>123
-							</span>
-							<span class="pd-l10">
-								<img src="../img/home/home-comment.png"  width="15"/>123
-							</span>
+        						<img src="../img/home/home-love2.png" width="15" />{{ resource.likeCount }}
+        					</span>
+                            <span class="pd-l10">
+        						<img src="../img/star1.png"  width="15"/>{{ resource.starCount }}
+        					</span>
+                            <span class="pd-l10">
+        						<img src="../img/home/home-comment.png"  width="15"/>{{ resource.commentCount }}
+        					</span>
 						</p>					
 					</div>
 				</li>
