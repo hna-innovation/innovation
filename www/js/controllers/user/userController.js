@@ -29,8 +29,8 @@ angular.module('starter.controllers')
 				});
 			}
 
-			$scope.goHome = function() {
-				$state.go('innovation');
+			$scope.goUser = function() {
+				$state.go('user', {userid: localStorage.userId});
 			}
 
 			$scope.goEditUserInfo = function(target) {
