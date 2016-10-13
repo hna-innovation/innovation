@@ -114,10 +114,10 @@ angular.module('starter')
 
       })
 
-      .state('resources', {
-        url: '/resources',
-        templateUrl: 'templates/resources/resources.html',
-        controller: 'ResourcesCtrl'
+      .state('detail-page-resource', {
+        url: '/detail-page-resource',
+        templateUrl: 'templates/resources/detail-page-resource.html',
+        controller: 'DetailPageResourceCtrl'
 
       })
 

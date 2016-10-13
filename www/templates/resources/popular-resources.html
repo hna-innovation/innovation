@@ -9,15 +9,17 @@
 			<ul class="list-img list-img-medium">
 				<li ng-repeat="resource in resources" >
 					<div>
-						<a ng-href="#">
-							<img ng-src="{{ resource.img }}" width="130" height="90"/>
-						</a>		
+						<a ui-sref="detail-page-resource">
+							<img src="../img/user/list-1.jpg" width="130" height="90"/>
+						</a>
 					</div>
 					<div>
-						<p class="color-3d font-14 text-ellipsis text-title">
+						<a class="color-3d font-14 text-ellipsis text-title" ui-sref="detail-page-resource">
 							{{ resource.title }}
-						</p>
+						</a>
 						<div class="font-12">
+							<a class="tag tag-lan mg-b0">科技</a>
+							<a class="tag tag-lan mg-b0">科技</a>
 							<a class="tag tag-lan mg-b0">科技</a>
 							<a class="tag tag-lan mg-b0">科技</a>
 						</div>
@@ -31,10 +33,10 @@
                             <span class="pd-l10">
         						<img src="../img/home/home-comment.png"  width="15"/>{{ resource.commentCount }}
         					</span>
-						</p>					
+						</p>
 					</div>
 				</li>
-			</ul>			
+			</ul>
 		</div>
 
 	</ion-content>

@@ -1,0 +1,39 @@
+<ion-view view-title="资源详情">
+  <ion-content class="bg-fb">
+    <div class="detail-special">
+      <i class="if i-remove1 go-back radius" hna-goback></i>
+      <div class="bg-ff">
+        <img ng-src="{{detail.bannerImage}}" width="100%" height="174"/>
+      </div>
+
+      <div class="detail-special-info pd-lr pd-tb bg-ff">
+        <p class="color-3d font-14 text-ellipsis text-title">
+          {{::detail.title}}
+        </p>
+        <span class="tag tag-lan mg-b0 font-12">{{::detail.company}}</span>
+      </div>
+
+      <div class="swiper-container bg-ff mg-t10" id="swiper2">
+        <ul class="tab-nav" id="swiper2-nav"></ul>
+        <ul class="swiper-wrapper tab-list color-88">
+          <li class="swiper-slide pd-lr pd-tb">
+            <p>{{::detail.introduction}}</p>
+          </li>
+          <li class="swiper-slide pd-lr pd-tb">
+            <ul class="border-b1 pd-tb text1 text-word">
+              <li>
+                <!--<img src={{detail.mentor.headerIcon}} width="30" height="30" class="radius mg-r15 left"/>-->
+                <p class="left color-88 pd-l40">
+                  <span class="color-3d">{{::detail.mentor.name}}</span>
+                  <span>{{::detail.mentor.title}}</span>
+                </p>
+                <i class="if i-xiaoxi font-18 right color-88"></i>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+  <hna-footernav></hna-footernav>
+</ion-view>
