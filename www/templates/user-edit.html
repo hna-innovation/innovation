@@ -5,19 +5,19 @@
 			<span class="font-18">编辑个人中心</span>
 		</div>
 		<ul class="pd-10 user-edit">
-			<li ng-click="goEditUserInfo('name')">
+			<li ng-click="goEditUserInfo({text: '姓名', length: 10})">
 				<div>姓名：</div>
 				<input type="text" value="马涛" class="input-edit" placeholder="未填写" readonly />
 			</li>
-			<li ng-click="goEditUserInfo('company')">
+			<li ng-click="goEditUserInfo({text: '公司', length: 20})">
 				<div>公司：</div>
 				<input type="text" value="海航生态科技研究院 项目经理" class="input-edit" placeholder="未填写" readonly />
 			</li>
-			<li ng-click="goEditUserInfo('interest')">
+			<li ng-click="goEditUserInfo({text: '兴趣', length: 20})">
 				<div>兴趣：</div>
 				<input type="text" class="input-edit" placeholder="未填写" readonly/>
 			</li>
-			<li ng-click="goEditUserInfo('skill')">
+			<li ng-click="goEditUserInfo({text: '特长', length: 20})">
 				<div>特长：</div>
 				<input type="text" class="input-edit" placeholder="未填写" readonly />
 			</li>

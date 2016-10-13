@@ -183,7 +183,7 @@ angular.module('starter')
             length: null
         },
         templateUrl: 'templates/user-edit-info.html',
-        controller: 'UserCtrl'
+        controller: 'UserEditCtrl'
 
       })
       .state('user-creative', {
