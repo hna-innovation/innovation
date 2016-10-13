@@ -24,7 +24,7 @@
 .step-footer img{
     width: 18px!important;
     height: 18px!important;
-    vertical-align: -4px;
+    vertical-align: -3px;
 }
 
 #step-1{
@@ -33,12 +33,16 @@
     background: none;
 }
 
-#step-1 textarea{
+#step-1 .dianzi-description {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+#step-1 textarea {
     width: 100%;
-    height: 350px;
+    height: 100px;
     resize: none;
-    padding-top: 15px;
-    margin-bottom: 50px;
+    background-color: transparent;
 }
 
 #photoUpload{
