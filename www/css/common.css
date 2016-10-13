@@ -461,8 +461,7 @@ img{
 }
 
 .popup-container .popup {
-  min-height: 300px;
-  width: inherit;
+  width: 320px;
   margin: 0 30px;
 }
 

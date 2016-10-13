@@ -21,33 +21,31 @@
 }
 
 #step-2 .step-item{
-    width: calc((100vw - 60px) / 4);
-    height: calc((100vw - 60px) / 4);
+    width: calc((100vw - 60px) / 3);
+    height: calc((100vw - 60px) / 3);
     margin: 5px 10px 5px 0;
     position: relative;
+    border-radius: 4px;
     overflow: hidden;
 }
 .step-item img{
+    width: 100%;
     height: 100%;    
 }
 
-#step-2 .step-item:nth-child(4n){
+#step-2 .step-item:nth-child(3n){
     margin-right: 0;
 }
-#step-2 .step-item:nth-child(1), #step-2 .step-item:nth-child(2), #step-2 .step-item:nth-child(3), #step-2 .step-item:nth-child(4){
+#step-2 .step-item:nth-child(1), #step-2 .step-item:nth-child(2), #step-2 .step-item:nth-child(3) {
     margin-top: 0;
-}
-
-#step-2 .step-item img:first-child{
-    border-radius: 4px;
 }
 
 #step-2 .item-del{
     position: absolute;
     right: 0;
     top: 0;
-    width: 4vw;
-    height: 4vw;
+    width: 20px;
+    height: 20px;
 }
 
 #photoUpload2{
