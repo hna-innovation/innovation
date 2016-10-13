@@ -103,7 +103,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         }, function (result) {
             if (result.code == 0) {
                 localStorage.draftId = result.data.id;
-                window.location.href = '/#/step-2';
+                window.location.href = '/#/step-3';
             } else {
                 console.log(result);
             }
