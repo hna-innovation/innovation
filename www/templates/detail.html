@@ -1,9 +1,10 @@
-<!--<img src="../img/detail.png" style="width: 100%;height: auto; z-index: 0; position: absolute;opacity: 1;top: 38px">-->
 <ion-view>
 	<ion-content class="bg-fb">
 		<div class="detail-special">
-			<i class="if i-remove1 go-back radius" ng-if="pageName==undefined" onclick="window.location.href=document.referrer"></i>
-			<a class="if i-remove1 go-back radius" ng-if="pageName!=undefined" href="#{{pageName}}"></a>
+			<!-- <i class="if i-remove1 go-back radius" ng-if="pageName==undefined" onclick="window.location.href=document.referrer"></i>
+			<a class="if i-remove1 go-back radius" ng-if="pageName!=undefined" href="#{{pageName}}"></a> -->
+
+			<i class="if i-remove1 go-back radius" hna-goback></i>
 			<div class="swiper-container bg-ff" id="swiper1">
 				<ul class="swiper-wrapper">
 					<li class="swiper-slide" ng-repeat="img in detail.imageUrls">
