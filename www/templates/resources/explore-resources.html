@@ -4,7 +4,7 @@
         <div class="content content-header">
             <div class="pd-10">
                 <ul class="list-img list-img-medium">
-                    <li ng-repeat="resource in resources">
+                    <li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
                         <div>
                             <a>
                                 <img ng-src="{{ ::resource.img }}" width="130" height="90" />
@@ -14,9 +14,9 @@
                             <p class="color-3d font-14 text-ellipsis text-title">
                                 {{ ::resource.title }}
                             </p>
-                            <div class="font-10">
-                                <a class="tag tag-lan mg-b0">科技</a>
-                                <a class="tag tag-lan mg-b0">科技</a>
+                            <div>
+                                <a class="font-10 tag tag-lan mg-b0">科技</a>
+                                <a class="font-10 tag tag-lan mg-b0">科技</a>
                             </div>
                             <p class="color-88 text-bottom">
                                 <span>
