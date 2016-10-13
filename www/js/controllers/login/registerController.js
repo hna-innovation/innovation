@@ -2,6 +2,9 @@ angular.module('starter.controllers')
   .controller('RegisterCtrl', function ($scope, HnaAlert, $window, LoginService) {
     'use strict';
     $scope.register = function (data) {
+      if(!data)
+        return
+
       var registerData = {
         email: data.email,
         password: data.password

@@ -3,6 +3,9 @@ angular.module('starter.controllers')
     'use strict';
 
     $scope.login = function (data) {
+      if(!data)
+        return;
+
       var loginData = {
         email: data.email,
         password: data.password
@@ -21,4 +24,3 @@ angular.module('starter.controllers')
       });
     }
   });
-

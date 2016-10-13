@@ -110,8 +110,8 @@ angular.module('starter')
 
       .state('resources', {
         url: '/resources',
-        templateUrl: 'templates/resources.html',
-        controller: 'resourcesCtrl'
+        templateUrl: 'templates/resources/resources.html',
+        controller: 'ResourcesCtrl'
 
       })
 

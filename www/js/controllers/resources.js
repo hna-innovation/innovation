@@ -1,9 +1,9 @@
 angular.module('starter.controllers')
 
-	.controller('resourcesCtrl', function($scope, $stateParams) {
+	.controller('ResourcesCtrl', function($scope, $stateParams) {
 		   var mySwiper3 = new Swiper ('#swiper-container', {
 				    direction: 'horizontal',
-				    loop: true,	
+				    loop: true,
 				    autoplay: 0,
 				    pagination: '.tab-nav',
 					paginationClickable: true,
@@ -11,7 +11,7 @@ angular.module('starter.controllers')
 						var tag = [
 						   	{name:"资源介绍"},
 							{name:"创业导师"}
-						]						 
+						]
 						return "	<li class='swiper-pagination-bullet'><span>"+tag[index].name+"</span></li>"
 					},
 					onSlideChangeEnd: function(swiper){
@@ -24,8 +24,8 @@ angular.module('starter.controllers')
 						}
 						index--;
 						obj.removeClass("active");
-						obj.eq(index).addClass("active");					    		
+						obj.eq(index).addClass("active");
 					}
 
-			}) 		   
+			})
 	})
