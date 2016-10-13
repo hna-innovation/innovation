@@ -57,12 +57,12 @@
           </div>
 
           <div class="item item-image">
-            <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
+            <a ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
               <img ng-src="{{project.image}}">
             </a>
           </div>
           <h2>
-            <a class="item item-title" ng-href="#detail?projectid={{project.id}}&pageName=innovation" ng-bind="project.name"></a>
+            <a class="item item-title" ui-sref="detail({projectid: project.id, pageName: 'innovation'})" ng-bind="project.name"></a>
           </h2>
           <p class="description color-88" ng-bind="project.description"></p>
           <div class="info clearfix">

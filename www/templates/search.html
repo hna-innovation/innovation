@@ -1,48 +1,32 @@
-<form ng-submit="search(keyword)" novalidate>
-  <div class="bar bar-header bar-header-search item-input-inset bg-pink">
-    <label class="item-input-wrapper">
-      <i class="icon ion-ios-search placeholder-icon color-red"></i>
-      <input type="search" ng-model="keyword" placeholder="搜索..." autofocus="autofocus" class="bg-ff">
-    </label>
-    <a href="#innovation" class="color-white pd-l15">取消</a>
-  </div>
-</form>
-<div ng-show="isResultTextShown && searchResults.length === 0" class="color-pink pd-15">
-  {{ NO_SEARCH_RESULT }}
-</div>
-<ion-content>
-  <div class="content content-header">
-    <ion-list>
-      <div class="list card" ng-repeat="project in searchResults">
-        <div class="item item-avatar">
-          <img ng-src="{{project.user.headerIcon}}">
-          <h2><span ng-bind="project.user.nickName"></span><span>.</span><span ng-bind="project.user.department"></span>
-            </h2>
-          <div class="process">
-            <span ng-class="{active: project.status >=2 }"></span>
-            <span ng-class="{active: project.status >=3 }"></span>
-            <span ng-class="{active: project.status ==4 }"></span>
-          </div>
+<ion-view view-title="最新创意">
+    <ion-content class="bg-fb">
+        <form ng-submit="search(keyword)" novalidate>
+            <div class="bar bar-header bar-header-search item-input-inset bg-pink">
+                <label class="item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon color-red"></i>
+                    <input type="search" ng-model="keyword" placeholder="搜索..." autofocus="autofocus" class="bg-ff">
+                </label>
+                <a href="#innovation" class="color-white pd-l15">取消</a>
+            </div>
+        </form>
+        <div ng-show="isResultTextShown && searchResults.length === 0" class="color-pink pd-15">
+            {{ NO_SEARCH_RESULT }}
         </div>
-        <div class="item item-image">
-          <a ng-href="#detail?projectid={{project.id}}&pageName=innovation">
-            <img ng-src="{{project.image}}">
-          </a>
-        </div>
-        <a class="item item-title" href="#" ng-bind="project.name"></a>
-        <div class="description" ng-bind="project.description"></div>
-        <div class="info clearfix">
-          <div class="label-list">
-            <span ng-repeat="tagName in project.tagNames">
-            <i>＃</i><span ng-bind="tagName"></span>
-            </span>
-          </div>
-          <div class="action">
-            <span><img src="../img/home/home-love.png" alt=""><span ng-bind="project.likeCount"></span></span>
-            <span><img src="../img/home/home-comment.png" alt=""><span ng-bind="project.commentCount"></span></span>
-          </div>
-        </div>
-      </div>
-    </ion-list>
-  </div>
-</ion-content>
+        <ul class="show-innovation-list pd-5">
+            <li ng-repeat="project in searchResults">
+                <div ui-sref="detail({projectid: project.id, pageName: 'innovation'})">
+                    <div class="show-innovation-post">
+                        <img ng-src="{{::project.image}}">
+                    </div>
+                    <div>
+                        <p class="text-title3" ng-bind="::project.name"></p>
+                        <div class="border-t1 show-innovation-info color-88">
+                            <span class="if i-time"></span>
+                            <span class="innovation-time" ng-bind="::project.createdDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

@@ -2,8 +2,8 @@ angular.module('starter.controllers')
 
 .controller('DetailCtrl', function($scope, $stateParams, $http, $location, $ionicPopup, Services) {
 
-	$scope.pageName = $location.search()['pageName'];
-	var _projectId = $location.search()['projectid'];
+	$scope.pageName = $stateParams.pageName;
+	var _projectId = $stateParams.projectid;
 	var _userId = localStorage.userId;
 
 	//获取用户信息
@@ -24,7 +24,6 @@ angular.module('starter.controllers')
 			/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
 			$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
 			$scope.shareUrl = encodeURIComponent($location.absUrl());
-			console.log(result)
 		});
 	}
 	$scope.getProjectDetail();

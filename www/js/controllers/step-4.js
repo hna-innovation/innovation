@@ -112,6 +112,7 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
                 console.log(result);
                 window.location.replace('/#/innovation');
                 window.location.href = '/#/detail?projectid=' + result.data.id + '&pageName=innovation';
+                $state.go('detail', {projectid: result.data.id, pageName: 'innovation'});
             } else {
                 console.log(result);
             }
