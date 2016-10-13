@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
 
-	.controller('UserEditCtrl', function($scope, $stateParams, $http, $ionicHistory, $location, $ionicPopup, $state, Services) {
-      $scope.info = {text: $stateParams.text, length: $stateParams.length};
+	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, Services) {
+      $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, required: $stateParams.required};
 
       $scope.getUserInfo = function(){
 				Services.getUserInfo(localStorage.userId).success(function(result){
@@ -14,7 +14,17 @@ angular.module('starter.controllers')
       }
 
       $scope.save = function() {
+				if($scope.info.required) {
+					var targetValue = $scope.userInfo[$scope.info.target]
+					if (targetValue == null || targetValue.length == 0) {
+						HnaAlert.default($scope.info.text + '不能为空！');
+						return;
+					}
+				}
 
+				//call service to update the user info.
+				$ionicHistory.goBack();
       }
+
 			$scope.getUserInfo();
 	})

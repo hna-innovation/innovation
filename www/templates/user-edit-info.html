@@ -7,6 +7,12 @@
 			<div class="user-edit-save" ng-click="save()"></div>
 		</div>
 		<div class="pd-10">
+			<span class="user-edit-text-area-max">最大长度为{{::info.length}}个字哦~</span>
+			<textarea placeholder="请填写您的{{::info.text}}..." class="user-edit-text-area"
+					maxlength="{{::info.length}}"
+			 		ng-model="userInfo[info.target]"
+					ng-trim="true">
+			</textarea>
 		</div>
 	</ion-content>
 </ion-view>
