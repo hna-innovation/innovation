@@ -72,8 +72,9 @@
           </span>
             </div>
             <div class="action">
-              <span ng-class="{true:'like-hover',false:'like-collect'}[project.like]"><i class="if"
-                                                                                         ng-click="like(project)"></i>{{project.likeCount}}</span>
+              <span ng-class="{true:'like-hover',false:'like-collect'}[project.like]">
+                <i class="if" ng-click="like(project)"></i>{{project.likeCount}}
+              </span>
               <span><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
             </div>
           </div>
