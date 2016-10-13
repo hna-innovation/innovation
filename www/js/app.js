@@ -178,10 +178,7 @@ angular.module('starter')
       .state('user-edit-info', {
         url: '/user-edit-info',
         cache: false,
-        params: {
-            text: null,
-            length: null
-        },
+        params: {text: '', length: 0},
         templateUrl: 'templates/user-edit-info.html',
         controller: 'UserEditCtrl'
 

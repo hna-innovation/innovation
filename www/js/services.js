@@ -90,7 +90,10 @@ angular.module('starter.services')
 
     clickLikeCancle: function (projectId) {
       return $http.post(getUrl('/api/user/likeProject?projectId='+projectId+'&add=false'));
-    }
+    },
 
+    getUserInfo: function(userId) {
+      return 	$http.get(getUrl("/api/user?userId=" + userId));
+    }
   };
 }]);

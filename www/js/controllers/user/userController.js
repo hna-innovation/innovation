@@ -24,7 +24,7 @@ angular.module('starter.controllers')
 
 			//获取用户信息
 			$scope.getUserInfo = function(){
-				$http.get(Services.getUrl("/api/user?userId=" + localStorage.userId)).success(function(result){
+				Services.getUserInfo(localStorage.userId).success(function(result){
 						$scope.userInfo=result.data;
 				});
 			}
