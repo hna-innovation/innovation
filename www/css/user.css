@@ -342,6 +342,9 @@
 	text-align: center;
 	line-height: 25px;
 }
+.user-edit-container {
+  background-color: #fcfcfc;
+}
 .user-edit-cancel {
   background: url(../img/close.png) no-repeat 0px center;
   background-size: 18px;
@@ -360,13 +363,34 @@
   float: right;
   margin-right: 10px;
 }
-.user-edit-text-area {
-  width: 100%;
-  height: 200px;
-  resize: none;
-  margin-bottom: 50px;
+.user-edit-text-part-title{
+  color: #333;
+  margin: 0 0 0 10px;
+  font-size: 18px;
 }
-.user-edit-text-area-max{
-  color: #ff6469;
-  font-size: 0.8em;
+.user-edit-text-part {
+  border-top: solid 1px #dcd9d9;
+  background-color: #fff;
+  border-bottom: solid 1px #dcd9d9;
+  margin: 10px 0 10px 0;
+}
+.user-edit-text-part input{
+  width: 100%;
+  height: 2.4em;
+  resize: none;
+  padding-left: 8px;
+  padding-top: 0;
+  font-size: 16px;
+}
+.user-edit-text-part textarea{
+  width: 100%;
+  height: 4.8em;
+  resize: none;
+  padding-left: 10px;
+  padding-top: 12px;
+  font-size: 16px;
+}
+.user-edit-text-part-max{
+  color: #999;
+  margin-left: 10px;
 }

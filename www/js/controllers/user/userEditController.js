@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
 
 	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, Services) {
-      $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, required: $stateParams.required};
+      $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, mulitline: $stateParams.mulitline, required: $stateParams.required};
 
       $scope.getUserInfo = function(){
 				Services.getUserInfo(localStorage.userId).success(function(result){

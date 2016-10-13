@@ -1,18 +1,26 @@
 
-<ion-view view-title="">
-	<ion-content>
+<ion-view view-title="编辑个人中心">
+	<ion-content class="user-edit-container">
 		<div class="user-list-title bg-pink">
 			<div class="user-edit-cancel" ng-click="cancel()"></div>
-			<span class="font-18">编辑{{::info.text}}</span>
+			<span class="font-18">编辑个人中心</span>
 			<div class="user-edit-save" ng-click="save()"></div>
 		</div>
-		<div class="pd-10">
-			<span class="user-edit-text-area-max">最大长度为{{::info.length}}个字哦~</span>
-			<textarea placeholder="请填写您的{{::info.text}}..." class="user-edit-text-area"
-					maxlength="{{::info.length}}"
-			 		ng-model="userInfo[info.target]"
-					ng-trim="true">
-			</textarea>
+		<div class="pd-tb">
+			<span class="user-edit-text-part-title">{{::info.text}}</span>
+			<div class="user-edit-text-part">
+				<input ng-show="!info.mulitline" placeholder="在此输入您的{{::info.text}}..."
+						maxlength="{{::info.length}}"
+				 		ng-model="userInfo[info.target]"
+						ng-trim="true">
+				</input>
+				<textarea ng-show="info.mulitline" placeholder="在此输入您的{{::info.text}}..."
+						maxlength="{{::info.length}}"
+				 		ng-model="userInfo[info.target]"
+						ng-trim="true">
+				</textarea>
+		  </div>
+			<span class="user-edit-text-part-max">最大长度为{{::info.length}}个字</span>
 		</div>
 	</ion-content>
 </ion-view>
