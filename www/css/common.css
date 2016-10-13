@@ -85,6 +85,9 @@ pre{
 .mg-b0{
 	margin-bottom: 0 !important;
 }
+.mg-b5{
+  margin-bottom: 5px;
+}
 .mg-t10{
 	margin-top: 10px !important;
 }
@@ -125,8 +128,8 @@ pre{
 .pd-l15{
 	padding-left: 15px;
 }
-.pd-l40{
-  padding-left: 40px;
+.pd-l60{
+  padding-left: 60px;
 }
 .pd-r15{
 	padding-right: 15px;
@@ -386,12 +389,14 @@ pre{
 	right: 10px;
 	padding: 0 5px;
 }
+
 .swiper-slide{
 	/*height: 145px !important;*/
 	overflow: hidden;
 }
 .swiper-slide > img {
 	width: 100%;
+    height: 145px;
 	vertical-align: middle;
 }
 

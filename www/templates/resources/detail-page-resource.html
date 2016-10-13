@@ -13,21 +13,28 @@
         <span class="tag tag-lan mg-b0 font-12">{{::detail.company}}</span>
       </div>
 
-      <div class="swiper-container bg-ff mg-t10" id="swiper2">
-        <ul class="tab-nav" id="swiper2-nav"></ul>
+      <div class="swiper-container bg-ff mg-t10" id="swiper-resource">
+        <ul class="tab-nav" id="swiper-resource-nav"></ul>
         <ul class="swiper-wrapper tab-list color-88">
           <li class="swiper-slide pd-lr pd-tb">
             <p>{{::detail.introduction}}</p>
           </li>
           <li class="swiper-slide pd-lr pd-tb">
-            <ul class="border-b1 pd-tb text1 text-word">
-              <li>
-                <!--<img src={{detail.mentor.headerIcon}} width="30" height="30" class="radius mg-r15 left"/>-->
-                <p class="left color-88 pd-l40">
-                  <span class="color-3d">{{::detail.mentor.name}}</span>
-                  <span>{{::detail.mentor.position}}</span>
-                </p>
-                <i class="if i-xiaoxi font-18 right color-88"></i>
+            <ul class="text-word">
+              <li class="border-b1 pd-tb" ng-repeat="mentor in detail.mentors">
+                <div>
+                  <a href="#">
+                    <img src={{mentor.headerIcon}} width="45" height="45" class="radius mg-r15 left"/>
+                  </a>
+                </div>
+                <div class="pd-l60">
+                  <p class="mg-b5">
+                    <i class="if i-xiaoxi font-18 right color-88"></i>
+                    <a href="#" class="color-3d font-14 text-ellipsis text-title">{{::mentor.name}}</a>
+                    <span class="font-12" style="display: block; line-height: 12px;">{{::mentor.position}}</span>
+                  </p>
+                  <p class="text-ellipsis color-3d font-12 mg-b0">{{mentor.description}}</p>
+                </div>
               </li>
             </ul>
           </li>
