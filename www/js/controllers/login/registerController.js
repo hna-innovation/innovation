@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('RegisterCtrl', function ($scope, HnaAlert, $window, LoginService) {
+  .controller('RegisterCtrl', function ($scope, $rootScope, HnaAlert, $window, LoginService) {
     'use strict';
     $scope.register = function (data) {
       if(!data)
@@ -19,6 +19,7 @@ angular.module('starter.controllers')
           $scope.existedEmail = true;
         } else {
           HnaAlert.defaultSuccess('注册成功！');
+          $rootScope.goToLogin();
         }
       });
     }
