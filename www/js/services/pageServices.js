@@ -6,7 +6,6 @@ angular.module('starter.services')
     var description = '';
     return {
       title: function () {
-        console.log(title);
         return title;
       },
       setTitle: function (newTitle) {
