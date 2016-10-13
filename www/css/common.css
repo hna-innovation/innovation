@@ -384,7 +384,7 @@ pre{
 	padding: 0 5px;
 }
 .swiper-slide{
-	height: 145px !important;
+	/*height: 145px !important;*/
 	overflow: hidden;
 }
 .swiper-slide > img {
@@ -654,4 +654,8 @@ label.has-error {
   color: #DD6162;
   font-size: 12px;
   padding-left: 18px;
+}
+
+.ql-editor {
+  height: 300px;
 }

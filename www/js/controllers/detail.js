@@ -13,13 +13,15 @@ angular.module('starter.controllers')
 		});
 	}
 
+	$scope.isCurrentUser=false;
+
 	$scope.getUserInfo();
 
 	//项目详情
 	$scope.getProjectDetail = function() {
 		$http.get(Services.getUrl("/api/project/info/" + _projectId + "")).success(function(result) {
 			$scope.detail = result.data;
-
+      $scope.isCurrentUser = $scope.detail.user.id === _userId ? true : false;
 			//share
 			/* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
 			$scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
@@ -71,7 +73,16 @@ angular.module('starter.controllers')
 				obj.eq(index).addClass("active");
 			}
 		})
-	}, 1000)
+	}, 1000);
+
+  // rich editor
+  var quill = new Quill('#detail-introduction-container', {
+    modules: {
+      toolbar: []
+    },
+    theme: 'snow' // or 'bubble'
+  });
+  quill.setContents(JSON.parse(localStorage.getItem('contents-'+_projectId)));
 
 	var myPopup;
 	$scope.like = function(item) {

@@ -100,6 +100,12 @@ angular.module('starter')
 
       })
 
+      .state('detail-edit-introduction', {
+        url: '/detail-edit-introduction/:projectId',
+        templateUrl: 'templates/detail-edit-introduction.html',
+        controller: 'DetailEditIntroductionCtrl'
+      })
+
       .state('search', {
         url: '/search',
         cache: false,

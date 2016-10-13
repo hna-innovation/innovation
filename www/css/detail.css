@@ -1,0 +1,39 @@
+.edit-introduction {
+  text-align: center;
+  background-color: #f6f6f6;
+  color: #adadad;
+  height: 35px;
+  border: 1px dashed #adadad;
+  line-height: 35px;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.edit-introduction span {
+  display: inline-block;
+}
+
+.edit-introduction span:before {
+  content: "";
+  background: url(../img/user/edit.png) no-repeat;
+  display: block;
+  float: left;
+  width: 12px;
+  height: 24px;
+  background-size: contain;
+  background-position: 0px 12px;
+  margin-right: 5px;
+}
+
+.introduction .ql-toolbar.ql-snow {
+  display: none;
+}
+
+#detail-introduction-container {
+  border: none;
+}
+
+.introduction .ql-editor {
+  height: auto;
+  padding: 0;
+}
