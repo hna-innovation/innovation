@@ -28,6 +28,13 @@ angular.module('starter.services')
         .error(error)
     },
 
+    //logout
+    logout: function (success, error) {
+      return $http.get(getUrl('/api/logout'))
+        .success(success)
+        .error(error)
+    },
+
     //register
     register: function (data, success, error) {
       return $http.post(getUrl('/api/reg'), data)

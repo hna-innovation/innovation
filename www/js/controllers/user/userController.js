@@ -1,25 +1,10 @@
 angular.module('starter.controllers')
 
-	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services) {
+	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $state, $window) {
 
 			var resourcesType = $location.search()['type'];
 
 			$scope.getResources = function(){
-			}
-
-			if(resourcesType!=undefined){
-				if(resourcesType==1){
-					$scope.title = "支持的创意"
-				}
-				if(resourcesType==2){
-					$scope.title = "支持的资源"
-				}
-				if(resourcesType==3){
-					$scope.title = "收藏的创意"
-				}
-				if(resourcesType==4){
-					$scope.title = "收藏的资源"
-				}
 			}
 
 			//获取用户信息
@@ -38,4 +23,10 @@ angular.module('starter.controllers')
 			}
 
 			$scope.getUserInfo();
+
+			$scope.logout = function() {
+				Services.logout(function(){
+					$state.go('innovation');
+				});
+			}
 	})
