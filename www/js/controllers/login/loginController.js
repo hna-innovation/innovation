@@ -1,7 +1,13 @@
 angular.module('starter.controllers')
-  .controller('LoginCtrl', function ($scope, LoginService, HnaAlert, $window) {
+  .controller('LoginCtrl', function ($scope, ModalServices, LoginService, HnaAlert, $window) {
     'use strict';
+    $scope.goToRegister = function () {
+      ModalServices.goToRegister();
+    };
 
+    $scope.closePopup = function () {
+      ModalServices.closePopup();
+    };
     $scope.login = function (data) {
       if(!data)
         return;

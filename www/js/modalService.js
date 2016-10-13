@@ -1,33 +1,27 @@
 angular.module('starter.services')
-  .factory('ModalServices', ModalServices);
+  .factory('ModalServices', function ($rootScope, $ionicPopup) {
 
-function ModalServices($rootScope, $ionicPopup) {
-  // show modal
-  var showPopup = function () {
-    loginPopup = $ionicPopup.show({
-      templateUrl: '../templates/loginForm/login.html',
-      scope: $rootScope
-    });
-  };
+    var showPopup = function () {
+      loginPopup = $ionicPopup.show({
+        templateUrl: '../templates/loginForm/login.html'
+      });
+    };
 
-  $rootScope.closePopup = function () {
-    loginPopup.close();
-    registerPopup.close();
-  };
-
-  $rootScope.goToLogin = function () {
-    showPopup();
-    registerPopup.close();
-  };
-
-  $rootScope.goToRegister = function () {
-    registerPopup = $ionicPopup.show({
-      templateUrl: '../templates/loginForm/register.html',
-      scope: $rootScope
-    });
-    loginPopup.close()
-  };
-  return {
-    showPopup: showPopup
-  };
-}
+    return {
+      showPopup: showPopup,
+      closePopup: function () {
+        loginPopup.close();
+        registerPopup.close();
+      },
+      goToLogin: function () {
+        showPopup();
+        registerPopup.close();
+      },
+      goToRegister: function () {
+        registerPopup = $ionicPopup.show({
+          templateUrl: '../templates/loginForm/register.html'
+        });
+        loginPopup.close()
+      }
+    };
+  });

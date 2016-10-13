@@ -1,6 +1,13 @@
 angular.module('starter.controllers')
-  .controller('RegisterCtrl', function ($scope, $rootScope, HnaAlert, $window, LoginService) {
+  .controller('RegisterCtrl', function ($scope, ModalServices, HnaAlert, $window, LoginService) {
     'use strict';
+    $scope.goToLogin = function () {
+      ModalServices.goToLogin();
+    };
+
+    $scope.closePopup = function () {
+      ModalServices.closePopup();
+    };
     $scope.register = function (data) {
       if(!data)
         return
@@ -19,7 +26,7 @@ angular.module('starter.controllers')
           $scope.existedEmail = true;
         } else {
           HnaAlert.defaultSuccess('注册成功！');
-          $rootScope.goToLogin();
+          ModalServices.goToLogin();
         }
       });
     }
