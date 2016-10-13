@@ -206,7 +206,10 @@ angular.module('starter')
         url: '/step-1',
         cache: false,
         templateUrl: 'templates/step-1.html',
-        controller: 'StepFirstCtrl'
+        controller: 'StepFirstCtrl',
+        data: {
+          requireAuth: true
+        }
       })
 
       .state('step-2', {

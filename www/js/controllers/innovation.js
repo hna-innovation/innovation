@@ -64,13 +64,13 @@ angular.module('starter.controllers')
           }
         }
 
-        $scope.dianzi = function () {
-          if (localStorage.userId) {
-            window.location.href = "/#/step-1"
-          } else {
-            $scope.showPopup();
-          }
-        };
+        // $scope.dianzi = function () {
+        //   if (localStorage.userId) {
+        //     window.location.href = "/#/step-1"
+        //   } else {
+        //     $scope.showPopup();
+        //   }
+        // };
 
         // personal like slide
         $scope.slideStatus = false;
