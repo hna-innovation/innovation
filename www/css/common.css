@@ -427,6 +427,7 @@ pre{
 }
 
 .popup-body input {
+  font-size: 12px;
   padding-left: 10%;
   width: 85%;
   margin: 15px auto;
@@ -455,13 +456,13 @@ pre{
 }
 
 .popup-body .btn-action {
-  font-size: 16px;
   text-align: center;
   width: 85%;
   margin: 30px auto 10px;
 }
 
 .popup-body .btn-action span {
+  font-size: 14px;
   padding: 20px;
   display: inline-block;
 }
