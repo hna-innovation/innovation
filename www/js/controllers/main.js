@@ -1,6 +1,6 @@
 angular.module('starter')
   .controller('MainCtrl', MainCtrl);
 
-function MainCtrl($scope, Page) {
-  $scope.Page = Page;
+function MainCtrl($scope, PageService) {
+  $scope.Page = PageService;
 }

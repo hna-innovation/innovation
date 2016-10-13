@@ -9,8 +9,10 @@ angular.module('starter.controllers')
       'ProjectsService',
       'UtilityService',
       function ($scope, $ionicScrollDelegate, Services, ModalServices, PageService, $state, ProjectsService, UtilityService) {
+
         // set title
         PageService.setTitle('创新平台');
+        // PageService.setDescription('创新平台');
 
         function isLogin() {
           return localStorage.userId ? true : false;
