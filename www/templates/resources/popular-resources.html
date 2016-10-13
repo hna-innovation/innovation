@@ -7,7 +7,7 @@
 
 		<div class="pd-10">
 			<ul class="list-img list-img-medium">
-				<li ng-repeat="resource in resources" >
+				<li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
 					<div>
 						<a ui-sref="detail-page-resource">
 							<img src="../img/user/list-1.jpg" width="130" height="90"/>
@@ -17,21 +17,19 @@
 						<a class="color-3d font-14 text-ellipsis" ui-sref="detail-page-resource">
 							{{ resource.title }}
 						</a>
-						<div class="font-12">
-							<a class="tag tag-lan mg-b0">科技</a>
-							<a class="tag tag-lan mg-b0">科技</a>
+						<div class="font-12 mg-t5">
 							<a class="tag tag-lan mg-b0">科技</a>
 							<a class="tag tag-lan mg-b0">科技</a>
 						</div>
 						<p class="color-88 text-bottom">
 							<span>
-        						<img src="../img/home/home-love2.png" width="15" />{{ resource.likeCount }}
+        						<img src="../img/home/home-love2.png" width="15" /> {{ resource.likeCount }}
         					</span>
                             <span class="pd-l10">
-        						<img src="../img/star1.png"  width="15"/>{{ resource.starCount }}
+        						<img src="../img/star1.png"  width="15"/> {{ resource.starCount }}
         					</span>
                             <span class="pd-l10">
-        						<img src="../img/home/home-comment.png"  width="15"/>{{ resource.commentCount }}
+        						<img src="../img/home/home-comment.png"  width="15"/> {{ resource.commentCount }}
         					</span>
 						</p>
 					</div>

@@ -144,10 +144,6 @@
   right: 0;
 }
 
-.card .info .action span.like-collect {
-  color: #000;
-}
-
 .card .info .action span.like-collect i:before{
   content: "\e665";
   font-size: 18px;
