@@ -10,7 +10,7 @@
 		        </div>
 		
 		        <div id="user-bar-right">
-		        		<a ng-href="#user-edit">
+						<a ng-href="#user-edit" class="user-edit-link" >
 			            <img src="../img/user/edit.png" alt="编辑" width="12">
 			            <span class="color-white">编辑个人中心</span>		        			
 		        		</a>
@@ -52,7 +52,29 @@
 		        		</a>
 		        </li>
 		        <li class="col-25 text-center">
-		        		<a href="#user-like">
+						<a href="#popular-resources">
+			        		<p>
+								<i class="if i-pinglun1 font-20" style="color: #67af18;"></i>
+			        		</p>
+							<p class="color-3d">我的资源</p>
+			        		<p>
+								<strong class="color-3d">26</strong>
+			        		</p>
+			        	</a>	
+		        </li>
+		        <li class="col-25 text-center">
+		        		<a href="#user-favorite">
+			        		<p>
+			        			<i class="if i-star1 font-20" style="color: #3ba5e4;"></i>
+			        		</p>
+							<p class="color-3d">我的收藏</p>
+			        		<p>
+								<strong class="color-3d">26</strong>
+			        		</p>
+			        	</a>	
+		        </li>
+		        <li class="col-25 text-center">
+						<a href="#user-like">
 			        		<p>
 			        			<i class="if i-aixinhover font-18" style="color: #e06968;"></i>
 			        		</p>
@@ -62,39 +84,17 @@
 			        		</p>
 			        	</a>	
 		        </li>
-		        <li class="col-25 text-center">
-		        		<a href="#user-favorite">
-			        		<p>
-			        			<i class="if i-star1 font-20" style="color: #3ba5e4;"></i>
-			        		</p>
-			        		<p class="color-3d">我的收藏</p>
-			        		<p>
-			        			<strong class="color-3d">26</strong>
-			        		</p>
-			        	</a>	
-		        </li>
-		        <li class="col-25 text-center">
-		        		<a href="#user-comment2">
-			        		<p>
-			        			<i class="if i-pinglun1 font-20" style="color: #67af18;"></i>
-			        		</p>
-			        		<p class="color-3d">评论我的</p>
-			        		<p>
-			        			<strong class="color-3d">26</strong>
-			        		</p>
-			        	</a>	
-		        </li>
 		    </ul>
 		    
 		    <div class="business-row mg-b10 bg-ff pd-l15">
-		    		<a href="#user-draft">
+		    		<a href="#user-creative">
 					<i class="if i-caogaoxiang font-24 color-3d"></i>
-					<strong class="color-3d">草稿箱</strong>
+					<strong class="color-3d">参与的创意</strong>
 					<small class="color-red font-24 small-radio">&bull;</small>
-					<span class="color-88 pd-l10">你有一个七天前的草稿</span>		    			
+					<span class="color-88 pd-l10">查看你参与的创意项目</span>		    			
 		    		</a> 		
 		    </div>
-		
+
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 			    	<a href="#user-comment">
 					<i class="if i-xiaoxi font-24 color-3d"></i>
@@ -104,44 +104,15 @@
 				</a>	
 		    </div>
 		    
-		    <ul class="type-row bg-ff">
-			    <li>
-			    		<a ng-href="#user-resources?type=1">
-						<p>
-							<span class="color-3d">支持的创意</span>
-							<small class="color-red font-24 small-radio">&bull;</small>
-						</p>
-						<p><small class="color-6d">对支持的创意的描述</small></p>
-					</a>
-			    </li>
-			    <li>
-					<a ng-href="#user-resources?type=2">
-						<p>												
-							<span class="color-3d">支持的资源</span>
-							<small class="color-red font-24 small-radio">&bull;</small>							
-						</p>
-						<p><small class="color-6d">对支持的创意的描述</small></p>
-					</a>	
-			    </li>
-			    <li>
-			    		<a ng-href="#user-resources?type=3">
-						<p>				
-							<span class="color-3d">收藏的创意</span>
-							<small class="color-red font-24 small-radio">&bull;</small>
-						</p>
-						<p><small class="color-6d">对支持的创意的描述</small></p>
-					</a>
-			    </li>
-			    <li>	
-			    		<a ng-href="#user-resources?type=4">
-						<p>			
-							<span class="color-3d">收藏的资源</span>
-							<small class="color-red font-24 small-radio">&bull;</small>
-						</p>
-						<p><small class="color-6d">对支持的创意的描述</small></p>
-					</a>
-			    </li>
-		    </ul>
+		    <div class="business-row mg-b10 bg-ff pd-l15">
+		    		<a href="#user-draft">
+					<i class="if i-caogaoxiang font-24 color-3d"></i>
+					<strong class="color-3d">草稿箱</strong>
+					<small class="color-red font-24 small-radio">&bull;</small>
+					<span class="color-88 pd-l10">你有一个七天前的草稿</span>		    			
+		    		</a> 		
+		    </div>
+		    
 		</main>
 
 	</ion-content>
