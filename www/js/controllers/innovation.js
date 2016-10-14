@@ -8,7 +8,8 @@ angular.module('starter.controllers')
       '$state',
       'ProjectsService',
       'UtilityService',
-      function ($scope, $ionicScrollDelegate, Services, ModalServices, PageService, $state, ProjectsService, UtilityService) {
+      'Content',
+      function ($scope, $ionicScrollDelegate, Services, ModalServices, PageService, $state, ProjectsService, UtilityService, Content) {
 
         // set title
         PageService.setTitle('创新平台');
@@ -43,10 +44,12 @@ angular.module('starter.controllers')
               $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
               $scope.$broadcast('scroll.infiniteScrollComplete');
             } else {
+              $scope.attentionMsg = Content.EMPTY_CONTENT;
               $scope.hasMoreData = false;
             }
 
           }, function (error) {
+            $scope.attentionMsg = Content.TIME_OUT;
             $scope.hasMoreData = false;
             console.log(error);
           });

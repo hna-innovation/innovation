@@ -115,6 +115,15 @@
   transform: translate(0,0);
 }
 
+.innovation .empty {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.innovation .empty div {
+  padding: 20px 0;
+}
+
 .innovation .list:last-child.card {
   padding-bottom: 40px;
 }
