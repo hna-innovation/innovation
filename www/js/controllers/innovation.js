@@ -47,6 +47,7 @@ angular.module('starter.controllers')
             }
 
           }, function (error) {
+            $scope.hasMoreData = false;
             console.log(error);
           });
         }
