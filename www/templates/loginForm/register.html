@@ -32,7 +32,7 @@
          required-message="'请再次输入您的密码'" required >
 </div>
 <div class="btn-action">
-  <button class="active register" type="submit">注册</button>
+  <button ng-class="{active: !registerForm.$dirty||registerForm.$valid}" type="submit" ng-disabled="!registerForm.$pristine&&registerForm.$invalid">注册</button>
   <span>已有账号, 去<a ng-click="goToLogin()">登录</a></span>
 </div>
 

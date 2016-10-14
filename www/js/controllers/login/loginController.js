@@ -9,6 +9,7 @@ angular.module('starter.controllers')
       ModalServices.closePopup();
     };
     $scope.login = function (data) {
+      $scope.loginLoading = false;
       if(!data)
         return;
 
@@ -20,8 +21,11 @@ angular.module('starter.controllers')
         return;
       }
       LoginService.login(loginData, function (res) {
+        $scope.loginLoading = true;
+
         if (res.error) {
           HnaAlert.defaultError('登录信息不正确！');
+          $scope.loginLoading = false;
         } else {
           localStorage.userId = res.data.id;
           HnaAlert.defaultSuccess('登录成功！');

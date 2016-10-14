@@ -23,9 +23,8 @@
 </div>
 
 <div class="btn-action">
-  <button class="active" type="submit">登录</button>
+  <button ng-class="{active: !loginForm.$dirty||(loginForm.$valid&&!loginLoading)}"  ng-disabled="loginForm.$pristine||!(!loginForm.$dirty||(loginForm.$valid&&!loginLoading))"  ng-init="" type="submit">登录</button>
   <span>还没有账号, 去<a ng-click="goToRegister()">注册</a></span>
 </div>
-
   <div class="close" ng-click="closePopup()">X</div>
 </form>
