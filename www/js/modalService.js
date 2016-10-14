@@ -1,6 +1,7 @@
 angular.module('starter.services')
-  .factory('ModalServices', function ($rootScope, $ionicPopup) {
+  .factory('ModalServices', ['$rootScope', '$ionicPopup', function ($rootScope, $ionicPopup) {
 
+    var loginPopup,registerPopup;
     var showPopup = function () {
       loginPopup = $ionicPopup.show({
         templateUrl: '../templates/loginForm/login.html'
@@ -10,8 +11,8 @@ angular.module('starter.services')
     return {
       showPopup: showPopup,
       closePopup: function () {
-        loginPopup.close();
-        registerPopup.close();
+        if (loginPopup) loginPopup.close();
+        if (registerPopup) registerPopup.close();
       },
       goToLogin: function () {
         showPopup();
@@ -24,4 +25,4 @@ angular.module('starter.services')
         loginPopup.close()
       }
     };
-  });
+  }]);
