@@ -3,7 +3,11 @@
  */
 
 .stastitics-show {
-	padding: 18px 10px 8px;
+	padding: 18px 10px;
+}
+
+.stastitics-show .stastitics_item:not(:last-child) {
+    border-right: 1px solid #e8e8e8;
 }
 
 .stastitics-show .stastitics_item span {
