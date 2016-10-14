@@ -2,10 +2,13 @@
  * Statistics Element
  */
 
+.stastitics-show {
+	padding: 18px 10px 8px;
+}
+
 .stastitics-show .stastitics_item span {
-    padding-top: 6px 0;
-    padding-left: 28px;
-    overflow: visible;
+    padding-left: 24px;
+    display: inline-block;
 }
 
 .stastitics-show .stastitics_innovation span {
