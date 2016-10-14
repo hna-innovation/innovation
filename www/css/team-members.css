@@ -1,0 +1,48 @@
+/*
+ * Team Members
+ */
+
+.team-members {
+	padding: 18px 15px;
+}
+
+.team-members h3 {
+	font-size: 16px;
+}
+
+.team-members ul {
+	padding-top: 5px;
+}
+
+.team-members ul li {
+	display: inline-block;
+	width: 30px;
+	margin-right: 18px;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.team-members ul li:last-child {
+	width: 60px;
+	text-align: center;
+}
+
+.team-members .team-members_avator {
+	width: 100%;
+}
+
+.team-members .team-members_name {
+	margin-top: 7px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.team-members .team-members_add {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	background-color: #f5f5f5;
+	text-align: center;
+	line-height: 24px;
+}

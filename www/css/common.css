@@ -173,6 +173,9 @@ img{
 .border-b1{
 	border-bottom: #e5e5e5 dashed 1px;
 }
+.border-b1-red{
+	border-bottom: #e06968 dashed 1px;
+}
 .border-t1{
   border-top: #e5e5e5 dashed 1px;
 }
