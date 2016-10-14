@@ -3,13 +3,12 @@ angular.module('starter.controllers')
       '$scope',
       '$ionicScrollDelegate',
       'Services',
-      'ModalServices',
       'PageService',
       '$state',
       'ProjectsService',
       'UtilityService',
       'Content',
-      function ($scope, $ionicScrollDelegate, Services, ModalServices, PageService, $state, ProjectsService, UtilityService, Content) {
+      function ($scope, $ionicScrollDelegate, Services, PageService, $state, ProjectsService, UtilityService, Content) {
 
         // set title
         PageService.setTitle('创新平台');
@@ -17,10 +16,6 @@ angular.module('starter.controllers')
 
         function isLogin() {
           return localStorage.userId ? true : false;
-        }
-
-        function getUserId() {
-          return localStorage.userId;
         }
 
         // init banner carousel
@@ -59,14 +54,6 @@ angular.module('starter.controllers')
           getProductsByOffset(offset);
           offset++;
         };
-
-        $scope.showPopup = function () {
-          if (isLogin()) {
-            $state.go('user', {userid: getUserId()});
-          } else {
-            ModalServices.showPopup();
-          }
-        }
 
         // personal like slide
         $scope.slideStatus = false;
