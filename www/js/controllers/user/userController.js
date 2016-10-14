@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $state, $window, AuthEvent) {
+	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent) {
 
 			var resourcesType = $location.search()['type'];
 
