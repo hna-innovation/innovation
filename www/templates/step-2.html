@@ -13,7 +13,7 @@
             </ul>
             <div>
                 <ul class="step-container clearfix">
-                    <li class="step-item left" ng-repeat="item in ItemContent">
+                    <li class="step-item left" ng-repeat="item in images">
                         <img ng-src="{{item.url}}" ng-click="del(item.id)">
                         <img class="item-del" src="../img/step/step-close.png" alt="删除" ng-click="del(item.id)" width="12" height="12">
                     </li>

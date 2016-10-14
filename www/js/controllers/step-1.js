@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepFirstCtrl', StepFirstCtrl)
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state) {
     // set title
     // Page.setTitle('记录新创意');
     // 初始化表单数据
@@ -96,19 +96,17 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         var num = $scope.itemCount || '';
         num++;
         Services.dianziCreate({
-            "name": "我的创意" + num,
             "description": $scope.formdata.description,
-            "creator": localStorage.userId,
             "images": [$scope.imagesChild]
         }, function (result) {
             if (result.code == 0) {
                 localStorage.draftId = result.data.id;
-                window.location.href = '/#/step-3';
+                $state.go('step-3');
             } else {
-                console.log(result);
+                // console.log(result);
             }
         }, function (error) {
-            console.log(error);
+            // console.log(error);
         });
     };
 };

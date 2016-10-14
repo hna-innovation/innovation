@@ -20,17 +20,17 @@ angular.module('starter.controllers')
 
     //项目详情
     $scope.getProjectDetail = function () {
-      $http.get(Services.getUrl("/api/project/info/" + _projectId + "")).success(function (result) {
+      $http.get(Services.getUrl("/api/projects/" + _projectId + "")).success(function (result) {
         $scope.detail = result.data;
 
         // set title
         PageService.setTitle($scope.detail.name);
         // PageService.setSeo($scope.detail.name, $scope.detail.description);
 
-        $scope.isCurrentUser = $scope.detail.user.id === _userId ? true : false;
+        $scope.isCurrentUser = $scope.detail.creator.id === _userId ? true : false;
         //share
         /* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
-        $scope.imageUrls = encodeURIComponent(result.data.imageUrls[0]);
+        $scope.imageUrls = result.data.images;
         $scope.shareUrl = encodeURIComponent($location.absUrl());
       });
     }

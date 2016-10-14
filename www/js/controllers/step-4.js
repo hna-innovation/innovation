@@ -26,7 +26,7 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
         if (result.code == 0) {
             $scope.loading = false;
             $scope.ItemContent = result.data;
-            $scope.formdata.description = result.data.projectDraft.description
+            $scope.formdata.description = result.data.description
         } else {
             console.log(result);
         }
@@ -97,15 +97,21 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
             HnaAlert.default('标签不能为空！');
             return;
         }
+
+        var images = $scope.ItemContent.images.map(function(img){
+            return img.id;
+        });
+
         Services.dianziRelease({
-            "draftId": $scope.draftId,
             "name": $scope.formdata.title,
+            "draftId": $scope.draftId,
+            "images": images,
             "description": $scope.formdata.description,
             "tags": $scope.tags,
-            "introduction": "",
-            "marketAnalysis": "",
-            "businessModel": "",
-            "resourceRequired": ""
+            // "introduction": "",
+            // "marketAnalysis": "",
+            // "businessModel": "",
+            // "resourceRequired": ""
         }, function (result) {
             if (result.code == 0) {
                 HnaAlert.default('创意发布成功！');

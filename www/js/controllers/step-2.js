@@ -10,20 +10,19 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     $scope.getDetail = function () {
         Services.dianziDetail(localStorage.draftId, function (result) {
             if (result.code == 0) {
-                $scope.ItemContent = result.data.photos;
-                $scope.images = result.data.projectDraft.images;
-                $scope.formdata.description = result.data.projectDraft.description;
-                $scope.formdata.name = result.data.projectDraft.name;
+                // $scope.ItemContent = result.data.photos;
+                $scope.images = result.data.images;
+                $scope.formdata.description = result.data.description;
                 if ($scope.images.length < 8) {
                     $scope.addShow = true;
                 } else {
                     $scope.addShow = false;
                 }
             } else {
-                console.log(result);
+                // console.log(result);
             }
         }, function (error) {
-            console.log(error);
+            // console.log(error);
         });
     };
     $scope.getDetail();
@@ -32,26 +31,24 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     $scope.ItemUpdate = function (status, msg, msg2) {
         Services.dianziEdit(localStorage.draftId,
             {
-                "name": $scope.formdata.name,
                 "description": $scope.formdata.description,
-                "creator": localStorage.userId,
                 "images": $scope.images
             },
             function (result) {
                 if (result.code == 0) {
                     if (status) {
-                        window.location.href = '/#/step-3';
+                        $state.go('step-3');
                     } else {
                         HnaAlert.default(msg);
                     }
                     $scope.getDetail();
                 } else {
                     HnaAlert.default(msg2);
-                    console.log(result);
+                    // console.log(result);
                 }
             }, function (error) {
                 HnaAlert.default(msg2);
-                console.log(error);
+                // console.log(error);
             });
     }
     // 初始化表单数据
