@@ -1,8 +1,8 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $http, $location, $ionicPopup, Services, PageService) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService) {
 
-    $scope.pageName = $stateParams.pageName;
+    var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectid;
     var _userId = localStorage.userId;
 
@@ -123,6 +123,15 @@ angular.module('starter.controllers')
         }).success(function (result) {
           $scope.getProjectDetail();
         })
+      }
+    }
+
+    $scope.goBack = function(){
+      if(_pageName){
+        $state.go(_pageName)
+      }
+      else{
+        $ionicHistory.goBack();
       }
     }
   })

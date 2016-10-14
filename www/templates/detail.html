@@ -1,10 +1,7 @@
 <ion-view>
 	<ion-content class="bg-fb">
 		<div class="detail-special">
-			<!-- <i class="if i-remove1 go-back radius" ng-if="pageName==undefined" onclick="window.location.href=document.referrer"></i>
-			<a class="if i-remove1 go-back radius" ng-if="pageName!=undefined" href="#{{pageName}}"></a> -->
-
-			<i class="if i-remove1 go-back radius" hna-goback></i>
+			<i class="if i-remove1 go-back radius" ng-click="goBack()"></i>
 			<div class="swiper-container bg-ff" id="swiper1">
 				<ul class="swiper-wrapper">
 					<li class="swiper-slide" ng-repeat="img in detail.imageUrls">
@@ -71,5 +68,3 @@
 	<hna-footernav></hna-footernav>
 
 </ion-view>
-
-

@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepFourthCtrl', StepFourthCtrl)
 
-function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
+function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
     // set title
     // Page.setTitle('编辑完善创意');
     // 轮播图
@@ -108,16 +108,14 @@ function StepFourthCtrl($scope, $timeout, Services, HnaAlert, Page) {
             "resourceRequired": ""
         }, function (result) {
             if (result.code == 0) {
+                HnaAlert.default('创意发布成功！');
                 localStorage.removeItem('draftId');
-                console.log(result);
-                window.location.replace('/#/innovation');
-                window.location.href = '/#/detail?projectid=' + result.data.id + '&pageName=innovation';
                 $state.go('detail', {projectid: result.data.id, pageName: 'innovation'});
             } else {
-                console.log(result);
+                HnaAlert.default('创意发布失败，请稍后再试！');
             }
         }, function (error) {
-            console.log(error);
+            HnaAlert.default('创意发布失败，请稍后再试！');
         });
     };
 };
