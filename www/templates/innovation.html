@@ -78,17 +78,19 @@
             </div>
           </div>
         </div>
-        <div class="empty" ng-if="projects">
-          <img src="../img/empty.svg" >
-          <div ng-bind="attentionMsg"></div>
-        </div>
+
         <ion-infinite-scroll
+          ng-class="{'more-data': hasMoreData}"
           on-infinite="loadMore()"
           ng-if="hasMoreData"
           icon="ion-loading-a"
           distance="15%">
         </ion-infinite-scroll>
       </load-more>
+      <div class="empty" ng-if="projects.length === 0">
+        <img src="../img/empty.svg">
+        <div ng-bind="attentionMsg"></div>
+      </div>
 
     </div>
   </ion-content>

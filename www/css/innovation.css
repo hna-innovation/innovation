@@ -115,13 +115,17 @@
   transform: translate(0,0);
 }
 
-.innovation .empty {
+.innovation + .empty {
   padding-top: 20px;
   text-align: center;
 }
 
-.innovation .empty div {
+.innovation + .empty div {
   padding: 20px 0;
+}
+
+.innovation .more-data {
+  height: 0;
 }
 
 .innovation .list:last-child.card {
