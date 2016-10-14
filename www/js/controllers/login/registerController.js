@@ -14,7 +14,8 @@ angular.module('starter.controllers')
 
       var registerData = {
         email: data.email,
-        password: data.password
+        password: data.password,
+        nickName: data.username
       }
 
       if (!data.email || !data.password || data.passwordRepeat !== data.password) {

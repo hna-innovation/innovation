@@ -1,40 +1,48 @@
-  <div class="banner">
-    <img src="../../img/login/banner-login.jpg" alt="">
-  </div>
+<div class="banner">
+  <img src="../../img/login/banner-login.jpg" alt="">
+</div>
 <form name="registerForm" ng-controller="RegisterCtrl" ng-submit="register(credentials)" novalidate angular-validator>
-<div class="form-group">
-  <i class="icon ion-ios-email-outline placeholder-icon"></i>
-  <input type="email" name="email"
-         ng-model="credentials.email" placeholder="邮箱"
-         invalid-message = "'请输入正确的邮箱格式'"
-         required-message="'请输入您的邮箱'"
-         ng-maxlength="32"
-         ng-minlength="5"
-         ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
-         required>
+  <div class="form-group">
+    <i class="icon ion-ios-email-outline placeholder-icon"></i>
+    <input type="email" name="email"
+           ng-model="credentials.email" placeholder="邮箱"
+           invalid-message="'请输入正确的邮箱格式'"
+           required-message="'请输入您的邮箱'"
+           ng-maxlength="32"
+           ng-minlength="5"
+           ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
+           required>
     <span class="errorMessage dispear" ng-show="!registerForm.email.$error.required" ng-if="existedEmail">邮箱已存在</span>
-</div>
-<div class="form-group">
-  <i class="icon ion-ios-locked-outline placeholder-icon"></i>
-  <input type="password" name="password"
-         ng-model="credentials.password" placeholder="密码"
-         ng-minlength="8"
-         required-message="'请输入您的密码'"
-         invalid-message="'密码长度不低于8位字符'"
-         required>
-</div>
-<div class="form-group">
-  <i class="icon ion-ios-locked-outline placeholder-icon"></i>
-  <input type="password" name="passwordRepeat"
-         ng-model="credentials.passwordRepeat" placeholder="确认密码"
-         validator = "credentials.password === credentials.passwordRepeat"
-         invalid-message = "'密码不一致'"
-         required-message="'请再次输入您的密码'" required >
-</div>
-<div class="btn-action">
-  <button ng-class="{active: !registerForm.$dirty||registerForm.$valid}" type="submit" ng-disabled="!registerForm.$pristine&&registerForm.$invalid">注册</button>
-  <span>已有账号, 去<a ng-click="goToLogin()">登录</a></span>
-</div>
+  </div>
+  <div class="form-group">
+    <i class="icon ion-ios-body-outline placeholder-icon"></i>
+    <input type="text" name="username"
+           ng-model="credentials.username" placeholder="用户名"
+           >
+  </div>
+  <div class="form-group">
+    <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+    <input type="password" name="password"
+           ng-model="credentials.password" placeholder="密码"
+           ng-minlength="8"
+           required-message="'请输入您的密码'"
+           invalid-message="'密码长度不低于8位字符'"
+           required>
+  </div>
+  <div class="form-group">
+    <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+    <input type="password" name="passwordRepeat"
+           ng-model="credentials.passwordRepeat" placeholder="确认密码"
+           validator="credentials.password === credentials.passwordRepeat"
+           invalid-message="'密码不一致'"
+           required-message="'请再次输入您的密码'" required>
+  </div>
+  <div class="btn-action">
+    <button ng-class="{active: !registerForm.$dirty||registerForm.$valid}" type="submit"
+            ng-disabled="!registerForm.$pristine&&registerForm.$invalid">注册
+    </button>
+    <span>已有账号, 去<a ng-click="goToLogin()">登录</a></span>
+  </div>
 
   <div class="close" ng-click="closePopup()">X</div>
 </form>
