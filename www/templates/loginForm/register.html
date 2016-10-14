@@ -18,7 +18,8 @@
     <i class="icon ion-ios-body-outline placeholder-icon"></i>
     <input type="text" name="username"
            ng-model="credentials.username" placeholder="用户名"
-           >
+           required-message="'请输入您的用户名'"
+           required>
   </div>
   <div class="form-group">
     <i class="icon ion-ios-locked-outline placeholder-icon"></i>
@@ -38,9 +39,7 @@
            required-message="'请再次输入您的密码'" required>
   </div>
   <div class="btn-action">
-    <button ng-class="{active: !registerForm.$dirty||registerForm.$valid}" type="submit"
-            ng-disabled="!registerForm.$pristine&&registerForm.$invalid">注册
-    </button>
+    <button class="active" type="submit">注册</button>
     <span>已有账号, 去<a ng-click="goToLogin()">登录</a></span>
   </div>
 
