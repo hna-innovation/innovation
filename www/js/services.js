@@ -30,7 +30,7 @@ angular.module('starter.services')
 
     //logout
     logout: function (success, error) {
-      return $http.get(getUrl('/api/logout'))
+      return $http.get(getUrl('/api/user/logout'))
         .success(success)
         .error(error)
     },
