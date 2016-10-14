@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $state, $window) {
+	.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $state, $window, AuthEvent) {
 
 			var resourcesType = $location.search()['type'];
 
@@ -25,8 +25,6 @@ angular.module('starter.controllers')
 			$scope.getUserInfo();
 
 			$scope.logout = function() {
-				Services.logout(function(){
-					$state.go('innovation');
-				});
+				$scope.$emit(AuthEvent.LOGOUT);
 			}
 	})
