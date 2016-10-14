@@ -472,6 +472,7 @@ img{
 .popup-container .popup {
   width: 320px;
   margin: 0 30px;
+  position: relative;
 }
 
 .popup-body .btn-action {
