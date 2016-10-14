@@ -32,8 +32,6 @@ angular.module('starter')
         $rootScope.$broadcast(AuthEvent.NOT_AUTHENTICATED);
       }
     });
-
-
   })
 
   .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
@@ -41,10 +39,6 @@ angular.module('starter')
       'response': function (response) {
         if (response.data.code == 401) {
           var ModalServices = $injector.get('ModalServices');
-          // var rootScope = $injector.get('$rootScope');
-          // var state = $injector.get('$rootScope').$state.current.name;
-          // rootScope.stateBeforLogin = state;
-          // rootScope.$state.go("login");
           localStorage.removeItem('userId');
           ModalServices.showPopup();
           return $q.reject(response);
