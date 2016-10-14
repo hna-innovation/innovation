@@ -6,13 +6,17 @@
   background-color: #fff;
 }
 
+.bar-header img.user-header-icon {
+  width: 27px;
+}
+
 .bar-header div:nth-child(1).button {
   padding: 4px 5px;
   background-color: transparent;
 }
 
-.bar-header div.button img {
-  width: 17px;
+.bar-header .bar-user-header {
+  z-index: 1;
 }
 
 .bar .title {

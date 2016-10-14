@@ -27,8 +27,9 @@ angular.module('starter.controllers')
           HnaAlert.defaultError('登录信息不正确！');
           $scope.loginLoading = false;
         } else {
-          localStorage.userId = res.data.id;
           HnaAlert.defaultSuccess('登录成功！');
+          localStorage.userId = res.data.id;
+          localStorage.userHeaderIcon = res.data.headerIcon;
           $window.location.reload();
         }
       });
