@@ -276,6 +276,9 @@ img{
 .bg-pink{
     background-color: #e16a68!important;
 }
+.bg-light-red {
+    background-color: #faf5f5;
+}
 .bg-success{
 	background-color: green;
 }
