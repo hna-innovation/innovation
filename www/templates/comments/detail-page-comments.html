@@ -8,11 +8,11 @@
                 <div class="box-table bg-ff">
                     <li class="box-table-row">
                         <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
-                            <img ng-src="{{ comment.avator }}" alt="头像" width="35" height="35" class="user-img border-0">
+                            <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="35" height="35" class="user-img border-0">
                         </div>
                         <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
                             <div class="font-14 color-3d">
-                                {{ comment.name }}
+                                {{ comment.creator.nickName }}
                                 <span class="font-12 color-88 right">{{ comment.time }}</span>
                             </div>
                             <p class="font-16 color-88">

@@ -9,17 +9,24 @@ angular.module('starter.services')
     return {
       getUrl: getUrl,
 
-      add: function(comment, success, error) {
+      addProjectComment: function(comment, success, error) {
         
         if ( !comment || !comment.content ) {
             HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
             return;
         }
 
-        // TODO Integration
-        // return $http.get(getUrl(Api.SEARCH_API + '?name=' + keyword + '&page=0&size=8'))
-        //   .success(success)
-        //   .error(error);
+        return $http.post(getUrl(Api.POST_COMMENT_API), comment)
+          .success(success)
+          .error(error);
+      },
+
+      getProjectComments: function(productId, success, error) {
+        
+        return $http.get(getUrl('/api/projects') + '/' + productId + '/comments')
+          .success(success)
+          .error(error);
       }
+
     }
   });
