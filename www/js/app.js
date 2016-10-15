@@ -130,7 +130,7 @@ angular.module('starter')
         url: '/user-draft',
         cache: false,
         templateUrl: 'templates/user-draft.html',
-        controller: 'UserCtrl'
+        controller: 'UserDraftsCtrl'
 
       })
       .state('user-comment', {

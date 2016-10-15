@@ -1,29 +1,38 @@
 angular.module('starter.controllers')
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService) {
 
-.controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent) {
+    var resourcesType = $location.search()['type'];
 
-  var resourcesType = $location.search()['type'];
+    $scope.getResources = function() {};
 
-  $scope.getResources = function() {}
+    //获取用户信息
+    $scope.getUserInfo = function() {
+      Services.getUserInfo(localStorage.userId).success(function(result) {
+        $scope.userInfo = result.data;
+      });
+    }
 
-  //获取用户信息
-  $scope.getUserInfo = function() {
-    Services.getUserInfo(localStorage.userId).success(function(result) {
-      $scope.userInfo = result.data;
-    });
-  }
+    $scope.getUserExtensionInfo = function() {
+      UserService.getUserExtensionInfo(function(result) {
+        // console.log(result);
+      }, function() {
+        // TODO
+      });
+    }
 
-  $scope.goUser = function() {
-    $state.go('user', { userid: localStorage.userId });
-  }
+    $scope.goUser = function() {
+      $state.go('user', { userid: localStorage.userId });
+    }
 
-  $scope.goEditUserInfo = function(target) {
-    $state.go('user-edit-info', target);
-  }
+    $scope.goEditUserInfo = function(target) {
+      $state.go('user-edit-info', target);
+    }
 
-  $scope.getUserInfo();
+    $scope.getUserInfo();
+    $scope.getUserExtensionInfo();
 
-  $scope.logout = function() {
-    $scope.$emit(AuthEvent.LOGOUT);
-  }
-})
+    $scope.logout = function() {
+      $scope.$emit(AuthEvent.LOGOUT);
+    }
+
+  })
