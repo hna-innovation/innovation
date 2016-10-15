@@ -1,36 +1,22 @@
 
 <ion-view view-title="草稿箱">
 	<ion-content class="bg-fb">
-		<div class="user-list-title bg-pink bg-img-left" ng-click="goUser()">
+		<div class="user-list-title bg-pink bg-img-left" ui-sref="user">
 			<span class="font-18">草稿箱</span>
 		</div>
 		<div class="pd-10">
 			<ul class="user-list">
-				<li>
+				<li ng-repeat="draft in ::drafts" ng-click="goStep3(draft.id)" >
 					<div>
-						<a ng-href="#">
-							<img src="../img/user/list-1.jpg" width="110" height="75"/>
+						<a>
+							<img ng-src="{{ draft.images[0] }}" width="110" height="75"/>
 						</a>
 					</div>
 					<div>
-						<p class="color-3d font-16 text-ellipsis text-title">基于大数据和人工智能的需求基于大数据和人工智能的需求</p>
+						<p class="color-3d font-16 text-ellipsis text-title" ng-bind="draft.description" ></p>
 						<p class="color-88 text-bottom">
 							<small class="if i-time font-12"></small>
-							<small>2016-10-08 17:24:36</small>
-						</p>
-					</div>
-				</li>
-				<li>
-					<div>
-						<a ng-href="#">
-							<img src="../img/user/list-1.jpg" width="110" height="75"/>
-						</a>
-					</div>
-					<div>
-						<p class="color-3d font-16 text-ellipsis text-title">基于大数据和人工智能的需求基于大数据和人工智能的需求</p>
-						<p class="color-88 text-bottom">
-							<small class="if i-time font-12"></small>
-							<small>2016-10-08 17:24:36</small>
+							<small ng-bind="draft.updatedDate" ></small>
 						</p>
 					</div>
 				</li>

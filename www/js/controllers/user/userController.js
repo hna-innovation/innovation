@@ -14,7 +14,7 @@ angular.module('starter.controllers')
 
     $scope.getUserExtensionInfo = function() {
       UserService.getUserExtensionInfo(function(result) {
-        // console.log(result);
+        // TODO
       }, function() {
         // TODO
       });

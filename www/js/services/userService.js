@@ -15,5 +15,11 @@ function UserService($http, LOCAL_TEST_URL, Api) {
       .error(error);
   }
 
+  userService.getUserDrafts = function(success, error) {
+    return $http.get(getUrl(Api.USER_DRAFTS_API))
+      .success(success)
+      .error(error);
+  }
+
   return userService;
 }
