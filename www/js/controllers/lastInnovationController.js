@@ -16,12 +16,10 @@ angular.module('starter.controllers')
             $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
             $scope.$broadcast('scroll.infiniteScrollComplete');
           } else {
-            // $scope.attentionMsg = Content.EMPTY_CONTENT;
             $scope.hasMoreData = false;
           }
 
         }, function(error) {
-          // $scope.attentionMsg = Content.TIME_OUT;
           $scope.hasMoreData = false;
         });
 
