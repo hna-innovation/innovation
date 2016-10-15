@@ -7,27 +7,26 @@ angular.module('starter.controllers')
     var _userId = localStorage.userId;
 
     //获取用户信息
-    $scope.getUserInfo = function () {
-      $http.get(Services.getUrl("/api/user?userId=" + _userId)).success(function (result) {
-        $scope.userinfo = result.data;
-      });
-    }
+    // $scope.getUserInfo = function () {
+    //   $http.get(Services.getUrl("/api/user?userId=" + _userId)).success(function (result) {
+    //     $scope.userinfo = result.data;
+    //   });
+    // }
+    // $scope.getUserInfo();
 
     $scope.isCurrentUser = false;
-
-    $scope.getUserInfo();
-
 
     //项目详情
     $scope.getProjectDetail = function () {
       $http.get(Services.getUrl("/api/projects/" + _projectId + "")).success(function (result) {
         $scope.detail = result.data;
 
-        // set title
+        // Set title and SEO
         PageService.setTitle($scope.detail.name);
-        // PageService.setSeo($scope.detail.name, $scope.detail.description);
+        PageService.setSeo($scope.detail.name, $scope.detail.description);
 
         $scope.isCurrentUser = $scope.detail.creator.id === _userId ? true : false;
+        
         //share
         /* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
         $scope.imageUrls = result.data.images;
