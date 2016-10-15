@@ -8,8 +8,10 @@ angular.module('starter.services')
           .success(success)
           .error(error);
       },
-      getProductsByType: function(type, offset) {
+      getProductsByType: function(type, offset, success, error) {
         return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/ordered?sort='+ type + ',desc&page='+ offset +'&size='+Page.SIZE))
+          .success(success)
+          .error(error);
       }
     }
   }]);
