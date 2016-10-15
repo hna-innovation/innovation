@@ -16,7 +16,7 @@ angular.module('starter.services')
           return;
         }
 
-        return $http.post(getUrl(Api.POST_COMMENT_API), comment)
+        return $http.post(getUrl(Api.USER_COMMENTS_API), comment)
           .success(success)
           .error(error);
       },
@@ -26,6 +26,14 @@ angular.module('starter.services')
         return $http.get(getUrl('/api/projects') + '/' + productId + '/comments')
           .success(success)
           .error(error);
+      },
+
+      getUserComments: function(success, error) {
+
+        return $http.get(getUrl(Api.USER_COMMENTS_API))
+          .success(success)
+          .error(error);
+
       }
 
     }

@@ -3,24 +3,26 @@
         <div class="user-list-title bg-pink bg-img-left" ng-click="goUser()">
             <span class="font-18">我评论的</span>
         </div>
-        <div class="">
-            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in comments">
+        <div ng-show="comments.length === 0" class="color-pink pd-15" ng-bind="::NO_COMMENTS">
+        </div>
+        <div ng-show="comments.length > 0">
+            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in ::comments">
                 <ul class="box-table">
                     <li class="box-table-row" id="user-photo">
                         <div class="box-table-cell" style="width: 40px;">
-                            <img src="../img/user/user.jpg" alt="头像" width="40" height="40" class="user-img">
+                            <img src="../img/face/4.png" alt="头像" width="40" height="40" class="user-img">
                         </div>
                         <div class="box-table-cell pd-l10 pd-tb5">
                             <div id="user-name">
-                                <span class="color-3d font-16">{{ ::comment.userName }}</span>
+                                <span class="color-3d font-16" ng-bind="comment.userName" ></span>
                             </div>
-                            <div class="color-a9">{{ ::comment.time }}</div>
+                            <div class="color-a9" ng-bind="comment.time" ></div>
                         </div>
                     </li>
                 </ul>
                 <div class="comment bg-f9 mg-b15">
                     <div class="triangle-up"></div>
-                    <span class="color-6d" ng-bind="::comment.content"></span>
+                    <span class="color-6d" ng-bind="comment.content"></span>
                 </div>
                 <ul class="user-list">
                     <li class="border-0" ui-sref="detail({ projectid: '57d8e9718b41fa72217bf6c4'})">
@@ -30,8 +32,8 @@
                             </a>
                         </div>
                         <div class="bg-f9">
-                            <p class="color-3d font-16 text-ellipsis text-title">{{ ::comment.projectName }}</p>
-                            <p class="color-88 text-row2" ng-bind="::comment.description">
+                            <p class="color-3d font-16 text-ellipsis text-title" ng-bind="comment.projectName" ></p>
+                            <p class="color-88 text-row2" ng-bind="comment.description">
                             </p>
                         </div>
                     </li>
