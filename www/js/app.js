@@ -27,7 +27,7 @@ angular.module('starter')
       if( !next.data ) return;
       var isAuthRequired = next.data.requireAuth;
 
-      if ( isAuthRequired && !AuthService.isAuthenticated()) {
+      if ( isAuthRequired && !localStorage.userId) {
         event.preventDefault();
         $rootScope.$broadcast(AuthEvent.NOT_AUTHENTICATED);
       }

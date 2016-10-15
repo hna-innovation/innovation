@@ -1,19 +1,22 @@
 angular.module('starter.controllers')
-  .controller('AppCtrl', ['$scope', 'AuthEvent', 'AuthService', 'ModalServices', 'Services', '$state',
-    function($scope, AuthEvent, AuthService, ModalServices, Services, $state) {
-      'use strict';
+  .controller('AppCtrl', AppCtrl);
 
-      $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {
-        ModalServices.showPopup();
-      });
+function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state, HnaAlert) {
+  'use strict';
 
-      $scope.$on(AuthEvent.LOGOUT, function() {
-        localStorage.removeItem('userId');
+  $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {
+    HnaAlert.default('请您先登录');
+    ModalServices.showPopup();
+  });
 
-        Services.logout(function() {
-          $state.go('innovation');
-        });
-      });
+  $scope.$on(AuthEvent.LOGOUT, function() {
+    localStorage.removeItem('userId');
 
-    }
-  ]);
+    Services.logout(function() {
+      HnaAlert.success('您已退出登录');
+      $state.go('innovation');
+    }, function() {
+      // TODO
+    });
+  });
+}
