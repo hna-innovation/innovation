@@ -13,10 +13,10 @@
                         <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
                             <div class="font-14 color-3d">
                                 {{ comment.creator.nickName }}
-                                <span class="font-12 color-88 right">{{ comment.time }}</span>
+                                <span class="font-12 color-88 right">{{ comment.time || '10分钟前'}}</span>
                             </div>
                             <p class="font-16 color-88">
-                                {{ comment.content }}
+                                {{ comment.content || '这个项目很好，必须支持一下啊。'}}
                             </p>
                         </div>
                     </li>

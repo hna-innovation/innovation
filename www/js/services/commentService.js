@@ -10,10 +10,10 @@ angular.module('starter.services')
       getUrl: getUrl,
 
       addProjectComment: function(comment, success, error) {
-        
-        if ( !comment || !comment.content ) {
-            HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
-            return;
+
+        if (!comment || !comment.content) {
+          HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
+          return;
         }
 
         return $http.post(getUrl(Api.POST_COMMENT_API), comment)
@@ -22,7 +22,7 @@ angular.module('starter.services')
       },
 
       getProjectComments: function(productId, success, error) {
-        
+
         return $http.get(getUrl('/api/projects') + '/' + productId + '/comments')
           .success(success)
           .error(error);
