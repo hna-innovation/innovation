@@ -3,8 +3,8 @@ angular.module('starter.controllers')
     'use strict';
 
     $scope.getProjects = function(){
-      ProjectsService.getProductsByType('likeCount', 0).success(function(result){
-          $scope.projects=result.data;
+      ProjectsService.getProductsByType('createdDate', 0).success(function(result){
+          $scope.projects=result.data.content;
       });
     }
 
