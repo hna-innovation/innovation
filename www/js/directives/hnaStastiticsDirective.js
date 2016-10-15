@@ -24,14 +24,14 @@ angular.module('starter')
 
           if ($scope.resourcesCount > 36)
             $interval.cancel(stopCountResources);
-        }, 8);
+        }, 40);
 
         stopCountSuccesses = $interval(function() {
           $scope.successesCount++;
 
           if ($scope.successesCount > 25)
             $interval.cancel(stopCountSuccesses);
-        }, 8);
+        }, 40);
 
       }
     };
