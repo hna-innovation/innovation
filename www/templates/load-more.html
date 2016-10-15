@@ -1,8 +1,7 @@
-<div ng-transclude>
-  <!--<ion-infinite-scroll-->
-    <!--on-infinite="loadMore()"-->
-    <!--&lt;!&ndash;ng-if="hasMoreData()"&ndash;&gt;-->
-    <!--icon="ion-loading-c"-->
-    <!--distance="15%">-->
-  <!--</ion-infinite-scroll>-->
-</div>
+<ng-transclude></ng-transclude>
+<ion-infinite-scroll
+	on-infinite="loadMore()"
+	ng-if="hasMoreData()"
+	icon="ion-loading-c"
+	distance="15%">
+</ion-infinite-scroll>

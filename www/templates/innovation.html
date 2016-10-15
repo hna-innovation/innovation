@@ -61,7 +61,7 @@
 
           <div class="item item-image">
             <a ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
-              <img ng-src="{{project.images[0]}}">
+              <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
             </a>
           </div>
           <h2 class="color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
@@ -81,14 +81,7 @@
             </div>
           </div>
         </div>
-
-        <ion-infinite-scroll
-          ng-class="{'more-data': hasMoreData}"
-          on-infinite="loadMore()"
-          ng-if="hasMoreData"
-          icon="ion-loading-a"
-          distance="15%">
-        </ion-infinite-scroll>
+        
       </load-more>
       <div class="empty" ng-if="projects.length === 0">
         <img src="../img/empty.svg">
