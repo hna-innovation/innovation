@@ -46,9 +46,9 @@
         <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
 
           <div class="item item-avatar">
-            <img ng-src="{{project.user.headerIcon}}">
+            <img ng-src="{{project.creator.headerIcon}}">
             <h2>
-              <span class="color-3d" ng-bind="project.user.nickName || '马涛'"></span>
+              <span class="color-3d" ng-bind="project.creator.nickName || '马涛'"></span>
               <span>&middot;</span>
               <span class="font-12 color-88" ng-bind="project.user.department || '生态科技研究院'"></span>
             </h2>
@@ -61,7 +61,7 @@
 
           <div class="item item-image">
             <a ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
-              <img ng-src="{{project.image}}">
+              <img ng-src="{{project.images[0]}}">
             </a>
           </div>
           <h2 class="color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
