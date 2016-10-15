@@ -183,11 +183,11 @@ angular.module('starter')
         controller: 'UserEditCtrl'
 
       })
-      .state('user-creative', {
-        url: '/user-creative',
+      .state('user-innovations', {
+        url: '/user-innovations',
         cache: false,
-        templateUrl: 'templates/user-creative.html',
-        controller: 'UserCtrl'
+        templateUrl: 'templates/user-innovations.html',
+        controller: 'UserInnovationsCtrl'
 
       })
       .state('lookuser', {

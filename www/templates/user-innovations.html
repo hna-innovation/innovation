@@ -1,0 +1,29 @@
+
+<ion-view view-title="我的创意">
+	<ion-content class="bg-fb">
+		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" >
+			<span class="font-18">我的创意</span>
+		</div>
+
+		<ul class="creative-list pd-10">
+			<li ng-repeat="project in ::projects" 
+				ui-sref="detail({ projectid: project.id})" >
+				<div>
+					<div>
+						<a>
+							<img ng-src="{{ project.images[0] }}"/>
+						</a>
+					</div>
+					<div class="info">
+						<p class="border-b1 text-title2" ng-bind="project.name"></p>
+						<p class="color-88">
+							<small class="if i-time font-12"></small>
+							<small ng-bind="project.createdDate" ></small>
+						</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</ion-content>
+</ion-view>

@@ -5,5 +5,6 @@ angular.module('configuration')
         'USER_INFO_API': '/api/user/profile',
         'USER_EXTENSION_INFO': '/api/user/profile/extensionInfo',
         'USER_COMMENTS_API': '/api/user/comments',
+        'USER_PROJECTS_API': '/api/user/projects',
         'USER_DRAFTS_API': '/api/user/drafts'
     });
