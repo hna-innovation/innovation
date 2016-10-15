@@ -1,34 +1,36 @@
 angular.module('starter.controllers')
-  .controller('LastInnovationCtrl', function($scope, $state, ProjectsService, UtilityService) {
-    'use strict';
+  .controller('LastInnovationCtrl', LastInnovationCtrl);
 
-    // Get Projects
-    $scope.projects = [];
-    $scope.hasMoreData = true;
+function LastInnovationCtrl($scope, ProjectsService, UtilityService) {
+  'use strict';
 
-    var getProductsByType = function() {
-      var offset = 0;
+  // Get Projects
+  $scope.projects = [];
+  $scope.hasMoreData = true;
 
-      return function() {
-        ProjectsService.getProductsByType('createdDate', offset, function(data) {
+  var getProductsByType = function() {
+    var offset = 0;
 
-          if (data.data.content && data.data.content.length) {
-            $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
-            $scope.$broadcast('scroll.infiniteScrollComplete');
-          } else {
-            $scope.hasMoreData = false;
-          }
+    return function() {
+      ProjectsService.getProductsByType('createdDate', offset, function(data) {
 
-        }, function(error) {
+        if (data.data.content && data.data.content.length) {
+          $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        } else {
           $scope.hasMoreData = false;
-        });
+        }
 
-        offset++;
-      };
+      }, function(error) {
+        $scope.hasMoreData = false;
+      });
 
+      offset++;
     };
 
-    $scope.getProjects = getProductsByType();
-    $scope.getProjects();
+  };
 
-  });
+  $scope.getProjects = getProductsByType();
+  $scope.getProjects();
+
+}
