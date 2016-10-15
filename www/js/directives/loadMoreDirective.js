@@ -1,8 +1,11 @@
 angular.module('starter')
-  .directive("loadMore", function () {
+  .directive("loadMore", function() {
     return {
       restrict: 'EA',
-      transclude: true,
+      scope: {
+        hasMoreData: "=",
+        onLoadMore: '&'
+      },
       templateUrl: '../../templates/load-more.html'
     }
   })

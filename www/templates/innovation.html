@@ -42,7 +42,7 @@
           </li>
         </ul>
       </div>
-      <load-more class="innovation">
+      <div class="innovation" >
         <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
 
           <div class="item item-avatar">
@@ -81,8 +81,13 @@
             </div>
           </div>
         </div>
-        
-      </load-more>
+
+        <load-more
+          on-load-more="getProjects()"
+          has-more-data="hasMoreData">
+        </load-more>
+
+      </div>
       <div class="empty" ng-if="projects.length === 0">
         <img src="../img/empty.svg">
         <div ng-bind="attentionMsg"></div>

@@ -28,32 +28,35 @@ angular.module('starter.controllers')
         });
 
         // Get Projects
-
         $scope.projects = [];
-        $scope.hasMoreData = function () {
-          return true;
-        }
-        function getProductsByOffset(offset) {
-          ProjectsService.getProductsByOffset(offset, function (data) {
-            if(data.data.content && data.data.content.length){
-              $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
-              $scope.$broadcast('scroll.infiniteScrollComplete');
-            } else {
-              $scope.attentionMsg = Content.EMPTY_CONTENT;
-              $scope.hasMoreData = false;
-            }
+        $scope.hasMoreData = true;
 
-          }, function (error) {
-            $scope.attentionMsg = Content.TIME_OUT;
-            $scope.hasMoreData = false;
-            console.log(error);
-          });
-        }
-        var offset = 0;
-        $scope.loadMore = function () {
-          getProductsByOffset(offset);
-          offset++;
+        var getProductsByOffset = function() {
+          var offset = 0;
+
+          return function(){
+            ProjectsService.getProductsByOffset(offset, function (data) {
+
+              if(data.data.content && data.data.content.length){
+                $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+              } else {
+                $scope.attentionMsg = Content.EMPTY_CONTENT;
+                $scope.hasMoreData = false;
+              }
+
+            }, function (error) {
+              $scope.attentionMsg = Content.TIME_OUT;
+              $scope.hasMoreData = false;
+            });
+
+            offset++;
+          };
+
         };
+
+        $scope.getProjects = getProductsByOffset();
+        $scope.getProjects();
 
         // personal like slide
         $scope.slideStatus = false;
