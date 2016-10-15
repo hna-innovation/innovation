@@ -9,6 +9,12 @@ function UserService($http, LOCAL_TEST_URL, Api) {
     return LOCAL_TEST_URL + api;
   }
 
+  userService.getUserInfo = function(success, error) {
+    return $http.get(getUrl(Api.USER_INFO_API))
+      .success(success)
+      .error(error);;
+  }
+
   userService.getUserExtensionInfo = function(success, error) {
     return $http.get(getUrl(Api.USER_EXTENSION_INFO))
       .success(success)

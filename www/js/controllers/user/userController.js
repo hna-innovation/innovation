@@ -7,8 +7,10 @@ angular.module('starter.controllers')
 
     //获取用户信息
     $scope.getUserInfo = function() {
-      Services.getUserInfo(localStorage.userId).success(function(result) {
+      UserService.getUserInfo(function(result) {
         $scope.userInfo = result.data;
+      }, function() {
+        // TODO
       });
     }
 
