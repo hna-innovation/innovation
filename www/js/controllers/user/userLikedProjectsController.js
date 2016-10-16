@@ -16,4 +16,6 @@ function UserLikedProjectsCtrl($scope, UserService, Content) {
     // TODO
   });
 
+  UserService.setUserLikedRead();
+
 }

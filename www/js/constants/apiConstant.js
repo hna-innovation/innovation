@@ -9,5 +9,6 @@ angular.module('configuration')
         'USER_PROJECTS_API': '/api/user/projects',
         'USER_DRAFTS_API': '/api/user/drafts',
         'USER_LIKED_PROJECTS_API': '/api/user/userLikedProjects',
-        'USER_FAVORITE__PROJECTS_API': '/api/user/favoriteProjects'
+        'USER_FAVORITE__PROJECTS_API': '/api/user/favoriteProjects',
+        'USER_LIKED_STATUS_READ': '/api/user/likeStatus',
     });

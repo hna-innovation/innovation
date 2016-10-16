@@ -53,6 +53,10 @@ function UserService($http, LOCAL_TEST_URL, Api) {
       .error(error);
   }
 
+  userService.setUserLikedRead = function() {
+
+    return $http.post(getUrl(Api.USER_LIKED_STATUS_READ));
+  }
 
   return userService;
 }

@@ -81,7 +81,7 @@
 			        		<p>
 								<strong class="color-3d">
 									<span ng-bind="::userExtensionInfo.userlikedCount"></span>
-									<small ng-bind="userExtensionInfo.unreadUserlikedCount"></small>
+									<small ng-bind="userExtensionInfo.unreadUserlikedCount" ng-show="userExtensionInfo.unreadUserlikedCount > 0"></small>
 								</strong>
 			        		</p>
 			        	</a>
