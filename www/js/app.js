@@ -81,7 +81,7 @@ angular.module('starter')
 
       .state('detail', {
         url: '/detail/:projectId/:pageName',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
 
@@ -292,35 +292,35 @@ angular.module('starter')
 
       .state('popular-innovation', {
         url: '/popular-innovation',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/popular-innovation.html',
         controller: 'PopularInnovationCtrl'
       })
 
       .state('popular-resources', {
         url: '/popular-resources',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/resources/popular-resources.html',
         controller: 'PopularResourcesCtrl'
       })
 
       .state('last-innovation', {
         url: '/last-innovation',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/last-innovation.html',
         controller: 'LastInnovationCtrl'
       })
 
       .state('innovation-stars', {
         url: '/innovation-stars',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/list/innovation-stars.html',
         controller: 'InnovationStarsCtrl'
       })
 
       .state('detail-page-comments', {
         url: '/detail-page-comments/:projectid',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/comments/detail-page-comments.html',
         controller: 'DetailPageCommentsCtrl',
         data: {
