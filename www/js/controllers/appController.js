@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('AppCtrl', AppCtrl);
 
-function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state, HnaAlert) {
+function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state, HnaAlert, $window) {
   'use strict';
 
   $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {

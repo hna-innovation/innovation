@@ -7,5 +7,7 @@ angular.module('configuration')
         'USER_EXTENSION_INFO': '/api/user/profile/extensionInfo',
         'USER_COMMENTS_API': '/api/user/comments',
         'USER_PROJECTS_API': '/api/user/projects',
-        'USER_DRAFTS_API': '/api/user/drafts'
+        'USER_DRAFTS_API': '/api/user/drafts',
+        'USER_LIKED_PROJECTS_API': '/api/user/userLikedProjects',
+        'USER_FAVORITE__PROJECTS_API': '/api/user/favoriteProjects'
     });

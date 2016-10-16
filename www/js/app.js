@@ -170,7 +170,7 @@ angular.module('starter')
         url: '/user-favorite',
         cache: false,
         templateUrl: 'templates/user-favorite.html',
-        controller: 'UserCtrl',
+        controller: 'UserFavoriteProjectsCtrl',
         data: {
           requireAuth: true
         }

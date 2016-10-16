@@ -39,5 +39,20 @@ function UserService($http, LOCAL_TEST_URL, Api) {
       .error(error);
   }
 
+  userService.getUserLikedProjects = function(success, error) {
+
+    return $http.get(getUrl(Api.USER_LIKED_PROJECTS_API))
+      .success(success)
+      .error(error);
+  }
+
+  userService.getUserFavoriteProjects = function(success, error) {
+
+    return $http.get(getUrl(Api.USER_FAVORITE__PROJECTS_API))
+      .success(success)
+      .error(error);
+  }
+
+
   return userService;
 }

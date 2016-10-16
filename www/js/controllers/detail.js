@@ -94,7 +94,7 @@ angular.module('starter.controllers')
     $scope.hasLiked = function (item) {
       item.hasLiked ? Services.clickLikeCancle(item) : Services.clickLikeAdd(item);
     }
-    
+
     $scope.hasFavorited = function (item) {
       item.hasFavorited ? Services.clickFavoriteCancle(item) : Services.clickFavoriteAdd(item);
     }

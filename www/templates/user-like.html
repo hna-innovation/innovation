@@ -10,11 +10,11 @@
     <div ng-show="likedProjects.length > 0">
       <ul class="user-list2 bg-f9">
         <li class="bg-ff" ng-repeat="likedProject in ::likedProjects"
-            ui-sref="detail({ projectid: likedProject.targetId})">
+            ui-sref="detail({ projectid: likedProject.targetId })">
           <div>
             <div class="user-list2-img">
               <a ng-href="#" class="left">
-                <img ng-src="{{ ::likedProject.images[0] }}" width="42" height="42"/>
+                <img ng-src="{{ likedProject.images[0] }}" width="42" height="42"/>
               </a>
             </div>
             <div class="user-list2-text">
