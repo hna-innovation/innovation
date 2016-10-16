@@ -154,7 +154,7 @@ angular.module('starter')
         url: '/user-like',
         cache: false,
         templateUrl: 'templates/user-like.html',
-        controller: 'UserCtrl'
+        controller: 'UserLikedProjectsCtrl'
 
       })
       .state('user-favorite', {

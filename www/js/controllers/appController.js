@@ -15,6 +15,7 @@ function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state
     Services.logout(function() {
       HnaAlert.success('您已退出登录');
       $state.go('innovation');
+      $window.location.reload();
     }, function() {
       // TODO
     });

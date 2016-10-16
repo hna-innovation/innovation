@@ -6,13 +6,13 @@
 		        <div id="user-bar-left">
 		        		<a href="#innovation">
 		        			<img src="../img/user/iconfont-shouye.png" alt="主页" width="24" height="22">
-		        		</a>            
+		        		</a>
 		        </div>
-		
+
 		        <div id="user-bar-right">
 						<a ng-href="#user-edit" class="user-edit-link" >
 			            <img src="../img/user/edit.png" alt="编辑" width="12">
-			            <span class="color-white">编辑个人中心</span>		        			
+			            <span class="color-white">编辑个人中心</span>
 		        		</a>
 		        </div>
 		    </div>
@@ -36,7 +36,7 @@
 		        </li>
 		    </ul>
 		</header>
-		
+
 		<main id="user-main" class="bg-fb">
 		    <ul class="row user-row mg-b10 bg-ff">
 		        <li class="col-25 text-center">
@@ -47,7 +47,7 @@
 			        		<p class="color-3d">我的创意</p>
 			        		<p>
 								<strong class="color-3d" ng-bind="::userExtensionInfo.projectCount"></strong>
-			        		</p>		        			
+			        		</p>
 		        		</a>
 		        </li>
 		        <li class="col-25 text-center">
@@ -59,7 +59,7 @@
 			        		<p>
 								<strong class="color-3d">26</strong>
 			        		</p>
-			        	</a>	
+			        	</a>
 		        </li>
 		        <li class="col-25 text-center">
 		        		<a href="#user-favorite">
@@ -70,7 +70,7 @@
 			        		<p>
 								<strong class="color-3d" ng-bind="::userExtensionInfo.userfavoredCount"></strong>
 			        		</p>
-			        	</a>	
+			        	</a>
 		        </li>
 		        <li class="col-25 text-center">
 						<a href="#user-like">
@@ -84,17 +84,17 @@
 									<small ng-bind="userExtensionInfo.unreadUserlikedCount"></small>
 								</strong>
 			        		</p>
-			        	</a>	
+			        	</a>
 		        </li>
 		    </ul>
-		    
+
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 					<a href="#user-innovations">
 					<i class="if i-caogaoxiang font-24 color-3d"></i>
 					<strong class="color-3d">参与的创意</strong>
 					<!-- <small class="color-red font-24 small-radio">&bull;</small> -->
-					<span class="color-88 pd-l10">查看你参与的创意项目</span>		    			
-		    		</a> 		
+					<span class="color-88 pd-l10">查看你参与的创意项目</span>
+		    		</a>
 		    </div>
 
 		    <div class="business-row mg-b10 bg-ff pd-l15">
@@ -103,16 +103,16 @@
 					<strong class="color-3d">我的评论</strong>
 					<!-- <small class="color-red font-24 small-radio">&bull;</small> -->
 					<span class="color-88 pd-l10">查看你的所有评论</span>
-				</a>	
+				</a>
 		    </div>
-		    
+
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 		    		<a href="#user-draft">
 					<i class="if i-caogaoxiang font-24 color-3d"></i>
 					<strong class="color-3d">草稿箱</strong>
 					<!-- <small class="color-red font-24 small-radio">&bull;</small> -->
-					<span class="color-88 pd-l10">你有一共有 <span ng-bind="::userExtensionInfo.userDraftCount"></span> 个点子草稿</span>		    			
-		    		</a> 		
+					<span class="color-88 pd-l10">你有一共有 <span ng-bind="::userExtensionInfo.userDraftCount"></span> 个点子草稿</span>
+		    		</a>
 		    </div>
 
 		    <div class="user-logout">
@@ -120,7 +120,7 @@
 		    		退出登录
 				</button>
 		    </div>
-		    
+
 		</main>
 
 	</ion-content>

@@ -8,7 +8,8 @@ angular.module('configuration')
     comment: {
       'ERROR_MESSAGE_EMPTY': '您的评论内容不能为空。',
       'SUCCESS_MESSAGE_ADDED_COMMENT': '评论成功。',
-      'NO_COMMENTS': '暂无评论信息。'
+      'NO_COMMENTS': '暂无评论信息。',
+      'NO_LIKED': '还没有收到点赞'
     },
 
     draft: {
