@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService) {
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService, Content) {
 
     var resourcesType = $location.search()['type'];
 
@@ -30,11 +30,14 @@ angular.module('starter.controllers')
       $state.go('user-edit-info', target);
     }
 
-    $scope.getUserInfo();
-    $scope.getUserExtensionInfo();
 
     $scope.logout = function() {
       $scope.$emit(AuthEvent.LOGOUT);
     }
+
+
+    $scope.userDefaultHeader = Content.image.DEFAULT_HEADER;
+    $scope.getUserInfo();
+    $scope.getUserExtensionInfo();
 
   })

@@ -13,5 +13,9 @@ angular.module('configuration')
 
     draft: {
       'NO_DRAFTS': '你的草稿箱为空。'
+    },
+
+    image: {
+      'DEFAULT_HEADER': '../img/face/4.png'
     }
   });
