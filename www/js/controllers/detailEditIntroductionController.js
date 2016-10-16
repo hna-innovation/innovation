@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', function($scope, $stateParams, $ionicHistory) {
+  .controller('DetailEditIntroductionCtrl', function($scope, $stateParams, $ionicHistory, DetailService) {
 
     var quill = new Quill('#editor-container', {
       modules: {
@@ -21,7 +21,17 @@ angular.module('starter.controllers')
     initEditor();
 
     $scope.save = function () {
-      localStorage.setItem('contents-'+projectId, JSON.stringify(quill.getContents()));
+      var data = {
+        projectId: projectId,
+        passData: {
+          introduction: JSON.stringify(quill.getContents())
+        }
+      }
+      DetailService.editDetailIntroduction(data, function (data) {
+        console.log(data);
+      }, function () {
+
+      });
       $ionicHistory.goBack();
     };
 

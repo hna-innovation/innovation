@@ -56,7 +56,7 @@ angular.module('starter.services')
         .error(error);
     },
 
-    // 创意创建
+    // 创意创建 (草稿状态)
     dianziCreate: function (data, success, error) {
       return $http.post(getUrl('/api/drafts'), data)
         .success(success)
@@ -73,6 +73,12 @@ angular.module('starter.services')
     // 创意详情
     dianziDetail: function (draftId, success, error) {
       return $http.get(getUrl('/api/drafts/' + draftId))
+        .success(success)
+        .error(error);
+    },
+
+    innovationDetail: function (success, error) {
+      return $http.get(getUrl(Api.PROJECTS_API + '/' + _projectId + ""))
         .success(success)
         .error(error);
     },

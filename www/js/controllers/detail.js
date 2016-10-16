@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectid;
@@ -18,7 +18,7 @@ angular.module('starter.controllers')
 
     //项目详情
     $scope.getProjectDetail = function () {
-      $http.get(Services.getUrl("/api/projects/" + _projectId + "")).success(function (result) {
+      $http.get(Services.getUrl(Api.PROJECTS_API + '/' + _projectId + "")).success(function (result) {
         $scope.detail = result.data;
 
         // Set title and SEO
@@ -26,7 +26,7 @@ angular.module('starter.controllers')
         PageService.setSeo($scope.detail.name, $scope.detail.description);
 
         $scope.isCurrentUser = $scope.detail.creator.id === _userId ? true : false;
-        
+
         //share
         /* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
         $scope.imageUrls = result.data.images;

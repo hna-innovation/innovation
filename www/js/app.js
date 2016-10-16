@@ -97,7 +97,10 @@ angular.module('starter')
       .state('detail-edit-introduction', {
         url: '/detail-edit-introduction/:projectId',
         templateUrl: 'templates/detail-edit-introduction.html',
-        controller: 'DetailEditIntroductionCtrl'
+        controller: 'DetailEditIntroductionCtrl',
+        data: {
+          requireAuth: true
+        }
       })
 
       .state('search', {
