@@ -4,7 +4,7 @@ angular.module('starter.services')
 
     return {
       getProductsByOffset: function(offset, success, error) {
-        return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/custom?sort=createDate,desc&page='+ offset +'&size='+Page.SIZE))
+        return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/custom?sort=createdDate,desc&page='+ offset +'&size='+Page.SIZE))
           .success(success)
           .error(error);
       },
