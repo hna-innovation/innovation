@@ -9,8 +9,7 @@
 
     <div ng-show="likedProjects.length > 0">
       <ul class="user-list2 bg-f9">
-        <li class="bg-ff" ng-repeat="likedProject in ::likedProjects"
-            ui-sref="detail({ projectid: likedProject.targetId })">
+        <li class="bg-ff" ng-repeat="likedProject in ::likedProjects" ui-sref="detail({ projectId: likedProject.targetId })" >
           <div>
             <div class="user-list2-img">
               <a ng-href="#" class="left">
@@ -24,8 +23,8 @@
           </div>
           <div class="bg-f9">
             <i class="if i-collect color-6d font-20"></i>
-            <p class="text-center mg-b0 color-6d" ng-bind="likedProject.likeCount"></p>
             <!--<small ng-bind="likedProject.unreadLikeCount"></small>-->
+            <p class="text-center mg-b0 color-6d" ng-bind="likedProject.likeCount"></p>
           </div>
         </li>
       </ul>
