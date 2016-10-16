@@ -91,40 +91,12 @@ angular.module('starter.controllers')
     }, 1000);
 
 
-    var myPopup;
-    $scope.like = function (item) {
-      if (item.like == true) {
-        $http({
-          method: "POST",
-          url: Services.getUrl("/api/user/likeProject?projectId=" + item.id + "&add=false")
-        }).success(function (result) {
-          $scope.getProjectDetail();
-        })
-      } else {
-        $http({
-          method: "POST",
-          url: Services.getUrl("/api/user/likeProject?projectId=" + item.id + "&add=true")
-        }).success(function (result) {
-          $scope.getProjectDetail();
-        })
-      }
+    $scope.hasLiked = function (item) {
+      item.hasLiked ? Services.clickLikeCancle(item) : Services.clickLikeAdd(item);
     }
-    $scope.favorite = function (item) {
-      if (item.favorite == true) {
-        $http({
-          method: "POST",
-          url: Services.getUrl("/api/user/favoriteProject?projectId=" + item.id + "&add=false")
-        }).success(function (result) {
-          $scope.getProjectDetail();
-        })
-      } else {
-        $http({
-          method: "POST",
-          url: Services.getUrl("/api/user/favoriteProject?projectId=" + item.id + "&add=true")
-        }).success(function (result) {
-          $scope.getProjectDetail();
-        })
-      }
+    
+    $scope.hasFavorited = function (item) {
+      item.hasFavorited ? Services.clickFavoriteCancle(item) : Services.clickFavoriteAdd(item);
     }
 
     $scope.goBack = function () {

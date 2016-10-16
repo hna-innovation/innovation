@@ -98,18 +98,33 @@ angular.module('starter.services')
     },
 
     clickLikeAdd: function (item) {
-      return $http.post(getUrl('/api/user/likeProject?projectId=' + item.id + '&add=true'))
+      return $http.post(getUrl('api/user/likeProject/' + item.id))
         .success(function () {
-          item.like = true;
-          item.likeCount++
+          item.hasLiked = true;
+          item.likeCount++;
         });
     },
 
     clickLikeCancle: function (item) {
-      return $http.post(getUrl('/api/user/likeProject?projectId=' + item.id + '&add=false'))
+      return $http.delete(getUrl('/api/user/likeProject/' + item.id))
         .success(function () {
-          item.like = false;
-          item.likeCount--
+          item.hasLiked = false;
+          item.likeCount--;
+        });
+    },
+    clickFavoriteAdd: function (item) {
+      return $http.post(getUrl('/api/user/favoriteProject/' + item.id))
+        .success(function () {
+          item.hasFavorited = true;
+          item.favoriteCount++;
+        });
+    },
+
+    clickFavoriteCancle: function (item) {
+      return $http.delete(getUrl('/api/user/favoriteProject/' + item.id))
+        .success(function () {
+          item.hasFavorited = false;
+          item.favoriteCount--;
         });
     },
 

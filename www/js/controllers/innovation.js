@@ -14,7 +14,11 @@ angular.module('starter.controllers')
         PageService.setTitle('创新平台');
         // PageService.setDescription('创新平台');
 
-        $scope.userHeaderIcon = isLogin() ? localStorage.userHeaderIcon : '../img/user.png';
+        $scope.getUserHeaderIcon = function () {
+          $scope.userHeaderIcon = isLogin() ? localStorage.userHeaderIcon : '../img/user.png';
+        };
+
+        $scope.getUserHeaderIcon();
 
         function isLogin() {
           return localStorage.userId ? true : false;
@@ -100,10 +104,6 @@ angular.module('starter.controllers')
         $scope.goInnovationStars = function() {
           $state.go('innovation-stars');
         };
-
-        $scope.like = function(item) {
-          item.like ? Services.clickLikeCancle(item) : Services.clickLikeAdd(item);
-        }
 
         Services.getTags(function (data) {
           $scope.tags = data.data;
