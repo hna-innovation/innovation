@@ -10,7 +10,7 @@
                 <ul class="box-table">
                     <li class="box-table-row" id="user-photo">
                         <div class="box-table-cell" style="width: 40px;">
-                            <img src="../img/face/4.png" alt="头像" width="40" height="40" class="user-img">
+                            <img ng-src="{{ comment.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
                         </div>
                         <div class="box-table-cell pd-l10 pd-tb5">
                             <div id="user-name">
@@ -25,9 +25,9 @@
                     <span class="color-6d" ng-bind="comment.content"></span>
                 </div>
                 <ul class="user-list">
-                    <li class="border-0" >
+                    <li class="border-0" ui-sref="detail({ projectid: comment.projectId })" >
                         <div>
-                            <a href="javascript:;">
+                            <a>
                                 <img ng-src="{{ comment.images[0] }}" width="110" height="75" />
                             </a>
                         </div>
