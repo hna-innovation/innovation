@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('StepFirstCtrl', StepFirstCtrl)
+.controller('StepFirstCtrl', StepFirstCtrl);
 
 function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state) {
   // set title
@@ -9,7 +9,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
   $scope.formdata = {};
 
   // 触发file input
-  $scope.photoUpload = function () {
+  $scope.photoUpload = function() {
     jQuery('#photoUpload').trigger('click');
   };
 
@@ -24,17 +24,17 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
   // 限制上传类型和文件大小
   $scope.uploader.filters.push({
     name: 'imageTypeFilter',
-    fn: function (item) {
+    fn: function(item) {
       return item.type.indexOf('image/') !== -1;
     }
   });
   $scope.uploader.filters.push({
     name: 'imageSizeFilter',
-    fn: function (item) {
+    fn: function(item) {
       return item.size <= 5242880;
     }
   });
-  $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
+  $scope.uploader.onWhenAddingFileFailed = function(fileItem, filter) {
     console.log(filter)
     if (filter.name == 'imageTypeFilter') {
       HnaAlert.default('请选择正确的图片类型！');
@@ -47,12 +47,12 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
   };
 
   // loading
-  $scope.uploader.onAfterAddingFile = function (fileItem) {
+  $scope.uploader.onAfterAddingFile = function(fileItem) {
     $scope.loading = true;
   };
 
   // 上传成功
-  $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
+  $scope.uploader.onSuccessItem = function(fileItem, response, status, headers) {
     if (response.code != 0) return HnaAlert.default('图片上传失败！');
     $scope.loading = false;
     $scope.imagesChild = response.data[0].id;
@@ -63,7 +63,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
   };
 
   // 创意创建
-  $scope.create = function () {
+  $scope.create = function() {
     if ($scope.imagesChild == undefined) {
       HnaAlert.default('图片不能为空！');
       return;
@@ -74,22 +74,25 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
       return;
     }
 
-        var num = $scope.itemCount || '';
-        num++;
-        Services.dianziCreate({
-            "description": $scope.formdata.description,
-            "images": [$scope.imagesChild]
-        }, function (result) {
-            if (result.code == 0) {
-                localStorage.draftId = result.data.id;
-                $state.go('step-3');
-            } else {
-                // console.log(result);
-            }
-        }, function (error) {
-            // console.log(error);
-        });
-    };
+    if ($scope.formdata.description.length > 135) {
+      HnaAlert.default('字数不能超过135字');
+      return;
+    }
+
+    Services.dianziCreate({
+      "description": $scope.formdata.description,
+      "images": [$scope.imagesChild]
+    }, function(result) {
+      if (result.code == 0) {
+        localStorage.draftId = result.data.id;
+        $state.go('step-3');
+      } else {
+        // TODO Handle error
+        // console.log(result);
+      }
+    }, function(error) {
+      // TODO Handle error
+      // console.log(error);
+    });
+  };
 };
-
-

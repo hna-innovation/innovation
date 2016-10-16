@@ -34,6 +34,10 @@
 }
 
 #step-1 .dianzi-description {
+    height: 195px;
+}
+
+#step-1 .dianzi-description label {
     border: 1px solid #e1e1e1;
     border-radius: 5px;
 }
