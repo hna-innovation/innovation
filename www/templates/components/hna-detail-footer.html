@@ -14,7 +14,7 @@
         <li><i class='if' ng-class="{true:'i-star1',false:'i-star'}[detail.favorite]" ng-click='favorite(detail)'></i>
         	{{detail.favoriteCount}}
         </li>
-        <li ui-sref="detail-page-comments">
+        <li ui-sref="detail-page-comments({ projectid: detail.id})">
         	<i class='if i-xiaoxi'></i>
         </li>
         <li>

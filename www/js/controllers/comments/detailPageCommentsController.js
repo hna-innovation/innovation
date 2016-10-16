@@ -1,18 +1,16 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, Content, CommentService, HnaAlert, $window) {
+function DetailPageCommentsCtrl($scope, $stateParams, Content, CommentService, HnaAlert, $window) {
   'use strict';
 
-  $scope.targetId = "5801935f7e18f8136206825a";
-
-  _getProjectComments();
+  var _projectId = $stateParams.projectid;
 
   $scope.submitComment = function(content) {
 
     var comment = {
       content: $scope.newComment,
-      targetId: $scope.targetId
+      targetId: _projectId
     };
 
     CommentService.addProjectComment(comment, function() {
@@ -23,11 +21,9 @@ function DetailPageCommentsCtrl($scope, Content, CommentService, HnaAlert, $wind
     });
   }
 
-  function _getProjectComments() {
-    CommentService.getProjectComments($scope.targetId, function(res) {
-      $scope.comments = res.data.content;
-    }, function() {
-      // TODO
-    });
-  }
+  CommentService.getProjectComments(_projectId, function(res) {
+    $scope.comments = res.data.content;
+  }, function() {
+    // TODO
+  });
 }

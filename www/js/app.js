@@ -259,7 +259,7 @@ angular.module('starter')
       })
 
       .state('detail-page-comments', {
-        url: '/detail-page-comments',
+        url: '/detail-page-comments/:projectid',
         cache: false,
         templateUrl: 'templates/comments/detail-page-comments.html',
         controller: 'DetailPageCommentsCtrl'
