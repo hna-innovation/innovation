@@ -24,6 +24,10 @@ angular.module('starter.controllers')
 
     $scope.isCurrentUser = false;
 
+    function setLocalStorageWithDetailTab(projectId, content, type) {
+      localStorage.setItem(type + '-' + projectId, content ? content : '');
+    }
+
     //项目详情
     $scope.getProjectDetail = function () {
       DetailService.getProjectDetail(_projectId, function (result) {
@@ -37,8 +41,13 @@ angular.module('starter.controllers')
         //share
         $scope.imageUrls = result.data.images;
         $scope.shareUrl = encodeURIComponent($location.absUrl());
-        if($scope.detail.introduction) quill.setContents(JSON.parse($scope.detail.introduction));
-        localStorage.setItem('introduction-' + _projectId, $scope.detail.introduction?$scope.detail.introduction:'')
+
+        if ($scope.detail.introduction) quill.setContents(JSON.parse($scope.detail.introduction));
+
+        setLocalStorageWithDetailTab(_projectId, $scope.detail.introduction, 'introduction');
+        setLocalStorageWithDetailTab(_projectId, $scope.detail.resourceRequired, 'resource');
+        setLocalStorageWithDetailTab(_projectId, $scope.detail.marketAnalysis, 'market');
+        setLocalStorageWithDetailTab(_projectId, $scope.detail.businessModel, 'business');
       }, function () {
 
       });

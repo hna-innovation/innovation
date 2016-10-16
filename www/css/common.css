@@ -44,6 +44,11 @@ img{
 	border: #dedede solid 1px;
 	border-radius: 5px;
 }
+
+.full-width {
+  width: 100%;
+}
+
 .p-20{
 	margin: 0;
 	height: 20px;

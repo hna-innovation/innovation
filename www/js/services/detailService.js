@@ -10,7 +10,22 @@ angular.module('starter.services')
         return $http.put(HelperService.getUrl(Api.PROJECTS_API + '/' + data.projectId + '/introduction'), data.passData)
           .success(success)
           .error(error);
-      }
+      },
+      editDetailResource: function (data, success, error) {
+        return $http.put(HelperService.getUrl(Api.PROJECTS_API + '/' + data.projectId + '/resourceRequired'), data.passData)
+          .success(success)
+          .error(error);
+      },
+      editDetailMarket: function (data, success, error) {
+        return $http.put(HelperService.getUrl(Api.PROJECTS_API + '/' + data.projectId + '/marketAnalysis'), data.passData)
+          .success(success)
+          .error(error);
+      },
+      editDetailBusiness: function (data, success, error) {
+        return $http.put(HelperService.getUrl(Api.PROJECTS_API + '/' + data.projectId + '/businessModel'), data.passData)
+          .success(success)
+          .error(error);
+      },
     };
   }]);
 

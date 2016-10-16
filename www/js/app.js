@@ -96,8 +96,35 @@ angular.module('starter')
 
       .state('detail-edit-introduction', {
         url: '/detail-edit-introduction/:projectId',
-        templateUrl: 'templates/detail-edit-introduction.html',
+        templateUrl: 'templates/detail/detail-edit-introduction.html',
         controller: 'DetailEditIntroductionCtrl',
+        data: {
+          requireAuth: true
+        }
+      })
+
+      .state('detail-edit-resource', {
+        url: '/detail-edit-resource/:projectId',
+        templateUrl: 'templates/detail/detail-edit-resource.html',
+        controller: 'DetailEditResourceCtrl',
+        data: {
+          requireAuth: true
+        }
+      })
+
+      .state('detail-edit-market', {
+        url: '/detail-edit-market/:projectId',
+        templateUrl: 'templates/detail/detail-edit-market.html',
+        controller: 'DetailEditMarketCtrl',
+        data: {
+          requireAuth: true
+        }
+      })
+
+      .state('detail-edit-business', {
+        url: '/detail-edit-business/:projectId',
+        templateUrl: 'templates/detail/detail-edit-business.html',
+        controller: 'DetailEditBusinessCtrl',
         data: {
           requireAuth: true
         }
