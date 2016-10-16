@@ -6,10 +6,6 @@
     margin: 10px 15px 50px 10px;
 }
 
-#swiper-step{
-    height: auto;
-}
-
 .go-back{
     width: 30px;
     height: 30px;
@@ -22,9 +18,4 @@
     left: 10px;
     z-index: 20;
     cursor: pointer;
-}
-
-.swiper-item{
-    height: 180px!important;
-    overflow: hidden;
 }
