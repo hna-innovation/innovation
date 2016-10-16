@@ -23,7 +23,7 @@ angular.module('starter.services')
 
       getProjectComments: function(productId, success, error) {
 
-        return $http.get(getUrl('/api/projects') + '/' + productId + '/comments')
+        return $http.get(getUrl('/api/projects') + '/' + productId + '/comments?sort=createdDate,desc')
           .success(success)
           .error(error);
       },

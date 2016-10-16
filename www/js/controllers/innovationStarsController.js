@@ -7,7 +7,6 @@ function InnovationStarsCtrl($scope, UserService, Content) {
   UserService.getInnovationStarUsers(function(result) {
 
     if (result.data && result.data.length) {
-      console.log(result);
       $scope.stars = result.data;
     }
   }, function(error) {

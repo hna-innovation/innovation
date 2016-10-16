@@ -1,22 +1,21 @@
 <ion-view view-title="评论">
-    <ion-content class="bg-f9">
+    <ion-content class="bg-f9 mg-b40">
         <div class="user-list-title bg-pink bg-img-left" hna-goback>
             <span class="font-18">评论</span>
         </div>
         <section>
-            <div class="border-b" collection-repeat="comment in comments">
+            <div class="border-b" collection-repeat="comment in ::comments">
                 <div class="box-table bg-ff">
                     <li class="box-table-row">
                         <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
                             <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="35" height="35" class="user-img border-0">
                         </div>
                         <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
-                            <div class="font-14 color-3d">
-                                {{ comment.creator.nickName }}
-                                <span class="font-12 color-88 right">{{ comment.time || '10分钟前'}}</span>
+                            <div>
+                                <span class="font-14 color-3d" ng-bind="comment.creator.nickName" ></span>
+                                <span class="font-12 color-88 right" ng-bind="comment.createdDate" ></span>
                             </div>
-                            <p class="font-16 color-88">
-                                {{ comment.content || '这个项目很好，必须支持一下啊。'}}
+                            <p class="font-16 color-88" ng-bind="comment.content" >
                             </p>
                         </div>
                     </li>
@@ -24,14 +23,14 @@
             </div>
         </section>
     </ion-content>
+    <form ng-submit="submitComment(newComment)" novalidate >
+        <div class="bar bar-footer hna-footer item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" ng-model="newComment" placeholder="请输入评论...">
+            </label>
+            <button class="button button-clear">
+                评论
+            </button>
+        </div>
+    </form>
 </ion-view>
-<form ng-submit="submitComment(newComment)" novalidate >
-    <div class="bar bar-footer hna-footer item-input-inset">
-        <label class="item-input-wrapper">
-            <input type="text" ng-model="newComment" placeholder="请输入评论...">
-        </label>
-        <button class="button button-clear">
-            评论
-        </button>
-    </div>
-</form>
