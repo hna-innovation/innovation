@@ -81,7 +81,7 @@ angular.module('starter')
 
       .state('detail', {
         url: '/detail/:projectId/:pageName',
-        cache: true,
+        cache: false,
         templateUrl: 'templates/detail.html',
         controller: 'DetailCtrl'
 

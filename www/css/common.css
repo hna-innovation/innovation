@@ -439,7 +439,7 @@ img{
 }
 
 .swiper-slide{
-	/*height: 145px !important;*/
+	height: 200px!important;
 	overflow: hidden;
 }
 .swiper-slide > img {
@@ -449,7 +449,7 @@ img{
 }
 
 .swiper-item {
-    height: 200px!important;
+    /*height: 200px!important;*/
     overflow: hidden;
 }
 

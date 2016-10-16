@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -48,11 +48,14 @@ angular.module('starter.controllers')
         setLocalStorageWithDetailTab(_projectId, $scope.detail.resourceRequired, 'resource');
         setLocalStorageWithDetailTab(_projectId, $scope.detail.marketAnalysis, 'market');
         setLocalStorageWithDetailTab(_projectId, $scope.detail.businessModel, 'business');
-      }, function () {
 
+        $ionicLoading.hide();
+      }, function () {
+        $ionicLoading.hide();
       });
     }
     $scope.getProjectDetail();
+    $ionicLoading.show();
 
     setTimeout(function () {
       Swiper('#swiper1', {
