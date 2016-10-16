@@ -403,3 +403,13 @@
   color: #999;
   margin-left: 10px;
 }
+.newlike small {
+  top: 2px;
+  position: absolute;
+  right: -4px;
+  width: 28px;
+  color: #e17877;
+}
+.newlike small:before {
+  content: "+";
+}

@@ -21,10 +21,10 @@
               <p class="color-88 text-bottom2 mg-b0 font-12" ng-bind="likedProject.latestCreatedDate"></p>
             </div>
           </div>
-          <div class="bg-f9">
-            <i class="if i-collect color-6d font-20"></i>
-            <!--<small ng-bind="likedProject.unreadLikeCount"></small>-->
-            <p class="text-center mg-b0 color-6d" ng-bind="likedProject.likeCount"></p>
+          <div class="bg-f9 newlike">
+            <i class="if color-6d font-20" ng-class="{true:'i-aixinhover color-red',false:'i-collect'}[likedProject.unreadLikeCount>0]"></i>
+            <small class="font-12" ng-bind="likedProject.unreadLikeCount" ng-if="likedProject.unreadLikeCount"></small>
+            <p class="text-center mg-b0 color-6d font-14" ng-bind="likedProject.likeCount"></p>
           </div>
         </li>
       </ul>

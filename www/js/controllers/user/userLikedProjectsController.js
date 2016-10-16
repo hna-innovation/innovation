@@ -10,12 +10,14 @@ function UserLikedProjectsCtrl($scope, UserService, Content) {
     if (result.data && result.data.length) {
 
       $scope.likedProjects = result.data;
+      console.log($scope.likedProjects);
+
+      UserService.setUserLikedRead();
     }
 
   }, function() {
     // TODO
   });
 
-  UserService.setUserLikedRead();
 
 }

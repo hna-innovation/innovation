@@ -6,10 +6,10 @@
 		</div>
 
 
-    <div ng-show="favoriteProjects.length === 0" class="color-pink pd-15" ng-bind="::NO_LIKED">
+    <div ng-show="favoriteProjects.length === 0" class="color-pink pd-15" ng-bind="::NO_FAVORITE">
     </div>
 
-    <div ng-show="favoriteProjects.length > 0">
+    <div ng-if="favoriteProjects.length > 0">
         <section>
           <div class="border-tb mg-b10" ng-repeat="favoriteProject in ::favoriteProjects">
             <ul class="box-table bg-ff">
@@ -26,7 +26,7 @@
               <li class="bg-ff pd-l15 pd-b15" ui-sref="detail({ projectId: favoriteProject.id })" >
                 <div>
                   <a ng-href="#">
-                    <img src="{{ favoriteProject.images[0] }}" width="42" height="42"/>
+                    <img ng-src="{{ favoriteProject.images[0] }}" width="42" height="42"/>
                   </a>
                 </div>
                 <div>
