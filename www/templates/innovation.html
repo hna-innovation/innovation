@@ -7,7 +7,7 @@
     <div class="content content-header">
       <div class="swiper-container">
         <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
+        <div id="home-slide" class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
             <img src="../img/banner/banner-1.jpg" alt="">
@@ -60,7 +60,7 @@
           </div>
 
           <div class="item item-image">
-            <a ui-sref="detail({projectId: project.id, pageName: 'innovation'})" >
+            <a class="vertical-align-img" >
               <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
             </a>
           </div>
