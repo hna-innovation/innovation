@@ -43,7 +43,7 @@
         </ul>
       </div>
       <div class="innovation" >
-        <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
+        <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectId: project.id, pageName: 'innovation'})" >
 
           <div class="item item-avatar">
             <img ng-src="{{project.creator.headerIcon}}">
@@ -60,7 +60,7 @@
           </div>
 
           <div class="item item-image">
-            <a ui-sref="detail({projectid: project.id, pageName: 'innovation'})" >
+            <a ui-sref="detail({projectId: project.id, pageName: 'innovation'})" >
               <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
             </a>
           </div>

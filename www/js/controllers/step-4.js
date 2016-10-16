@@ -116,7 +116,7 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
             if (result.code == 0) {
                 HnaAlert.default('创意发布成功！');
                 localStorage.removeItem('draftId');
-                $state.go('detail', {projectid: result.data.id, pageName: 'innovation'});
+                $state.go('detail', {projectId: result.data.id, pageName: 'innovation'});
             } else {
                 HnaAlert.default('创意发布失败，请稍后再试！');
             }

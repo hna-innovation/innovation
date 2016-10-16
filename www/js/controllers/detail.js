@@ -1,9 +1,9 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService) {
 
     var _pageName = $stateParams.pageName;
-    var _projectId = $stateParams.projectid;
+    var _projectId = $stateParams.projectId;
     var _userId = localStorage.userId;
 
     //获取用户信息
@@ -14,23 +14,33 @@ angular.module('starter.controllers')
     // }
     // $scope.getUserInfo();
 
+    // rich editor
+    var quill = new Quill('#detail-introduction-container', {
+      modules: {
+        toolbar: []
+      },
+      theme: 'snow' // or 'bubble'
+    });
+
     $scope.isCurrentUser = false;
 
     //项目详情
     $scope.getProjectDetail = function () {
-      $http.get(Services.getUrl(Api.PROJECTS_API + '/' + _projectId + "")).success(function (result) {
+      DetailService.getProjectDetail(_projectId, function (result) {
         $scope.detail = result.data;
 
-        // Set title and SEO
+        // Set title with Hack
         PageService.setTitle($scope.detail.name);
-        PageService.setSeo($scope.detail.name, $scope.detail.description);
 
         $scope.isCurrentUser = $scope.detail.creator.id === _userId ? true : false;
 
         //share
-        /* http://a.vpimg3.com/upload/merchandise/pdc/220/233/8239185494233220/0/TW7C567-10-3_95x120_90.jpg   */
         $scope.imageUrls = result.data.images;
         $scope.shareUrl = encodeURIComponent($location.absUrl());
+        if($scope.detail.introduction) quill.setContents(JSON.parse($scope.detail.introduction));
+        localStorage.setItem('introduction-' + _projectId, $scope.detail.introduction?$scope.detail.introduction:'')
+      }, function () {
+
       });
     }
     $scope.getProjectDetail();
@@ -80,14 +90,6 @@ angular.module('starter.controllers')
       })
     }, 1000);
 
-    // rich editor
-    var quill = new Quill('#detail-introduction-container', {
-      modules: {
-        toolbar: []
-      },
-      theme: 'snow' // or 'bubble'
-    });
-    quill.setContents(JSON.parse(localStorage.getItem('contents-' + _projectId)));
 
     var myPopup;
     $scope.like = function (item) {
@@ -125,11 +127,11 @@ angular.module('starter.controllers')
       }
     }
 
-    $scope.goBack = function(){
-      if(_pageName){
+    $scope.goBack = function () {
+      if (_pageName) {
         $state.go(_pageName)
       }
-      else{
+      else {
         $ionicHistory.goBack();
       }
     }

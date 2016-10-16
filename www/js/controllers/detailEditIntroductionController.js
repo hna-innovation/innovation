@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', function($scope, $stateParams, $ionicHistory, DetailService) {
+  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert) {
 
     var quill = new Quill('#editor-container', {
       modules: {
@@ -16,8 +16,10 @@ angular.module('starter.controllers')
     var projectId = $stateParams.projectId;
 
     function initEditor() {
-      quill.setContents(JSON.parse(localStorage.getItem('contents-'+projectId)));
+      var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '[]';
+      quill.setContents(JSON.parse(introduction));
     }
+
     initEditor();
 
     $scope.save = function () {
@@ -28,15 +30,17 @@ angular.module('starter.controllers')
         }
       }
       DetailService.editDetailIntroduction(data, function (data) {
-        console.log(data);
+        HnaAlert.success('提交成功');
       }, function () {
-
+        HnaAlert.success('服务器超时，请重试');
       });
-      $ionicHistory.goBack();
+
+      // reload
+      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: true});
     };
 
-    $scope.cancel = function() {
+    $scope.cancel = function () {
       $ionicHistory.goBack();
     }
-  })
+  }])
 
