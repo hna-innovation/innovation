@@ -1,38 +1,17 @@
 angular.module('starter.controllers')
-  .controller('InnovationStarsCtrl', function($scope, $state, Content) {
-    'use strict';
+  .controller('InnovationStarsCtrl', InnovationStarsCtrl);
 
-    $scope.stars = [
-    	{
-    		name: "马涛",
-    		avator: "../img/user/user.jpg",
-    		ownedProductsCount: 5,
-    		likeTotalCount: 3115
-    	},
-    	{
-    		name: "马涛",
-    		avator: "../img/user/user.jpg",
-    		ownedProductsCount: 5,
-    		likeTotalCount: 3115
-    	},
-    	{
-    		name: "马涛",
-    		avator: "../img/user/user.jpg",
-    		ownedProductsCount: 5,
-    		likeTotalCount: 3115
-    	},
-    	{
-    		name: "马涛",
-    		avator: "../img/user/user.jpg",
-    		ownedProductsCount: 5,
-    		likeTotalCount: 3115
-    	},
-    	{
-    		name: "马涛",
-    		avator: "../img/user/user.jpg",
-    		ownedProductsCount: 5,
-    		likeTotalCount: 3115
-    	}
-    ];
+function InnovationStarsCtrl($scope, UserService, Content) {
+  'use strict';
 
+  UserService.getInnovationStarUsers(function(result) {
+
+    if (result.data && result.data.length) {
+      console.log(result);
+      $scope.stars = result.data;
+    }
+  }, function(error) {
+    // TOTO Handle error
   });
+
+}

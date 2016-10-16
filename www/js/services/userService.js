@@ -33,5 +33,11 @@ function UserService($http, LOCAL_TEST_URL, Api) {
       .error(error);
   }
 
+  userService.getInnovationStarUsers = function(success, error) {
+    return $http.get(getUrl(Api.USER_INNOVATION_STARS_API))
+      .success(success)
+      .error(error);
+  }
+
   return userService;
 }
