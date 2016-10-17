@@ -104,11 +104,27 @@ angular.module('starter.controllers')
 
 
     $scope.hasLiked = function (item) {
-      item.hasLiked ? Services.clickLikeCancle(item) : Services.clickLikeAdd(item);
+      if (item.hasLiked) {
+        Services.clickLikeCancle(item.id, function () {
+          $scope.getProjectDetail();
+        });
+      } else {
+        Services.clickLikeAdd(item.id, function () {
+          $scope.getProjectDetail();
+        });
+      }
     }
 
     $scope.hasFavorited = function (item) {
-      item.hasFavorited ? Services.clickFavoriteCancle(item) : Services.clickFavoriteAdd(item);
+      if (item.hasFavorited) {
+        Services.clickFavoriteCancle(item.id, function () {
+          $scope.getProjectDetail();
+        });
+      } else {
+        Services.clickFavoriteAdd(item.id, function () {
+          $scope.getProjectDetail();
+        });
+      }
     }
 
     $scope.goBack = function () {

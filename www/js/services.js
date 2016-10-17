@@ -97,35 +97,23 @@ angular.module('starter.services')
         .error(error);
     },
 
-    clickLikeAdd: function (item) {
-      return $http.post(getUrl('api/user/likeProject/' + item.id))
-        .success(function () {
-          item.hasLiked = true;
-          item.likeCount++;
-        });
+    clickLikeAdd: function (projectId, success) {
+      return $http.post(getUrl('api/user/likeProject/' + projectId))
+        .success(success);
     },
 
-    clickLikeCancle: function (item) {
-      return $http.delete(getUrl('/api/user/likeProject/' + item.id))
-        .success(function () {
-          item.hasLiked = false;
-          item.likeCount--;
-        });
+    clickLikeCancle: function (projectId, success) {
+      return $http.delete(getUrl('/api/user/likeProject/' + projectId))
+        .success(success);
     },
-    clickFavoriteAdd: function (item) {
-      return $http.post(getUrl('/api/user/favoriteProject/' + item.id))
-        .success(function () {
-          item.hasFavorited = true;
-          item.favoriteCount++;
-        });
+    clickFavoriteAdd: function (projectId, success) {
+      return $http.post(getUrl('/api/user/favoriteProject/' + projectId))
+        .success(success);
     },
 
-    clickFavoriteCancle: function (item) {
-      return $http.delete(getUrl('/api/user/favoriteProject/' + item.id))
-        .success(function () {
-          item.hasFavorited = false;
-          item.favoriteCount--;
-        });
+    clickFavoriteCancle: function (projectId, success) {
+      return $http.delete(getUrl('/api/user/favoriteProject/' + projectId))
+        .success(success);
     },
 
     getUserInfo: function(userId) {
