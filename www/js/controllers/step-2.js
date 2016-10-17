@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state) {
     // set title
     // Page.setTitle('创意编辑');
 
@@ -29,10 +29,14 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
 
     // 更新创意
     $scope.ItemUpdate = function (status, msg, msg2) {
+        var images = $scope.images.map(function(img){
+            return img.id;
+        });
+
         Services.dianziEdit(localStorage.draftId,
             {
                 "description": $scope.formdata.description,
-                "images": $scope.images
+                "images": images
             },
             function (result) {
                 if (result.code == 0) {
@@ -44,11 +48,9 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
                     $scope.getDetail();
                 } else {
                     HnaAlert.default(msg2);
-                    // console.log(result);
                 }
             }, function (error) {
                 HnaAlert.default(msg2);
-                // console.log(error);
             });
     }
     // 初始化表单数据
