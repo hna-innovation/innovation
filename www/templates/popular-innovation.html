@@ -5,16 +5,16 @@
 			<span class="font-18">热门创意</span>
 		</div>
 		<ul class="show-innovation-list pd-5">
-			<li ng-repeat="project in ::projects">
+			<li ng-repeat="project in projects">
 				<div ui-sref="detail({ projectId: project.id, pageName: 'innovation'})">
 					<div class="show-innovation-post">
-						<img ng-src="{{ project.images[0] }}" />
+						<img ng-src="{{ ::project.images[0] }}" />
 					</div>
 					<div>
-						<p class="text-title3" ng-bind="project.name" ></p>
+						<p class="text-title3" ng-bind="::project.name" ></p>
 						<div class="border-t1 show-innovation-info">
 							<img src="../img/home/home-love2.png" alt="">
-							<span class="popular-innovation-number" ng-bind="project.likeCount" ></span>
+							<span class="popular-innovation-number" ng-bind="::project.likeCount" ></span>
 						</div>
 					</div>
 				</div>
