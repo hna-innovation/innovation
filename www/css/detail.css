@@ -33,6 +33,10 @@
   border: none;
 }
 
+#detail-introduction-container img {
+  width: 100%;
+}
+
 .introduction .ql-editor {
   height: auto;
   padding: 0;

@@ -17,8 +17,9 @@ angular.module('starter.controllers')
 
     function initEditor() {
       var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '[]';
-      quill.setContents(JSON.parse(introduction));
+      angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
     }
+
 
     initEditor();
 
@@ -26,7 +27,7 @@ angular.module('starter.controllers')
       var data = {
         projectId: projectId,
         passData: {
-          introduction: JSON.stringify(quill.getContents())
+          introduction: document.querySelector('.ql-editor').innerHTML
         }
       }
       DetailService.editDetailIntroduction(data, function (data) {

@@ -6,22 +6,6 @@ angular.module('starter.controllers')
     var _projectId = $stateParams.projectId;
     var _userId = localStorage.userId;
 
-    //获取用户信息
-    // $scope.getUserInfo = function () {
-    //   $http.get(Services.getUrl("/api/user?userId=" + _userId)).success(function (result) {
-    //     $scope.userinfo = result.data;
-    //   });
-    // }
-    // $scope.getUserInfo();
-
-    // rich editor
-    var quill = new Quill('#detail-introduction-container', {
-      modules: {
-        toolbar: []
-      },
-      theme: 'snow' // or 'bubble'
-    });
-
     $scope.isCurrentUser = false;
 
     function setLocalStorageWithDetailTab(projectId, content, type) {
@@ -42,7 +26,9 @@ angular.module('starter.controllers')
         $scope.imageUrls = result.data.images;
         $scope.shareUrl = encodeURIComponent($location.absUrl());
 
-        if ($scope.detail.introduction) quill.setContents(JSON.parse($scope.detail.introduction));
+        if ($scope.detail.introduction) {
+          document.querySelector('#detail-introduction-container').innerHTML = $scope.detail.introduction;
+        }
 
         setLocalStorageWithDetailTab(_projectId, $scope.detail.introduction, 'introduction');
         setLocalStorageWithDetailTab(_projectId, $scope.detail.resourceRequired, 'resource');
