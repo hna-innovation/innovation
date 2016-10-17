@@ -148,7 +148,7 @@ angular.module('starter')
       .state('user', {
         url: '/user/:userid',
         cache: false,
-        templateUrl: 'templates/user.html',
+        templateUrl: 'templates/user/user.html',
         controller: 'UserCtrl',
         data: {
           requireAuth: true
@@ -159,7 +159,7 @@ angular.module('starter')
       .state('user-draft', {
         url: '/user-draft',
         cache: false,
-        templateUrl: 'templates/user-draft.html',
+        templateUrl: 'templates/user/user-draft.html',
         controller: 'UserDraftsCtrl',
         data: {
           requireAuth: true
@@ -169,7 +169,7 @@ angular.module('starter')
       .state('user-comment', {
         url: '/user-comment',
         cache: false,
-        templateUrl: 'templates/user-comment.html',
+        templateUrl: 'templates/user/user-comment.html',
         controller: 'UserCommentsCtrl',
         data: {
           requireAuth: true
@@ -179,14 +179,14 @@ angular.module('starter')
       .state('user-comment2', {
         url: '/user-comment2',
         cache: false,
-        templateUrl: 'templates/user-comment2.html',
+        templateUrl: 'templates/user/user-comment2.html',
         controller: 'UserCtrl'
 
       })
       .state('user-like', {
         url: '/user-like',
         cache: false,
-        templateUrl: 'templates/user-like.html',
+        templateUrl: 'templates/user/user-like.html',
         controller: 'UserLikedProjectsCtrl',
         data: {
           requireAuth: true
@@ -196,7 +196,7 @@ angular.module('starter')
       .state('user-favorite', {
         url: '/user-favorite',
         cache: false,
-        templateUrl: 'templates/user-favorite.html',
+        templateUrl: 'templates/user/user-favorite.html',
         controller: 'UserFavoriteProjectsCtrl',
         data: {
           requireAuth: true
@@ -206,7 +206,7 @@ angular.module('starter')
       .state('user-resources', {
         url: '/user-resources',
         cache: false,
-        templateUrl: 'templates/user-resources.html',
+        templateUrl: 'templates/user/user-resources.html',
         controller: 'UserCtrl',
         data: {
           requireAuth: true
@@ -216,7 +216,7 @@ angular.module('starter')
       .state('user-edit', {
         url: '/user-edit',
         cache: false,
-        templateUrl: 'templates/user-edit.html',
+        templateUrl: 'templates/user/user-edit.html',
         controller: 'UserCtrl',
         data: {
           requireAuth: true
@@ -227,7 +227,7 @@ angular.module('starter')
         url: '/user-edit-info',
         cache: false,
         params: {target:null, text: '', length: 0, mulitline:false, required: false},
-        templateUrl: 'templates/user-edit-info.html',
+        templateUrl: 'templates/user/user-edit-info.html',
         controller: 'UserEditCtrl',
         data: {
           requireAuth: true
@@ -237,7 +237,7 @@ angular.module('starter')
       .state('user-innovations', {
         url: '/user-innovations',
         cache: false,
-        templateUrl: 'templates/user-innovations.html',
+        templateUrl: 'templates/user/user-innovations.html',
         controller: 'UserInnovationsCtrl',
         data: {
           requireAuth: true
@@ -246,7 +246,7 @@ angular.module('starter')
       })
       .state('lookuser', {
         url: '/lookuser',
-        templateUrl: 'templates/lookuser.html',
+        templateUrl: 'templates/user/lookuser.html',
         controller: 'LookUserCtrl'
 
       })
