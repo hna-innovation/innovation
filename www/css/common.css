@@ -518,6 +518,60 @@ img {
   border-bottom: #e16a68 solid 2px;
 }
 
+/* panels */
+.panel-section {
+  border-top: #e5e5e5 solid 1px;
+  border-bottom: #e5e5e5 solid 1px;
+  background-color: #fff;
+
+}
+
+.panel-section .panel_header {
+  padding: 10px 10px;
+  border-bottom: #e5e5e5 solid 1px;
+}
+
+.panel-section .panel_title {
+  border-left: #e16a68 solid 3px;
+  line-height: 1;
+  padding-left: 10px;
+}
+
+.panel-section .panel_body {
+  padding: 15px;
+}
+
+/* poker-list */
+.poker-list {
+  overflow: hidden;
+}
+
+.poker-list li {
+  float: left;
+  margin-right: 15px;
+}
+
+.poker-card {
+  border: #e5e5e5 solid 1px;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+.poker-card .poker_img img {
+  width: 72px;
+}
+
+.poker-card .poker_title {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.poker-card .poker_description {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
 /* swiper */
 .swiper-container-horizontal > .swiper-pagination {
   display: inline !important;

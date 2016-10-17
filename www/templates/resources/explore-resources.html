@@ -1,49 +1,18 @@
 <ion-view>
     <ion-content>
-        <div class="user-list-title bg-pink bg-img-left" hna-goback>
+        <div class="user-list-title bg-pink bg-img-left" ui-sref="innovation" >
             <span class="font-18">资源库</span>
         </div>
-
         <div>
-            <ul class="tab-menu color-3d" >
-                <li class="active">公开培训</li>
+            <ul class="tab-menu color-3d">
+                <li class="active" ui-sref="explore-resources.experts">各路精英</li>
                 <li>公开培训</li>
-                <li>公开培训</li>
-                <li>公开培训</li>
+                <li ui-sref="explore-resources.markets">资源市集</li>
             </ul>
         </div>
-
         <div class="content">
-            <div class="pd-10">
-                <ul class="list-img list-img-medium">
-                    <li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
-                        <div>
-                            <a>
-                                <img ng-src="{{ ::resource.img }}" width="130" height="90" />
-                            </a>
-                        </div>
-                        <div>
-                            <p class="color-3d font-14 text-ellipsis text-title">
-                                {{ ::resource.title }}
-                            </p>
-                            <div>
-                                <a class="font-10 tag tag-lan mg-b0">科技</a>
-                                <a class="font-10 tag tag-lan mg-b0">科技</a>
-                            </div>
-                            <p class="color-88 text-bottom">
-                                <span>
-            						<img src="../img/home/home-love2.png" width="15" />{{ resource.likeCount }}
-            					</span>
-                                <span class="pd-l10">
-            						<img src="../img/star1.png"  width="15"/>{{ resource.starCount }}
-            					</span>
-                                <span class="pd-l10">
-            						<img src="../img/home/home-comment.png"  width="15"/>{{ resource.commentCount }}
-            					</span>
-                            </p>
-                        </div>
-                    </li>
-                </ul>
+            <div class="mg-t10">
+                <div ui-view></div>
             </div>
         </div>
     </ion-content>

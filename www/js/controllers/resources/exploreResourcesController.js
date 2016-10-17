@@ -2,6 +2,8 @@ angular.module('starter.controllers')
   .controller('ExploreResourcesCtrl', function($scope, $state, Content) {
     'use strict';
 
+    $state.transitionTo('explore-resources.experts');
+
     $scope.resources = [
         {
             title: "创业导师资源",

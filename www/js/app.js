@@ -94,6 +94,16 @@ angular.module('starter')
 
       })
 
+      .state('explore-resources.experts', {
+        url: '/resources-experts',
+        templateUrl: 'templates/resources/resources-experts.html',
+      })
+
+      .state('explore-resources.markets', {
+        url: '/resources-markets',
+        templateUrl: 'templates/resources/resources-markets.html',
+      })
+
       .state('detail-edit-introduction', {
         url: '/detail-edit-introduction/:projectId',
         templateUrl: 'templates/detail/detail-edit-introduction.html',
