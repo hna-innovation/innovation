@@ -1,5 +1,5 @@
 angular.module('configuration')
   .constant('Page', {
-    'SIZE': 2
+    'SIZE': 10
   });
 
