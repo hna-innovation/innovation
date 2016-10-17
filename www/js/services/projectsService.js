@@ -17,6 +17,11 @@ angular.module('starter.services')
         return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/search?query=' + keyword + '&page=0&size=8'))
           .success(success)
           .error(error);
+      },
+      getStateOfProducts: function (success, error) {
+        return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/state'))
+          .success(success)
+          .error(error)
       }
     }
   }]);

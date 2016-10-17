@@ -33,6 +33,13 @@ angular.module('starter.controllers')
           pagination: '.swiper-pagination'
         });
 
+        // Get state of projects
+        ProjectsService.getStateOfProducts(function (data) {
+          $scope.innovationsCount = data.data.totalCount;
+        }, function () {
+
+        });
+
         // Get Projects
         $scope.projects = [];
         $scope.hasMoreData = true;
