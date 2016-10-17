@@ -489,8 +489,10 @@ img {
   border-bottom: transparent solid 2px;
 }
 
-.tab-nav .active span {
-  border-bottom: #e16a68 solid 2px;
+.tab-nav .active:after {
+  content: "";
+  display: block;
+  border-bottom: #e16a68 solid 1px;
   color: #e16a68;
   font-size: 16px;
 }
