@@ -22,8 +22,13 @@
 		</ul>
 
 		<load-more
-          on-load-more="getProjects()"
-          has-more-data="hasMoreData">
-        </load-more>
+       on-load-more="getProjects()"
+       has-more-data="hasMoreData">
+    </load-more>
+
+		<div class="empty" ng-if="projects.length === 0">
+				<img src="../img/empty.svg">
+				<div ng-bind="attentionMsg"></div>
+		</div>
 	</ion-content>
 </ion-view>
