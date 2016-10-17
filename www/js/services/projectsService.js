@@ -12,6 +12,11 @@ angular.module('starter.services')
         return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/ordered?sort='+ type + ',desc&page='+ offset +'&size='+Page.SIZE))
           .success(success)
           .error(error);
+      },
+      getProductsBySearch: function(keyword, success, error) {
+        return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/search?query=' + keyword + '&page=0&size=8'))
+          .success(success)
+          .error(error);
       }
     }
   }]);

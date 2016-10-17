@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('SearchCtrl', function($scope, SearchService, Content) {
+  .controller('SearchCtrl', function($scope, ProjectsService, Content) {
     'use strict';
 
     $scope.NO_SEARCH_RESULT = Content.NO_SEARCH_RESULT;
@@ -7,7 +7,7 @@ angular.module('starter.controllers')
 
     $scope.search = function(keyword) {
 
-      SearchService.getProducts(keyword, function(response) {
+      ProjectsService.getProductsBySearch(keyword, function(response) {
         $scope.searchResults = response.data.content;
       }, function(error) {
         // TOTO Handle error
