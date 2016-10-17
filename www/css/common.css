@@ -501,6 +501,23 @@ img {
   border-bottom: #e5e5e5 solid 1px;
 }
 
+.tab-menu {
+  border-bottom: #e5e5e5 solid 1px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.tab-menu > li {
+  float: left;
+  height: 100%;
+  padding-top: 10px;
+  margin: 0 20px;
+}
+
+.tab-menu .active {
+  border-bottom: #e16a68 solid 2px;
+}
+
 /* swiper */
 .swiper-container-horizontal > .swiper-pagination {
   display: inline !important;

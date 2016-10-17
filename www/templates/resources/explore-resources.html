@@ -1,7 +1,19 @@
 <ion-view>
-    <hna-home-header></hna-home-header>
     <ion-content>
-        <div class="content content-header">
+        <div class="user-list-title bg-pink bg-img-left" hna-goback>
+            <span class="font-18">资源库</span>
+        </div>
+
+        <div>
+            <ul class="tab-menu color-3d" >
+                <li class="active">公开培训</li>
+                <li>公开培训</li>
+                <li>公开培训</li>
+                <li>公开培训</li>
+            </ul>
+        </div>
+
+        <div class="content">
             <div class="pd-10">
                 <ul class="list-img list-img-medium">
                     <li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
@@ -35,6 +47,4 @@
             </div>
         </div>
     </ion-content>
-    <hna-home-footer></hna-home-footer>
-    <hna-home-preferences></hna-home-edit-preferences>
 </ion-view>
