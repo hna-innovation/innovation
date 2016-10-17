@@ -37,7 +37,7 @@ angular.module('starter.controllers')
 
         $scope.members = $scope.detail.members;
 
-        $scope.isCurrentUser = !$scope.members.length ? false : $scope.members.filter(function (elem) {
+        $scope.isProjectUser = !$scope.members.length ? false : $scope.members.filter(function (elem) {
           return elem.id === _userId;
         }).length ? true : false;
 
@@ -51,7 +51,7 @@ angular.module('starter.controllers')
 
     $scope.joinProject = function () {
       UserService.joinProject(_projectId, function (data) {
-        $state.go($state.current, {}, {reload: true});
+        $scope.getProjectDetail();
       }, function () {
 
       })
