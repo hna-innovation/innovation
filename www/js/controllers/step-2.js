@@ -105,7 +105,9 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
         if (response.code != 0) return HnaAlert.default('图片上传失败！');
         $scope.loading = false;
         response.data.forEach(function (item) {
-            $scope.images.push(item.id);
+            $scope.images.push({
+                id: item.id
+            });
         });
         if ($scope.images.length < 8) {
             $scope.addShow = true;
