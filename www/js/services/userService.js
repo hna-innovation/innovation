@@ -12,7 +12,7 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
   userService.getUserInfo = function(success, error) {
     return $http.get(getUrl(Api.USER_INFO_API))
       .success(success)
-      .error(error);;
+      .error(error);
   }
 
   userService.getUserExtensionInfo = function(success, error) {

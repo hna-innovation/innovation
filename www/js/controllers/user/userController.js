@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService, Content) {
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService, HnaAlert, Content) {
 
     var resourcesType = $location.search()['type'];
 
@@ -10,7 +10,7 @@ angular.module('starter.controllers')
       UserService.getUserInfo(function(result) {
         $scope.userInfo = result.data;
       }, function() {
-        // TODO
+        HnaAlert.default('获取用户信息出错！');
       });
     }
 
@@ -18,7 +18,7 @@ angular.module('starter.controllers')
       UserService.getUserExtensionInfo(function(result) {
         $scope.userExtensionInfo = result.data;
       }, function() {
-        // TODO
+          HnaAlert.default('获取用户信息出错！');
       });
     }
 
