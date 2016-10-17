@@ -58,5 +58,10 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
     return $http.post(getUrl(Api.USER_LIKED_STATUS_READ));
   }
 
+  userService.setUserProfile = function(data) {
+
+    return $http.put(getUrl(Api.USER_INFO_API), data)
+  }
+
   return userService;
 }

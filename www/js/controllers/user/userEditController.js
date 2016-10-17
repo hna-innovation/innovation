@@ -1,13 +1,15 @@
 angular.module('starter.controllers')
 
-	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, Services) {
+	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, UserService) {
       $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, mulitline: $stateParams.mulitline, required: $stateParams.required};
 
-      $scope.getUserInfo = function(){
-				Services.getUserInfo(localStorage.userId).success(function(result){
-						$scope.userInfo=result.data;
-				});
-			}
+			$scope.getUserInfo = function() {
+	      UserService.getUserInfo(function(result) {
+	        $scope.userInfo = result.data;
+	      }, function() {
+	        HnaAlert.default('获取用户信息出错！');
+	      });
+	    }
 
       $scope.cancel = function() {
         $ionicHistory.goBack();
@@ -22,8 +24,22 @@ angular.module('starter.controllers')
 					}
 				}
 
-				//call service to update the user info.
-				$ionicHistory.goBack();
+				UserService.setUserProfile({
+					nickName: $scope.userInfo.nickName,
+					company: $scope.userInfo.company,
+					hobby: $scope.userInfo.hobby,
+					speciality: $scope.userInfo.speciality
+				}).success(function(result){
+					if(result.code == 0) {
+						//HnaAlert.default('用户信息更新成功！');
+						$ionicHistory.goBack();
+					}
+					else{
+						HnaAlert.default('用户信息更新失败！');
+					}
+				}).error(function(error){
+					HnaAlert.default('用户信息更新失败！');
+				})
       }
 
 			$scope.getUserInfo();
