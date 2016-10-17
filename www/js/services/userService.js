@@ -1,7 +1,7 @@
 angular.module('starter.services')
   .factory('UserService', UserService);
 
-function UserService($http, LOCAL_TEST_URL, Api) {
+function UserService($http, LOCAL_TEST_URL, Api, Page) {
 
   var userService = {};
 
@@ -46,9 +46,9 @@ function UserService($http, LOCAL_TEST_URL, Api) {
       .error(error);
   }
 
-  userService.getUserFavoriteProjects = function(success, error) {
+  userService.getUserFavoriteProjects = function(offset, success, error) {
 
-    return $http.get(getUrl(Api.USER_FAVORITE__PROJECTS_API))
+    return $http.get(getUrl(Api.USER_FAVORITE_PROJECTS_API + '?page='+ offset + '&size=5'))
       .success(success)
       .error(error);
   }
