@@ -511,7 +511,8 @@ img {
   padding: 0 5px;
 }
 
-#swiper1 .swiper-slide {
+#swiper1 .swiper-slide,
+#swiper-step .swiper-slide {
   height: 200px;
   overflow: hidden;
 }
