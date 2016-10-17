@@ -118,7 +118,11 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
                 localStorage.removeItem('draftId');
                 $state.go('detail', {projectId: result.data.id, pageName: 'innovation'});
             } else {
+              if (result.code == 500) {
+                HnaAlert.default('标题长度不能超过40字符! ');
+              } else {
                 HnaAlert.default('创意发布失败，请稍后再试！');
+              }
             }
         }, function (error) {
             HnaAlert.default('创意发布失败，请稍后再试！');

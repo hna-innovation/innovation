@@ -19,6 +19,8 @@
     <input type="text" name="username"
            ng-model="credentials.username" placeholder="用户名"
            required-message="'请输入您的用户名'"
+           ng-maxlength="10"
+           invalid-message="'用户名长度不超过10位字符'"
            required disallow-spaces>
   </div>
   <div class="form-group">
