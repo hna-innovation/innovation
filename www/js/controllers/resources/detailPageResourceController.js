@@ -9,17 +9,17 @@ angular.module('starter.controllers')
       mentors: [
         {
           name: "大海",
-          headerIcon: "../images/user/datx.png",
+          headerIcon: "../img/face/1.png",
           position: "资深投资人",
           description: "可为电商o2o项目提供项目指导和培训"
         },{
           name: "江山 ShanJiang",
-          headerIcon: "../images/user/datx.png",
+          headerIcon: "../img/face/2.png",
           position: "资深媒体人",
           description: "拥有20年的媒体投资经验, 可为电商o2o项目提供项目指导和培训"
         },{
           name: "黄河",
-          headerIcon: "../images/user/datx.png",
+          headerIcon: "../img/face/3.png",
           position: "资深投资人",
           description: "可为电商o2o项目提供项目指导和培训"
         }
