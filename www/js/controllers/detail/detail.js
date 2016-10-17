@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -35,6 +35,12 @@ angular.module('starter.controllers')
         setLocalStorageWithDetailTab(_projectId, $scope.detail.marketAnalysis, 'market');
         setLocalStorageWithDetailTab(_projectId, $scope.detail.businessModel, 'business');
 
+        $scope.members = $scope.detail.members;
+
+        $scope.isCurrentUser = !$scope.members.length ? false : $scope.members.filter(function (elem) {
+          return elem.id === _userId;
+        }).length ? true : false;
+
         $ionicLoading.hide();
       }, function () {
         $ionicLoading.hide();
@@ -42,6 +48,14 @@ angular.module('starter.controllers')
     }
     $scope.getProjectDetail();
     $ionicLoading.show();
+
+    $scope.joinProject = function () {
+      UserService.joinProject(_projectId, function (data) {
+        $state.go($state.current, {}, {reload: true});
+      }, function () {
+
+      })
+    }
 
     setTimeout(function () {
       Swiper('#swiper1', {

@@ -1,31 +1,15 @@
 <div class="team-members">
-    <h3 class="color-3d">创意成员（6）</h3>
-    <div>
-        <ul>
-            <li>
-                <img class="team-members_avator radius" src="../img/face/1.png" alt="创意成员">
-                <div class="team-members_name color-6d">马涛</div>
-            </li>
-            <li>
-                <img class="team-members_avator radius" src="../img/face/2.png" alt="创意成员">
-                <div class="team-members_name color-6d">马涛</div>
-            </li>
-            <li>
-                <img class="team-members_avator radius" src="../img/face/3.png" alt="创意成员">
-                <div class="team-members_name color-6d">马涛</div>
-            </li>
-            <li>
-                <img class="team-members_avator radius" src="../img/face/4.png" alt="创意成员">
-                <div class="team-members_name color-6d">马涛</div>
-            </li>
-            <li>
-                <img class="team-members_avator radius" src="../img/face/5.png" alt="创意成员">
-                <div class="team-members_name color-6d">马涛</div>
-            </li>
-            <li>
-                <div class="team-members_add color-pink radius bg-light-red">+</div>
-                <div class="team-members_name color-red">申请加入</div>
-            </li>
-        </ul>
-    </div>
+  <h3 class="color-3d">创意成员（<span ng-bind="members.length || '无'"></span>）</h3>
+  <div>
+    <ul>
+      <li ng-repeat="member in members">
+        <img class="team-members_avator radius" ng-src="{{member.headerIcon}}" alt="创意成员">
+        <div class="team-members_name color-6d" ng-bind="member.nickName"></div>
+      </li>
+      <li ng-if="!isCurrentUser">
+        <div class="team-members_add color-pink radius bg-light-red" ng-click="joinProject()">+</div>
+        <div class="team-members_name color-red">申请加入</div>
+      </li>
+    </ul>
+  </div>
 </div>
