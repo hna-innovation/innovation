@@ -19,18 +19,18 @@
 		    <ul class="box-table">
 		        <li class="box-table-row" id="user-photo">
 					<div class="box-table-cell" style="width: 80px;">
-						<img ng-src="{{ ::userInfo.headerIcon || userDefaultHeader }}" alt="头像" width="80" height="80" class="user-img">
+						<img ng-src="{{userInfo.headerIcon || userDefaultHeader }}" alt="头像" width="80" height="80" class="user-img">
 					</div>
 					<div class="box-table-cell pd-l10 color-white">
 			            <div id="user-name">
-			                姓名：<span ng-bind=" ::userInfo.nickName || '未填写'" ></span>
+			                姓名：<span ng-bind="userInfo.nickName || '未填写'" ></span>
 			            </div>
 			            <div id="user-company">
-			                公司：<span ng-bind=" ::userInfo.company || '未填写'">{{  }}</span>
+			                公司：<span ng-bind="userInfo.company || '未填写'"></span>
 			            </div>
 			            <div id="user-interest">
-			                <div>兴趣：<span ng-bind=" ::userInfo.hobby || '未填写'"></span></div>
-			                <div>特长：<span ng-bind=" ::userInfo.speciality || '未填写'"></span></div>
+			                <div>兴趣：<span ng-bind="userInfo.hobby || '未填写'"></span></div>
+			                <div>特长：<span ng-bind="userInfo.speciality || '未填写'"></span></div>
 			            </div>
 		            </div>
 		        </li>

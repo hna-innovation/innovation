@@ -12,7 +12,7 @@
            ng-minlength="5"
            ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
            required disallow-spaces>
-    <span class="errorMessage dispear" ng-show="!registerForm.email.$error.required" ng-if="existedEmail">邮箱已存在</span>
+    <span class="errorMessage" ng-show="registerForm.email.$pristine" ng-if="existedEmail && registerForm.email.$valid" ng-bind="EXISTED_EMAIL_MSG"></span>
   </div>
   <div class="form-group">
     <i class="icon ion-ios-person-outline placeholder-icon"></i>

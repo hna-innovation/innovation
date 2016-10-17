@@ -1,19 +1,37 @@
 angular.module('starter.controllers')
   .controller('UserFavoriteProjectsCtrl', UserFavoriteProjectsCtrl);
 
-function UserFavoriteProjectsCtrl($scope, UserService, Content) {
+function UserFavoriteProjectsCtrl($scope, UserService, Content, UtilityService) {
 
   $scope.NO_FAVORITE = Content.user.NO_FAVORITE;
 
-  UserService.getUserFavoriteProjects(function(result) {
+  $scope.favoriteProjects = [];
+  $scope.hasMoreData = true;
 
-    if (result.data.content && result.data.content.length) {
+  var getProjectsByPage = function() {
+    var offset = 0;
 
-      $scope.favoriteProjects = result.data.content;
-    }
+    return function() {
+      UserService.getUserFavoriteProjects(offset, function(result) {
 
-  }, function() {
-    // TODO
-  });
+        if (result.data.content && result.data.content.length) {
+          $scope.favoriteProjects = UtilityService.concatArray($scope.favoriteProjects, result.data.content);
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        } else {
+          $scope.hasMoreData = false;
+        }
+
+      }, function(error) {
+        $scope.attentionMsg = Content.TIME_OUT;
+        $scope.hasMoreData = false;
+      });
+
+      offset++;
+    };
+  };
+
+  $scope.getFavoriteProjects = getProjectsByPage();
+
+  $scope.getFavoriteProjects();
 
 }

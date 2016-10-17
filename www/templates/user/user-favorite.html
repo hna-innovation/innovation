@@ -7,11 +7,12 @@
 
 
     <div ng-show="favoriteProjects.length === 0" class="color-pink pd-15" ng-bind="::NO_FAVORITE">
+      <p ng-bind="attentionMsg"></p>
     </div>
 
     <div ng-if="favoriteProjects.length > 0">
         <section>
-          <div class="border-tb mg-b10" ng-repeat="favoriteProject in ::favoriteProjects">
+          <div class="border-tb mg-b10" ng-repeat="favoriteProject in favoriteProjects">
             <ul class="box-table bg-ff">
                   <li class="box-table-row" id="user-photo">
                       <div class="box-table-cell pd-l15 pd-tb" style="width: 40px;">
@@ -39,9 +40,14 @@
               </li>
             </ul>
           </div>
-        </section>
-      </div>
 
+          <load-more
+            on-load-more="getFavoriteProjects()"
+            has-more-data="hasMoreData">
+          </load-more>
+
+        </section>
+    </div>
 
 	</ion-content>
 </ion-view>

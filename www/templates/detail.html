@@ -15,9 +15,9 @@
 				<div class="border-b1 pd-tb text1 text-word">
 					<img ng-src="{{ ::detail.creator.headerIcon}}" width="30" height="30" class="radius mg-r15 left"/>
 					<div class="left color-88">
-						<span ng-bind="::detail.creator.nickName || '马涛'"></span>
+						<span ng-bind="::detail.creator.nickName"></span>
 						<span>&middot;</span>
-						<span class="font-10 color-88" ng-bind="::project.user.department || '生态科技研究院'"></span>
+						<span class="font-10 color-88" ng-bind="project.user.department || '生态科技研究院'"></span>
 					</div>
 					<span class="right color-88" ng-bind="::detail.createdDate"></span>
 				</div>
