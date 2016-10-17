@@ -22,15 +22,13 @@
 						<img ng-src="{{userInfo.headerIcon || userDefaultHeader }}" alt="头像" width="80" height="80" class="user-img">
 					</div>
 					<div class="box-table-cell pd-l10 color-white">
-			            <div id="user-name">
-			                姓名：<span ng-bind="userInfo.nickName || '未填写'" ></span>
+			            <div id="user-name" ng-bind="userInfo.nickName" ng-if="userInfo.nickName">
 			            </div>
-			            <div id="user-company">
-			                公司：<span ng-bind="userInfo.company || '未填写'"></span>
+			            <div id="user-company"  ng-bind="userInfo.company" ng-if="userInfo.company">
 			            </div>
-			            <div id="user-interest">
-			                <div>兴趣：<span ng-bind="userInfo.hobby || '未填写'"></span></div>
-			                <div>特长：<span ng-bind="userInfo.speciality || '未填写'"></span></div>
+			            <div id="user-interest" >
+			                <span class="block" ng-bind="userInfo.hobby" ng-if="userInfo.hobby"></span>
+			                <span class="block" ng-bind="userInfo.speciality" ng-if="userInfo.speciality"></span>
 			            </div>
 		            </div>
 		        </li>
