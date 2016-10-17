@@ -8,8 +8,13 @@ angular.module('starter.controllers')
     $scope.closePopup = function () {
       ModalServices.closePopup();
     };
+
     $scope.existedEmail = false;
+    $scope.registerLoading = false;
+
     $scope.register = function (data) {
+      $scope.registerLoading = true;
+
       if(!data)
         return;
 
@@ -28,6 +33,8 @@ angular.module('starter.controllers')
           $scope.existedEmail = true;
           $scope.EXISTED_EMAIL_MSG = "邮箱已存在";
           $scope.registerForm.$setPristine();
+          $scope.registerLoading = false;
+
         } else {
           HnaAlert.defaultSuccess('注册成功！');
           ModalServices.goToLogin();

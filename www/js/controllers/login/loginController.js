@@ -8,8 +8,12 @@ angular.module('starter.controllers')
     $scope.closePopup = function () {
       ModalServices.closePopup();
     };
+
+    $scope.loginLoading = false;
+
     $scope.login = function (data) {
-      $scope.loginLoading = false;
+      $scope.loginLoading = true;
+
       if(!data)
         return;
 
@@ -21,7 +25,6 @@ angular.module('starter.controllers')
         return;
       }
       LoginService.login(loginData, function (res) {
-        $scope.loginLoading = true;
 
         if (res.error) {
           HnaAlert.defaultError('登录信息不正确！');

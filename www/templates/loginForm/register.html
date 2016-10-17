@@ -41,7 +41,7 @@
            required-message="'请再次输入您的密码'" required disallow-spaces>
   </div>
   <div class="btn-action">
-    <button class="active" type="submit">注册</button>
+    <button class="active" type="submit" ng-disabled="registerLoading">注册</button>
     <span>已有账号, 去<a ng-click="goToLogin()">登录</a></span>
   </div>
 
