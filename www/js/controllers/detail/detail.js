@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -130,7 +130,14 @@ angular.module('starter.controllers')
 
     $scope.generateBPPdf = function (item) {
       ProjectsService.getProjectBPPdf(item.id, function (result) {
-        console.log(result);
+        if (result) {
+          var file = new Blob([result], {type: 'application/pdf'});
+          saveAs(file, "BP计划书.pdf");
+        } else {
+          HnaAlert.default(Content.project.ERROR_MESSAGE_PDF);
+        }
+      }, function(){
+        HnaAlert.default(Content.project.ERROR_MESSAGE_PDF);
       });
     }
 

@@ -26,5 +26,9 @@ angular.module('configuration')
 
     image: {
       'DEFAULT_HEADER': '../img/face/4.png'
+    },
+
+    project: {
+      'ERROR_MESSAGE_PDF': '生成PDF计划书失败。'
     }
   });

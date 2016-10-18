@@ -24,7 +24,7 @@ angular.module('starter.services')
           .error(error)
       },
       getProjectBPPdf: function (projectId, success, error) {
-        return $http.get(HelperService.getUrl(Api.PROJECT_BP_PDF_API + '/' + projectId + '/doc'))
+        return $http.get(HelperService.getUrl(Api.PROJECT_BP_PDF_API + '/' + projectId + '/doc'), {responseType: 'arraybuffer'})
           .success(success)
           .error(error)
       }
