@@ -16,7 +16,7 @@
             <li ng-repeat="project in searchResults">
                 <div ui-sref="detail({projectId: project.id, pageName: 'innovation'})">
                     <div class="show-innovation-post">
-                        <img ng-src="{{::project.image}}">
+                        <img ng-src="{{::project.images[0]}}">
                     </div>
                     <div>
                         <p class="text-title3" ng-bind="::project.name"></p>
