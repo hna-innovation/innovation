@@ -4,5 +4,5 @@ angular.module('configuration')
       'zh': '中文',
       'en': '英文'
     },
-    'preferredLanguage': 'en'
+    'preferredLanguage': 'zh'
   });
