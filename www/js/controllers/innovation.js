@@ -2,13 +2,14 @@ angular.module('starter.controllers')
   .controller('InnovationCtrl', [
       '$scope',
       '$ionicScrollDelegate',
+      '$translate',
       'Services',
       'PageService',
       '$state',
       'ProjectsService',
       'UtilityService',
       'Content',
-      function ($scope, $ionicScrollDelegate, Services, PageService, $state, ProjectsService, UtilityService, Content) {
+      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, Content) {
 
         // set title
         PageService.setTitle('创新平台');
@@ -112,6 +113,10 @@ angular.module('starter.controllers')
           $state.go('innovation-stars');
         };
 
+        $scope.setLang = function(langKey) {
+          $translate.use(langKey);
+        };
+        
         Services.getTags(function (data) {
           $scope.tags = data.data;
         }, function () {

@@ -1,15 +1,18 @@
+angular.module('configuration', []);
+
 angular.module('starter', [
     'ionic',
     'starter.controllers',
     'starter.services',
     'angularValidator',
     'angularFileUpload',
-    'ionic.closePopup'
+    'ionic.closePopup',
+    'ngCookies',
+    'pascalprecht.translate',
+    'configuration'
     ]);
 
 angular.module('starter.controllers', []);
-
-angular.module('configuration', []);
 
 angular.module('starter.services', ['configuration']);
 
