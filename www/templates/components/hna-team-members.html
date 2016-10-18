@@ -6,7 +6,7 @@
         <img class="team-members_avator radius" ng-src="{{member.headerIcon}}" alt="创意成员">
         <div class="team-members_name color-6d" ng-bind="member.nickName"></div>
       </li>
-      <li ng-if="!isProjectUser">
+      <li ng-if="!isProjectUser" class="team-members_join" >
         <div class="team-members_add color-pink radius bg-light-red" ng-click="joinProject()">+</div>
         <div class="team-members_name color-red">申请加入</div>
       </li>
