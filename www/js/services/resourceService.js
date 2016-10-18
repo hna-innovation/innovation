@@ -4,7 +4,7 @@ angular.module('starter.services')
 
     return {
       clickLikeAdd: function (item) {
-        item.like=true;
+        item.hasLiked=true;
         item.likeCount++;
         // TODO Integration
         // return $http.post(getUrl(RESOURCE_API+'?resourceId=' + item.id + '&add=true'))
@@ -15,7 +15,7 @@ angular.module('starter.services')
       },
 
       clickLikeCancle: function (item) {
-        item.like=false;
+        item.hasLiked=false;
         item.likeCount--;
         // TODO Integration
         // return $http.post(getUrl(RESOURCE_API+'?resourceId=' + item.id + '&add=false'))
@@ -25,7 +25,7 @@ angular.module('starter.services')
         //   });
       },
       clickFavoriteAdd: function (item) {
-        item.favorite=true;
+        item.hasFavorited=true;
         item.favoriteCount++;
         // TODO Integration
         // return $http.post(getUrl(RESOURCE_API+'?resourceId=' + item.id + '&add=true'))
@@ -36,7 +36,7 @@ angular.module('starter.services')
       },
 
       clickFavoriteCancle: function (item) {
-        item.favorite=false;
+        item.hasFavorited=false;
         item.favoriteCount--;
         // TODO Integration
         // return $http.post(getUrl(RESOURCE_API+'?resourceId=' + item.id + '&add=false'))

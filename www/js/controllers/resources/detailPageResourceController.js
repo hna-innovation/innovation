@@ -24,8 +24,8 @@ angular.module('starter.controllers')
           description: "可为电商o2o项目提供项目指导和培训"
         }
       ],
-      like: false,
-      favorite: false,
+      hasLiked: false,
+      hasFavorited: false,
       favoriteCount: 5,
       likeCount: 3115,
       bannerImage: "../img/banner/banner-1.jpg"
@@ -61,10 +61,10 @@ angular.module('starter.controllers')
       })
     }, 1000);
 
-    $scope.like = function (item) {
+    $scope.hasLiked = function (item) {
       item.like ? ResourceService.clickLikeCancle(item) : ResourceService.clickLikeAdd(item);
     }
-    $scope.favorite = function (item) {
+    $scope.hasFavorited = function (item) {
       item.favorite ? ResourceService.clickFavoriteCancle(item) : ResourceService.clickFavoriteAdd(item);
     }
 
