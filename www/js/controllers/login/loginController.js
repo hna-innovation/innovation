@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('LoginCtrl', function ($scope, ModalServices, LoginService, HnaAlert, $window) {
+  .controller('LoginCtrl', function ($scope, $state, ModalServices, LoginService, HnaAlert) {
     'use strict';
     $scope.goToRegister = function () {
       ModalServices.goToRegister();
@@ -35,7 +35,8 @@ angular.module('starter.controllers')
           HnaAlert.defaultSuccess('登录成功！');
           localStorage.userId = res.data.id;
           localStorage.userHeaderIcon = res.data.headerIcon;
-          $window.location.reload();
+          $scope.closePopup();
+          $state.reload($state.current);
         }
       });
     }

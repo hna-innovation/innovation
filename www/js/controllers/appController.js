@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('AppCtrl', AppCtrl);
 
-function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state, HnaAlert, $window) {
+function AppCtrl($scope, AuthEvent, ModalServices, Services, $state, HnaAlert) {
   'use strict';
 
   $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {
@@ -10,12 +10,13 @@ function AppCtrl($scope, AuthEvent, AuthService, ModalServices, Services, $state
   });
 
   $scope.$on(AuthEvent.LOGOUT, function() {
-    localStorage.removeItem('userId');
 
+    $state.go('innovation');
     Services.logout(function() {
+      localStorage.removeItem('userId');
+      $state.reload('innovation');
       HnaAlert.success('您已退出登录');
-      $state.go('innovation');
-      $window.location.reload();
+
     }, function() {
       // TODO
     });

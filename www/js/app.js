@@ -87,7 +87,8 @@ angular.module('starter')
         url: '/innovation',
         cache: false,
         templateUrl: 'templates/innovation.html',
-        controller: 'InnovationCtrl'
+        controller: 'InnovationCtrl',
+        cache: 'false'
       })
 
       .state('detail', {
