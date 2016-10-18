@@ -112,7 +112,7 @@ angular.module('starter.controllers')
         $scope.setLang = function(langKey) {
           $translate.use(langKey);
         };
-        
+
         Services.getTags(function (data) {
           $scope.tags = data.data;
         }, function () {

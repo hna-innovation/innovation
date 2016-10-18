@@ -5,6 +5,10 @@
 
   <ion-content>
     <div class="content content-header">
+      <!--p> 测试按钮 稍后删除
+        <span ng-click="setLang('en')">English</span>
+        <span ng-click="setLang('zh')">中文</span>
+      </p-->
       <div class="swiper-container">
         <!-- Additional required wrapper -->
         <div id="home-slide" class="swiper-wrapper">
@@ -27,10 +31,10 @@
       <div class="nav-list">
         <ul>
           <li ng-click="goPopularInnovation()">
-            <img src="../img/nav/nav-1.png" alt=""> {{'innovation.popular-innovation' | translate}}
+            <img src="../img/nav/nav-1.png" alt=""> {{'innovation.popular-innovation' | translate }}
           </li>
           <li ng-click="goLastInnovation()">
-            <img src="../img/nav/nav-2.png" alt=""> 最新创意
+            <img src="../img/nav/nav-2.png" alt=""> {{'innovation.last-innovation' | translate }}
           </li>
         </ul>
         <ul>

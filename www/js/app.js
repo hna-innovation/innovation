@@ -71,6 +71,7 @@ angular.module('starter')
     });
     // Tell the module what language to use by default
     $translateProvider.preferredLanguage(LANGUAGE.preferredLanguage);
+    $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.useCookieStorage();
   })
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
