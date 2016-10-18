@@ -202,6 +202,10 @@ img {
   padding-bottom: 15px;
 }
 
+.pd-b5 {
+  padding-bottom: 5px;
+}
+
 .pd-b15 {
   padding-bottom: 15px;
 }
@@ -516,6 +520,11 @@ img {
 
 .tab-menu .active {
   border-bottom: #e16a68 solid 2px;
+}
+
+/* icons */
+.icons-list {
+  line-height: 13px;
 }
 
 /* panels */
