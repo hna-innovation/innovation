@@ -4,9 +4,14 @@ angular.module('configuration')
     'TIME_JUST_NOW': '刚刚',
     'TIME_OUT': '网页不给力，请下拉重新刷新',
     'EMPTY_CONTENT': '暂无数据',
+
     user: {
       'NO_FAVORITE': '暂无收藏的创意',
-      'NO_LIKED': '还未收到点赞'
+      'NO_LIKED': '还未收到点赞',
+      'LOAD_DATA_ERROR': '获取用户信息出错！',
+      'NO_EMPTY': '不能为空！',
+      'LOAD_DATA_SUCCESS': '用户信息更新成功！',
+      'UPDATE_ERROR': '用户信息更新失败！'
     },
 
     comment: {

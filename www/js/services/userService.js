@@ -21,10 +21,8 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
       .error(error);
   }
 
-  userService.getUserProjects = function(success, error) {
-    return $http.get(getUrl(Api.USER_PROJECTS_API))
-      .success(success)
-      .error(error);
+  userService.getUserProjects = function() {
+    return $http.get(getUrl(Api.USER_PROJECTS_API));
   }
 
   userService.getUserDrafts = function(success, error) {
@@ -67,6 +65,10 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
     return $http.post(getUrl(Api.USER_JOIN_PROJECT + '/' + projectId))
       .success(success)
       .error(error);
+  }
+
+  userService.joinedProject = function () {
+    return $http.get(getUrl(Api.USER_JOIN_PROJECT))
   }
 
   return userService;

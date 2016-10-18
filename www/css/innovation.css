@@ -115,6 +115,10 @@
   transform: translate(0,0);
 }
 
+.creative-list + .empty {
+  text-align: center;
+}
+
 .innovation + .empty {
   padding-top: 20px;
   text-align: center;

@@ -267,6 +267,16 @@ angular.module('starter')
         }
 
       })
+      .state('user-joined-innovations', {
+        url: '/user-joined-innovations',
+        cache: false,
+        templateUrl: 'templates/user/user-joined-innovations.html',
+        controller: 'UserJoinedInnovationsCtrl',
+        data: {
+          requireAuth: true
+        }
+
+      })
       .state('lookuser', {
         url: '/lookuser',
         templateUrl: 'templates/user/lookuser.html',
