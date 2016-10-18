@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert) {
+  .controller('DetailCtrl', function ($scope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -125,6 +125,12 @@ angular.module('starter.controllers')
           $scope.getProjectDetail();
         });
       }
+    }
+
+    $scope.generateBPPdf = function (item) {
+      ProjectsService.getProjectBPPdf(item.id, function (result) {
+        console.log(result);
+      });
     }
 
     $scope.goBack = function () {

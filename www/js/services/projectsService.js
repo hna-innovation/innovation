@@ -22,6 +22,11 @@ angular.module('starter.services')
         return $http.get(HelperService.getUrl(Api.PROJECTS_API + '/state'))
           .success(success)
           .error(error)
+      },
+      getProjectBPPdf: function (projectId, success, error) {
+        return $http.get(HelperService.getUrl(Api.PROJECT_BP_PDF_API + '/' + projectId + '/doc'))
+          .success(success)
+          .error(error)
       }
     }
   }]);

@@ -1,6 +1,7 @@
 angular.module('configuration')
     .constant('Api', {
         'PROJECTS_API': '/api/projects',
+        'PROJECT_BP_PDF_API': '/api/projects',
         'USER_INNOVATION_STARS_API': '/api/user/stars',
         'USER_INFO_API': '/api/user/profile',
         'USER_EXTENSION_INFO': '/api/user/profile/extensionInfo',
