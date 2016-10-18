@@ -23,7 +23,7 @@ angular.module('starter.controllers')
         nickName: data.username
       }
 
-      if (!data.email || !data.password || data.passwordRepeat !== data.password) {
+      if (!data.email || !data.username || !data.password || data.passwordRepeat !== data.password ) {
         return;
       }
 
