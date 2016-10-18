@@ -15,6 +15,8 @@ angular.module('starter.controllers')
     //项目详情
     $scope.getProjectDetail = function () {
       DetailService.getProjectDetail(_projectId, function (result) {
+        $ionicLoading.hide();
+
         $scope.detail = result.data;
 
         // Set title with Hack
@@ -41,7 +43,6 @@ angular.module('starter.controllers')
           return elem.id === _userId;
         }).length ? true : false;
 
-        $ionicLoading.hide();
       }, function () {
         $ionicLoading.hide();
       });
