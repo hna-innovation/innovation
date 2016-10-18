@@ -13,7 +13,6 @@ angular.module('starter.controllers')
     $scope.registerLoading = false;
 
     $scope.register = function (data) {
-      $scope.registerLoading = true;
 
       if(!data)
         return;
@@ -27,6 +26,8 @@ angular.module('starter.controllers')
       if (!data.email || !data.password || data.passwordRepeat !== data.password) {
         return;
       }
+
+      $scope.registerLoading = true;
 
       LoginService.register(registerData, function (res) {
         if (res.error) {

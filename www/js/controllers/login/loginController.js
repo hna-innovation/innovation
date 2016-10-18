@@ -12,7 +12,6 @@ angular.module('starter.controllers')
     $scope.loginLoading = false;
 
     $scope.login = function (data) {
-      $scope.loginLoading = true;
 
       if(!data)
         return;
@@ -24,6 +23,9 @@ angular.module('starter.controllers')
       if (!data.email || !data.password) {
         return;
       }
+
+      $scope.loginLoading = true;
+
       LoginService.login(loginData, function (res) {
 
         if (res.error) {
