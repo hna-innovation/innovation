@@ -41,3 +41,7 @@
   height: auto;
   padding: 0;
 }
+
+#editor-container {
+  -webkit-user-select: auto;
+}

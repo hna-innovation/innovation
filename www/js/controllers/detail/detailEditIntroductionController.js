@@ -5,8 +5,7 @@ angular.module('starter.controllers')
     var quill = new Quill('#editor-container', {
       modules: {
         toolbar: [
-          ['bold', 'italic', 'underline'],
-          ['image']
+          ['bold', 'italic', 'underline']
         ]
       },
       placeholder: 'Compose an epic...',
