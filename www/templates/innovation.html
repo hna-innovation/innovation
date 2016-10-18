@@ -52,9 +52,9 @@
           <div class="item item-avatar">
             <img ng-src="{{project.creator.headerIcon}}">
             <h2>
-              <span class="color-3d" ng-bind="project.creator.nickName || '马涛'"></span>
-              <span>&middot;</span>
-              <span class="font-12 color-88" ng-bind="project.user.department || '生态科技研究院'"></span>
+              <span class="color-3d" ng-bind="project.creator.nickName"></span>
+              <span ng-show="project.user.department">&middot;</span>
+              <span class="font-12 color-88" ng-bind="project.user.department"></span>
             </h2>
             <div class="process">
               <span ng-class="{active: project.status >=2 }"></span>
