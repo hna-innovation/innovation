@@ -10,19 +10,25 @@
     border-right: 1px solid #e8e8e8;
 }
 
-.stastitics-show .stastitics_item span {
+.stastitics-show .stastitics_item .stastitics_title span {
     padding-left: 24px;
     display: inline-block;
 }
 
-.stastitics-show .stastitics_innovation span {
+.stastitics-show .stastitics_item .stastitics_new {
+    position: relative;
+    top: -10px;
+    padding: 1px 2px;
+}
+
+.stastitics-show .stastitics_innovation .stastitics_title span {
     background: url(../img/innovation.svg) no-repeat left center;
 }
 
-.stastitics-show .stastitics_resources span {
+.stastitics-show .stastitics_resources .stastitics_title span {
     background: url(../img/resource.svg) no-repeat left center;
 }
 
-.stastitics-show .stastitics_success span {
+.stastitics-show .stastitics_success .stastitics_title span {
     background: url(../img/diamond.svg) no-repeat left center;
 }
