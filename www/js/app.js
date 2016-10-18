@@ -34,13 +34,21 @@ angular.module('starter')
     });
   })
 
-  .factory('httpInterceptor', ['$q', '$injector', 'HnaAlert', function ($q, $injector, HnaAlert) {
+  .factory('httpInterceptor', function ($q, $injector, HnaAlert, $location, $rootScope) {
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401) {
-          var ModalServices = $injector.get('ModalServices');
+
+
+          $location.path('innovation');
+
           localStorage.removeItem('userId');
-          ModalServices.showPopup();
+
+          if(!$rootScope.ModalServices){
+            $rootScope.ModalServices = $injector.get('ModalServices');
+            $rootScope.ModalServices.showPopup();
+          }
+
           return $q.reject(response);
         } else if (response.status === 404) {
           alert("404!");
@@ -60,7 +68,7 @@ angular.module('starter')
       }
     }
     return httpInterceptor;
-  }])
+  })
   .config(function($translateProvider, LANGUAGE){
     // Register a loader for the static files
     // So, the module will search missing translation tables under the specified urls.

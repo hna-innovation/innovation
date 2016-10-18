@@ -71,5 +71,11 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
     return $http.get(getUrl(Api.USER_JOIN_PROJECT))
   }
 
+  userService.checkSession = function (success, error) {
+    return $http.get(getUrl('/api/user/session/status'))
+      .success(success)
+      .error(error);
+  }
+
   return userService;
 }
