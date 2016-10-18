@@ -100,6 +100,12 @@ img {
   transform: translateY(-50%);
 }
 
+/* scroll */
+.sroll-x-wrapper {
+  width: max-content;
+  width: -webkit-max-content;
+}
+
 /* margin */
 .mg-r15 {
   margin-right: 15px;
