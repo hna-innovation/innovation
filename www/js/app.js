@@ -359,6 +359,13 @@ angular.module('starter')
         controller: 'InnovationStarsCtrl'
       })
 
+      .state('download-bim', {
+        url: '/download-bim',
+        cache: true,
+        templateUrl: 'templates/static/download-bim.html',
+        controller: 'DownloadBimCtrl'
+      })
+
       .state('detail-page-comments', {
         url: '/detail-page-comments/:projectid',
         cache: true,

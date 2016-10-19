@@ -237,6 +237,10 @@ img {
 }
 
 /* border */
+.border-d1 {
+  border: #e5e5e5 dashed 1px;
+}
+
 .border-b1 {
   border-bottom: #e5e5e5 dashed 1px;
 }
