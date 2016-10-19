@@ -15,9 +15,9 @@
     "find-resource": "Find Resources"
   },
   "user": {
-    "my-innovation": "My Ideas",
-    "my-resource": "My Resources",
-    "my-collection": "My Collections",
-    "my-praise": "My Praise"
+    "my-innovation": "Ideas",
+    "my-resource": "Resources",
+    "my-collection": "Collections",
+    "my-praise": "Praises"
   }
 }
