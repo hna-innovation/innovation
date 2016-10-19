@@ -16,8 +16,8 @@
 					<img ng-src="{{ ::detail.creator.headerIcon}}" width="30" height="30" class="radius mg-r15 left"/>
 					<div class="left color-88">
 						<span ng-bind="::detail.creator.nickName"></span>
-						<span ng-show="project.user.department" >&middot;</span>
-						<span class="font-10 color-88" ng-bind="::project.user.department"></span>
+						<span ng-show="detail.creator.company" >&middot;</span>
+						<span class="font-10 color-88" ng-bind="::detail.creator.company"></span>
 					</div>
 					<span class="right color-88" ng-bind="::detail.createdDate"></span>
 				</div>

@@ -49,8 +49,8 @@
             <img ng-src="{{project.creator.headerIcon}}">
             <h2>
               <span class="color-3d" ng-bind="project.creator.nickName"></span>
-              <span ng-show="project.user.department">&middot;</span>
-              <span class="font-12 color-88" ng-bind="project.user.department"></span>
+              <span ng-show="project.creator.company">&middot;</span>
+              <span class="font-12 color-88" ng-bind="project.creator.company"></span>
             </h2>
             <div class="process">
               <span ng-class="{active: project.status >=2 }"></span>
