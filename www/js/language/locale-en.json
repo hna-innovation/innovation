@@ -13,5 +13,11 @@
   "home-footer": {
     "find-innovation": "Find Innovation",
     "find-resource": "Find Resource"
+  },
+  "user": {
+    "my-innovation": "My Innovation",
+    "my-resource": "My Resource",
+    "my-collection": "My Collection",
+    "my-praise": "My Praise"
   }
 }
