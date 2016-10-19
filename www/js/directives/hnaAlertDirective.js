@@ -1,7 +1,7 @@
 angular.module('starter')
   .factory("HnaAlert", function () {
   function msgAnimation(status, msg) {
-    jQuery('#alert').removeClass(expiredStatus).addClass(status).text(msg).fadeIn(500).delay(2000).fadeOut(500);
+    jQuery('#alert').removeClass(expiredStatus).addClass(status).text(msg).fadeIn(500).delay(1000).fadeOut(500);
   }
   var expiredStatus = "bg-success bg-error bg-default bg-default-dark success-check error-check";
   return {
