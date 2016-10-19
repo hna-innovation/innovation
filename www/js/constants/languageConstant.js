@@ -1,8 +1,8 @@
 angular.module('configuration')
   .constant('LANGUAGE', {
     'languages': {
-      'zh': '中文',
-      'en': '英文'
+      'zh': 'cn_ZH',
+      'en': 'en_US'
     },
     'preferredLanguage': 'zh'
   });
