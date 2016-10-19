@@ -1,7 +1,25 @@
 angular.module('starter.controllers')
-  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, Services, $window, AuthEvent, UserService, HnaAlert, Content) {
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, $translate, Services, $window, AuthEvent, UserService, HnaAlert, LANGUAGE, Content) {
 
     var resourcesType = $location.search()['type'];
+
+    //Set the language
+    var languageKeys = Object.keys(LANGUAGE.languages);
+    var currentLanguageKey = $translate.use();
+    
+    var languages = [];
+    var currentLanguage = null;
+
+    languageKeys.forEach(function(item){
+      var option = {key: item, name: LANGUAGE.languages[item]};
+      if(item == currentLanguageKey)
+        currentLanguage = option;
+      languages.push(option);
+    })
+
+    $scope.currentLanguage = currentLanguage;
+    $scope.languages = languages;
+
 
     $scope.getResources = function() {};
 
@@ -34,11 +52,13 @@ angular.module('starter.controllers')
       $state.go('user-edit-info', target);
     }
 
-
     $scope.logout = function() {
       $scope.$emit(AuthEvent.LOGOUT);
     }
 
+    $scope.setLangugage = function(currentLanguage) {
+      $translate.use(currentLanguage.key);
+    };
 
     $scope.userDefaultHeader = Content.image.DEFAULT_HEADER;
     $scope.getUserInfo();

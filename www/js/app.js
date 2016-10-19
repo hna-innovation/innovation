@@ -78,6 +78,7 @@ angular.module('starter')
       prefix: 'js/language/locale-',
       suffix: '.json'
     });
+    
     // Tell the module what language to use by default
     $translateProvider.preferredLanguage(LANGUAGE.preferredLanguage);
     $translateProvider.useSanitizeValueStrategy('escape');

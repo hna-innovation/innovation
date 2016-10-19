@@ -88,7 +88,7 @@
 
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 					<a href="#user-joined-innovations">
-					<i class="if i-caogaoxiang font-24 color-3d"></i>
+					<i class="if ion-ios-heart-outline font-24 color-3d"></i>
 					<strong class="color-3d">我参与的创意</strong>
 					<!-- <small class="color-red font-24 small-radio">&bull;</small> -->
 					<span class="color-88 pd-l10">查看你参与的创意项目</span>
@@ -113,12 +113,23 @@
 		    		</a>
 		    </div>
 
+				<div class="business-row mg-b10 bg-ff pd-l15">
+				  <label class="user-language item item-select">
+				    <span>
+				      <i class="if ion-ios-world-outline font-24 color-3d"></i>
+				      <strong class="color-3d">语言</strong>
+				    </span>
+						<select ng-model="currentLanguage"
+              ng-options="option.name for option in languages track by option.key"
+							ng-change="setLangugage(currentLanguage)"></select>
+				  </label>
+				</div>
+
 		    <div class="user-logout">
 		    	<button class="button button-clear button-positive" ng-click="logout()">
 		    		退出登录
 				</button>
 		    </div>
-
 		</main>
 
 	</ion-content>

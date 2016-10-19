@@ -83,6 +83,9 @@
 	border-bottom: #ededed solid 1px;
 	overflow: hidden;
 }
+.business-row .if {
+  vertical-align: sub;
+}
 .small-radio{
 	position: relative;
 	top: 2px;
@@ -412,4 +415,14 @@
 }
 .newlike small:before {
   content: "+";
+}
+
+label.user-language {
+  font-size: 14px;
+  border: none;
+  padding: 12px 0;
+}
+
+label.user-language select {
+  color: #888;
 }
