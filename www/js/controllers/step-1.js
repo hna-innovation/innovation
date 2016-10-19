@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('StepFirstCtrl', StepFirstCtrl);
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, ModalServices) {
   // set title
   // Page.setTitle('记录新创意');
   // 初始化表单数据
@@ -53,13 +53,23 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
 
   // 上传成功
   $scope.uploader.onSuccessItem = function(fileItem, response, status, headers) {
-    if (response.code != 0) return HnaAlert.default('图片上传失败！');
+    if (response.code == 0) {
     $scope.loading = false;
     $scope.imagesChild = response.data[0].id;
     $scope.picURL = response.data[0].url;
     jQuery('#img-view').attr('src', $scope.picURL)
     HnaAlert.default('图片上传成功！');
     jQuery('#photoUpload').val('');
+    } else {
+      if(response.code == 401){
+        HnaAlert.default('登录超时！请重新登录');
+        $state.go('innovation', {}, {reload: true});
+        localStorage.removeItem('userId');
+        ModalServices.showPopup();
+      } else {
+        HnaAlert.default('图片上传失败');
+      }
+    }
   };
 
   // 创意创建
