@@ -14,8 +14,9 @@ angular.module('starter.controllers')
         // set title
         PageService.setTitle('创新平台');
         // PageService.setDescription('创新平台');
+        $scope.userHeaderIconDefault = '../img/user.png';
 
-        $scope.userHeaderIcon = isLogin() ? localStorage.userHeaderIcon : '../img/user.png';
+        $scope.userHeaderIcon = isLogin() ? localStorage.userHeaderIcon : $scope.userHeaderIconDefault;
 
         function isLogin() {
           return localStorage.userId ? true : false;
