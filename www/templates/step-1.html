@@ -1,10 +1,10 @@
 <ion-view view-title="记录新创意">
-    <header class="bar bar-header bg-pink step-header">
+    <ion-header-bar class="bar bg-pink step-header">
         <a ui-sref="innovation" class="ion-android-close color-white"></a>
         <h1 class="title color-white">记录新创意</h1>
-    </header>
-    <ion-content >
-        <main id="step-1" class="content has-header">
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <main id="step-1" class="content">
             <div id="imgUpload">
                 <div class="spinners" ng-show="loading == true">
                     <ion-spinner class="step-loading" icon="ios"></ion-spinner>
@@ -18,9 +18,7 @@
                 </ul>
             </div>
             <div class="dianzi-description">
-                <label class="item item-input pd-15 mg-t10 bg-fb">
-                    <textarea placeholder="在此记录你的灵感..." ng-trim="true" ng-model="formdata.description" maxlength="135" ></textarea>
-                </label>
+                <textarea class="pd-15 mg-t10 bg-fb" rows="8" placeholder="在此记录你的灵感..." ng-trim="true" ng-model="formdata.description" maxlength="135" ></textarea>
             </div>
         </main>
     </ion-content>
