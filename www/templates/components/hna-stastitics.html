@@ -5,7 +5,7 @@
         </div>
         <div class="stastitics_number center mg-t5 pd-tb" >
             <span class="stastitics_total color-6d font-24 bold" count-to="{{innovationsCount}}" duration="1" value=0 ></span>
-            <span class="stastitics_new bg-pink color-white" count-to="10" duration="1" value=0 ></span>
+            <span class="stastitics_new bg-pink color-white" count-to="{{newCount}}" duration="1" value=0 ng-if="newCount > 0"></span>
         </div>
     </div>
     <div class="col stastitics_item stastitics_resources">
