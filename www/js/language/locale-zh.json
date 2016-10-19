@@ -4,5 +4,14 @@
     "last-innovation": "最新创意",
     "popular-resources": "热门资源",
     "innovation-stars": "创新明星"
+  },
+  "stastitics": {
+    "innovation": "创意",
+    "resources": "资源",
+    "show-case": "成功案例"
+  },
+  "home-footer": {
+    "find-innovation": "发现创意",
+    "find-resource": "寻找资源"
   }
 }

@@ -4,5 +4,14 @@
       "last-innovation": "Last Innovation",
       "popular-resources": "Popular Resources",
       "innovation-stars": "Innovation Stars"
+  },
+  "stastitics": {
+    "innovation": "Innovation",
+    "resources": "Resources",
+    "show-case": "ShowCase"
+  },
+  "home-footer": {
+    "find-innovation": "Find Innovation",
+    "find-resource": "Find Resource"
   }
 }
