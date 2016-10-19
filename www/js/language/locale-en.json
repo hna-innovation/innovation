@@ -1,23 +1,23 @@
 {
   "innovation": {
-      "popular-innovation": "Popular Innovation",
-      "last-innovation": "Last Innovation",
+      "popular-innovation": "Popular Ideas",
+      "last-innovation": "Lastest Ideas",
       "popular-resources": "Popular Resources",
       "innovation-stars": "Innovation Stars"
   },
   "stastitics": {
-    "innovation": "Innovation",
-    "resources": "Resources",
-    "show-case": "ShowCase"
+    "innovation": "Idea",
+    "resources": "Resource",
+    "show-case": "Success"
   },
   "home-footer": {
-    "find-innovation": "Find Innovation",
-    "find-resource": "Find Resource"
+    "find-innovation": "Find Ideas",
+    "find-resource": "Find Resources"
   },
   "user": {
-    "my-innovation": "My Innovation",
-    "my-resource": "My Resource",
-    "my-collection": "My Collection",
+    "my-innovation": "My Ideas",
+    "my-resource": "My Resources",
+    "my-collection": "My Collections",
     "my-praise": "My Praise"
   }
 }
