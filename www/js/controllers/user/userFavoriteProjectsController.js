@@ -18,6 +18,7 @@ function UserFavoriteProjectsCtrl($scope, UserService, Content, UtilityService) 
           $scope.favoriteProjects = UtilityService.concatArray($scope.favoriteProjects, result.data.content);
           $scope.$broadcast('scroll.infiniteScrollComplete');
         } else {
+          $scope.attentionMsg = Content.EMPTY_CONTENT;
           $scope.hasMoreData = false;
         }
 

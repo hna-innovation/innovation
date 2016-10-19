@@ -5,12 +5,6 @@
 			<span class="font-18">我的收藏</span>
 		</div>
 
-
-    <div ng-show="favoriteProjects.length === 0" class="color-pink pd-15" ng-bind="::NO_FAVORITE">
-      <p ng-bind="attentionMsg"></p>
-    </div>
-
-    <div ng-if="favoriteProjects.length > 0">
         <section>
           <div class="border-tb mg-b10" ng-repeat="favoriteProject in favoriteProjects">
             <ul class="box-table bg-ff">
@@ -47,6 +41,9 @@
           </load-more>
 
         </section>
+    <div class="center mg-t20" ng-if="favoriteProjects.length === 0">
+      <img src="../img/empty.svg">
+      <div class="mg-t10" ng-bind="attentionMsg"></div>
     </div>
 
 	</ion-content>
