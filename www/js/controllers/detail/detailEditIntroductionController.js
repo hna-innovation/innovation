@@ -6,8 +6,8 @@ angular.module('starter.controllers')
       modules: {
         toolbar: [
           [{ header: [1, 2, false] }],
-          ['bold', 'underline'],
-          [{ list: 'ordered' }, { list: 'bullet' }]
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          ['blockquote', 'code-block'],
         ]
       },
       placeholder: 'Compose an epic...',
@@ -17,7 +17,7 @@ angular.module('starter.controllers')
     var projectId = $stateParams.projectId;
 
     function initEditor() {
-      var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '[]';
+      var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '';
       angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
     }
 
