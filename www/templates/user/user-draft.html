@@ -4,7 +4,13 @@
 		<div class="user-list-title bg-pink bg-img-left" ui-sref="user">
 			<span class="font-18">草稿箱</span>
 		</div>
-		<div class="pd-10">
+
+    <div class="center mg-t20" ng-if="!drafts || drafts.length === 0">
+      <img src="../img/empty.svg">
+      <div class="mg-t10" ng-bind="attentionMsg"></div>
+    </div>
+
+    <div class="pd-10" ng-if="drafts.length > 0">
 			<ul class="user-list">
 				<li ng-repeat="draft in ::drafts" ng-click="goStep3(draft.id)" >
 					<div>

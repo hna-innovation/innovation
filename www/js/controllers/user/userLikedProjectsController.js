@@ -3,18 +3,18 @@ angular.module('starter.controllers')
 
 function UserLikedProjectsCtrl($scope, UserService, Content) {
 
-  $scope.NO_LIKED = Content.user.NO_LIKED;
-
   UserService.getUserLikedProjects(function(result) {
 
     if (result.data && result.data.length) {
 
       $scope.likedProjects = result.data;
       UserService.setUserLikedRead();
+    } else {
+      $scope.attentionMsg = Content.EMPTY_CONTENT;
     }
 
-  }, function() {
-    // TODO
+  }, function(error) {
+    $scope.attentionMsg = Content.TIME_OUT;
   });
 
 

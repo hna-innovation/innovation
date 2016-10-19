@@ -3,9 +3,13 @@
         <div class="user-list-title bg-pink bg-img-left" ui-sref="user" >
             <span class="font-18">我评论的</span>
         </div>
-        <div ng-show="comments.length === 0" class="color-pink pd-15" ng-bind="::NO_COMMENTS">
+
+        <div class="center mg-t20" ng-if="!comments || comments.length === 0">
+          <img src="../img/empty.svg">
+          <div class="mg-t10" ng-bind="attentionMsg"></div>
         </div>
-        <div ng-show="comments.length > 0">
+
+        <div ng-if="comments.length > 0">
             <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in ::comments">
                 <ul class="box-table">
                     <li class="box-table-row" id="user-photo">
