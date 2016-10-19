@@ -7,7 +7,8 @@ angular.module('starter.controllers')
 	      UserService.getUserInfo(function(result) {
 	        $scope.userInfo = result.data;
 	      }, function() {
-	        HnaAlert.default(Content.user.LOAD_DATA_ERROR);
+          //出错信息统一在app.js处理,包括错误码401、404、504
+          // HnaAlert.default(Content.user.LOAD_DATA_ERROR);
 	      });
 	    }
 

@@ -34,19 +34,20 @@ angular.module('starter')
     });
   })
 
-  .factory('httpInterceptor', function ($q, $injector, HnaAlert, $location, $rootScope) {
+  .factory('httpInterceptor', function ($q, $injector, HnaAlert, $location, $rootScope, AuthEvent) {
     var httpInterceptor = {
       'response': function (response) {
-        if (response.data.code == 401) {
+        if (response.data.code == 401 ) {
 
+          if(localStorage.userId) {
+            $location.path('innovation');
+            localStorage.removeItem('userId');
 
-          $location.path('innovation');
-
-          localStorage.removeItem('userId');
-
-          if(!$rootScope.ModalServices){
+            HnaAlert.default('登录超时！请重新登录');
             $rootScope.ModalServices = $injector.get('ModalServices');
             $rootScope.ModalServices.showPopup();
+          } else {
+              $rootScope.$broadcast(AuthEvent.NOT_AUTHENTICATED);
           }
 
           return $q.reject(response);

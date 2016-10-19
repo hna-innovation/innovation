@@ -9,8 +9,11 @@ angular.module('starter.controllers')
     $scope.getUserInfo = function() {
       UserService.getUserInfo(function(result) {
         $scope.userInfo = result.data;
-      }, function() {
-        HnaAlert.default('获取用户信息出错！');
+        //UserInfo成功返回后再去请求ExtensionInfo
+        $scope.getUserExtensionInfo();
+      }, function(result) {
+        //出错信息统一在app.js处理,包括错误码401、404、504
+        // HnaAlert.default('获取用户信息出错！');
       });
     }
 
@@ -18,7 +21,8 @@ angular.module('starter.controllers')
       UserService.getUserExtensionInfo(function(result) {
         $scope.userExtensionInfo = result.data;
       }, function() {
-          HnaAlert.default('获取用户信息出错！');
+        //出错信息统一在app.js处理,包括错误码401、404、504
+        // HnaAlert.default('获取用户信息出错！');
       });
     }
 
@@ -38,6 +42,5 @@ angular.module('starter.controllers')
 
     $scope.userDefaultHeader = Content.image.DEFAULT_HEADER;
     $scope.getUserInfo();
-    $scope.getUserExtensionInfo();
 
   })
