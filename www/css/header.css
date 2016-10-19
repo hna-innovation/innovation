@@ -6,13 +6,14 @@
   background-color: #fff;
 }
 
-.bar-header .user-header-icon {
-  width: 27px;
-}
-
 .bar-header .user-header-icon-default {
   width: 21px;
   padding-top: 4px
+}
+
+.bar-header .user-header-icon {
+  width: 27px;
+  padding-top: 0;
 }
 
 .bar-header div:nth-child(1).button {
