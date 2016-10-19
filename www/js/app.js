@@ -120,6 +120,11 @@ angular.module('starter')
         templateUrl: 'templates/resources/resources-experts.html',
       })
 
+      .state('explore-resources.open', {
+        url: '/resources-open',
+        templateUrl: 'templates/resources/resources-open.html',
+      })
+
       .state('explore-resources.markets', {
         url: '/resources-markets',
         templateUrl: 'templates/resources/resources-markets.html',

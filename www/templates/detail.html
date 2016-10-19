@@ -43,21 +43,21 @@
             </div>
 					</li>
 					<li class="swiper-slide pd-lr pd-tb">
-						<p ng-bind="detail.marketAnalysis"></p>
+						<pre ng-bind="detail.marketAnalysis"></pre>
             <div class="edit-introduction" ui-sref="detail-edit-market({projectId:detail.id})" ng-if="isCurrentUser">
               <i class="edit"></i>
               <span>编辑内容</span>
             </div>
 					</li>
 					<li class="swiper-slide pd-lr pd-tb">
-						<p ng-bind="detail.businessModel"></p>
+						<pre ng-bind="detail.businessModel"></pre>
             <div class="edit-introduction" ui-sref="detail-edit-business({projectId:detail.id})" ng-if="isCurrentUser">
               <i class="edit"></i>
               <span>编辑内容</span>
             </div>
 					</li>
 					<li class="swiper-slide pd-lr pd-tb">
-						<p ng-bind="detail.resourceRequired"></p>
+						<pre ng-bind="detail.resourceRequired"></pre>
             <div class="edit-introduction" ui-sref="detail-edit-resource({projectId:detail.id})" ng-if="isCurrentUser">
               <i class="edit"></i>
               <span>编辑内容</span>
