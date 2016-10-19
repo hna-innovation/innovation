@@ -127,6 +127,11 @@ angular.module('starter')
         templateUrl: 'templates/resources/resources-open.html',
       })
 
+      .state('resource-detail', {
+        url: '/resource-detail',
+        templateUrl: 'templates/resources/resource-detail.html',
+      })
+
       .state('explore-resources.markets', {
         url: '/resources-markets',
         templateUrl: 'templates/resources/resources-markets.html',

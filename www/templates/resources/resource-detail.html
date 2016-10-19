@@ -1,0 +1,87 @@
+<ion-view>
+  <ion-content class="bg-fb resource-detail">
+    <div class="banner">
+      <i class="if i-remove1 go-back radius" ui-sref="explore-resources.experts"></i>
+      <img src="../img/resources/detail-banner.png" alt="">
+    </div>
+    <div class="title">
+      不以应用为目的的技术，都是耍流氓－区块链之应用篇
+    </div>
+    <div class="info">
+      <div>
+        <img src="../img/resources/date-active.png" alt="">
+        <span>2016.10.14  20:00-21:00</span>
+      </div>
+    </div>
+    <div class="content">
+      区块链是一个需要大规模协作的系统，因此在发展初期会经历一个漫长的积累期.互联网为我们带来了信息的互联，而区块链将实现价值的互联，由于其记录唯一、不可更改的特性，让资产像邮件一样的自由转移成为了可能。与互联网类似，区块链也是一个需要大规模协作的系统，因此在发展初期会经历一个漫长的积累期，但是在达到一个临界点之后，将呈现指数型的爆发。资本在这一阶段普遍保持了观望的态度，国内除了布比区块链拿到了3000万人民币投资外，并没有太大金额的融资。国外由于技术上相对领先，投融资较国内更为活跃，研发侧链技术的Blockstream在今年2月完成了5500万美元的A轮融资。
+    </div>
+    <div class="expert">
+      <div class="box-table">
+        <div class="box-table-row">
+          <div class="box-table-cell" style="width: 50px;">
+            <img src="../img/face/human-1.png" alt="头像" width="45" height="45" class="user-img border-0">
+          </div>
+          <div class="box-table-cell pd-r15">
+            <div>
+              <span class="font-14 color-3d expert-name">肖黎明<span>讲师</span></span>
+              <span class="expert-title">大数据专家</span>
+            </div>
+            <div class="description">
+              超爱无人驾驶与特斯拉，还有贝索斯和卡兰尼克，如果你也喜欢，咱们可以交个朋友！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="user-list">
+      <div class="user-img">
+        <img src="../img/face/1.png" alt="">
+      </div>
+      <div class="user-img">
+        <img src="../img/face/2.png" alt="">
+      </div>
+      <div class="user-img">
+        <img src="../img/face/3.png" alt="">
+      </div>
+      <div class="user-img">
+        <img src="../img/face/4.png" alt="">
+      </div>
+
+      <div class="user-count">
+        321人想参加 >
+      </div>
+    </div>
+    <div class="action">
+      <div class="join-btn">
+        我要参加
+      </div>
+    </div>
+
+  </ion-content>
+  <div class='detail-footer'>
+    <div class='detail-footer-share'>
+      <a href='http://v.t.sina.com.cn/share/share.php?title={{detail.name}}&url={{shareUrl}}&pic={{imageUrls}}'>
+        <img src='../img/sina.png'>
+      </a>
+      <a href='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{shareUrl}}&title={{detail.name}}&summary={{detail.description}}&pics={{imageUrls}}'>
+        <img src='../img/qzone.png'>
+      </a>
+    </div>
+    <ul class='detail-footer-nav pd-l15'>
+      <li><i class='if i-aixinhover' ></i>
+        <sapn>10</sapn>
+      </li>
+      <li><i class='if i-star'></i>
+        <sapn>2</sapn>
+      </li>
+      <li ui-sref="detail-page-comments({ projectid: detail.id})">
+        <i class='if i-xiaoxi'></i>
+      </li>
+      <li>
+        <i class='if i-fenxiang' id='share'></i>
+      </li>
+    </ul>
+  </div>
+
+</ion-view>
