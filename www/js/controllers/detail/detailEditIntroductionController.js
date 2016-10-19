@@ -21,9 +21,6 @@ angular.module('starter.controllers')
       angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
     }
 
-    quill.focus();
-
-
     initEditor();
 
     $scope.save = function () {
