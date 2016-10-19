@@ -8,8 +8,9 @@ angular.module('starter.controllers')
       '$state',
       'ProjectsService',
       'UtilityService',
+      'ModalServices',
       'Content',
-      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, Content) {
+      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, ModalServices, Content) {
 
         // set title
         PageService.setTitle('创新平台');
@@ -41,7 +42,7 @@ angular.module('starter.controllers')
           return function(){
             ProjectsService.getProductsByOffset(offset, function (data) {
 
-              if(data.data.content && data.data.content.length){
+              if(data && data.data && data.data.content && data.data.content.length){
                 $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
                 $scope.$broadcast('scroll.infiniteScrollComplete');
               } else {
@@ -56,7 +57,6 @@ angular.module('starter.controllers')
 
             offset++;
           };
-
         };
 
         $scope.getProjects = getProductsByOffset();
@@ -65,11 +65,17 @@ angular.module('starter.controllers')
         // personal like slide
         $scope.slideStatus = false;
         $scope.slideUpInterest = function () {
+          if(!isLogin()) {
+            ModalServices.showPopup();
+            return;
+          }
           $scope.slideStatus = true;
         };
         $scope.slideDownInterest = function () {
+          $ionicScrollDelegate.scrollTop();
           $scope.slideStatus = false;
         };
+
         $scope.saveInterest = function () {
           var tags = [];
           $scope.tags.filter(function (elem) {
@@ -77,11 +83,12 @@ angular.module('starter.controllers')
           }).map(function (elem) {
             tags.push(elem.id);
           });
-          Services.getProjectsByTags(tags.join(','), function (data) {
-            console.log(data);
-            $scope.projects = data.data.content;
+
+          Services.setUserTags({tags: tags}, function (data) {
             $scope.slideDownInterest();
-            $ionicScrollDelegate.scrollTop();
+            $scope.projects = [];
+            $scope.getProjects = getProductsByOffset();
+            $scope.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -104,10 +111,21 @@ angular.module('starter.controllers')
         };
 
         Services.getTags(function (data) {
+          if(isLogin()) {
+            Services.getUserTags().success(function(userTags){
+              if(userTags && userTags.data){
+                data.data.forEach(function(tag){
+                  userTags.data.forEach(function(userTag){
+                    if(tag.id == userTag){
+                      tag.status = true;
+                    }
+                  })
+                })
+              }
+            })
+          }
           $scope.tags = data.data;
         }, function () {
-
         });
-
       }]
   );

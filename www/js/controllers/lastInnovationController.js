@@ -14,7 +14,7 @@ function LastInnovationCtrl($scope, ProjectsService, UtilityService) {
     return function() {
       ProjectsService.getProductsByType('createdDate', offset, function(data) {
 
-        if (data.data.content && data.data.content.length) {
+        if (data && data.data && data.data.content && data.data.content.length) {
           $scope.projects = UtilityService.concatArray($scope.projects, data.data.content);
           $scope.$broadcast('scroll.infiniteScrollComplete');
         } else {

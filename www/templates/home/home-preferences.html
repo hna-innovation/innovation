@@ -15,7 +15,7 @@
             </div>
         </div>
         <ul class="tag-list">
-            <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status = false">
+            <li ng-repeat="tag in tags track by $index" ng-click="tag.status=!tag.status" ng-init="tag.status">
                 <img ng-src="{{tag.imageUrl}}" alt="">
                 <div class="cover" ng-show="tag.status">
                     <img src="../img/selected.png" alt="">

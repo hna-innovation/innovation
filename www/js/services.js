@@ -8,12 +8,16 @@ angular.module('starter.services')
   return {
     getUrl: getUrl,
 
-    getProjectsByTags: function(tags, success, error) {
-      return $http.get(getUrl('/api/show/project?tag='+tags))
+    setUserTags: function(tags, success, error) {
+      return $http.put(getUrl('/api/user/tags'), tags)
         .success(success)
         .error(error);
     },
 
+    getUserTags: function(tags) {
+      return $http.get(getUrl('/api/user/tags'));
+    },
+    
     //get all tags
     getTags: function (success, error) {
       return $http.get(getUrl('/api/tags?type=0'))

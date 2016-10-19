@@ -11,5 +11,6 @@ angular.module('configuration')
         'USER_LIKED_PROJECTS_API': '/api/user/userLikedProjects',
         'USER_FAVORITE_PROJECTS_API': '/api/user/favoriteProjects',
         'USER_LIKED_STATUS_READ': '/api/user/likeStatus',
-        'USER_JOIN_PROJECT': '/api/user/joinedProjects'
+        'USER_JOIN_PROJECT': '/api/user/joinedProjects',
+        'USER_TAGS': '/api/user/tags'
     });
