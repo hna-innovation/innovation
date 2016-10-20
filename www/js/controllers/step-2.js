@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, Upload) {
     // set title
     // Page.setTitle('创意编辑');
 
@@ -63,61 +63,63 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
     };
 
     // 图片上传接口
-    $scope.uploader = new FileUploader({
-        url: '/api/media/image',
-        isUploading: true,
-        autoUpload: true,
-        removeAfterUpload: true
-    });
+    $scope.uploadFiles = function(file, errFiles) {
+      $scope.uploadfile = file;
+      $scope.errFile = errFiles && errFiles[0];
 
-    // 限制上传类型和文件大小
-    $scope.uploader.filters.push({
-        name: 'imageTypeFilter',
-        fn: function (item) {
-            return item.type.indexOf('image/') !== -1;
-        }
-    });
-    $scope.uploader.filters.push({
-        name: 'imageSizeFilter',
-        fn: function (item) {
-            return item.size <= 5242880;
-        }
-    });
-    $scope.uploader.onWhenAddingFileFailed = function (fileItem, filter) {
-        console.log(filter)
-        if (filter.name == 'imageTypeFilter') {
-            HnaAlert.default('请选择正确的图片类型！');
-            jQuery('#photoUpload2').val('');
-        }
-        if (filter.name == 'imageSizeFilter') {
-            HnaAlert.default('图片大小不能超过5M！');
-            jQuery('#photoUpload2').val('');
-        }
-    };
+      // 限制上传类型和文件大小
+      if ($scope.errFile && $scope.errFile.$error === 'pattern') {
+        HnaAlert.default('请选择正确的图片类型！');
+        jQuery('#photoUpload').val('');
+        return;
+      }
 
-    // loading
-    $scope.uploader.onAfterAddingFile = function (fileItem) {
+      if ($scope.errFile && $scope.errFile.$error === 'maxSize') {
+        HnaAlert.default('图片大小不能超过5M！');
+        jQuery('#photoUpload').val('');
+        return;
+      }
+
+      if (file) {
         $scope.loading = true;
-    };
-
-
-    // 上传成功
-    $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
-        if (response.code != 0) return HnaAlert.default('图片上传失败！');
-        $scope.loading = false;
-        response.data.forEach(function (item) {
-            $scope.images.push({
-                id: item.id
-            });
+        file.upload = Upload.upload({
+          url: '/api/media/image',
+          data: { file: file }
         });
-        if ($scope.images.length < 8) {
-            $scope.addShow = true;
-        } else {
-            $scope.addShow = false;
-        }
-        $scope.ItemUpdate(0, '图片上传成功！', '图片上传失败！');
-        jQuery('#photoUpload2').val('');
-    };
+
+        file.upload.then(function(result) {
+          $scope.loading = false;
+          var response = result.data;
+
+          $timeout(function() {
+
+            if (response.code == 0) {
+              response.data.forEach(function(item) {
+                $scope.images.push({
+                  id: item.id
+                });
+              });
+
+              if ($scope.images.length < 8) {
+                $scope.addShow = true;
+              } else {
+                $scope.addShow = false;
+              }
+
+              $scope.ItemUpdate(0, '图片上传成功！', '图片上传失败！');
+              jQuery('#photoUpload2').val('');
+
+            } else {
+              HnaAlert.default('图片上传失败');
+            }
+
+          });
+        }, function() {
+          $scope.loading = false;
+          HnaAlert.default('图片上传失败');
+        });
+      } else {}
+    }
 
     // 图片删除
     $scope.del = function (imgId) {
