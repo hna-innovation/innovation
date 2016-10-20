@@ -150,9 +150,7 @@ angular.module('starter.controllers')
       }
     }
 
-    $scope.goToApp = function () {
-      // ToDo
-
-      mobileTypeDetectService.getMobileOperatingSystem();
+    $scope.getMobileType = function () {
+      return mobileTypeDetectService.getMobileOperatingSystem().toLowerCase();
     }
   })
