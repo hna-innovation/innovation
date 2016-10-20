@@ -1,5 +1,5 @@
 <div class="bar bar-header">
-    <div class="bar-user-header pd-l5" ui-sref="user" >
+    <div class="bar-user-header pd-l5" ui-sref="user" nav-direction="forward">
       <img ng-src="{{userHeaderIcon}}" class="user-header-icon-default radius" ng-class="{true: 'user-header-icon-default', false: 'user-header-icon'}[userHeaderIcon == userHeaderIconDefault]" >
     </div>
 
@@ -11,6 +11,6 @@
 
     <div class="button button-img">
         <img ng-click="slideUpInterest()" src="../img/interest.png" alt="喜好">
-        <img ui-sref="search" src="../img/search.png" alt="搜索">
+        <img ui-sref="search" src="../img/search.png" alt="搜索" nav-direction="forward">
     </div>
 </div>

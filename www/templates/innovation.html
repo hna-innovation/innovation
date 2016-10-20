@@ -26,24 +26,24 @@
 
       <div class="nav-list">
         <ul>
-          <li ng-click="goPopularInnovation()">
+          <li ng-click="goPopularInnovation()" nav-direction="forward">
             <img src="../img/nav/nav-1.png" alt=""> {{'innovation.popular-innovation' | translate }}
           </li>
-          <li ng-click="goLastInnovation()">
+          <li ng-click="goLastInnovation()" nav-direction="forward">
             <img src="../img/nav/nav-2.png" alt=""> {{'innovation.last-innovation' | translate }}
           </li>
         </ul>
         <ul>
-          <li ng-click="goPopularResources()">
+          <li ng-click="goPopularResources()" nav-direction="forward">
             <img src="../img/nav/nav-3.png" alt=""> {{'innovation.popular-resources' | translate }}
           </li>
-          <li ng-click="goInnovationStars()">
+          <li ng-click="goInnovationStars()" nav-direction="forward">
             <img src="../img/nav/nav-4.png" alt=""> {{'innovation.innovation-stars' | translate }}
           </li>
         </ul>
       </div>
       <div class="innovation" >
-        <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectId: project.id, pageName: 'innovation'})" >
+        <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectId: project.id, pageName: 'innovation'})" nav-direction="forward">
 
           <div class="item item-avatar">
             <img ng-src="{{project.creator.headerIcon}}">

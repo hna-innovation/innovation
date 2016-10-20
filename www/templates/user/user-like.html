@@ -1,6 +1,6 @@
 <ion-view view-title="我的获赞">
   <ion-content class="bg-f9">
-    <div class="user-list-title bg-pink bg-img-left" ui-sref="user">
+    <div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
       <span class="font-18">我的获赞</span>
     </div>
 
@@ -8,7 +8,7 @@
       <div ng-if="likedProjects.length > 0">
         <ul class="user-list2 bg-f9">
           <li class="bg-ff" ng-repeat="likedProject in likedProjects"
-              ui-sref="detail({ projectId: likedProject.targetId })">
+              ui-sref="detail({ projectId: likedProject.targetId })" nav-direction="forward">
             <div>
               <div class="user-list2-img">
                 <a ng-href="#" class="left">

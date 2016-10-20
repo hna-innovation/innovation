@@ -37,7 +37,7 @@ angular.module('starter.controllers')
           $scope.registerLoading = false;
 
         } else {
-          HnaAlert.defaultSuccess('注册成功！');
+          HnaAlert.defaultSuccess('注册成功！请登录');
           ModalServices.goToLogin();
         }
       });

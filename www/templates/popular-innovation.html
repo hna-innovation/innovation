@@ -1,12 +1,12 @@
 
 <ion-view view-title="热门创意">
 	<ion-content class="bg-fb">
-		<div class="user-list-title bg-pink bg-img-left" hna-goback>
+		<div class="user-list-title bg-pink bg-img-left" hna-goback nav-direction="back">
 			<span class="font-18">热门创意</span>
 		</div>
 		<ul class="show-innovation-list pd-5">
 			<li ng-repeat="project in projects">
-				<div ui-sref="detail({ projectId: project.id, pageName: 'innovation'})">
+				<div ui-sref="detail({ projectId: project.id, pageName: 'innovation'})" nav-direction="forward">
 					<div class="show-innovation-post">
 						<img ng-src="{{ ::project.images[0] }}" />
 					</div>

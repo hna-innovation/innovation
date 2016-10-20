@@ -1,7 +1,7 @@
 
 <ion-view view-title="我的收藏">
 	<ion-content class="bg-f9">
-		<div class="user-list-title bg-pink bg-img-left" ui-sref="user">
+		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
 			<span class="font-18">我的收藏</span>
 		</div>
 
@@ -18,7 +18,7 @@
                   </li>
               </ul>
             <ul class="user-list3 bg-f9">
-              <li class="bg-ff pd-l15 pd-b15" ui-sref="detail({ projectId: favoriteProject.id })" >
+              <li class="bg-ff pd-l15 pd-b15" ui-sref="detail({ projectId: favoriteProject.id })" nav-direction="forward">
                 <div>
                   <a ng-href="#">
                     <img ng-src="{{ favoriteProject.images[0] }}" width="42" height="42"/>

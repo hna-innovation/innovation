@@ -1,13 +1,13 @@
 
 <ion-view view-title="我的创意">
 	<ion-content class="bg-fb">
-		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" >
+		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
 			<span class="font-18">我的创意</span>
 		</div>
 
 		<ul class="creative-list pd-10">
 			<li ng-repeat="project in projects"
-				ui-sref="detail({ projectId: project.id})" >
+				ui-sref="detail({ projectId: project.id})" nav-direction="forward">
 				<div>
 					<div>
 						<a>

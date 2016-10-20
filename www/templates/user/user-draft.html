@@ -1,7 +1,7 @@
 
 <ion-view view-title="草稿箱">
 	<ion-content class="bg-fb">
-		<div class="user-list-title bg-pink bg-img-left" ui-sref="user">
+		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
 			<span class="font-18">草稿箱</span>
 		</div>
 
@@ -12,7 +12,7 @@
 
     <div class="pd-10" ng-if="drafts.length > 0">
 			<ul class="user-list">
-				<li ng-repeat="draft in ::drafts" ng-click="goStep3(draft.id)" >
+				<li ng-repeat="draft in ::drafts" ng-click="goStep3(draft.id)" nav-direction="forward">
 					<div>
 						<a>
 							<img ng-src="{{ draft.images[0] }}" width="110" height="75"/>
