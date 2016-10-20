@@ -61,6 +61,55 @@ angular.module('configuration')
 
     },
     KNOWLEDGE: {
-
+      ARTICLES: [
+        {
+            title: "作物病害将通过人工智能得到识别",
+            img: "../img/resources/knowledge/new-1.jpg",
+            tags: ["科技资讯", "人工智能"],
+            likeCount: 14,
+            starCount: 4,
+            commentCount: 7
+        },
+        {
+            title: "彩虹编程的魅力",
+            img: "../img/resources/knowledge/new-2.png",
+            tags: ["科技资讯", "编程"],
+            likeCount: 32,
+            starCount: 14,
+            commentCount: 10
+        },
+        {
+            title: "人类手写笔记获能被电脑进行复制",
+            img: "../img/resources/knowledge/new-3.jpg",
+            tags: ["科技资讯", "机器学习"],
+            likeCount: 21,
+            starCount: 21,
+            commentCount: 4
+        },
+        {
+            title: "直播平台的机遇与挑战",
+            img: "../img/resources/knowledge/event-1.png",
+            tags: ["行业活动", "直播平台"],
+            likeCount: 10,
+            starCount: 32,
+            commentCount: 10
+        },
+        {
+            title: "对话垂直行业大数据+创业",
+            img: "../img/resources/knowledge/event-2.png",
+            tags: ["行业活动", "大数据"],
+            likeCount: 32,
+            starCount: 14,
+            commentCount: 14
+        },
+        {
+            title: "投资人导师访谈",
+            img: "../img/resources/knowledge/event-3.png",
+            tags: ["行业活动", "投资"],
+            likeCount: 25,
+            starCount: 3,
+            commentCount: 10
+        }
+      ]
     }
   });

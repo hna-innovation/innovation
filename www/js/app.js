@@ -143,6 +143,11 @@ angular.module('starter')
         templateUrl: 'templates/resources/resources-markets.html',
       })
 
+      .state('explore-resources.knowledges', {
+        url: '/resources-knowledges',
+        templateUrl: 'templates/resources/resources-knowledges.html'
+      })
+
       .state('detail-edit-introduction', {
         url: '/detail-edit-introduction/:projectId',
         templateUrl: 'templates/detail/detail-edit-introduction.html',

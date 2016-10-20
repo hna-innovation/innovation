@@ -55,6 +55,8 @@ angular.module('starter.controllers')
         }
     ];
 
+    $scope.knowledges = RESOURCE.KNOWLEDGE;
+
     // swiper-container
     var swiper = new Swiper('.swiper-container-nav', {
       slidesPerView: 4,
