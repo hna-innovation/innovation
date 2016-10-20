@@ -96,6 +96,8 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
       if (result.code == 0) {
         localStorage.draftId = result.data.id;
         $state.go('step-3');
+        HnaAlert.default('创意已保存至草稿箱!');
+
       } else {
         // TODO Handle error
         // console.log(result);

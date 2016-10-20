@@ -42,6 +42,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUplo
                 if (result.code == 0) {
                     if (status) {
                         $state.go('step-3');
+                        HnaAlert.default('创意已保存至草稿箱!');
                     } else {
                         HnaAlert.default(msg);
                     }
