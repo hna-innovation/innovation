@@ -10,7 +10,7 @@
 				<li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
 					<div>
 						<a ui-sref="detail-page-resource">
-							<img src="../img/user/list-1.jpg" width="130" height="90"/>
+							<img ng-src="{{ resource.img }}" width="130" height="90"/>
 						</a>
 					</div>
 					<div>
@@ -18,8 +18,9 @@
 							{{ resource.title }}
 						</a>
 						<div>
-							<a class="font-10 tag tag-lan mg-b0">科技</a>
-							<a class="font-10 tag tag-lan mg-b0">科技</a>
+							<a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in resource.tags" >
+	                          {{ tag }}
+	                        </a>
 						</div>
 						<p class="color-88 text-bottom">
 							<span>
