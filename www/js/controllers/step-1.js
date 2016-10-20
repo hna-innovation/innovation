@@ -10,19 +10,10 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
 
   // 图片上传接口
   $scope.uploadFiles = function(file, errFiles) {
-    $scope.uploadfile = file;
     $scope.errFile = errFiles && errFiles[0];
 
-    // 限制上传类型和文件大小
-    if ($scope.errFile && $scope.errFile.$error === 'pattern') {
-      HnaAlert.default('请选择正确的图片类型！');
-      jQuery('#photoUpload').val('');
-      return;
-    }
-
-    if ($scope.errFile && $scope.errFile.$error === 'maxSize') {
-      HnaAlert.default('图片大小不能超过5M！');
-      jQuery('#photoUpload').val('');
+    if ($scope.errFile) {
+      _validateImgFile($scope.errFile.$error);
       return;
     }
 
@@ -55,6 +46,21 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploa
         HnaAlert.default('图片上传失败');
       });
     } else {
+    }
+  }
+
+  function _validateImgFile(errType) {
+    // 限制上传类型和文件大小
+    if ( errType === 'pattern') {
+      HnaAlert.default('请选择正确的图片类型！');
+      jQuery('#photoUpload').val('');
+      return;
+    }
+
+    if ( errType === 'maxSize') {
+      HnaAlert.default('图片大小不能超过5M！');
+      jQuery('#photoUpload').val('');
+      return;
     }
   }
 
