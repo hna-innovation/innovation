@@ -28,10 +28,10 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
             $scope.ItemContent = result.data;
             $scope.formdata.description = result.data.description
         } else {
-            console.log(result);
+            // console.log(result);
         }
     }, function (error) {
-        console.log(error);
+        // console.log(error);
     });
 
     // 状态切换
@@ -69,7 +69,7 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
             })
         })
     }, function (error) {
-        console.log(error);
+        // console.log(error);
     });
 
     // 获取标签数组
@@ -80,7 +80,7 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
         } else {
             $scope.tags.splice($scope.tags.indexOf(id), 1);
         }
-        console.log($scope.tags);
+        // console.log($scope.tags);
     };
 
     // 创意发布
