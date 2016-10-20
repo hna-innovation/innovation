@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('StepFirstCtrl', StepFirstCtrl);
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, ModalServices, Upload) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, ModalServices, Upload) {
   // set title
   // Page.setTitle('记录新创意');
   // 初始化表单数据

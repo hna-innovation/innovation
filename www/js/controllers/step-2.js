@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, Upload) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, Upload) {
     // set title
     // Page.setTitle('创意编辑');
 

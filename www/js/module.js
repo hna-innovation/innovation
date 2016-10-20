@@ -5,7 +5,6 @@ angular.module('starter', [
     'starter.controllers',
     'starter.services',
     'angularValidator',
-    'angularFileUpload',
     'ionic.closePopup',
     'ngCookies',
     'pascalprecht.translate',
