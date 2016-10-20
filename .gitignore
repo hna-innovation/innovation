@@ -8,3 +8,4 @@ plugins/
 .idea/workspace.xml
 www/.DS_Store
 www/img/.DS_Store
+build/
