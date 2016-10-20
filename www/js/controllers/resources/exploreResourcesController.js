@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('ExploreResourcesCtrl', function($scope, $state, Content) {
+  .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE) {
     'use strict';
 
     $state.transitionTo('explore-resources.experts');
@@ -55,4 +55,11 @@ angular.module('starter.controllers')
         }
     ];
 
+    // swiper-container
+    var swiper = new Swiper('.swiper-container-nav', {
+      slidesPerView: 4,
+      centeredSlides: false,
+      spaceBetween: 30,
+      grabCursor: true
+    });
   });

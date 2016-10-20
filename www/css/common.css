@@ -528,10 +528,6 @@ img {
   margin: 0 20px;
 }
 
-.tab-menu .active {
-  border-bottom: #e16a68 solid 2px;
-}
-
 /* icons */
 .icons-list {
   line-height: 16px;
