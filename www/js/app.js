@@ -133,6 +133,11 @@ angular.module('starter')
         templateUrl: 'templates/resources/resource-detail.html',
       })
 
+      .state('explore-resources.professors', {
+        url: '/resources-professors',
+        templateUrl: 'templates/resources/resources-professors.html',
+      })
+
       .state('explore-resources.markets', {
         url: '/resources-markets',
         templateUrl: 'templates/resources/resources-markets.html',

@@ -1,0 +1,24 @@
+<div>
+    <section class="panel-section mg-t10 padding">
+        <div class="box-table mg-b15" ng-repeat="professor in ::professors">
+            <div class="box-table-row border-b1">
+                <div class="box-table-cell" style="width: 50px;">
+                    <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
+                </div>
+                <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="pd-b5">
+                        <span class="font-14 color-3d" ng-bind="professor.name" >江山 San Jang</span>
+                        <button class="button-init button-red right" ng-bind="professor.tel" ></button>
+                    </div>
+                    <p ng-bind="professor.description" >
+                    </p>
+                    <div class="pd-b5">
+                        <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags" >
+                          <span ng-bind="tag" ></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

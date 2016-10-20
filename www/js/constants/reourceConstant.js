@@ -51,9 +51,29 @@ angular.module('configuration')
         }
       ]
     },
-    EXPERT: {
-
-    },
+    PROFESSOR: [
+        {
+          name: '任耀洲',
+          img: '../img/face/1.png',
+          description: '会议室管理设备',
+          tel: '13891281123',
+          tags: ['会议管理']
+        },
+        {
+          name: '杨仁慧',
+          img: '../img/face/2.png',
+          description: '开发测试云资源',
+          tel: '13812731823',
+          tags: ['自动化测试']
+        },
+        {
+          name: '冯廷伟',
+          img: '../img/face/3.png',
+          description: '融合通信软件',
+          tel: '15782381329',
+          tags: ['通信']
+        }
+    ],
     INCUBATION: {
 
     },

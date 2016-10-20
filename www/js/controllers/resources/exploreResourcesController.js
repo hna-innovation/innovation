@@ -2,7 +2,7 @@ angular.module('starter.controllers')
   .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE) {
     'use strict';
 
-    $state.transitionTo('explore-resources.open');
+    $state.transitionTo('explore-resources.experts');
 
     $scope.resources = [
         {
@@ -56,6 +56,7 @@ angular.module('starter.controllers')
     ];
 
     $scope.knowledges = RESOURCE.KNOWLEDGE;
+    $scope.professors = RESOURCE.PROFESSOR;
     $scope.train = RESOURCE.TRAIN;
 
     // swiper-container
