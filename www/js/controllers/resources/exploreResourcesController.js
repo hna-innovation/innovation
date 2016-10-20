@@ -2,7 +2,7 @@ angular.module('starter.controllers')
   .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE) {
     'use strict';
 
-    $state.transitionTo('explore-resources.experts');
+    $state.transitionTo('explore-resources.open');
 
     $scope.resources = [
         {
@@ -56,6 +56,7 @@ angular.module('starter.controllers')
     ];
 
     $scope.knowledges = RESOURCE.KNOWLEDGE;
+    $scope.train = RESOURCE.TRAIN;
 
     // swiper-container
     var swiper = new Swiper('.swiper-container-nav', {

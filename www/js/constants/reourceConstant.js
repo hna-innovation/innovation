@@ -58,7 +58,36 @@ angular.module('configuration')
 
     },
     TRAIN: {
-
+      CLASSES: [
+        {
+            title: "社交媒体运营创业社交媒体运营创业社交媒体运营创业",
+            img: "../img/resources/tech/team-2.png",
+            speaker: '李睿平',
+            city: '上海',
+            date: '2016-10-28'
+        },
+        {
+            title: "创业意识培训",
+            img: "../img/resources/tech/team-4.png",
+            speaker: '张博',
+            city: '背景',
+            date: '2016-11-02'
+        },
+        {
+            title: "如何创办你的企业",
+            img: "../img/resources/tech/team-2.png",
+            speaker: '刘宏伟',
+            city: '广州',
+            date: '2016-11-05'
+        },
+        {
+            title: "创业，创业精神与人生发展",
+            img: "../img/resources/tech/team-4.png",
+            speaker: '高德阳',
+            city: '西安',
+            date: '2016-11-14'
+        }
+      ]
     },
     KNOWLEDGE: {
       ARTICLES: [

@@ -7,26 +7,25 @@
     <div class="panel_btn">我要开讲</div>
   </div>
   <ul class="open-list">
-    <li ng-repeat="t in [1,2,3,4,5]" ui-sref="resource-detail">
+    <li ng-repeat="class in ::train.CLASSES" ui-sref="resource-detail">
       <div class="img">
-        <img src="../img/resources/open-img.png" alt="">
+        <img ng-src="{{ class.img }}" alt="">
       </div>
       <div class="summary">
-        <div class="title">
-          社交媒体运营创业社交媒体运营创业社交媒体运营创业
+        <div class="title" ng-bind="class.title" >
         </div>
         <div class="info">
           <div>
             <img src="../img/resources/open-user.png" alt="">
-            <span>肖黎明</span>
+            <span ng-bind="class.speaker" ></span>
           </div>
           <div>
             <img src="../img/resources/open-location.png" alt="">
-            <span>上海</span>
+            <span ng-bind="class.city" ></span>
           </div>
           <div>
             <img src="../img/resources/open-date.png" alt="">
-            <span>2016/10/19</span>
+            <span ng-bind="class.date" ></span>
           </div>
         </div>
       </div>
