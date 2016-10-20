@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('AppCtrl', AppCtrl);
 
-function AppCtrl($scope, AuthEvent, ModalServices, Services, $state, HnaAlert) {
+function AppCtrl($scope, AuthEvent, ModalServices, Services, $state, HnaAlert, Page) {
   'use strict';
 
   $scope.$on(AuthEvent.NOT_AUTHENTICATED, function() {
@@ -20,5 +20,9 @@ function AppCtrl($scope, AuthEvent, ModalServices, Services, $state, HnaAlert) {
     }, function() {
       // TODO
     });
+  });
+
+  $scope.$on(Page.INDEX, function() {
+    $state.go(Page.INDEX.toLowerCase());
   });
 }

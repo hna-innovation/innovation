@@ -22,11 +22,11 @@ angular.module('starter.controllers')
       });
 
       // reload
-      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: true});
+      $state.go('detail', {projectId: projectId, pageName: 'edit-detail'}, {reload: true});
     };
 
     $scope.cancel = function () {
-      $ionicHistory.goBack();
+      $state.go('detail', {projectId: projectId, pageName: 'edit-detail'}, {reload: false});
     }
   }])
 
