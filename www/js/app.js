@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter')
 
-  .run(function ($ionicPlatform, $rootScope, AuthEvent, AuthService, Page) {
+  .run(function ($ionicPlatform, $rootScope, AuthEvent, AuthService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -30,11 +30,6 @@ angular.module('starter')
       if ( isAuthRequired && !localStorage.userId) {
         event.preventDefault();
         $rootScope.$broadcast(AuthEvent.NOT_AUTHENTICATED);
-      }
-
-      if(fromParams.pageName === 'edit-detail'){
-        event.preventDefault();
-        $rootScope.$broadcast(Page.INDEX);
       }
     });
   })

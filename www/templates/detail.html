@@ -1,7 +1,7 @@
 <ion-view>
 	<ion-content class="bg-fb">
 		<div class="detail-special">
-			<i class="if i-remove1 go-back radius" hna-goback nav-direction="back"></i>
+			<i class="if i-remove1 go-back radius" ng-click="goBack()" nav-direction="back"></i>
 			<div class="swiper-container bg-ff" id="swiper1">
 				<ul class="swiper-wrapper">
 					<li class="swiper-slide swiper-item vertical-align-img" ng-repeat="img in ::detail.images">

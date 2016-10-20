@@ -22,11 +22,11 @@ angular.module('starter.controllers')
       });
 
       // reload
-      $state.go('detail', {projectId: projectId, pageName: 'edit-detail'}, {reload: true});
+      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: true});
     };
 
     $scope.cancel = function () {
-      $state.go('detail', {projectId: projectId, pageName: 'edit-detail'}, {reload: false});
+      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: false});
     }
   }])
 
