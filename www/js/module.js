@@ -9,7 +9,8 @@ angular.module('starter', [
     'ionic.closePopup',
     'ngCookies',
     'pascalprecht.translate',
-    'configuration'
+    'configuration',
+    'ngFileUpload'
     ]);
 
 angular.module('starter.controllers', []);

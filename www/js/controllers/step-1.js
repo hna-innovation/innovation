@@ -2,74 +2,65 @@ angular.module('starter.controllers')
 
 .controller('StepFirstCtrl', StepFirstCtrl);
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, ModalServices) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, FileUploader, HnaAlert, Page, $state, ModalServices, Upload) {
   // set title
   // Page.setTitle('记录新创意');
   // 初始化表单数据
   $scope.formdata = {};
 
+  // 图片上传接口
+  $scope.uploadFiles = function(file, errFiles) {
+    $scope.uploadfile = file;
+    $scope.errFile = errFiles && errFiles[0];
+
+    // 限制上传类型和文件大小
+    if ($scope.errFile && $scope.errFile.$error === 'pattern') {
+      HnaAlert.default('请选择正确的图片类型！');
+      jQuery('#photoUpload').val('');
+      return;
+    }
+
+    if ($scope.errFile && $scope.errFile.$error === 'maxSize') {
+      HnaAlert.default('图片大小不能超过5M！');
+      jQuery('#photoUpload').val('');
+      return;
+    }
+
+    if (file) {
+      $scope.loading = true;
+      file.upload = Upload.upload({
+        url: '/api/media/image',
+        data: { file: file }
+      });
+
+      file.upload.then(function(result) {
+        $scope.loading = false;
+        var response = result.data;
+        
+        $timeout(function() {
+
+          if (response.code == 0) {
+            $scope.imagesChild = response.data[0].id;
+            $scope.picURL = response.data[0].url;
+            jQuery('#img-view').attr('src', $scope.picURL)
+            HnaAlert.default('图片上传成功！');
+            jQuery('#photoUpload').val('');
+          } else {
+            HnaAlert.default('图片上传失败');    
+          }
+
+        });
+      }, function() {
+        $scope.loading = false;
+        HnaAlert.default('图片上传失败');
+      });
+    } else {
+    }
+  }
+
   // 触发file input
   $scope.photoUpload = function() {
     jQuery('#photoUpload').trigger('click');
-  };
-
-  // 图片上传接口
-  $scope.uploader = new FileUploader({
-    url: '/api/media/image',
-    isUploading: true,
-    autoUpload: true,
-    removeAfterUpload: true
-  });
-
-  // 限制上传类型和文件大小
-  $scope.uploader.filters.push({
-    name: 'imageTypeFilter',
-    fn: function(item) {
-      return item.type.indexOf('image/') !== -1;
-    }
-  });
-  $scope.uploader.filters.push({
-    name: 'imageSizeFilter',
-    fn: function(item) {
-      return item.size <= 5242880;
-    }
-  });
-  $scope.uploader.onWhenAddingFileFailed = function(fileItem, filter) {
-    console.log(filter)
-    if (filter.name == 'imageTypeFilter') {
-      HnaAlert.default('请选择正确的图片类型！');
-      jQuery('#photoUpload').val('');
-    }
-    if (filter.name == 'imageSizeFilter') {
-      HnaAlert.default('图片大小不能超过5M！');
-      jQuery('#photoUpload').val('');
-    }
-  };
-
-  // loading
-  $scope.uploader.onAfterAddingFile = function(fileItem) {
-    $scope.loading = true;
-  };
-
-  // 上传成功
-  $scope.uploader.onSuccessItem = function(fileItem, response, status, headers) {
-    if (response.code == 0) {
-    $scope.loading = false;
-    $scope.imagesChild = response.data[0].id;
-    $scope.picURL = response.data[0].url;
-    jQuery('#img-view').attr('src', $scope.picURL)
-    HnaAlert.default('图片上传成功！');
-    jQuery('#photoUpload').val('');
-    } else {
-      if(response.code == 401){
-        HnaAlert.default('登录超时！请重新登录');
-        $state.go('innovation', {}, {reload: true});
-        localStorage.removeItem('userId');
-        ModalServices.showPopup();
-      } else {
-        HnaAlert.default('图片上传失败');
-      }
-    }
   };
 
   // 创意创建
