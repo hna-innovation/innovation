@@ -16,6 +16,10 @@ angular.module('starter.controllers')
 
     var projectId = $stateParams.projectId;
 
+    $('.ql-editor p, #editor-container, .ql-editor').on('mousedown mouseup touchstart touchend', function (e) {
+      e.stopPropagation();
+    });
+
     function initEditor() {
       var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '';
       angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
