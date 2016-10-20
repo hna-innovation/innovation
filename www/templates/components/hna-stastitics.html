@@ -1,26 +1,26 @@
 <div class="row stastitics-show bg-ff border-b">
-    <div class="col stastitics_item stastitics_innovation">
-        <div class="stastitics_title center font-16">
-            <span class="color-6d">{{'stastitics.innovation' | translate }}</span>
-        </div>
-        <div class="stastitics_number center mg-t5 pd-tb" >
-            <span class="stastitics_total color-6d font-24 bold" count-to="{{innovationsCount}}" duration="1" value=0 ></span>
+    <div class="col stastitics_item stastitics_innovation" ui-sref="last-innovation" >
+        <div class="stastitics_number center pd-tb" >
+            <span class="stastitics_total color-6d font-20 bold" count-to="{{innovationsCount}}" duration="1" value=0 ></span>
             <span class="stastitics_new bg-pink color-white" count-to="{{newCount}}" duration="1" value=0 ng-if="newCount > 0"></span>
         </div>
-    </div>
-    <div class="col stastitics_item stastitics_resources">
-        <div class="stastitics_title center font-16">
-            <span class="color-6d">{{'stastitics.resources' | translate }}</span>
+        <div class="stastitics_title center font-14">
+            <span class="color-6d">{{'stastitics.innovation' | translate }}</span>
         </div>
-        <div class="stastitics_number center mg-t5 pd-tb" >
-            <span class="stastitics_total color-6d font-24 bold" count-to="38" duration="1" value=0 ></span>
+    </div>
+    <div class="col stastitics_item stastitics_resources" ui-sref="popular-resources" >
+        <div class="stastitics_number center pd-tb" >
+            <span class="stastitics_total color-6d font-20 bold" count-to="38" duration="1" value=0 ></span>
             <span class="stastitics_new bg-pink color-white" count-to="5" duration="1" value=0 ></span>
+        </div>
+        <div class="stastitics_title center font-14">
+            <span class="color-6d">{{'stastitics.resources' | translate }}</span>
         </div>
     </div>
     <div class="col stastitics_item stastitics_success">
-        <div class="stastitics_title center font-16">
+        <div class="stastitics_number center color-6d font-20 pd-tb bold" count-to="26" duration="1" value=0></div>
+        <div class="stastitics_title center font-14">
             <span class="color-6d">{{'stastitics.show-case' | translate }}</span>
         </div>
-        <div class="stastitics_number center color-6d font-24 mg-t5 pd-tb bold" count-to="26" duration="1" value=0></div>
     </div>
 </div>
