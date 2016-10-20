@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('StepFirstCtrl', StepFirstCtrl);
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, ModalServices, Upload) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, ModalServices, Upload, $ionicViewSwitcher) {
   // set title
   // Page.setTitle('记录新创意');
   // 初始化表单数据
@@ -27,7 +27,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
       file.upload.then(function(result) {
         $scope.loading = false;
         var response = result.data;
-        
+
         $timeout(function() {
 
           if (response.code == 0) {
@@ -37,7 +37,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
             HnaAlert.default('图片上传成功！');
             jQuery('#photoUpload').val('');
           } else {
-            HnaAlert.default('图片上传失败');    
+            HnaAlert.default('图片上传失败');
           }
 
         });
@@ -93,6 +93,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
       if (result.code == 0) {
         localStorage.draftId = result.data.id;
         $state.go('step-3');
+        $ionicViewSwitcher.nextDirection("forwoard");
         HnaAlert.default('创意已保存至草稿箱!');
 
       } else {

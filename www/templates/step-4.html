@@ -1,6 +1,6 @@
 <ion-view view-title="编辑完善创意">
     <header class="bar bar-header bg-pink step-header">
-        <a ui-sref="step-3" class="ion-ios-arrow-left font-24 color-white"></a>
+        <a ui-sref="step-3" class="ion-ios-arrow-left font-24 color-white" nav-direction="back"></a>
         <h1 class="title color-grey">编辑完善创意</h1>
     </header>
     <ion-content>
@@ -49,7 +49,7 @@
             </div>
         </main>
     </ion-content>
-    <footer class="bar bar-footer step-footer pointer" ng-click="release()">
+    <footer class="bar bar-footer step-footer pointer" ng-click="release()" nav-direction="forward">
         <div class="title">
             <a>
                 <img src="../img/step/step-fabu.png" alt="发布">

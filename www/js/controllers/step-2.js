@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, Upload) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, Upload, $ionicViewSwitcher) {
     // set title
     // Page.setTitle('创意编辑');
 
@@ -43,6 +43,8 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
                     if (status) {
                         $state.go('step-3');
                         HnaAlert.default('创意已保存至草稿箱!');
+                        $ionicViewSwitcher.nextDirection("forwoard");
+
                     } else {
                         HnaAlert.default(msg);
                     }

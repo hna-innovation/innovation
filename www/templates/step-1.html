@@ -1,6 +1,6 @@
 <ion-view view-title="记录新创意">
     <ion-header-bar class="bar bg-pink step-header">
-        <a ui-sref="innovation" class="ion-android-close color-white"></a>
+        <a ui-sref="innovation" class="ion-android-close color-white" nav-direction="back"></a>
         <h1 class="title color-white">记录新创意</h1>
     </ion-header-bar>
     <ion-content class="has-header">
@@ -26,7 +26,7 @@
             </div>
         </main>
     </ion-content>
-    <footer class="bar bar-footer step-footer pointer" ng-click="create()">
+    <footer class="bar bar-footer step-footer pointer" ng-click="create()" >
         <div class="title">
             <img src="../img/step/step-save1.png" alt="保存">
             <span class="color-88">保存我的创意</span>
