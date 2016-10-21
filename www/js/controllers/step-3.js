@@ -24,18 +24,12 @@ function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state) {
             $scope.loading = false;
             $scope.ItemContent = result.data;
         } else {
-            console.log(result);
         }
     }, function (error) {
       //TODO
     });
 
   $scope.goBack = function() {
-
-    var backStateName = $ionicHistory.backView().stateName;
-
-    if (backStateName != 'step-2') {
-      $state.go(backStateName);
-    }
+      $state.go($ionicHistory.backView().stateName);
   }
 };
