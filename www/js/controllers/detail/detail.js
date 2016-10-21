@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, CacheService, $timeout) {
+  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, CacheService, $timeout, $window) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -136,7 +136,7 @@ angular.module('starter.controllers')
         } else {
           HnaAlert.default(Content.project.ERROR_MESSAGE_PDF);
         }
-      }, function(){
+      }, function () {
         HnaAlert.default(Content.project.ERROR_MESSAGE_PDF);
       });
     }
@@ -150,7 +150,32 @@ angular.module('starter.controllers')
       }
     }
 
-    $scope.getMobileType = function () {
+    var getMobileType = function () {
       return mobileTypeDetectService.getMobileOperatingSystem().toLowerCase();
+    }
+
+    $scope.joinChat = function () {
+      var url = '';
+      var downloadUrl = '';
+      switch (getMobileType()) {
+        case 'ios':
+          url = 'bim://bimwork';
+          downloadUrl = 'https://beta.bugly.qq.com/7ubr';
+          break;
+        case 'android':
+          url = 'intent://bim/home#Intent;scheme=bim;package=com.pactera.hnabim;end';
+          downloadUrl = 'https://beta.bugly.qq.com/u58z';
+          break;
+      }
+      $window.location = url;
+
+      var clickedDate = +new Date;
+      setTimeout(function () {
+        !window.document.webkitHidden && setTimeout(function () {
+          if (+new Date - clickedDate < 2000) {
+            window.location = downloadUrl;
+          }
+        }, 500);
+      }, 500)
     }
   })
