@@ -8,9 +8,13 @@ angular.module('starter.controllers')
 
     $scope.isCurrentUser = false;
 
-    function setLocalStorageWithDetailTab(projectId, content, type) {
-      localStorage.setItem(type + '-' + projectId, content ? content : '');
-    }
+    // rich editor
+    new Quill('#detail-introduction-container', {
+      modules: {
+        toolbar: []
+      },
+      theme: 'snow' // or 'bubble'
+    });
 
     //项目详情
     $scope.getProjectDetail = function () {
@@ -29,7 +33,8 @@ angular.module('starter.controllers')
         $scope.shareUrl = encodeURIComponent($location.absUrl());
 
         if ($scope.detail.introduction) {
-          document.querySelector('#detail-introduction-container').innerHTML = $scope.detail.introduction;
+          angular.element(document.querySelector('#detail-introduction-container .ql-editor')).append($scope.detail.introduction);
+          // document.querySelector('#detail-introduction-container').innerHTML = $scope.detail.introduction;
         }
 
         CacheService.setIntroduction($scope.detail.introduction);
@@ -167,13 +172,17 @@ angular.module('starter.controllers')
           downloadUrl = 'https://beta.bugly.qq.com/u58z';
           break;
       }
-      $window.location = url;
+      if (url) {
+        $window.location = url;
+      }
 
       var clickedDate = +new Date;
       setTimeout(function () {
         !window.document.webkitHidden && setTimeout(function () {
           if (+new Date - clickedDate < 2000) {
-            window.location = downloadUrl;
+            if(downloadUrl){
+              window.location = downloadUrl;
+            }
           }
         }, 500);
       }, 500)
