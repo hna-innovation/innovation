@@ -29,16 +29,16 @@ angular.module('starter.controllers')
 
       $scope.registerLoading = true;
 
-      LoginService.register(registerData, function (res) {
-        if (res.error) {
+      LoginService.register(registerData, function (result) {
+        if (result.code == 0) {
+          HnaAlert.defaultSuccess('注册成功！请登录');
+          ModalServices.goToLogin();
+
+        } else if (result.code == 1){
           $scope.existedEmail = true;
           $scope.EXISTED_EMAIL_MSG = "邮箱已存在";
           $scope.registerForm.$setPristine();
           $scope.registerLoading = false;
-
-        } else {
-          HnaAlert.defaultSuccess('注册成功！请登录');
-          ModalServices.goToLogin();
         }
       });
     }

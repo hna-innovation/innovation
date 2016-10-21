@@ -26,17 +26,16 @@ angular.module('starter.controllers')
 
       $scope.loginLoading = true;
 
-      LoginService.login(loginData, function (res) {
-
-        if (res.error) {
-          HnaAlert.defaultError('登录信息不正确！');
-          $scope.loginLoading = false;
-        } else {
-          HnaAlert.defaultSuccess('登录成功！');
-          localStorage.userId = res.data.id;
-          localStorage.userHeaderIcon = res.data.headerIcon;
+      LoginService.login(loginData, function (result) {
+        if (result.code == 0) {
+          localStorage.userId = result.data.id;
+          localStorage.userHeaderIcon = result.data.headerIcon;
           $scope.closePopup();
+          HnaAlert.defaultSuccess('登录成功!');
           $state.reload($state.current);
+        } else if (result.code == 1) {
+          HnaAlert.defaultError('登录信息不正确!');
+          $scope.loginLoading = false;
         }
       });
     }
