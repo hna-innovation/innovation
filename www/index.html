@@ -57,11 +57,11 @@
   <script src="js/vendor/swiper.min.js"></script>
   <!-- endinject -->
 
-  <!--custom js-->
-  <script src="js/module.js"></script>
+  <!-- inject:script-app:js -->
   <script src="js/app.js"></script>
   <script src="js/config.js"></script>
   <script src="js/modalService.js"></script>
+  <script src="js/services.js"></script>
 
   <script src="js/constants/authEventConstant.js"></script>
   <script src="js/constants/apiConstant.js"></script>
@@ -104,7 +104,6 @@
   <script src="js/controllers/detail/detailEditMarketController.js" ></script>
   <script src="js/controllers/static/downloadBimController.js" ></script>
 
-  <script src="js/services.js"></script>
   <script src="js/services/authService.js"></script>
   <script src="js/services/userService.js"></script>
   <script src="js/services/helperService.js"></script>
@@ -129,6 +128,10 @@
   <script src="js/directives/hnaTeamMembersDirective.js"></script>
   <script src="js/directives/disallowSpaceDirective.js"></script>
   <script src="js/directives/countAnimationDirective.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:script-templates:js -->
+  <!-- endinject -->
 </head>
 <body ng-controller="AppCtrl" >
  <div id="alert" ></div>

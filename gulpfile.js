@@ -70,20 +70,26 @@ gulp.task('image-copy', function (done) {
       .on('end', done);
 })
 
-gulp.task('js-copy', function (done) {
-  gulp.src('www/js/**/*.*')
-      .pipe(gulp.dest(path.join(buildDir, 'js')))
-      .on('end', done);
-})
-
 gulp.task('templates-copy', function (done) {
   gulp.src('www/templates/**/*.*')
       .pipe(gulp.dest(path.join(buildDir, 'templates')))
       .on('end', done);
 })
 
+gulp.task('language-copy', function (done) {
+  gulp.src('www/js/language/*.*')
+      .pipe(gulp.dest(path.join(buildDir, 'js/language')))
+      .on('end', done);
+})
+
 gulp.task('favicon-copy', function (done) {
   gulp.src('www/favicon.ico')
+      .pipe(gulp.dest(buildDir))
+      .on('end', done);
+})
+
+gulp.task('apple-app-copy', function (done) {
+  gulp.src('www/apple-app-site-association')
       .pipe(gulp.dest(buildDir))
       .on('end', done);
 })
@@ -96,20 +102,16 @@ gulp.task('js-vendor-concat', function (done) {
       .on('end', done);
 })
 
-gulp.task('inject-index', function (done) {
-  var _inject = function(src, tag) {
-    return inject(src, {
-      starttag: '<!-- inject:' + tag + ':{{ext}} -->',
-      addRootSlash: false
-    });
-  };
-
-  gulp.src('www/index.html')
-    .pipe(_inject(gulp.src("css/css*", { cwd: buildDir, read: false }), 'style-css'))
-    .pipe(_inject(gulp.src("css/resources/resources*", { cwd: buildDir, read: false }), 'style-resources'))
-    .pipe(_inject(gulp.src("css/vendor/vendor*", { cwd: buildDir, read: false }), 'style-vendor'))
-    .pipe(_inject(gulp.src("js/vendor/vendor*", { cwd: buildDir, read: false }), 'script-vendor'))
-    .pipe(gulp.dest(buildDir))
+gulp.task('js-mini', function (done) {
+  gulp.src([
+    'www/js/*.js',
+    'www/js/constants/*.js', 'www/js/controllers/**/*.js',
+    'www/js/services/*.js', 'www/js/directives/*.js'])
+    .pipe(annotate())
+    .pipe(concat('app.min.js'))
+    //.pipe(uglify())
+    .pipe(rev())
+    .pipe(gulp.dest(path.join(buildDir, 'js')))
     .on('end', done);
 })
 
@@ -127,9 +129,28 @@ gulp.task('script-template', function(done) {
       module: 'starter',
       htmlmin: minifyConfig
     }))
-    .pipe(rev())
     .pipe(annotate())
+    .pipe(rev())
     .pipe(gulp.dest(path.join(buildDir, 'js')))
+    .on('end', done);
+});
+
+gulp.task('inject-index', function (done) {
+  var _inject = function(src, tag) {
+    return inject(src, {
+      starttag: '<!-- inject:' + tag + ':{{ext}} -->',
+      addRootSlash: false
+    });
+  };
+
+  gulp.src('www/index.html')
+    .pipe(_inject(gulp.src("css/css*", { cwd: buildDir, read: false }), 'style-css'))
+    .pipe(_inject(gulp.src("css/resources/resources*", { cwd: buildDir, read: false }), 'style-resources'))
+    .pipe(_inject(gulp.src("css/vendor/vendor*", { cwd: buildDir, read: false }), 'style-vendor'))
+    .pipe(_inject(gulp.src("js/vendor/vendor*", { cwd: buildDir, read: false }), 'script-vendor'))
+    .pipe(_inject(gulp.src("js/app*", { cwd: buildDir, read: false }), 'script-app'))
+    .pipe(_inject(gulp.src("js/templates*", { cwd: buildDir, read: false }), 'script-templates'))
+    .pipe(gulp.dest(buildDir))
     .on('end', done);
 });
 
@@ -141,10 +162,10 @@ gulp.task('build', function(done) {
     'style-copy-icon', 'style-copy-lib', 'style-css', 'style-resources', 'style-vendor',
 
     //js files
-    'js-vendor-concat', 'script-template',
+    'js-vendor-concat', 'script-template', 'js-mini',
 
     // image files
-    'image-copy', 'js-copy', 'favicon-copy'
+    'image-copy', 'favicon-copy', 'apple-app-copy', 'language-copy'
   ],
   'inject-index')
 });
