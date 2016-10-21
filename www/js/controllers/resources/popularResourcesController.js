@@ -4,28 +4,28 @@ angular.module('starter.controllers')
 
     $scope.resources = [
         {
-            title: "原型制作团队",
-            img: '../img/resources/tech/team-1.png',
-            tags: ["UX", "设计"],
-            likeCount: 532,
-            starCount: 24,
-            commentCount: 53
-        },
-        {
-            title: "MVP开发团队",
-            img: '../img/resources/tech/team-2.png',
-            tags: ["软件", "开发"],
-            likeCount: 423,
-            starCount: 23,
-            commentCount: 53
-        },
-        {
-            title: "Scrum咨询团队",
+            title: "敏捷咨询团队",
             img: '../img/resources/tech/team-3.png',
             tags: ["敏捷", "XP"],
             likeCount: 101,
             starCount: 42,
             commentCount: 10
+        },
+        {
+            title: "移动APP开发",
+            img: '../img/resources/tech/team-2.png',
+            tags: ["软件", "APP"],
+            likeCount: 423,
+            starCount: 23,
+            commentCount: 53
+        },
+        {
+            title: "快速原型制作",
+            img: '../img/resources/tech/team-1.png',
+            tags: ["UX", "设计"],
+            likeCount: 532,
+            starCount: 24,
+            commentCount: 53
         },
         {
             title: "创意包装团队",
