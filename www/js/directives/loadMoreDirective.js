@@ -6,6 +6,6 @@ angular.module('starter')
         hasMoreData: "=",
         onLoadMore: '&'
       },
-      templateUrl: '../../templates/load-more.html'
+      templateUrl: 'templates/load-more.html'
     }
   })

@@ -11,7 +11,8 @@ var runSequence = require('run-sequence');
 var rev = require('gulp-rev');
 var inject = require('gulp-inject');
 var uglify = require('gulp-uglify');
-
+var templateCache = require('gulp-angular-templatecache');
+var annotate = require('gulp-ng-annotate');
 var buildDir = path.resolve('build');
 
 gulp.task('clean', function(done) {
@@ -112,6 +113,26 @@ gulp.task('inject-index', function (done) {
     .on('end', done);
 })
 
+gulp.task('script-template', function(done) {
+  var minifyConfig = {
+    collapseWhitespace: true,
+    collapseBooleanAttributes: true,
+    removeAttributeQuotes: true,
+    removeComments: true
+  };
+
+  gulp.src('**/*.html', { cwd: 'www/templates'})
+    .pipe(templateCache('templates.js', {
+      root: 'templates/',
+      module: 'starter',
+      htmlmin: minifyConfig
+    }))
+    .pipe(rev())
+    .pipe(annotate())
+    .pipe(gulp.dest(path.join(buildDir, 'js')))
+    .on('end', done);
+});
+
 gulp.task('build', function(done) {
   runSequence(
   'clean',
@@ -120,10 +141,10 @@ gulp.task('build', function(done) {
     'style-copy-icon', 'style-copy-lib', 'style-css', 'style-resources', 'style-vendor',
 
     //js files
-    'js-vendor-concat',
+    'js-vendor-concat', 'script-template',
 
     // image files
-    'image-copy', 'js-copy', 'templates-copy', 'favicon-copy'
+    'image-copy', 'js-copy', 'favicon-copy'
   ],
   'inject-index')
 });

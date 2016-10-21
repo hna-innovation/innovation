@@ -5,7 +5,7 @@ angular.module('starter.services')
     restrict: "EAC",
     replace: true,
     transclude: false,
-    templateUrl: '../../templates/components/hna-detail-footer.html',
+    templateUrl: 'templates/components/hna-detail-footer.html',
     link: function(element) {
       jQuery(document).on("click", "#share", function() {
         var topNumber = jQuery(".detail-footer-share").css("top");
