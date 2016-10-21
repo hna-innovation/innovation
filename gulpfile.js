@@ -40,7 +40,7 @@ gulp.task('style-css', function (done) {
         .pipe(rev())
         .pipe(gulp.dest(path.join(buildDir, 'css')))
         .on('end', done);
-})
+});
 
 gulp.task('style-resources', function (done) {
     gulp.src('www/css/resources/**/*.css')
@@ -51,7 +51,7 @@ gulp.task('style-resources', function (done) {
         .pipe(rev())
         .pipe(gulp.dest(path.join(buildDir, 'css/resources')))
         .on('end', done);
-})
+});
 
 gulp.task('style-vendor', function (done) {
   gulp.src('www/css/vendor/**/*.css')
@@ -62,37 +62,31 @@ gulp.task('style-vendor', function (done) {
       .pipe(rev())
       .pipe(gulp.dest(path.join(buildDir, 'css/vendor')))
       .on('end', done);
-})
+});
 
 gulp.task('image-copy', function (done) {
   gulp.src('www/img/**/*.*')
       .pipe(gulp.dest(path.join(buildDir, 'img')))
       .on('end', done);
-})
-
-gulp.task('templates-copy', function (done) {
-  gulp.src('www/templates/**/*.*')
-      .pipe(gulp.dest(path.join(buildDir, 'templates')))
-      .on('end', done);
-})
+});
 
 gulp.task('language-copy', function (done) {
   gulp.src('www/js/language/*.*')
       .pipe(gulp.dest(path.join(buildDir, 'js/language')))
       .on('end', done);
-})
+});
 
 gulp.task('favicon-copy', function (done) {
   gulp.src('www/favicon.ico')
       .pipe(gulp.dest(buildDir))
       .on('end', done);
-})
+});
 
 gulp.task('apple-app-copy', function (done) {
   gulp.src('www/apple-app-site-association')
       .pipe(gulp.dest(buildDir))
       .on('end', done);
-})
+});
 
 gulp.task('js-vendor-concat', function (done) {
   gulp.src('www/js/vendor/**/*.js')
@@ -100,7 +94,7 @@ gulp.task('js-vendor-concat', function (done) {
       .pipe(rev())
       .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
       .on('end', done);
-})
+});
 
 gulp.task('js-mini', function (done) {
   gulp.src([
@@ -113,7 +107,7 @@ gulp.task('js-mini', function (done) {
     .pipe(rev())
     .pipe(gulp.dest(path.join(buildDir, 'js')))
     .on('end', done);
-})
+});
 
 gulp.task('script-template', function(done) {
   var minifyConfig = {
