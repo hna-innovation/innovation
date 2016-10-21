@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepThirdCtrl', StepThirdCtrl)
 
-function StepThirdCtrl($scope, $timeout, Services, Page) {
+function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state) {
     // set title
     // Page.setTitle('创意预览');
     // 轮播图
@@ -27,6 +27,15 @@ function StepThirdCtrl($scope, $timeout, Services, Page) {
             console.log(result);
         }
     }, function (error) {
-        console.log(error);
+      //TODO
     });
+
+  $scope.goBack = function() {
+
+    var backStateName = $ionicHistory.backView().stateName;
+
+    if (backStateName != 'step-2') {
+      $state.go(backStateName);
+    }
+  }
 };
