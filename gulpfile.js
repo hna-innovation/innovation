@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
@@ -88,6 +87,14 @@ gulp.task('favicon-copy', function (done) {
       .on('end', done);
 })
 
+gulp.task('js-vendor-concat', function (done) {
+  gulp.src('www/js/vendor/**/*.js')
+      .pipe(concat('vendor.min.js'))
+      .pipe(rev())
+      .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
+      .on('end', done);
+})
+
 gulp.task('inject-index', function (done) {
   var _inject = function(src, tag) {
     return inject(src, {
@@ -100,15 +107,9 @@ gulp.task('inject-index', function (done) {
     .pipe(_inject(gulp.src("css/css*", { cwd: buildDir, read: false }), 'style-css'))
     .pipe(_inject(gulp.src("css/resources/resources*", { cwd: buildDir, read: false }), 'style-resources'))
     .pipe(_inject(gulp.src("css/vendor/vendor*", { cwd: buildDir, read: false }), 'style-vendor'))
+    .pipe(_inject(gulp.src("js/vendor/vendor*", { cwd: buildDir, read: false }), 'script-vendor'))
     .pipe(gulp.dest(buildDir))
     .on('end', done);
-})
-
-gulp.task('js-vendor-concat', function (done) {
-  gulp.src('www/js/vendor/**/*.js')
-      .pipe(concat('vendor.min.js'))
-      .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
-      .on('end', done);
 })
 
 gulp.task('build', function(done) {
@@ -118,52 +119,11 @@ gulp.task('build', function(done) {
     // css files
     'style-copy-icon', 'style-copy-lib', 'style-css', 'style-resources', 'style-vendor',
 
+    //js files
+    'js-vendor-concat',
+
     // image files
     'image-copy', 'js-copy', 'templates-copy', 'favicon-copy'
   ],
   'inject-index')
-});
-
-
-var paths = {
-  sass: ['./scss/**/*.scss']
-};
-
-gulp.task('default', ['sass']);
-
-gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
-});
-
-gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
-});
-
-gulp.task('install', ['git-check'], function() {
-  return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
-});
-
-gulp.task('git-check', function(done) {
-  if (!sh.which('git')) {
-    console.log(
-      '  ' + gutil.colors.red('Git is not installed.'),
-      '\n  Git, the version control system, is required to download Ionic.',
-      '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
-      '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
-    process.exit(1);
-  }
-  done();
 });
