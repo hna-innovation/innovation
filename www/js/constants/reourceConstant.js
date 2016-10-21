@@ -30,6 +30,7 @@ angular.module('configuration')
       RESOURCES: [
         {
           img: '../img/resources/tech/resource-1.png',
+          banner: '../img/resources/tech/resource-1.png',
           owner: '任耀洲',
           tags: ['软件资源', '大数据', '营销'],
           name: '大数据营销服务',
@@ -37,6 +38,7 @@ angular.module('configuration')
         },
         {
           img: '../img/resources/tech/resource-2.png',
+          banner: '../img/resources/tech/resource-1.png',
           owner: '杨仁慧',
           tags: ['软件资源', '测试', '云管理'],
           name: '开发测试云',
@@ -44,6 +46,7 @@ angular.module('configuration')
         },
         {
           img: '../img/resources/tech/resource-2.png',
+          banner: '../img/resources/tech/resource-1.png',
           owner: '杨仁慧',
           tags: ['软件资源', '微服务', '容器化'],
           name: '容器云',
@@ -51,6 +54,7 @@ angular.module('configuration')
         },
         {
           img: '../img/resources/tech/resource-2.png',
+          banner: '../img/resources/tech/resource-1.png',
           owner: '杨仁慧',
           tags: ['软件资源', '物联网'],
           name: '物联网云平台',
@@ -58,6 +62,7 @@ angular.module('configuration')
         },
         {
           img: '../img/resources/tech/resource-3.png',
+          banner: '../img/resources/tech/resource-1.png',
           owner: '冯廷伟',
           tags: ['软件资源', '通信'],
           name: '融合通信云服务',
