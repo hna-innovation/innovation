@@ -4,7 +4,7 @@ angular.module('starter.services')
     var loginPopup,registerPopup;
     var showPopup = function () {
       loginPopup = $ionicPopup.show({
-        templateUrl: '../templates/loginForm/login.html'
+        templateUrl: 'templates/loginForm/login.html'
       });
       IonicClosePopupService.register(loginPopup);
     };
@@ -21,7 +21,7 @@ angular.module('starter.services')
       },
       goToRegister: function () {
         registerPopup = $ionicPopup.show({
-          templateUrl: '../templates/loginForm/register.html'
+          templateUrl: 'templates/loginForm/register.html'
         });
         IonicClosePopupService.register(registerPopup);
         loginPopup.close();
