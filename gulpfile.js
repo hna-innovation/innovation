@@ -109,7 +109,7 @@ gulp.task('js-mini', function (done) {
     'www/js/services/*.js', 'www/js/directives/*.js'])
     .pipe(annotate())
     .pipe(concat('app.min.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest(path.join(buildDir, 'js')))
     .on('end', done);
