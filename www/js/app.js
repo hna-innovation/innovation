@@ -408,6 +408,13 @@ angular.module('starter')
         controller: 'DownloadBimCtrl'
       })
 
+      .state('success-case', {
+        url: '/success-case',
+        cache: true,
+        templateUrl: 'templates/static/success-case.html',
+        controller: 'SuccessCaseCtrl'
+      })
+
       .state('detail-page-comments', {
         url: '/detail-page-comments/:projectid',
         cache: true,

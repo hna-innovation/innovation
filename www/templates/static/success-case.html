@@ -1,0 +1,49 @@
+<style>
+  /*.detail {
+    width: 78%;
+    float: right;
+  }
+
+  .info {
+    position: absolute;
+    botton: 10px;
+  }*/
+</style>
+<ion-view view-title="成功案例">
+  <ion-content class="bg-fb">
+    <div class="user-list-title bg-pink bg-img-left" ui-sref="innovation" nav-direction="back">
+      <span class="font-18">成功案例</span>
+    </div>
+    <section class="panel-section pd-5">
+        <div class="banner">
+          <img src="../../img/successCase/banner.jpg" style="width: 375px; height: 146px" alt="">
+        </div>
+
+        <ul class="text-word pd-l5 pd-r5">
+          <li class="border-b1 pd-tb" collection-repeat="case in ::successCases">
+            <a>
+              <img ng-src="{{ case.image }}" alt="" width="60" class="left mg-r15 pd-tb5">
+            </a>
+            <div class="detail font-14">
+              <div class="title" ng-bind="case.title">
+              </div>
+              <div class="info font-12 mg-t10">
+                <span class="mg-r15">
+                  <img src="../img/resources/open-user.png" alt="">
+                  <span ng-bind="case.owner"></span>
+                </span>
+                <span class="mg-r15">
+                  <img src="../img/resources/open-location.png" alt="">
+                  <span ng-bind="case.location"></span>
+                </span>
+                <span class="mg-r15">
+                  <img src="../img/resources/open-date.png" alt="">
+                  <span ng-bind="case.date"></span>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </ion-content>
+  </ion-view>
