@@ -44,22 +44,22 @@ angular.module('configuration')
           name: '开发测试云',
           introduction: '可跨越私有云、公有云提供开发测试环境，支持DevOps所需的工具和流程，为开发团队提供自动化、虚拟化的基础设施资源，提升开发部署速度和灵活性。'
         },
-        {
-          img: '../img/resources/tech/resource-2.png',
-          banner: '../img/resources/tech/resource-1.png',
-          owner: '杨仁慧',
-          tags: ['软件资源', '微服务', '容器化'],
-          name: '容器云',
-          introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。'
-        },
-        {
-          img: '../img/resources/tech/resource-2.png',
-          banner: '../img/resources/tech/resource-1.png',
-          owner: '杨仁慧',
-          tags: ['软件资源', '物联网'],
-          name: '物联网云平台',
-          introduction: '为各类智能设备提供了数据采集、设备管理、远程操作等能力，并通过开放API和SDK支持跨平台物联网应用及服务的开发和运行，可为车联网、智能楼宇、客流分析、物流跟踪、装备维修等应用领域带来创新动力。'
-        },
+        // {
+        //   img: '../img/resources/tech/resource-2.png',
+        //   banner: '../img/resources/tech/resource-1.png',
+        //   owner: '杨仁慧',
+        //   tags: ['软件资源', '微服务', '容器化'],
+        //   name: '容器云',
+        //   introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。'
+        // },
+        // {
+        //   img: '../img/resources/tech/resource-2.png',
+        //   banner: '../img/resources/tech/resource-1.png',
+        //   owner: '杨仁慧',
+        //   tags: ['软件资源', '物联网'],
+        //   name: '物联网云平台',
+        //   introduction: '为各类智能设备提供了数据采集、设备管理、远程操作等能力，并通过开放API和SDK支持跨平台物联网应用及服务的开发和运行，可为车联网、智能楼宇、客流分析、物流跟踪、装备维修等应用领域带来创新动力。'
+        // },
         {
           img: '../img/resources/tech/resource-3.png',
           banner: '../img/resources/tech/resource-1.png',
