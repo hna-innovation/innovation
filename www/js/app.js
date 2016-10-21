@@ -132,6 +132,7 @@ angular.module('starter')
 
       .state('explore-resources.experts', {
         url: '/resources-experts',
+        cache: false,
         templateUrl: 'templates/resources/resources-experts.html',
         controller: 'ExpertsResourcesCtrl'
       })

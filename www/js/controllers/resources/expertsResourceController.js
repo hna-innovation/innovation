@@ -1,7 +1,8 @@
 angular.module('starter.controllers')
-  .controller('ExpertsResourcesCtrl', function ($scope, RESOURCE) {
+  .controller('ExpertsResourcesCtrl', function ($scope, RESOURCE, $timeout) {
     'use strict';
-    setTimeout(function () {
+
+    $timeout(function () {
       var swiper = new Swiper('.swiper-container-resource-team', {
         initialSlide: 1,
         effect: 'coverflow',
@@ -19,8 +20,6 @@ angular.module('starter.controllers')
     })
 
     $scope.tech = RESOURCE.TECH;
-
-
 
   });
 

@@ -50,7 +50,7 @@
     </div>
     <div class="panel_body">
       <div class="swiper-container-resource-team">
-        <ul class="swiper-wrapper">
+        <ul class="swiper-wrapper" ng-if="tech.TEAMS.length > 0">
           <li class="poker-card swiper-slide" ng-repeat="team in tech.TEAMS" ui-sref="team-detail" nav-direction="forward">
             <div class="poker_img">
               <img class="radius" ng-src="{{::team.img}}" alt="创意成员">
@@ -70,7 +70,7 @@
       <div class="panel_title">软硬件资源</div>
     </div>
     <ul class="list-img list-img-medium">
-      <li ng-repeat="resource in tech.RESOURCES" ui-sref="detail-page-resource">
+      <li ng-repeat="resource in tech.RESOURCES" ui-sref="detail-page-resource" ng-if="tech.RESOURCES.length > 0">
         <div>
           <a>
             <img ng-src="{{ ::resource.img }}" width="130" height="90"/>
