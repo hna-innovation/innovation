@@ -842,7 +842,7 @@ label.has-error {
   background-image: url('../img/login/success-check.png');
   background-repeat: no-repeat;
   background-size: 9%;
-  background-position: 28%;
+  background-position: 20%;
 }
 
 .error-check {
