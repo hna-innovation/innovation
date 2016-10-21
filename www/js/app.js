@@ -123,6 +123,11 @@ angular.module('starter')
 
       })
 
+      .state('banner-detail', {
+        url: '/banner-detail',
+        templateUrl: 'templates/banner-detail.html'
+      })
+
       .state('explore-resources', {
         url: '/explore-resources',
         templateUrl: 'templates/resources/explore-resources.html',
