@@ -24,7 +24,7 @@
               <li class="border-b1 pd-tb" ng-repeat="mentor in detail.mentors">
                 <div>
                   <a href="#">
-                    <img src={{mentor.headerIcon}} width="45" height="45" class="radius mg-r15 left"/>
+                    <img ng-src={{::mentor.headerIcon}} width="45" height="45" class="radius mg-r15 left"/>
                   </a>
                 </div>
                 <div class="pd-l60">
