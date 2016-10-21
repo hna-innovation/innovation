@@ -26,7 +26,9 @@ function DetailPageCommentsCtrl($scope, $stateParams, Content, CommentService, H
   $scope.getProjectComments = function() {
 
     CommentService.getProjectComments(_projectId, function(res) {
-      $scope.comments = res.data.content;
+      if(res.data && res.data.content){
+        $scope.comments = res.data.content;
+      }
     }, function() {
       // TODO
     });
