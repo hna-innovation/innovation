@@ -104,6 +104,13 @@ gulp.task('inject-index', function (done) {
     .on('end', done);
 })
 
+gulp.task('js-vendor-concat', function (done) {
+  gulp.src('www/js/vendor/**/*.js')
+      .pipe(concat('vendor.min.js'))
+      .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
+      .on('end', done);
+})
+
 gulp.task('build', function(done) {
   runSequence(
   'clean',
