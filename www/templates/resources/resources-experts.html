@@ -36,7 +36,7 @@
   }
 
   .tech .list-img-medium > li > div:nth-child(2) .text-title {
-    margin-top: 15px;
+    margin-top: 5px;
   }
 
   .tech .list-img .tag-list {
@@ -46,7 +46,7 @@
 <div class="tech">
   <section class="panel-section">
     <div class="panel_header">
-      <div class="panel_title">能力团队</div>
+      <div class="panel_title">技术服务</div>
     </div>
     <div class="panel_body">
       <div class="swiper-container-resource-team">
@@ -77,11 +77,11 @@
           </a>
         </div>
         <div class="pd-b5">
-          <span class="font-14 color-3d">{{ ::resource.owner }}</span>
           <!--<a class="button-init button-red right" ng-href="tel:{{phone}}">call</a>-->
-          <p class="color-3d font-14 text-ellipsis text-title">
+          <p class="color-3d font-16 bold text-ellipsis text-title">
             {{ ::resource.name }}
           </p>
+          <span class="font-14 color-3d">{{ ::resource.owner }}</span>
           <div class="tag-list">
             <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in resource.tags" >
               {{ tag }}

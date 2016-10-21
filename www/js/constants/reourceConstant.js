@@ -3,24 +3,24 @@ angular.module('configuration')
     TECH: {
       TEAMS:[
         {
-          img: '../img/resources/tech/team-1.png',
-          name: '原型制作团队',
-          leader: '龚倩'
-        },
-        {
-          img: '../img/resources/tech/team-2.png',
-          name: 'MVP开发团队',
-          leader: 'Jerry'
-        },
-        {
           img: '../img/resources/tech/team-3.png',
-          name: 'Scrum咨询团队',
+          name: '敏捷开发咨询',
           leader: '程杨'
         },
         {
+          img: '../img/resources/tech/team-2.png',
+          name: '移动APP开发',
+          leader: '杨叶鹏'
+        },
+        {
+          img: '../img/resources/tech/team-1.png',
+          name: '快速原型设计',
+          leader: '龚倩'
+        },
+        {
           img: '../img/resources/tech/team-4.png',
-          name: '创意包装团队',
-          leader: '车博琳'
+          name: '智能硬件设计',
+          leader: '任耀洲'
         }
       ],
       RESOURCES: [
