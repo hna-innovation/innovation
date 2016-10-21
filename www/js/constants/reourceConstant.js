@@ -60,29 +60,93 @@ angular.module('configuration')
         }
       ]
     },
-    PROFESSOR: [
+    PROFESSOR: {
+      IT: [
         {
-          name: '任耀洲',
+          name: '龙旭东',
           img: '../img/face/1.png',
-          description: '会议室管理设备',
-          tel: '13891281123',
-          tags: ['会议管理']
+          description: 'CTO, 海航生态科技集团',
+          tel: '13902210042',
+          tags: ['IDC', '售前', 'IT战略', 'IT解决方案']
         },
         {
-          name: '杨仁慧',
-          img: '../img/face/2.png',
-          description: '开发测试云资源',
-          tel: '13812731823',
-          tags: ['自动化测试']
+          name: '易梅',
+          img: '../img/face/4.png',
+          description: '院长，海航生态科技研究院',
+          tel: '13701103510',
+          tags: ['展示中心', '售前', '解决方案架构', 'IT战略']
         },
         {
-          name: '冯廷伟',
+          name: '李书博',
           img: '../img/face/3.png',
-          description: '融合通信软件',
-          tel: '15782381329',
-          tags: ['通信']
+          description: '产品经理，海航生态科技研究院',
+          tel: '18601177189',
+          tags: ['容器', 'Scrum', '公有云', 'IT战略']
+        },
+        {
+          name: '刘轩',
+          img: '../img/face/4.png',
+          description: 'PMO总监，海航生态科技集团',
+          tel: '18601158064',
+          tags: ['项目管理', '项目交付', 'PMP', '运维']
         }
-    ],
+      ],
+      FINANCE: [
+        {
+          name: '张荣',
+          img: '../img/face/1.png',
+          description: '共享服务经理，海航生态科技集团',
+          tel: '18810728864',
+          tags: ['预算', '核算', '资本化']
+        },
+        {
+          name: '牛晓鹏',
+          img: '../img/face/3.png',
+          description: '税务主管，海航生态科技集团',
+          tel: '18907553381',
+          tags: ['税务', '核算']
+        }
+      ],
+      HR: [
+        {
+          name: '宋光宇(Ted)',
+          img: '../img/face/1.png',
+          description: '人力资源总监',
+          tel: '18976889537',
+          tags: ['行政办公', '人事管理', '领导力', '沟通力']
+        },
+        {
+          name: '侯斌(Allen)',
+          img: '../img/face/3.png',
+          description: '招聘培训经理',
+          tel: '18611924619',
+          tags: ['培训讲师', '课程开发', '人际密码', '向上沟通']
+        },
+        {
+          name: '朱钰(Erin)',
+          img: '../img/face/4.png',
+          description: '招聘培训主管',
+          tel: '18643851727',
+          tags: ['人事招聘', '团队协作', '综合协调']
+        }
+      ],
+      LAW: [
+        {
+          name: '韩明(Maggie)',
+          img: '../img/face/3.png',
+          description: '法律事务经理',
+          tel: '13661399455',
+          tags: ['行政办公', '人事管理', '领导力', '沟通力']
+        },
+        {
+          name: '王伟钊',
+          img: '../img/face/4.png',
+          description: '法律事务主管',
+          tel: '15001185703',
+          tags: ['风险控制', '法律事务']
+        }
+      ]
+    },
     INCUBATION: {
 
     },
