@@ -11,6 +11,7 @@ var path = require('path');
 var runSequence = require('run-sequence');
 var rev = require('gulp-rev');
 var inject = require('gulp-inject');
+var uglify = require('gulp-uglify');
 
 var buildDir = path.resolve('build');
 
@@ -88,7 +89,6 @@ gulp.task('favicon-copy', function (done) {
 })
 
 gulp.task('inject-index', function (done) {
-
   var _inject = function(src, tag) {
     return inject(src, {
       starttag: '<!-- inject:' + tag + ':{{ext}} -->',
@@ -104,7 +104,6 @@ gulp.task('inject-index', function (done) {
     .on('end', done);
 })
 
-
 gulp.task('build', function(done) {
   runSequence(
   'clean',
@@ -117,6 +116,7 @@ gulp.task('build', function(done) {
   ],
   'inject-index')
 });
+
 
 var paths = {
   sass: ['./scss/**/*.scss']
