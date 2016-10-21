@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var plugins = require('gulp-load-plugins');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
@@ -45,7 +44,7 @@ gulp.task('style-resources', function (done) {
         .pipe(minifyCss({
           keepSpecialComments: 0
          }))
-        .pipe(gulp.dest(path.join(buildDir, 'css')))
+        .pipe(gulp.dest(path.join(buildDir, 'css/resources')))
         .on('end', done);
 })
 
@@ -55,7 +54,7 @@ gulp.task('style-vendor', function (done) {
       .pipe(minifyCss({
         keepSpecialComments: 0
        }))
-      .pipe(gulp.dest(path.join(buildDir, 'css')))
+      .pipe(gulp.dest(path.join(buildDir, 'css/vendor')))
       .on('end', done);
 })
 

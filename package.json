@@ -13,7 +13,6 @@
   "devDependencies": {
     "bower": "^1.3.3",
     "del": "^2.2.2",
-    "gulp-load-plugins": "^1.3.0",
     "gulp-minify-css": "^0.3.0",
     "gulp-util": "^2.2.14",
     "run-sequence": "^1.2.2",
