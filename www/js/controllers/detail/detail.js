@@ -179,12 +179,12 @@ angular.module('starter.controllers')
       var clickedDate = +new Date;
       setTimeout(function () {
         !window.document.webkitHidden && setTimeout(function () {
-          if (+new Date - clickedDate < 2000) {
+          if (+new Date - clickedDate < 6000) {
             if(downloadUrl){
               window.location = downloadUrl;
             }
           }
-        }, 500);
-      }, 500)
+        }, 1500);
+      }, 1500)
     }
   })

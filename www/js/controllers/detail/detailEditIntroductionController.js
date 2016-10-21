@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
+  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService, mobileTypeDetectService) {
 
     var quill = new Quill('#editor-container', {
       modules: {
@@ -28,6 +28,10 @@ angular.module('starter.controllers')
 
     initEditor();
 
+    $scope.isWeiXinOnIOS = function(){
+      return mobileTypeDetectService.isWeiXin() && (mobileTypeDetectService.getMobileOperatingSystem().toLowerCase() === 'ios')
+    }
+
     $scope.save = function () {
       var data = {
         projectId: projectId,
@@ -48,5 +52,7 @@ angular.module('starter.controllers')
     $scope.cancel = function () {
       $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: false});
     }
+
+
   }])
 

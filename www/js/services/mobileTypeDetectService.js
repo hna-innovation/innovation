@@ -22,8 +22,18 @@ angular.module('starter.services')
       return "unknown";
     }
 
+    function isWeiXin(){
+      var ua = window.navigator.userAgent.toLowerCase();
+      if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
     return {
-      getMobileOperatingSystem: getMobileOperatingSystem
+      getMobileOperatingSystem: getMobileOperatingSystem,
+      isWeiXin: isWeiXin
     }
 
   });
