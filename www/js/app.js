@@ -157,6 +157,12 @@ angular.module('starter')
         templateUrl: 'templates/resources/team-detail.html',
       })
 
+      .state('tech-resource-detail', {
+        url: '/tech-resource-detail/:detailId',
+        templateUrl: 'templates/resources/tech-resource-detail.html',
+        controller: 'TechResourceDetailCtrl'
+      })
+
       .state('explore-resources.professors', {
         url: '/resources-professors',
         templateUrl: 'templates/resources/resources-professors.html',
