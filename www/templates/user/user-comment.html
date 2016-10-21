@@ -10,7 +10,7 @@
         </div>
 
         <div ng-if="comments.length > 0">
-            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in ::comments">
+            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in comments">
                 <ul class="box-table">
                     <li class="box-table-row" id="user-photo">
                         <div class="box-table-cell" style="width: 40px;">
@@ -20,7 +20,7 @@
                             <div id="user-name">
                                 <span class="color-3d font-16" ng-bind="comment.userName" ></span>
                             </div>
-                            <div class="color-a9" ng-bind="comment.time" ></div>
+                            <div class="color-a9" ng-bind="comment.createdDate" ></div>
                         </div>
                     </li>
                 </ul>
@@ -43,6 +43,11 @@
                     </li>
                 </ul>
             </section>
+          <load-more
+            on-load-more="getComments()"
+            has-more-data="hasMoreData">
+          </load-more>
+
         </div>
     </ion-content>
 </ion-view>

@@ -28,9 +28,9 @@ angular.module('starter.services')
           .error(error);
       },
 
-      getUserComments: function(success, error) {
+      getUserComments: function(offset, success, error) {
 
-        return $http.get(getUrl(Api.USER_COMMENTS_API))
+        return $http.get(getUrl(Api.USER_COMMENTS_API + '?sort=createdDate,desc&page='+ offset +'&size=6'))
           .success(success)
           .error(error);
 
