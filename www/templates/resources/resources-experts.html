@@ -51,12 +51,12 @@
     <div class="panel_body">
       <div class="swiper-container-resource-team">
         <ul class="swiper-wrapper">
-          <li class="poker-card swiper-slide" ng-repeat="team in tech.TEAMS">
+          <li class="poker-card swiper-slide" ng-repeat="team in tech.TEAMS" ui-sref="team-detail" nav-direction="forward">
             <div class="poker_img">
               <img class="radius" ng-src="{{::team.img}}" alt="创意成员">
             </div>
             <div class="poker_title color-3d" ng-bind="::team.name"></div>
-            <div class="poker_description color-6d" ng-bind="::team.leader"></div>
+            <!--<div class="poker_description color-6d" ng-bind="::team.leader"></div>-->
             <div>
               <button class="button-init button-red">查看详情</button>
             </div>

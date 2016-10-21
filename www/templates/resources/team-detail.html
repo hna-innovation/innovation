@@ -1,0 +1,73 @@
+<style>
+  .resource-detail.team .banner {
+    height: 200px;
+  }
+  .resource-detail.team .content > div,
+  .resource-detail.team .content > ol {
+    text-indent: 28px;
+    margin-bottom: 5px;
+    list-style: circle;
+    line-height: 25px;
+  }
+  .resource-detail.team .content > ol li {
+    list-style: circle;
+    text-indent: 0;
+    margin-left: 45px;
+  }
+  .resource-detail.team .content {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+  }
+  .resource-detail.team .action {
+    text-align: center;
+  }
+
+  .resource-detail.team .action > div {
+    margin: 4px 0;
+  }
+
+</style>
+<ion-view>
+  <ion-content class="bg-fb resource-detail team">
+    <div class="banner">
+      <i class="if i-remove1 go-back radius" ui-sref="explore-resources.experts" nav-direction="back"></i>
+      <img src="img/resources/team-banner.png" alt="">
+    </div>
+    <div class="title">
+      敏捷开发咨询服务
+    </div>
+    <div class="content">
+      <div>您企业采用传统的开发方法和流程，随着系统越来越多，复杂度越来越高，您感到举步维艰，无法跟上市场的脚步。</div>
+      <div>科技研究院可以帮您重新审视开发方法，调整交付架构，快速搭建敏捷交付体系，让您的旧体系焕发新生。</div>
+      <div>我们提供的敏捷咨询服务包括：</div>
+      <ol>
+        <li>敏捷开发方法培训</li>
+        <li>精益价值链梳理</li>
+        <li>用户故事、看板、Scrum、XP专项教练</li>
+      </ol>
+    </div>
+    <div class="expert">
+      <div class="box-table">
+        <div class="box-table-row">
+          <div class="box-table-cell" style="width: 50px;">
+            <img src="../img/face/human-1.png" alt="头像" width="45" height="45" class="user-img border-0">
+          </div>
+          <div class="box-table-cell pd-r15">
+            <div>
+              <span class="font-14 color-3d expert-name">程杨<span>产品经理</span></span>
+            </div>
+            <div class="description">
+              敏捷开发专家，SCRUM软件开发咨询师，多年敏捷团队管理经验，大量成功项目案例
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+        <a class="a-btn tag-hong" ng-click="joinChat()">申请加入讨论组</a>
+        <div>or</div>
+        <a href="tel:18091584470" class="a-btn tag-lv"><i class="ion-ios-telephone"></i>直接call他</a>
+    </div>
+  </ion-content>
+</ion-view>
