@@ -8,6 +8,10 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
   // 初始化表单数据
   $scope.formdata = {};
 
+  $scope.beforeChange = function(file) {
+    $scope.loading = true;
+  }
+
   // 图片上传接口
   $scope.uploadFiles = function(file, errFiles) {
     $scope.errFile = errFiles && errFiles[0];
@@ -18,7 +22,6 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
     }
 
     if (file) {
-      $scope.loading = true;
       file.upload = Upload.upload({
         url: '/api/media/image',
         data: { file: file }
@@ -46,6 +49,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
         HnaAlert.default('图片上传失败');
       });
     } else {
+      $scope.loading = false;
     }
   }
 
