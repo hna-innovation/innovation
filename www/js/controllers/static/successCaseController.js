@@ -18,7 +18,7 @@ function SuccessCaseCtrl($scope) {
       date: '2016/10/19',
       image: '../img/successCase/2.jpg'
     },{
-      title: '智能酒店项目已在集团23家酒店实施',
+      title: '智能酒店项目已在集团23家酒店实施, 获取广泛的关注',
       owner: '胡东娜',
       location: '海口',
       date: '2016/10/17',
@@ -36,7 +36,7 @@ function SuccessCaseCtrl($scope) {
       date: '2016/9/9',
       image: '../img/successCase/5.jpg'
     },{
-      title: '班车APP项目已在海口、西安落地,得到员工广泛好评',
+      title: '班车APP项目已在海口、西安落地, 得到员工广泛好评',
       owner: '周颖',
       location: '北京',
       date: '2016/9/9',
