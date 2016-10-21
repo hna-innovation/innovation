@@ -5,22 +5,26 @@ angular.module('configuration')
         {
           img: '../img/resources/tech/team-3.png',
           name: '敏捷开发咨询',
-          leader: '程杨'
+          leader: '程杨',
+          url: 'team-detail'
         },
         {
           img: '../img/resources/tech/team-2.png',
           name: '移动APP开发',
-          leader: '杨叶鹏'
+          leader: '杨叶鹏',
+          url: 'explore-resources.experts'
         },
         {
           img: '../img/resources/tech/team-1.png',
           name: '快速原型设计',
-          leader: '龚倩'
+          leader: '龚倩',
+          url: 'explore-resources.experts'
         },
         {
           img: '../img/resources/tech/team-4.png',
           name: '智能硬件设计',
-          leader: '任耀洲'
+          leader: '任耀洲',
+          url: 'explore-resources.experts'
         }
       ],
       RESOURCES: [
