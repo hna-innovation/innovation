@@ -32,7 +32,7 @@
   <ion-content class="bg-fb resource-detail team">
     <div class="banner">
       <i class="if i-remove1 go-back radius" ui-sref="explore-resources.experts" nav-direction="back"></i>
-      <img src="img/resources/team-banner.png" alt="">
+      <img ng-src="{{ ::detail.banner }}" alt="">
     </div>
     <div class="title" ng-bind="::detail.name"></div>
     <div class="content">
@@ -48,8 +48,7 @@
             <div>
               <span class="font-14 color-3d expert-name" ng-bind="::detail.owner"><span>产品经理</span></span>
             </div>
-            <div class="description">
-              敏捷开发专家，SCRUM软件开发咨询师，多年敏捷团队管理经验，大量成功项目案例
+            <div class="description" ng-bind="::detail.description" >
             </div>
           </div>
         </div>

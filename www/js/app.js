@@ -137,7 +137,7 @@ angular.module('starter')
 
       .state('explore-resources.experts', {
         url: '/resources-experts',
-        cache: false,
+        cache: true,
         templateUrl: 'templates/resources/resources-experts.html',
         controller: 'ExpertsResourcesCtrl'
       })
@@ -159,6 +159,7 @@ angular.module('starter')
 
       .state('tech-resource-detail', {
         url: '/tech-resource-detail/:detailId',
+        cache: true,
         templateUrl: 'templates/resources/tech-resource-detail.html',
         controller: 'TechResourceDetailCtrl'
       })
