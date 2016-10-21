@@ -1,11 +1,11 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditResourceCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert) {
+  .controller('DetailEditResourceCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
 
     var projectId = $stateParams.projectId;
 
     $scope.form = {
-      resource: localStorage.getItem('resource-' + projectId) ? localStorage.getItem('resource-' + projectId) : ''
+      resource: CacheService.getResourceOfDetail()
     }
 
     $scope.save = function () {

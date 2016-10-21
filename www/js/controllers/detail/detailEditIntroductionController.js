@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert) {
+  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
 
     var quill = new Quill('#editor-container', {
       modules: {
@@ -10,18 +10,19 @@ angular.module('starter.controllers')
           ['blockquote', 'code-block'],
         ]
       },
-      placeholder: 'Compose an epic...',
+      placeholder: '请输入文字',
       theme: 'snow' // or 'bubble'
     });
 
     var projectId = $stateParams.projectId;
 
+    // bugfix: don't focus the line easily'
     $('.ql-editor p, #editor-container, .ql-editor').on('mousedown mouseup touchstart touchend', function (e) {
       e.stopPropagation();
     });
 
     function initEditor() {
-      var introduction = localStorage.getItem('introduction-' + projectId) ? localStorage.getItem('introduction-' + projectId) : '';
+      var introduction = CacheService.getIntroductionOfDetail();
       angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
     }
 

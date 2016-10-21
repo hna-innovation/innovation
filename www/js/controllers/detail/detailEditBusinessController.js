@@ -1,11 +1,11 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditBusinessCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert) {
+  .controller('DetailEditBusinessCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
 
     var projectId = $stateParams.projectId;
 
     $scope.form = {
-      business: localStorage.getItem('business-' + projectId) ? localStorage.getItem('business-' + projectId) : ''
+      business: CacheService.getBussinessOfDetail()
     }
 
     $scope.save = function () {

@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService) {
+  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, CacheService, $timeout) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -32,10 +32,10 @@ angular.module('starter.controllers')
           document.querySelector('#detail-introduction-container').innerHTML = $scope.detail.introduction;
         }
 
-        setLocalStorageWithDetailTab(_projectId, $scope.detail.introduction, 'introduction');
-        setLocalStorageWithDetailTab(_projectId, $scope.detail.resourceRequired, 'resource');
-        setLocalStorageWithDetailTab(_projectId, $scope.detail.marketAnalysis, 'market');
-        setLocalStorageWithDetailTab(_projectId, $scope.detail.businessModel, 'business');
+        CacheService.setIntroduction($scope.detail.introduction);
+        CacheService.setMarket($scope.detail.marketAnalysis);
+        CacheService.setBussiness($scope.detail.businessModel);
+        CacheService.setResource($scope.detail.resourceRequired);
 
         $scope.members = $scope.detail.members;
 
@@ -58,7 +58,7 @@ angular.module('starter.controllers')
       })
     }
 
-    setTimeout(function () {
+    $timeout(function () {
       Swiper('#swiper1', {
         direction: 'horizontal',
         loop: false,
@@ -69,7 +69,7 @@ angular.module('starter.controllers')
       })
     }, 1000)
 
-    setTimeout(function () {
+    $timeout(function () {
       Swiper('#swiper2', {
         direction: 'horizontal',
         loop: true,

@@ -1,11 +1,11 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditMarketCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert) {
+  .controller('DetailEditMarketCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
 
     var projectId = $stateParams.projectId;
 
     $scope.form = {
-      market: localStorage.getItem('market-' + projectId) ? localStorage.getItem('market-' + projectId) : ''
+      market: CacheService.getMarketOfDetail()
     }
 
     $scope.save = function () {
