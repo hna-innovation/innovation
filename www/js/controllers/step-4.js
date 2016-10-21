@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepFourthCtrl', StepFourthCtrl)
 
-function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
+function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicViewSwitcher) {
     // set title
     // Page.setTitle('编辑完善创意');
     // 轮播图
@@ -117,6 +117,8 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, Page) {
                 HnaAlert.default('创意发布成功！');
                 localStorage.removeItem('draftId');
                 $state.go('detail', {projectId: result.data.id, pageName: 'innovation'});
+                $ionicViewSwitcher.nextDirection("forwoard");
+
             } else {
               if (result.code == 500) {
                 HnaAlert.default('标题长度不能超过40字符! ');

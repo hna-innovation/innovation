@@ -10,7 +10,8 @@ angular.module('starter.controllers')
       'UtilityService',
       'ModalServices',
       'Content',
-      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, ModalServices, Content) {
+      '$ionicViewSwitcher',
+      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, ModalServices, Content, $ionicViewSwitcher) {
 
         // set title
         PageService.setTitle('创新平台');
@@ -96,18 +97,22 @@ angular.module('starter.controllers')
 
         $scope.goPopularInnovation = function() {
           $state.go('popular-innovation');
+          $ionicViewSwitcher.nextDirection('forwoard');
         };
 
         $scope.goPopularResources = function() {
           $state.go('popular-resources');
+          $ionicViewSwitcher.nextDirection('forwoard');
         };
 
         $scope.goLastInnovation = function() {
           $state.go('last-innovation');
+          $ionicViewSwitcher.nextDirection("forwoard");
         };
 
         $scope.goInnovationStars = function() {
           $state.go('innovation-stars');
+          $ionicViewSwitcher.nextDirection("forwoard");
         };
 
         Services.getTags(function (data) {
