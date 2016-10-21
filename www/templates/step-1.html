@@ -3,7 +3,7 @@
         <a ui-sref="innovation" class="ion-android-close color-white" nav-direction="back"></a>
         <h1 class="title color-white">记录新创意</h1>
     </ion-header-bar>
-    <ion-content class="has-header">
+    <ion-content class="has-header has-footer mg-b20" padding="true" has-bouncing="false">
         <main id="step-1" class="content">
             <div id="imgUpload">
                 <div class="spinners" ng-show="loading == true">
@@ -21,8 +21,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="dianzi-description">
-                <textarea class="pd-15 mg-t10 bg-fb" rows="8" placeholder="在此记录你的灵感..." ng-trim="true" ng-model="formdata.description" maxlength="135" ></textarea>
+            <div>
+                <textarea class="pd-15 mg-t10 bg-fb pd-t20" auto-Expanding placeholder="在此记录你的灵感..." ng-trim="true" ng-model="formdata.description" maxlength="135" ></textarea>
             </div>
         </main>
     </ion-content>

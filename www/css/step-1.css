@@ -34,7 +34,8 @@
 }
 
 #step-1 .dianzi-description {
-    height: 195px;
+    min-height: 200px;
+    overflow: visible;
 }
 
 #step-1 .dianzi-description label {
@@ -43,12 +44,19 @@
 }
 
 #step-1 textarea {
+  min-height: 100px;
+    height: auto;
     width: 100%;
     resize: none;
     background-color: transparent;
     border: 1px solid #e1e1e1;
     border-radius: 5px;
-    overflow-y: auto;
+  overflow-y: visible;
+    -webkit-transition: height 2s ease;
+    -moz-transition: height 2s ease;
+    -ms-transition: height 2s ease;
+    -o-transition: height 2s ease;
+    transition: height 2s ease;
 }
 
 #photoUpload{
