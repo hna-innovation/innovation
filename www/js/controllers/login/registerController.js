@@ -31,7 +31,8 @@ angular.module('starter.controllers')
 
       LoginService.register(registerData, function (result) {
         if (result.code == 0) {
-          HnaAlert.defaultSuccess('注册成功！请登录');
+          HnaAlert.defaultSuccess('注册成功！');
+          HnaAlert.default('请登录');
           ModalServices.goToLogin();
 
         } else if (result.code == 1){
