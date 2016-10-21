@@ -27,26 +27,31 @@ angular.module('configuration')
         {
           img: '../img/resources/tech/resource-1.png',
           owner: '任耀洲',
+          tags: ['硬件资源', '会议管理'],
           name: '会议室管理设备'
         },
         {
           img: '../img/resources/tech/resource-2.png',
           owner: '杨仁慧',
+          tags: ['软件资源', '测试'],
           name: '开发测试云资源'
         },
         {
           img: '../img/resources/tech/resource-3.png',
           owner: '冯廷伟',
+          tags: ['软件资源', '通信'],
           name: '融合通信软件'
         },
         {
           img: '../img/resources/tech/resource-4.png',
           owner: '温岩',
+          tags: ['硬件资源', '显示屏'],
           name: '数据展示大屏'
         },
         {
           img: '../img/resources/tech/resource-5.png',
           owner: '杨叶鹏',
+          tags: ['硬件资源', '测试'],
           name: '移动测试设备'
         }
       ]

@@ -83,8 +83,9 @@
             {{ ::resource.name }}
           </p>
           <div class="tag-list">
-            <a class="font-10 tag tag-lan mg-b0">科技</a>
-            <a class="font-10 tag tag-lan mg-b0">科技</a>
+            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in resource.tags" >
+              {{ tag }}
+            </a>
           </div>
         </div>
         <div>
