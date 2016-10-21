@@ -2,7 +2,7 @@ angular.module('starter.controllers')
   .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE) {
     'use strict';
 
-    $state.transitionTo('explore-resources.experts');
+    // $state.transitionTo('explore-resources.experts');
 
     $scope.resources = [
         {
