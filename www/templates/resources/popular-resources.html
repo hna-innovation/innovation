@@ -7,14 +7,14 @@
 
 		<div class="pd-10">
 			<ul class="list-img list-img-medium">
-				<li ng-repeat="resource in resources" ui-sref="detail-page-resource" >
+				<li ng-repeat="resource in resources" ui-sref="detail-page-resource({detailId: $index})" >
 					<div>
 						<a ui-sref="detail-page-resource">
 							<img ng-src="{{ resource.img }}" width="130" height="90"/>
 						</a>
 					</div>
 					<div>
-						<a class="color-3d font-14 text-ellipsis" ui-sref="detail-page-resource">
+						<a class="color-3d font-14 text-ellipsis">
 							{{ resource.title }}
 						</a>
 						<div>

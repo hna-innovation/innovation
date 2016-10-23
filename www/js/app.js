@@ -237,7 +237,8 @@ angular.module('starter')
       })
 
       .state('detail-page-resource', {
-        url: '/detail-page-resource',
+        url: '/detail-page-resource/:detailId',
+        cache: true,
         templateUrl: 'templates/resources/detail-page-resource.html',
         controller: 'DetailPageResourceCtrl'
 
