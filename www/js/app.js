@@ -148,7 +148,7 @@ angular.module('starter')
       })
 
       .state('explore-resources.incubation', {
-        url: '/resources-open',
+        url: '/resources-incubation',
         templateUrl: 'templates/resources/resources-incubation.html',
         controller: 'IncubationResourcesCtrl'
       })
