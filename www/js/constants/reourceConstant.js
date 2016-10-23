@@ -263,7 +263,7 @@ angular.module('configuration')
       ]
     },
 
-    INCUBATOR: {
+    INCUBATION: {
       MENTOR:[
         {
           img: '../img/face/1.png',

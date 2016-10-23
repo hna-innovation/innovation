@@ -50,8 +50,8 @@
     </div>
     <div class="panel_body">
       <ion-scroll direction="x" >
-        <ul class="poker-list sroll-x-wrapper" ng-if="incubator.MENTOR.length > 0" >
-          <li class="poker-card" ng-repeat="team in incubator.MENTOR"  nav-direction="forward">
+        <ul class="poker-list sroll-x-wrapper" ng-if="incubation.MENTOR.length > 0" >
+          <li class="poker-card" ng-repeat="team in incubation.MENTOR" nav-direction="forward">
             <div class="poker_img">
               <img class="radius" ng-src="{{::team.img}}" alt="创业导师">
             </div>
@@ -70,7 +70,7 @@
       <div class="panel_title">孵化资源</div>
     </div>
     <ul class="list-img list-img-medium">
-      <li ng-repeat="service in incubator.SERVICES" ui-sref="tech-resource-detail({detailId: $index})" ng-if="incubator.SERVICES.length > 0">
+      <li ng-repeat="service in incubation.SERVICES" ui-sref="tech-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
         <div>
           <a>
             <img ng-src="{{ ::service.img }}" width="130" height="90"/>

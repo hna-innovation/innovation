@@ -147,10 +147,10 @@ angular.module('starter')
         templateUrl: 'templates/resources/resources-open.html',
       })
 
-      .state('explore-resources.incubator', {
+      .state('explore-resources.incubation', {
         url: '/resources-open',
-        templateUrl: 'templates/resources/resources-incubator.html',
-        controller: 'IncubatorResourcesCtrl'
+        templateUrl: 'templates/resources/resources-incubation.html',
+        controller: 'IncubationResourcesCtrl'
       })
 
       .state('resource-detail', {
