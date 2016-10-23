@@ -7,7 +7,7 @@
         <main id="step-2" class="content has-header">
             <!-- <input id="photoUpload2" type="file" accept="image/*" ng-show="true" nv-file-select uploader="uploader"> -->
 
-            <button id="photoUpload2" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-fix-orientation="true" ngf-resize="{width: 1024, quality: .8}"  ngf-resize-if="$width > 1024" ngf-max-size="5MB"></button>
+            <button id="photoUpload2" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-before-model-change="beforeChange($files)" ngf-fix-orientation="true" ngf-resize="{width: 1024, quality: .8}"  ngf-resize-if="$width > 1024" ngf-max-size="5MB"></button>
 
             <ul>
                 <li ng-repeat="item in uploader.queue">

@@ -10,7 +10,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
 
   $scope.beforeChange = function(file) {
     $scope.loading = true;
-  }
+  };
 
   // 图片上传接口
   $scope.uploadFiles = function(file, errFiles) {

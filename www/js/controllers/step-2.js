@@ -64,6 +64,10 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
         jQuery('#photoUpload2').trigger('click');
     };
 
+    $scope.beforeChange = function(file) {
+      $scope.loading = true;
+    };
+
     // 图片上传接口
     $scope.uploadFiles = function(file, errFiles) {
       $scope.errFile = errFiles && errFiles[0];
@@ -74,7 +78,6 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
       }
 
       if (file) {
-        $scope.loading = true;
         file.upload = Upload.upload({
           url: '/api/media/image',
           data: { file: file }
@@ -111,7 +114,9 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
           $scope.loading = false;
           HnaAlert.default('图片上传失败');
         });
-      } else {}
+      } else {
+        $scope.loading = false;
+      }
     }
 
     function _validateImgFile(errType) {
