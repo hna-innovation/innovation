@@ -292,7 +292,7 @@ angular.module('configuration')
           name: '企业服务'
         },{
           img: '../img/resources/incubation/innovation-video.jpg',
-          tags: [],
+          tags: ['创业课堂', '创业TV'],
           name: '创业视频'
         },{
           img: '../img/resources/incubation/training-service.jpg',
@@ -313,7 +313,7 @@ angular.module('configuration')
               detail: '为创业公司提供海航特色资源对接服务，包括海航业务资源、海航应用场景、海航航机媒体资源等。'
             },{
               title: '融资服务',
-              detail: '为创业公司提供多渠道融资对接，帮助创业公司与创投机构基金对接，提供多层资本市场对接，帮助创业公司对接新三板，四板，助推企业快速跨入资本市场'
+              detail: '为创业公司提供多渠道融资对接，帮助创业公司与创投机构基金对接，提供多层资本市场对接，帮助创业公司对接新三板，四板，助推企业快速跨入资本市场。'
             },{
               title: '行政服务',
               detail: '为创业公司提供基础行政服务，包括：工商注册服务、人力资源、代理记账、政策申请等服务。'
@@ -325,7 +325,7 @@ angular.module('configuration')
               detail: '为创业公司提供创新培训、会员交流、对接投资人、项目路演、搭建合作关系。'
             },{
               title: '网站搭建',
-              detail: '为创业公司提供网站搭建样板，运营咨询服务'
+              detail: '为创业公司提供网站搭建样板，运营咨询服务。'
             }
           ]
         },{
@@ -338,7 +338,7 @@ angular.module('configuration')
             },{
               title: '创新活动策划',
               detail: '为大企业集团策划创新活动、创新沙龙、创新比赛，帮助大企业树立创新品牌和创新形象。'
-            },,{
+            },{
               title: '创新体系设计',
               detail: '为大公司创新负责人设计内部创新创投体系，挖掘大集团自身创新潜力，创造业务发展新动力，挖掘创新人才。'
             }
@@ -348,7 +348,9 @@ angular.module('configuration')
           name: '创业视频',
           introduction: [
             {
-            },
+              title: '创业视频',
+              detail: '为创业项目提供丰富多样的视频资源。'
+            }
           ]
         },{
           banner: '../img/resources/incubation/banner/training-service.jpg',
@@ -357,7 +359,7 @@ angular.module('configuration')
             {
               title: '企业培训需求分析',
               details: '企业战略、财务、市场营销等全方位培训'
-            },
+            }
           ]
         }
         ]
