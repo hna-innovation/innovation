@@ -181,7 +181,7 @@ angular.module('configuration')
     TRAIN: {
       CLASSES: [
         {
-            title: "社交媒体运营创业社交媒体运营创业社交媒体运营创业",
+            title: "社交媒体运营",
             img: "../img/resources/tech/team-2.png",
             speaker: '李睿平',
             city: '上海',

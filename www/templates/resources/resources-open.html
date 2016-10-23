@@ -7,8 +7,8 @@
     <div class="panel_btn">我要开讲</div>
   </div>
   <ul class="open-list">
-    <li ng-repeat="class in ::train.CLASSES" ui-sref="resource-detail">
-      <div class="img">
+    <li class="clearfix" ng-repeat="class in ::train.CLASSES" ui-sref="resource-detail">
+      <div class="img left">
         <img ng-src="{{ class.img }}" alt="">
       </div>
       <div class="summary">

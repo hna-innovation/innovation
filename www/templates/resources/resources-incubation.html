@@ -1,46 +1,4 @@
-<style>
-  .incubation .list-img {
-    padding: 10px;
-  }
-
-  .incubation .panel_body {
-    overflow: hidden;
-  }
-
-  .incubation .list-img > li {
-    padding: 0px;
-    border: none;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 10px;
-  }
-
-  .incubation .list-img > li img {
-    width: auto;
-    height: 90px;
-    margin-left: -41px;
-  }
-
-  .incubation .list-img-medium > li > div:nth-child(1) {
-    width: 130px;
-    overflow: hidden;
-  }
-
-  .incubation .list-img-medium > li > div:nth-child(2) {
-    padding-left: 108px;
-    padding-top: 0;
-    padding-right: 0;
-  }
-
-  .incubation .list-img-medium > li > div:nth-child(2) .text-title {
-    margin-top: 5px;
-  }
-
-  .incubation .list-img .tag-list {
-    margin-top: 8px;
-  }
-</style>
-<div class="incubation">
-  <section class="panel-section">
+<section class="panel-section">
     <div class="panel_header">
       <div class="panel_title">创业导师</div>
     </div>
@@ -53,9 +11,6 @@
             </div>
             <div class="poker_title color-3d" ng-bind="::team.name"></div>
             <p style="height:40px;" class="font-12 color-88" ng-bind="::team.title"></p>
-            <div>
-              <button class="button-init button-red">查看详情</button>
-            </div>
           </li>
         </ul>
       </ion-scroll>
@@ -65,14 +20,10 @@
     <div class="panel_header">
       <div class="panel_title">孵化资源</div>
     </div>
-    <ul class="list-img list-img-medium">
-      <li ng-repeat="service in incubation.SERVICES" ui-sref="incubation-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
+    <ul class="">
+      <li class="border-b1 clearfix pd-10" ng-repeat="service in incubation.SERVICES" ui-sref="incubation-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
+        <img class="left mg-r15" ng-src="{{ ::service.img }}" width="130" height="90"/>
         <div>
-          <a>
-            <img ng-src="{{ ::service.img }}" width="130" height="90"/>
-          </a>
-        </div>
-        <div class="pd-b5">
           <p class="color-3d font-16 bold text-ellipsis text-title">
             {{ ::service.name }}
           </p>
@@ -85,4 +36,3 @@
       </li>
     </ul>
   </section>
-</div>
