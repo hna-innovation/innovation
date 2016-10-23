@@ -375,105 +375,74 @@ angular.module('configuration')
         img: '../img/resources/tech/resource-1-thumb.jpg',
         banner: '../img/resources/tech/resource-1.jpg',
         owner: '温岩',
+        url: 'tech-resource-detail({detailId:0})',
         tags: ['软件资源', '大数据', '营销'],
         title: '大数据营销服务',
-        company: "海创空间",
-        mentors: [
-          {
-            name: "大海",
-            headerIcon: "../img/face/1.png",
-            position: "资深投资人",
-            description: "可为电商o2o项目提供项目指导和培训"
-          },{
-            name: "江山 ShanJiang",
-            headerIcon: "../img/face/2.png",
-            position: "资深媒体人",
-            description: "拥有20年的媒体投资经验, 可为电商o2o项目提供项目指导和培训"
-          },{
-            name: "黄河",
-            headerIcon: "../img/face/3.png",
-            position: "资深投资人",
-            description: "可为电商o2o项目提供项目指导和培训"
-          }
-        ],
         introduction: '基于航旅、电商 、支付等海航具备特色的数据池，为开发者提供用户画像、聚类等大数据分析，帮助开发者快速开发精准营销解决方案。',
         likeCount: 235,
         starCount: 103,
-        commentCount: 90,
-        hasLiked: false,
-        hasFavorited: false,
-        favoriteCount: 300
+        commentCount: 90
       },
       {
         img: '../img/resources/tech/resource-2-thumb.jpg',
         banner: '../img/resources/tech/resource-2.jpg',
         owner: '杨仁慧',
+        url: 'tech-resource-detail({detailId:1})',
         tags: ['软件资源', '测试', '云管理'],
         title: '开发测试云',
         company: "海创空间",
         introduction: '可跨越私有云、公有云提供开发测试环境，支持DevOps所需的工具和流程，为开发团队提供自动化、虚拟化的基础设施资源，提升开发部署速度和灵活性。',
         likeCount: 223,
         starCount: 99,
-        commentCount: 403,
-        hasLiked: true,
-        hasFavorited: true,
-        favoriteCount: 299
+        commentCount: 403
       },
       {
         img: '../img/resources/tech/resource-3-thumb.jpg',
         banner: '../img/resources/tech/resource-3.jpg',
         owner: '李书博',
+        url: 'tech-resource-detail({detailId:2})',
         tags: ['软件资源', '微服务', '容器化'],
         title: '容器云',
         company: "海创空间",
         introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。',
         likeCount: 189,
         starCount: 83,
-        commentCount: 90,
-        hasLiked: false,
-        hasFavorited: true,
-        favoriteCount: 170
+        commentCount: 90
       },
       {
         img: '../img/resources/tech/resource-4-thumb.jpg',
         banner: '../img/resources/tech/resource-4.jpg',
         owner: '任耀洲',
+        url: 'tech-resource-detail({detailId:3})',
         tags: ['软件资源', '物联网'],
         title: '物联网云平台',
         company: "海创空间",
         introduction: '为各类智能设备提供了数据采集、设备管理、远程操作等能力，并通过开放API和SDK支持跨平台物联网应用及服务的开发和运行，可为车联网、智能楼宇、客流分析、物流跟踪、装备维修等应用领域带来创新动力。',
         likeCount: 173,
         starCount: 80,
-        commentCount: 33,
-        hasLiked: false,
-        hasFavorited: false,
-        favoriteCount: 120
+        commentCount: 33
       },
       {
         img: '../img/resources/tech/resource-5-thumb.jpg',
         banner: '../img/resources/tech/resource-5.jpg',
         owner: '冯廷伟',
+        url: 'tech-resource-detail({detailId:4})',
         tags: ['软件资源', '通信'],
         title: '融合通信云服务',
         company: "海创空间",
         introduction: '可为开发者提供即时消息、VoIP电话、视频会议等多种应用服务，帮助开发者便捷地将IP电话、PC终端、智能手机终端融合一体，快速落地企业移动办公通信、电话会议等创意。',
         likeCount: 172,
         starCount: 76,
-        commentCount: 50,
-        hasLiked: true,
-        hasFavorited: false,
-        favoriteCount: 98
+        commentCount: 50
       },
       {
         title: "敏捷咨询团队",
         img: '../img/resources/tech/team-3.png',
+        url: 'team-detail',
         tags: ["敏捷", "XP"],
         likeCount: 104,
         starCount: 59,
-        commentCount: 18,
-        hasLiked: false,
-        hasFavorited: false,
-        favoriteCount: 30
+        commentCount: 18
       },
       {
         title: "移动APP开发",
@@ -481,10 +450,7 @@ angular.module('configuration')
         tags: ["软件", "APP"],
         likeCount: 90,
         starCount: 23,
-        commentCount: 17,
-        hasLiked: false,
-        hasFavorited: false,
-        favoriteCount: 40
+        commentCount: 17
       },
       {
         title: "快速原型制作",

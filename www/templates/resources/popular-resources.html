@@ -7,7 +7,7 @@
 
 		<div class="pd-10">
 			<ul class="list-img list-img-medium">
-				<li ng-repeat="resource in resources" ui-sref="detail-page-resource({detailId: $index})" >
+				<li ng-repeat="resource in resources" ui-sref="{{resource.url}}" nav-direction="forward">
 					<div>
 						<a ui-sref="detail-page-resource">
 							<img ng-src="{{ resource.img }}" width="130" height="90"/>
