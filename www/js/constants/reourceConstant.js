@@ -99,7 +99,7 @@ angular.module('configuration')
         {
           name: '李剑波',
           img: '../img/face/4.png',
-          description: 'PMO总监，海航生态科技研究院',
+          description: '产品经理，海航生态科技研究院',
           tel: '18601158064',
           tags: ['敏捷', '云计算', '架构', 'Web服务']
         },
@@ -372,6 +372,28 @@ angular.module('configuration')
 
     POPULAR_RESOURCE : [
       {
+        title: "敏捷咨询团队",
+        img: '../img/resources/tech/team-3.png',
+        url: 'team-detail',
+        tags: ["敏捷", "XP"],
+        likeCount: 423,
+        starCount: 318,
+        commentCount: 180
+      },
+      {
+        img: '../img/resources/tech/resource-3-thumb.jpg',
+        banner: '../img/resources/tech/resource-3.jpg',
+        owner: '李书博',
+        url: 'tech-resource-detail({detailId:2})',
+        tags: ['软件资源', '微服务', '容器化'],
+        title: '容器云',
+        company: "海创空间",
+        introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。',
+        likeCount: 289,
+        starCount: 183,
+        commentCount: 90
+      },
+      {
         img: '../img/resources/tech/resource-1-thumb.jpg',
         banner: '../img/resources/tech/resource-1.jpg',
         owner: '温岩',
@@ -395,19 +417,6 @@ angular.module('configuration')
         likeCount: 223,
         starCount: 99,
         commentCount: 403
-      },
-      {
-        img: '../img/resources/tech/resource-3-thumb.jpg',
-        banner: '../img/resources/tech/resource-3.jpg',
-        owner: '李书博',
-        url: 'tech-resource-detail({detailId:2})',
-        tags: ['软件资源', '微服务', '容器化'],
-        title: '容器云',
-        company: "海创空间",
-        introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。',
-        likeCount: 189,
-        starCount: 83,
-        commentCount: 90
       },
       {
         img: '../img/resources/tech/resource-4-thumb.jpg',
@@ -434,55 +443,6 @@ angular.module('configuration')
         likeCount: 172,
         starCount: 76,
         commentCount: 50
-      },
-      {
-        title: "敏捷咨询团队",
-        img: '../img/resources/tech/team-3.png',
-        url: 'team-detail',
-        tags: ["敏捷", "XP"],
-        likeCount: 104,
-        starCount: 59,
-        commentCount: 18
-      },
-      {
-        title: "移动APP开发",
-        img: '../img/resources/tech/team-2.png',
-        tags: ["软件", "APP"],
-        likeCount: 90,
-        starCount: 23,
-        commentCount: 17
-      },
-      {
-        title: "快速原型制作",
-        img: '../img/resources/tech/team-1.png',
-        tags: ["UX", "设计"],
-        likeCount: 53,
-        starCount: 20,
-        commentCount: 160
-      },
-      {
-        title: "创意包装团队",
-        img: '../img/resources/tech/team-4.png',
-        tags: ["创意包装"],
-        likeCount: 51,
-        starCount: 18,
-        commentCount: 100
-      },
-      {
-        title: "会议室管理设备",
-        img: '../img/resources/tech/resource-1.png',
-        tags: ["办公"],
-        likeCount: 41,
-        starCount: 23,
-        commentCount: 30
-      },
-      {
-        title: "开发测试云资源",
-        img: '../img/resources/tech/resource-2.png',
-        tags: ["BUG管理", "测试"],
-        likeCount: 18,
-        starCount: 19,
-        commentCount: 24
       }
     ]
   });
