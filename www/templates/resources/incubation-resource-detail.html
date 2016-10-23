@@ -27,9 +27,8 @@
       <i class="if i-remove1 go-back radius" ui-sref="explore-resources.incubation" nav-direction="back"></i>
       <img ng-src="{{ ::resourcesDetail.banner }}" alt="">
     </div>
-
+    <div class="title" ng-bind="::resourcesDetail.name"></div>
     <div class="content">
-      <div class="title font-16" ng-bind="::resourcesDetail.name"></div>
       <ul>
         <li class="mg-b20" ng-repeat="resource in resourcesDetail.introduction">
           <p class="font-14 bold" ng-bind="::resource.title"></p>
