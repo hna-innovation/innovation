@@ -1,0 +1,97 @@
+<style>
+  .swiper-slide {
+    width: 150px;
+  }
+
+  .tech .list-img {
+    padding: 10px;
+  }
+
+  .tech .panel_body {
+    overflow: hidden;
+  }
+
+  .tech .list-img > li {
+    padding: 0px;
+    border: none;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+  }
+
+  .tech .list-img > li img {
+    width: auto;
+    height: 90px;
+    margin-left: -41px;
+  }
+
+  .tech .list-img-medium > li > div:nth-child(1) {
+    width: 130px;
+    overflow: hidden;
+  }
+
+  .tech .list-img-medium > li > div:nth-child(2) {
+    padding-left: 108px;
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .tech .list-img-medium > li > div:nth-child(2) .text-title {
+    margin-top: 5px;
+  }
+
+  .tech .list-img .tag-list {
+    margin-top: 8px;
+  }
+</style>
+<div class="tech">
+  <section class="panel-section">
+    <div class="panel_header">
+      <div class="panel_title">创业导师</div>
+    </div>
+    <div class="panel_body">
+      <ion-scroll direction="x" >
+        <ul class="poker-list sroll-x-wrapper" ng-if="incubator.MENTOR.length > 0" >
+          <li class="poker-card" ng-repeat="team in incubator.MENTOR"  nav-direction="forward">
+            <div class="poker_img">
+              <img class="radius" ng-src="{{::team.img}}" alt="创业导师">
+            </div>
+            <div class="poker_title color-3d" ng-bind="::team.name"></div>
+            <!--<div class="poker_description color-6d" ng-bind="::team.leader"></div>-->
+            <div>
+              <button class="button-init button-red">查看详情</button>
+            </div>
+          </li>
+        </ul>
+      </ion-scroll>
+    </div>
+  </section>
+  <section class="panel-section mg-t10">
+    <div class="panel_header">
+      <div class="panel_title">创业服务</div>
+    </div>
+    <ul class="list-img list-img-medium">
+      <li ng-repeat="service in incubator.SERVICES" ui-sref="tech-resource-detail({detailId: $index})" ng-if="incubator.SERVICES.length > 0">
+        <div>
+          <a>
+            <img ng-src="{{ ::service.img }}" width="130" height="90"/>
+          </a>
+        </div>
+        <div class="pd-b5">
+          <!--<a class="button-init button-red right" ng-href="tel:{{phone}}">call</a>-->
+          <p class="color-3d font-16 bold text-ellipsis text-title">
+            {{ ::service.name }}
+          </p>
+          <span class="font-14 color-3d">{{ ::service.owner }}</span>
+          <div class="tag-list">
+            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in service.tags" >
+              {{ tag }}
+            </a>
+          </div>
+        </div>
+        <div>
+
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
