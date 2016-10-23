@@ -85,25 +85,25 @@ angular.module('configuration')
     PROFESSOR: {
       IT: [
         {
-          name: '龙旭东',
+          name: '程杨',
           img: '../img/face/1.png',
-          description: 'CTO, 海航生态科技集团',
-          tel: '13902210042',
-          tags: ['IDC', '售前', 'IT战略', 'IT解决方案']
+          description: '产品经理, 海航生态科技研究院',
+          tel: '18091584470',
+          tags: ['看板', 'SCRUM', '代码狂', '开发']
         },
         {
-          name: '易梅',
+          name: '李剑波',
           img: '../img/face/4.png',
-          description: '院长，海航生态科技研究院',
-          tel: '13701103510',
-          tags: ['展示中心', '售前', '解决方案架构', 'IT战略']
+          description: 'PMO总监，海航生态科技研究院',
+          tel: '18601158064',
+          tags: ['敏捷', '云计算', '架构', 'Web服务']
         },
         {
           name: '李书博',
           img: '../img/face/3.png',
           description: '产品经理，海航生态科技研究院',
           tel: '18601177189',
-          tags: ['容器', 'Scrum', '公有云', 'IT战略']
+          tags: ['容器', 'SCRUM', '公有云', '研发体系']
         },
         {
           name: '刘轩',
@@ -129,18 +129,27 @@ angular.module('configuration')
           tags: ['税务', '核算']
         }
       ],
-      HR: [
+      MARKET: [
         {
-          name: '宋光宇(Ted)',
+          name: '李麒麟',
           img: '../img/face/1.png',
-          description: '人力资源总监',
-          tel: '18976889537',
-          tags: ['行政办公', '人事管理', '领导力', '沟通力']
+          description: '公关经理, 海航生态科技集团',
+          tel: '18600915201',
+          tags: ['公关', 'Journalism', 'Press Release']
         },
+        {
+          name: '黄杨',
+          img: '../img/face/3.png',
+          description: '公关主管，海航生态科技集团',
+          tel: '18601158064',
+          tags: ['公关', 'Journalism', 'Press Release', '官网']
+        }
+      ],
+      HR: [
         {
           name: '侯斌(Allen)',
           img: '../img/face/3.png',
-          description: '招聘培训经理',
+          description: '高级培训经理',
           tel: '18611924619',
           tags: ['培训讲师', '课程开发', '人际密码', '向上沟通']
         },
@@ -158,7 +167,7 @@ angular.module('configuration')
           img: '../img/face/3.png',
           description: '法律事务经理',
           tel: '13661399455',
-          tags: ['行政办公', '人事管理', '领导力', '沟通力']
+          tags: ['风险控制', '法律事务']
         },
         {
           name: '王伟钊',
@@ -168,9 +177,6 @@ angular.module('configuration')
           tags: ['风险控制', '法律事务']
         }
       ]
-    },
-    INCUBATION: {
-
     },
     TRAIN: {
       CLASSES: [
