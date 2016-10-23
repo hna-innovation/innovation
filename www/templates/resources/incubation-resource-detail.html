@@ -1,0 +1,45 @@
+<style>
+  .resource-detail.team .banner {
+    height: 200px;
+  }
+  .resource-detail.team .content > ol li {
+    list-style: circle;
+    text-indent: 0;
+    margin-left: 45px;
+  }
+  .resource-detail.team .content {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+  }
+  .resource-detail.team .action {
+    text-align: center;
+  }
+
+  .resource-detail.team .action > div {
+    margin: 4px 0;
+  }
+
+</style>
+<ion-view>
+  <ion-content class="bg-fb resource-detail team">
+    <div class="banner">
+      <i class="if i-remove1 go-back radius" ui-sref="explore-resources.incubation" nav-direction="back"></i>
+      <img ng-src="{{ ::resourcesDetail.banner }}" alt="">
+    </div>
+
+    <div class="content">
+      <div class="title font-16" ng-bind="::resourcesDetail.name"></div>
+      <ul>
+        <li class="mg-b20" ng-repeat="resource in resourcesDetail.introduction">
+          <p class="font-14 bold" ng-bind="::resource.title"></p>
+          <p class="font-12" ng-bind="::resource.detail"></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="action">
+        <a class="a-btn tag-hong" ng-click="joinChat()">申请加入讨论组</a>
+    </div>
+  </ion-content>
+</ion-view>

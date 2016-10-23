@@ -153,6 +153,13 @@ angular.module('starter')
         controller: 'IncubationResourcesCtrl'
       })
 
+      .state('incubation-resource-detail', {
+        url: '/incubation-resource-detail/:detailId',
+        cache: true,
+        templateUrl: 'templates/resources/incubation-resource-detail.html',
+        controller: 'IncubationResourceDetailCtrl'
+      })
+
       .state('resource-detail', {
         url: '/resource-detail',
         templateUrl: 'templates/resources/resource-detail.html',

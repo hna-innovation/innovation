@@ -266,79 +266,100 @@ angular.module('configuration')
     INCUBATION: {
       MENTOR:[
         {
-          img: '../img/face/1.png',
+          img: '../img/resources/incubation/mentor/jiangshan.jpg',
           name: '江山',
-          title: ''
+          title: '国内最大的生鲜电商平台"我厨"首席运营官"'
         },
         {
-          img: '../img/face/2.png',
+          img: '../img/resources/incubation/mentor/tanbing.jpg',
           name: '覃冰',
-          title: ''
+          title: '纵横公关北京公司的总经理'
         },
         {
-          img: '../img/face/3.png',
+          img: '../img/resources/incubation/mentor/libotao.jpg',
           name: '李博韬',
-          title: ''
-        },
-        {
-          img: '../img/face/4.png',
-          name: '魏家东',
-          title: ''
+          title: '锦囊专家合伙人CMO'
         }
       ],
       SERVICES: [
         {
-          img: '../img/resources/tech/resource-1-thumb.jpg',
-          banner: '../img/resources/tech/resource-1.jpg',
-          owner: '温岩',
-          tags: ['软件资源', '大数据', '营销'],
-          name: '大数据营销服务',
-          introduction: '基于航旅、电商 、支付等海航具备特色的数据池，为开发者提供用户画像、聚类等大数据分析，帮助开发者快速开发精准营销解决方案。'
-        },
-        {
-          img: '../img/resources/tech/resource-2-thumb.jpg',
-          banner: '../img/resources/tech/resource-2.jpg',
-          owner: '杨仁慧',
-          tags: ['软件资源', '测试', '云管理'],
-          name: '开发测试云',
-          introduction: '可跨越私有云、公有云提供开发测试环境，支持DevOps所需的工具和流程，为开发团队提供自动化、虚拟化的基础设施资源，提升开发部署速度和灵活性。'
-        },
-        {
-          img: '../img/resources/tech/resource-3-thumb.jpg',
-          banner: '../img/resources/tech/resource-3.jpg',
-          owner: '李书博',
-          tags: ['软件资源', '微服务', '容器化'],
-          name: '容器云',
-          introduction: '基于最新的Docker技术构建面向应用的容器云技术，为应用开发提供巨大的灵活性和可移植性，快速实现应用架构云化、微服务化。'
-        },
-        {
-          img: '../img/resources/tech/resource-4-thumb.jpg',
-          banner: '../img/resources/tech/resource-4.jpg',
-          owner: '任耀洲',
-          tags: ['软件资源', '物联网'],
-          name: '物联网云平台',
-          introduction: '为各类智能设备提供了数据采集、设备管理、远程操作等能力，并通过开放API和SDK支持跨平台物联网应用及服务的开发和运行，可为车联网、智能楼宇、客流分析、物流跟踪、装备维修等应用领域带来创新动力。'
-        },
-        {
-          img: '../img/resources/tech/resource-5-thumb.jpg',
-          banner: '../img/resources/tech/resource-5.jpg',
-          owner: '冯廷伟',
-          tags: ['软件资源', '通信'],
-          name: '融合通信云服务',
-          introduction: '可为开发者提供即时消息、VoIP电话、视频会议等多种应用服务，帮助开发者便捷地将IP电话、PC终端、智能手机终端融合一体，快速落地企业移动办公通信、电话会议等创意。'
+          img: '../img/resources/incubation/innovation-service.jpg',
+          tags: ['办公室', '融资服务', '行政服务', '咨询服务', '活动策划', '网站搭建'],
+          name: '创业服务'
+        },{
+          img: '../img/resources/incubation/company-service.jpg',
+          tags: ['投资机会对接', '创新活动策划', '创新体系设计'],
+          name: '企业服务'
+        },{
+          img: '../img/resources/incubation/innovation-video.jpg',
+          tags: [],
+          name: '创业视频'
+        },{
+          img: '../img/resources/incubation/training-service.jpg',
+          tags: ['企业培训需求分析'],
+          name: '培训服务'
         }
-        // {
-        //   img: '../img/resources/tech/resource-4.png',
-        //   owner: '温岩',
-        //   tags: ['硬件资源', '显示屏'],
-        //   name: '数据展示大屏'
-        // },
-        // {
-        //   img: '../img/resources/tech/resource-5.png',
-        //   owner: '杨叶鹏',
-        //   tags: ['硬件资源', '测试'],
-        //   name: '移动测试设备'
-        // }
-      ]
+      ],
+      RESOURCES: [
+        {
+          banner: '../img/resources/incubation/banner/innovation-service.jpg',
+          name: '创业服务',
+          introduction: [
+            {
+              title: '办公室',
+              detail: '北京孵化基地位于雍和航星园。中关村雍和航星科技园是中关村管委会与东城区人民政府合作共建的高科技文化创意产业园，是经北京市政府批复的信息服务产业园。园区地处北京市北二环东段，为中心城区，交通便利。可以为创业者提供舒适的办公环境。孵化基地将引入美国Rocket Space管理经验，为创业者提供全方位服务。'
+            },{
+              title: '海航特色资源',
+              detail: '为创业公司提供海航特色资源对接服务，包括海航业务资源、海航应用场景、海航航机媒体资源等。'
+            },{
+              title: '融资服务',
+              detail: '为创业公司提供多渠道融资对接，帮助创业公司与创投机构基金对接，提供多层资本市场对接，帮助创业公司对接新三板，四板，助推企业快速跨入资本市场'
+            },{
+              title: '行政服务',
+              detail: '为创业公司提供基础行政服务，包括：工商注册服务、人力资源、代理记账、政策申请等服务。'
+            },{
+              title: '创业咨询服务',
+              detail: '包括技术咨询、财务咨询、知识产权咨询、法务咨询、商业模式梳理、战略策划、行业研究等服务。'
+            },{
+              title: '创新活动策划',
+              detail: '为创业公司提供创新培训、会员交流、对接投资人、项目路演、搭建合作关系。'
+            },{
+              title: '网站搭建',
+              detail: '为创业公司提供网站搭建样板，运营咨询服务'
+            }
+          ]
+        },{
+          banner: '../img/resources/incubation/banner/company-service.jpg',
+          name: '企业服务',
+          introduction: [
+            {
+              title: '投资机会对接',
+              detail: '搭建起大企业与创新企业对接的桥梁。'
+            },{
+              title: '创新活动策划',
+              detail: '为大企业集团策划创新活动、创新沙龙、创新比赛，帮助大企业树立创新品牌和创新形象。'
+            },,{
+              title: '创新体系设计',
+              detail: '为大公司创新负责人设计内部创新创投体系，挖掘大集团自身创新潜力，创造业务发展新动力，挖掘创新人才。'
+            }
+          ]
+        },{
+          banner: '../img/resources/incubation/banner/innovation-video.jpg',
+          name: '创业视频',
+          introduction: [
+            {
+            },
+          ]
+        },{
+          banner: '../img/resources/incubation/banner/training-service.jpg',
+          name: '创业培训',
+          introduction: [
+            {
+              title: '企业培训需求分析',
+              details: '企业战略、财务、市场营销等全方位培训'
+            },
+          ]
+        }
+        ]
     }
   });
