@@ -8,6 +8,8 @@ function InnovationStarsCtrl($scope, UserService, Content) {
 
     if (result.data && result.data.length) {
       $scope.stars = result.data;
+    } else {
+      $scope.attentionMsg = Content.EMPTY_CONTENT;
     }
   }, function(error) {
     // TOTO Handle error

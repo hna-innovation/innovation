@@ -3,8 +3,8 @@
         <div class="user-list-title bg-pink bg-img-left" ui-sref="innovation" nav-direction="back">
             <span class="font-18">创新明星</span>
         </div>
-        <section class="">
-            <div class="border-b" ng-repeat="star in ::stars">
+        <section>
+            <div class="border-b" ng-repeat="star in ::stars" ng-if="stars.length > 0">
                 <div class="box-table bg-ff">
                     <li class="box-table-row" >
                         <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
@@ -25,5 +25,10 @@
                 </div>
             </div>
         </section>
+
+      <div class="empty center mg-t10" ng-if="!stars || stars.length === 0">
+        <img src="../img/empty.svg">
+        <div ng-bind="attentionMsg"></div>
+      </div>
     </ion-content>
 </ion-view>
