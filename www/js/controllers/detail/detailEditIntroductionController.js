@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService, mobileTypeDetectService) {
+  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'mobileTypeDetectService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, mobileTypeDetectService) {
 
     var quill = new Quill('#editor-container', {
       modules: {
@@ -22,8 +22,11 @@ angular.module('starter.controllers')
     });
 
     function initEditor() {
-      var introduction = CacheService.getIntroductionOfDetail();
-      angular.element(document.querySelector('#editor-container .ql-editor')).append(introduction);
+      DetailService.getDetailIntroduction(projectId, function (data) {
+        angular.element(document.querySelector('#editor-container .ql-editor')).append(data.data.introduction);
+      }, function () {
+        HnaAlert.error('服务器超时，请重试');
+      })
     }
 
     initEditor();
@@ -42,7 +45,7 @@ angular.module('starter.controllers')
       DetailService.editDetailIntroduction(data, function (data) {
         HnaAlert.success('提交成功');
       }, function () {
-        HnaAlert.success('服务器超时，请重试');
+        HnaAlert.error('服务器超时，请重试');
       });
 
       // reload

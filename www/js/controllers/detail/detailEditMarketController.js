@@ -4,9 +4,17 @@ angular.module('starter.controllers')
 
     var projectId = $stateParams.projectId;
 
-    $scope.form = {
-      market: CacheService.getMarketOfDetail()
-    }
+    $scope.isLoadData = false;
+
+    DetailService.getDetailMarket(projectId, function (data) {
+      $scope.form = {
+        market: data.data.marketAnalysis
+      }
+      $scope.isLoadData = true;
+    }, function () {
+      HnaAlert.error('服务器超时，请重试');
+      $scope.isLoadData = true;
+    })
 
     $scope.save = function () {
       var data = {

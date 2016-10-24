@@ -7,7 +7,7 @@
       <div class="user-edit-save" ng-click="save()"></div>
     </div>
     <div class="pd-10">
-      <textarea class="full-width" name="market" cols="30" rows="10" ng-model="form.market" ng-bind="form.market" placeholder="请输入市场分析的内容"></textarea>
+      <textarea class="full-width" name="market" cols="30" rows="10" ng-model="form.market" ng-bind="form.market" placeholder="请输入市场分析的内容" ng-if="isLoadData"></textarea>
     </div>
   </ion-content>
 </ion-view>

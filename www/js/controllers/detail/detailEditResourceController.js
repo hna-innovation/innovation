@@ -4,9 +4,18 @@ angular.module('starter.controllers')
 
     var projectId = $stateParams.projectId;
 
-    $scope.form = {
-      resource: CacheService.getResourceOfDetail()
-    }
+    $scope.isLoadData = false;
+
+
+    DetailService.getDetailResource(projectId, function (data) {
+      $scope.form = {
+        resource: data.data.resourceRequired
+      }
+      $scope.isLoadData = true;
+    }, function () {
+      HnaAlert.error('服务器超时，请重试');
+      $scope.isLoadData = true;
+    })
 
     $scope.save = function () {
       var data = {

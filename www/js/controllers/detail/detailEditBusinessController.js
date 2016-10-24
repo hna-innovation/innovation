@@ -4,9 +4,17 @@ angular.module('starter.controllers')
 
     var projectId = $stateParams.projectId;
 
-    $scope.form = {
-      business: CacheService.getBussinessOfDetail()
-    }
+    $scope.isLoadData = false;
+
+    DetailService.getDetailBusiness(projectId, function (data) {
+      $scope.form = {
+        business: data.data.businessModel
+      }
+      $scope.isLoadData = true;
+    }, function () {
+      HnaAlert.error('服务器超时，请重试');
+      $scope.isLoadData = true;
+    })
 
     $scope.save = function () {
       var data = {
