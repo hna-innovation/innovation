@@ -16,7 +16,7 @@
     position: relative;
     width: 110px;
     z-index: 2;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 
 .list-img-medium > li > div:nth-child(2) {
