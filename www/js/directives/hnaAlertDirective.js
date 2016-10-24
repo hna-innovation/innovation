@@ -1,9 +1,18 @@
 angular.module('starter')
   .factory("HnaAlert", function () {
-  function msgAnimation(status, msg) {
-    jQuery('#alert').removeClass(expiredStatus).addClass(status).text(msg).fadeIn(500).delay(1000).fadeOut(500);
-  }
-  var expiredStatus = "bg-success bg-error bg-default bg-default-dark success-check error-check";
+    var expiredStatus = "bg-success bg-error bg-default bg-default-dark success-check error-check";
+    var isWorking = false;
+
+    function msgAnimation(status, msg) {
+      if(isWorking) {
+        jQuery('#alert').text(msg);
+        return;
+      }
+
+      isWorking = true;
+      jQuery('#alert').removeClass(expiredStatus).addClass(status).text(msg).fadeIn(500).delay(1000).fadeOut(500);
+      setTimeout(function () {isWorking = false;}, 2000);
+    }
   return {
     success: function (msg) {
       msgAnimation("bg-success", msg)
