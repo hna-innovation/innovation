@@ -30,6 +30,11 @@ function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state) {
     });
 
   $scope.goBack = function() {
+    if($ionicHistory.backView()) {
       $state.go($ionicHistory.backView().stateName);
+    } else {
+      HnaAlert.default('操作有误, 将跳转回首页!');
+      $state.go('innovation');
+    }
   }
 };

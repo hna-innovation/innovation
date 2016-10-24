@@ -147,11 +147,11 @@ angular.module('starter.controllers')
     }
 
     $scope.goBack = function () {
-      if (_pageName) {
-        $state.go(_pageName)
-      }
-      else {
-        $ionicHistory.goBack();
+      if($ionicHistory.backView()) {
+        $state.go($ionicHistory.backView().stateName);
+      } else {
+        HnaAlert.default('操作有误, 将跳转回首页!');
+        $state.go('innovation');
       }
     }
 
