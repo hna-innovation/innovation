@@ -47,13 +47,15 @@ angular.module('starter')
     });
   })
 
-  .factory('httpInterceptor', function ($q, $injector, HnaAlert, $location, $rootScope, AuthEvent) {
+  .factory('httpInterceptor', function ($q, $injector, HnaAlert, $window, $rootScope, AuthEvent) {
     var httpInterceptor = {
       'response': function (response) {
         if (response.data.code == 401 ) {
 
           if(localStorage.userId) {
-            $location.path('innovation');
+            // $location.path('innovation');
+            //Reload index after session timeout
+            $window.location.href = '#/innovation';
             localStorage.removeItem('userId');
 
             HnaAlert.default('登录超时！请重新登录');
