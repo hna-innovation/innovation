@@ -99,8 +99,8 @@ gulp.task('js-vendor-concat', function (done) {
 gulp.task('js-mini', function (done) {
   gulp.src([
     'www/js/*.js',
-    'www/js/constants/*.js', 'www/js/controllers/**/*.js',
-    'www/js/services/*.js', 'www/js/directives/*.js'])
+    'www/js/constants/**/*.js', 'www/js/controllers/**/*.js',
+    'www/js/services/**/*.js', 'www/js/directives/**/*.js'])
     .pipe(annotate())
     .pipe(concat('app.min.js'))
     .pipe(uglify())
