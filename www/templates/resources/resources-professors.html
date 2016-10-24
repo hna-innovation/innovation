@@ -1,4 +1,9 @@
-<div>
+<style>
+  .resources-professors .telephone i {
+    margin-right: 5px;
+  }
+</style>
+<div class="resources-professors">
     <section class="panel-section mg-t10 padding">
         <div class="panel_header">
             <div class="panel_title">IT大咖</div>
@@ -9,15 +14,17 @@
                     <div class="box-table-cell" style="width: 50px;">
                         <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
                     </div>
-                    <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="box-table-cell pd-l10">
                         <div class="pd-b5">
                             <span class="font-14 color-3d" ng-bind="professor.name"></span>
-                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-red right" ng-bind="professor.tel" ></a>
+                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-green right telephone" >
+                              <i class="ion-ios-telephone"></i>电话
+                            </a>
                         </div>
                         <p ng-bind="professor.description">
                         </p>
                         <div class="pd-b5">
-                            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags">
+                            <a class="font-10 tag tag-lan mg-b5" ng-repeat="tag in professor.tags">
                                 <span ng-bind="tag"></span>
                             </a>
                         </div>
@@ -37,15 +44,15 @@
                     <div class="box-table-cell" style="width: 50px;">
                         <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
                     </div>
-                    <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="box-table-cell pd-l10">
                         <div class="pd-b5">
                             <span class="font-14 color-3d" ng-bind="professor.name"></span>
-                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-red right" ng-bind="professor.tel" ></a>
+                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-green right telephone"  ><i class="ion-ios-telephone"></i>电话</a>
                         </div>
                         <p ng-bind="professor.description">
                         </p>
                         <div class="pd-b5">
-                            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags">
+                            <a class="font-10 tag tag-lan mg-b5" ng-repeat="tag in professor.tags">
                                 <span ng-bind="tag"></span>
                             </a>
                         </div>
@@ -65,15 +72,15 @@
                     <div class="box-table-cell" style="width: 50px;">
                         <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
                     </div>
-                    <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="box-table-cell pd-l10">
                         <div class="pd-b5">
                             <span class="font-14 color-3d" ng-bind="professor.name"></span>
-                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-red right" ng-bind="professor.tel" ></a>
+                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-green right" ><i class="ion-ios-telephone"></i>电话</a>
                         </div>
                         <p ng-bind="professor.description">
                         </p>
                         <div class="pd-b5">
-                            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags">
+                            <a class="font-10 tag tag-lan mg-b5" ng-repeat="tag in professor.tags">
                                 <span ng-bind="tag"></span>
                             </a>
                         </div>
@@ -93,15 +100,15 @@
                     <div class="box-table-cell" style="width: 50px;">
                         <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
                     </div>
-                    <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="box-table-cell pd-l10">
                         <div class="pd-b5">
                             <span class="font-14 color-3d" ng-bind="professor.name"></span>
-                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-red right" ng-bind="professor.tel" ></a>
+                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-green right" ><i class="ion-ios-telephone"></i>电话</a>
                         </div>
                         <p ng-bind="professor.description">
                         </p>
                         <div class="pd-b5">
-                            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags">
+                            <a class="font-10 tag tag-lan mg-b5" ng-repeat="tag in professor.tags">
                                 <span ng-bind="tag"></span>
                             </a>
                         </div>
@@ -121,15 +128,15 @@
                     <div class="box-table-cell" style="width: 50px;">
                         <img ng-src="{{ professor.img }}" alt="头像" width="45" height="45" class="user-img border-0">
                     </div>
-                    <div class="box-table-cell pd-l10 pd-r15">
+                    <div class="box-table-cell pd-l10">
                         <div class="pd-b5">
                             <span class="font-14 color-3d" ng-bind="professor.name"></span>
-                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-red right" ng-bind="professor.tel" ></a>
+                            <a ng-href="tel:{{ professor.tel }}" class="button-init button-green right" ><i class="ion-ios-telephone"></i>电话</a>
                         </div>
                         <p ng-bind="professor.description">
                         </p>
                         <div class="pd-b5">
-                            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in professor.tags">
+                            <a class="font-10 tag tag-lan mg-b5" ng-repeat="tag in professor.tags">
                                 <span ng-bind="tag"></span>
                             </a>
                         </div>
