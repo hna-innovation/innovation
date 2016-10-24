@@ -10,7 +10,10 @@
         <p class="color-3d font-14 text-ellipsis text-title">
           {{::detail.title}}
         </p>
-        <span class="tag tag-lan mg-b0 font-12">{{::detail.company}}</span>
+          <span ng-repeat="tag in ::detail.tags">
+            <span class="tag tag-lan mg-b0 font-12" ng-bind="tag"></span>
+          </span>
+        <!--<span class="tag tag-lan mg-b0 font-12">{{::detail.company}}</span>-->
       </div>
 
       <div class="swiper-container bg-ff mg-t10" id="swiper-resource">
