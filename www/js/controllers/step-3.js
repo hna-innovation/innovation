@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
     .controller('StepThirdCtrl', StepThirdCtrl)
 
-function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state) {
+function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state, HnaAlert) {
     // set title
     // Page.setTitle('创意预览');
     // 轮播图

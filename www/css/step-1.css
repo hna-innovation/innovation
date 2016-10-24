@@ -44,19 +44,13 @@
 }
 
 #step-1 textarea {
-  min-height: 100px;
+    min-height: 100px;
     height: auto;
     width: 100%;
     resize: none;
     background-color: transparent;
     border: 1px solid #e1e1e1;
     border-radius: 5px;
-  overflow-y: visible;
-    -webkit-transition: height 2s ease;
-    -moz-transition: height 2s ease;
-    -ms-transition: height 2s ease;
-    -o-transition: height 2s ease;
-    transition: height 2s ease;
 }
 
 #photoUpload{
