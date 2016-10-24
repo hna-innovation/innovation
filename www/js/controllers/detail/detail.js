@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, CacheService, $timeout, $window) {
+  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, $timeout, $window) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
@@ -36,11 +36,6 @@ angular.module('starter.controllers')
           angular.element(document.querySelector('#detail-introduction-container .ql-editor')).append($scope.detail.introduction);
           // document.querySelector('#detail-introduction-container').innerHTML = $scope.detail.introduction;
         }
-
-        CacheService.setIntroduction($scope.detail.introduction);
-        CacheService.setMarket($scope.detail.marketAnalysis);
-        CacheService.setBussiness($scope.detail.businessModel);
-        CacheService.setResource($scope.detail.resourceRequired);
 
         $scope.members = $scope.detail.members;
 
