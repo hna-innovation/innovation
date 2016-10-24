@@ -84,14 +84,6 @@ angular.module('starter')
     return httpInterceptor;
   })
   .config(function($translateProvider, LANGUAGE){
-    // Register a loader for the static files
-    // So, the module will search missing translation tables under the specified urls.
-    // Those urls are [prefix][langKey][suffix].
-    $translateProvider.useStaticFilesLoader({
-      prefix: 'js/language/locale-',
-      suffix: '.json'
-    });
-
     // Tell the module what language to use by default
     $translateProvider.preferredLanguage(LANGUAGE.preferredLanguage);
     $translateProvider.useSanitizeValueStrategy('escape');

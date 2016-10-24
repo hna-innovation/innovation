@@ -70,12 +70,6 @@ gulp.task('image-copy', function (done) {
       .on('end', done);
 });
 
-gulp.task('language-copy', function (done) {
-  gulp.src('www/js/language/*.*')
-      .pipe(gulp.dest(path.join(buildDir, 'js/language')))
-      .on('end', done);
-});
-
 gulp.task('favicon-copy', function (done) {
   gulp.src('www/favicon.ico')
       .pipe(gulp.dest(buildDir))
@@ -99,7 +93,7 @@ gulp.task('js-vendor-concat', function (done) {
 gulp.task('js-mini', function (done) {
   gulp.src([
     'www/js/*.js',
-    'www/js/constants/**/*.js', 'www/js/controllers/**/*.js',
+    'www/js/constants/**/*.js', 'www/js/language/**/*.js', 'www/js/controllers/**/*.js',
     'www/js/services/**/*.js', 'www/js/directives/**/*.js'])
     .pipe(annotate())
     .pipe(concat('app.min.js'))
@@ -159,7 +153,7 @@ gulp.task('build', function(done) {
     'js-vendor-concat', 'script-template', 'js-mini',
 
     // image files
-    'image-copy', 'favicon-copy', 'apple-app-copy', 'language-copy'
+    'image-copy', 'favicon-copy', 'apple-app-copy'
   ],
   'inject-index')
 });
