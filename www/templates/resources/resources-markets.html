@@ -1,5 +1,5 @@
 <ul class="list-img list-img-medium">
-    <li ng-repeat="resource in resources" ui-sref="detail-page-resource">
+    <li ng-repeat="resource in resources" ui-sref="detail-page-resource" nav-direction="forward">
         <div>
             <a>
                 <img ng-src="{{ ::resource.img }}" width="130" height="90" />

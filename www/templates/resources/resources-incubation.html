@@ -21,7 +21,7 @@
       <div class="panel_title">孵化资源</div>
     </div>
     <ul class="">
-      <li class="border-b1 clearfix pd-10" ng-repeat="service in incubation.SERVICES" ui-sref="incubation-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
+      <li class="border-b1 clearfix pd-10" ng-repeat="service in incubation.SERVICES" nav-direction="forward" ui-sref="incubation-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
         <img class="left mg-r15" ng-src="{{ ::service.img }}" width="130" height="90"/>
         <div>
           <p class="color-3d font-16 bold text-ellipsis text-title">

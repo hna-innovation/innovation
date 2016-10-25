@@ -70,7 +70,7 @@
       <div class="panel_title">技术资源</div>
     </div>
     <ul class="list-img list-img-medium">
-      <li ng-repeat="resource in tech.RESOURCES" ui-sref="tech-resource-detail({detailId: $index})" ng-if="tech.RESOURCES.length > 0">
+      <li ng-repeat="resource in tech.RESOURCES" ui-sref="tech-resource-detail({detailId: $index})" nav-direction="forward" ng-if="tech.RESOURCES.length > 0">
         <div>
           <a>
             <img ng-src="{{ ::resource.img }}" width="130" height="90"/>
