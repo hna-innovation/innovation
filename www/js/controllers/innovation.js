@@ -11,7 +11,9 @@ angular.module('starter.controllers')
       'ModalServices',
       'Content',
       '$ionicViewSwitcher',
-      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, ModalServices, Content, $ionicViewSwitcher) {
+      '$ionicLoading',
+      function ($scope, $ionicScrollDelegate, $translate, Services, PageService, $state, ProjectsService, UtilityService, ModalServices, Content, $ionicViewSwitcher, $ionicLoading) {
+        $ionicLoading.hide();
 
         // set title
         PageService.setTitle('创新平台');
