@@ -92,7 +92,7 @@ angular.module('configuration')
         {
           name: '程杨',
           img: '../img/face/1.png',
-          description: '产品经理, 海航生态科技研究院',
+          description: '产品经理，海航生态科技研究院',
           tel: '18091584470',
           tags: ['看板', 'SCRUM', '代码狂', '开发']
         },
@@ -138,7 +138,7 @@ angular.module('configuration')
         {
           name: '李麒麟',
           img: '../img/face/1.png',
-          description: '公关经理, 海航生态科技集团',
+          description: '公关经理，海航生态科技集团',
           tel: '18600915201',
           tags: ['公关', 'Journalism', 'Press Release']
         },
@@ -196,7 +196,7 @@ angular.module('configuration')
             title: "创业意识培训",
             img: "../img/resources/tech/team-4.png",
             speaker: '张博',
-            city: '背景',
+            city: '北京',
             date: '2016-11-02'
         },
         {
@@ -207,7 +207,7 @@ angular.module('configuration')
             date: '2016-11-05'
         },
         {
-            title: "创业，创业精神与人生发展",
+            title: "创业精神与人生发展",
             img: "../img/resources/tech/team-4.png",
             speaker: '高德阳',
             city: '西安',
@@ -234,7 +234,7 @@ angular.module('configuration')
             commentCount: 10
         },
         {
-            title: "人类手写笔记获能被电脑进行复制",
+            title: "人类手写笔记或能被电脑进行复制",
             img: "../img/resources/knowledge/new-3.jpg",
             tags: ["科技资讯", "机器学习"],
             likeCount: 21,
@@ -273,7 +273,7 @@ angular.module('configuration')
         {
           img: '../img/resources/incubation/mentor/jiangshan.jpg',
           name: '江山',
-          title: '国内最大的生鲜电商平台"我厨"首席运营官"'
+          title: '国内最大的生鲜电商平台"我厨"首席运营官'
         },
         {
           img: '../img/resources/incubation/mentor/tanbing.jpg',
