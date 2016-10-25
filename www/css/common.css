@@ -617,7 +617,8 @@ img {
 }
 
 #swiper1 .swiper-slide,
-#swiper-step .swiper-slide {
+#swiper-step .swiper-slide,
+#swiper-step2 .swiper-slide {
   height: 200px;
   overflow: hidden;
 }
