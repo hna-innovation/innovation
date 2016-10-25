@@ -426,3 +426,13 @@ label.user-language {
 label.user-language select {
   color: #888;
 }
+
+.user-draft-img {
+  width: 100%;
+  height: 75px;
+  overflow: hidden;
+}
+
+.user-draft-img img{
+  width: 100%;
+}

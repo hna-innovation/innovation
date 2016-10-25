@@ -14,9 +14,9 @@
 			<ul class="user-list">
 				<li ng-repeat="draft in ::drafts" ng-click="goStep3(draft.id)" nav-direction="forward">
 					<div>
-						<a>
-							<img ng-src="{{ draft.images[0] }}" width="110" height="75"/>
-						</a>
+						<div class="user-draft-img">
+							<img ng-src="{{ draft.images[0] }}" />
+						</div>
 					</div>
 					<div>
 						<p class="color-3d font-16 text-ellipsis text-title" ng-bind="draft.description" ></p>
