@@ -51,10 +51,12 @@ angular.module('starter.controllers')
 
       // reload
       $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: true});
+      $ionicViewSwitcher.nextDirection("back");
     };
 
     $scope.cancel = function () {
       $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: false});
+      $ionicViewSwitcher.nextDirection("back");
     }
 
   }])
