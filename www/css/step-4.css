@@ -104,3 +104,9 @@ textarea[readonly]:not(.cloned-text-input){
     background-color: #fff;
 }
 
+.step-public-input {
+  resize: none;
+  padding: 10px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
