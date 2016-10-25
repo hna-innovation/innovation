@@ -2,7 +2,8 @@ angular.module('starter.controllers')
 
     .controller('StepThirdCtrl', StepThirdCtrl)
 
-function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state, HnaAlert, $window) {
+function StepThirdCtrl($scope, $timeout, Services, $stateParams, $state, $ionicViewSwitcher, $window) {
+    var _parentPage = $stateParams.parentPage;
     // set title
     // Page.setTitle('创意预览');
     // 轮播图
@@ -30,11 +31,11 @@ function StepThirdCtrl($scope, $timeout, Services, $ionicHistory, $state, HnaAle
     });
 
   $scope.goBack = function() {
-    if($ionicHistory.backView()) {
-      $state.go($ionicHistory.backView().stateName);
+    if(_parentPage) {
+      $state.go(_parentPage);
+      $ionicViewSwitcher.nextDirection("back");
     } else {
-      HnaAlert.default('操作有误, 将跳转回首页!');
-      $state.go('innovation');
+      $window.history.back();
     }
   }
 };

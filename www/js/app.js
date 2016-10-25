@@ -373,7 +373,7 @@ angular.module('starter')
       })
 
       .state('step-3', {
-        url: '/step-3',
+        url: '/step-3/:parentPage',
         cache: false,
         templateUrl: 'templates/step-3.html',
         controller: 'StepThirdCtrl',

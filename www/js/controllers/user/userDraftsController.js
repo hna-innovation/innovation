@@ -19,7 +19,9 @@ function UserDraftsCtrl($scope, UserService, Content, $state, HnaAlert) {
 
   $scope.goStep3 = function(draftId) {
     localStorage.draftId = draftId;
-    $state.go('step-3');
+    $state.go('step-3', {parentPage: 'user-draft'});
+    $ionicViewSwitcher.nextDirection("forwoard");
+
   };
 
 }
