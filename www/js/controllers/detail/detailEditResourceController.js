@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditResourceCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService) {
+  .controller('DetailEditResourceCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'CacheService', '$ionicViewSwitcher', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, CacheService, $ionicViewSwitcher) {
 
     var projectId = $stateParams.projectId;
 

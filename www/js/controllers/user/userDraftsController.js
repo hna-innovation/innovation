@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('UserDraftsCtrl', UserDraftsCtrl);
 
-function UserDraftsCtrl($scope, UserService, Content, $state, HnaAlert) {
+function UserDraftsCtrl($scope, UserService, Content, $state, $ionicViewSwitcher) {
 
   $scope.NO_DRAFTS = Content.draft.NO_DRAFTS;
 

@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'mobileTypeDetectService', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, mobileTypeDetectService) {
+  .controller('DetailEditIntroductionCtrl', ['$scope', '$stateParams', '$ionicHistory', 'DetailService', '$state', 'HnaAlert', 'mobileTypeDetectService', '$ionicViewSwitcher', function ($scope, $stateParams, $ionicHistory, DetailService, $state, HnaAlert, mobileTypeDetectService, $ionicViewSwitcher) {
 
     var quill = new Quill('#editor-container', {
       modules: {

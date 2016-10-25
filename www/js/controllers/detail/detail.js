@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, $timeout, $window) {
+  .controller('DetailCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicHistory, $http, $location, $ionicPopup, Services, PageService, Api, DetailService, $ionicLoading, UserService, UtilityService, HnaAlert, ProjectsService, Content, mobileTypeDetectService, $timeout, $window, $ionicViewSwitcher) {
 
     var _pageName = $stateParams.pageName;
     var _projectId = $stateParams.projectId;
