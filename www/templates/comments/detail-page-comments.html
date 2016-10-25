@@ -25,9 +25,7 @@
     </ion-content>
     <form ng-submit="submitComment(newComment)" novalidate >
         <div class="bar bar-footer hna-footer item-input-inset">
-            <label class="item-input-wrapper">
-                <input type="text" ng-model="newComment" placeholder="请输入评论...">
-            </label>
+            <textarea class="user-comments-detail single-line-textarea bg-f6 mg-r10" rows="1" ng-model="newComment" placeholder="请输入评论..."></textarea>
             <button class="button button-clear">
                 评论
             </button>
