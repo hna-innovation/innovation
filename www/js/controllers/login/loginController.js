@@ -37,6 +37,9 @@ angular.module('starter.controllers')
         } else if (result.code == 1) {
           HnaAlert.defaultError('登录信息不正确!');
           $scope.loginLoading = false;
+        } else {
+          HnaAlert.defaultError('登录失败');
+          $scope.loginLoading = false;
         }
       });
     }
