@@ -186,7 +186,7 @@ angular.module('starter')
       })
 
       .state('detail-edit-introduction', {
-        url: '/detail-edit-introduction/:projectId',
+        url: '/detail-edit-introduction/:projectId/:parentPage',
         templateUrl: 'templates/detail/detail-edit-introduction.html',
         controller: 'DetailEditIntroductionCtrl',
         data: {
@@ -195,7 +195,7 @@ angular.module('starter')
       })
 
       .state('detail-edit-resource', {
-        url: '/detail-edit-resource/:projectId',
+        url: '/detail-edit-resource/:projectId/:parentPage',
         templateUrl: 'templates/detail/detail-edit-resource.html',
         controller: 'DetailEditResourceCtrl',
         data: {
@@ -204,7 +204,7 @@ angular.module('starter')
       })
 
       .state('detail-edit-market', {
-        url: '/detail-edit-market/:projectId',
+        url: '/detail-edit-market/:projectId/:parentPage',
         templateUrl: 'templates/detail/detail-edit-market.html',
         controller: 'DetailEditMarketCtrl',
         data: {
@@ -213,7 +213,7 @@ angular.module('starter')
       })
 
       .state('detail-edit-business', {
-        url: '/detail-edit-business/:projectId',
+        url: '/detail-edit-business/:projectId/:parentPage',
         templateUrl: 'templates/detail/detail-edit-business.html',
         controller: 'DetailEditBusinessCtrl',
         data: {
@@ -316,7 +316,7 @@ angular.module('starter')
 
       })
       .state('user-edit-info', {
-        url: '/user-edit-info',
+        url: '/user-edit-info/:target/:text/:length/:mulitline/:required',
         cache: false,
         params: {target:null, text: '', length: 0, mulitline:false, required: false},
         templateUrl: 'templates/user/user-edit-info.html',

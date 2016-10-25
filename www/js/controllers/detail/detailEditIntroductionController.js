@@ -14,7 +14,8 @@ angular.module('starter.controllers')
       theme: 'snow' // or 'bubble'
     });
 
-    var projectId = $stateParams.projectId;
+    var _projectId = $stateParams.projectId;
+    var _parentPage = $stateParams.parentPage;
 
     // bugfix: don't focus the line easily'
     $('.ql-editor p, #editor-container, .ql-editor').on('mousedown mouseup touchstart touchend', function (e) {
@@ -22,7 +23,7 @@ angular.module('starter.controllers')
     });
 
     function initEditor() {
-      DetailService.getDetailIntroduction(projectId, function (data) {
+      DetailService.getDetailIntroduction(_projectId, function (data) {
         angular.element(document.querySelector('#editor-container .ql-editor')).append(data.data.introduction);
       }, function () {
         HnaAlert.error('服务器超时，请重试');
@@ -37,7 +38,7 @@ angular.module('starter.controllers')
 
     $scope.save = function () {
       var data = {
-        projectId: projectId,
+        projectId: _projectId,
         passData: {
           introduction: document.querySelector('.ql-editor').innerHTML
         }
@@ -49,13 +50,13 @@ angular.module('starter.controllers')
       });
 
       // reload
-      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: true});
+      $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: true});
     };
 
     $scope.cancel = function () {
-      $state.go('detail', {projectId: projectId, pageName: 'innovation'}, {reload: false});
+      $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: false});
     }
 
-
   }])
+
 

@@ -37,7 +37,7 @@
 				<ul class="swiper-wrapper tab-list">
 					<li class="swiper-slide pd-lr pd-tb introduction">
             <div id="detail-introduction-container"></div>
-            <div class="edit-introduction" ui-sref="detail-edit-introduction({projectId:detail.id})" nav-direction="forward" ng-if="isCurrentUser">
+            <div class="edit-introduction" ui-sref="detail-edit-introduction({projectId:detail.id, parentPage: parentPage})" nav-direction="forward" ng-if="isCurrentUser">
               <i class="edit"></i>
               <span>编辑内容</span>
             </div>

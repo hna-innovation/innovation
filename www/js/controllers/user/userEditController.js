@@ -13,7 +13,7 @@ angular.module('starter.controllers')
 	    }
 
       $scope.cancel = function() {
-        $ionicHistory.goBack();
+        $state.go('user');
       }
 
       $scope.save = function() {
@@ -33,7 +33,7 @@ angular.module('starter.controllers')
 				}).success(function(result){
 					if(result.code == 0) {
 						//HnaAlert.default(Content.user.LOAD_DATA_SUCCESS);
-						$ionicHistory.goBack();
+            $state.go('user', {}, {reload: true});
 					}
 					else{
 						HnaAlert.default(Content.user.UPDATE_ERROR);

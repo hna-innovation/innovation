@@ -6,6 +6,7 @@ angular.module('starter.controllers')
     var _projectId = $stateParams.projectId;
     var _userId = localStorage.userId;
 
+    $scope.parentPage = _pageName;
     $scope.isCurrentUser = false;
 
     // rich editor
@@ -141,14 +142,12 @@ angular.module('starter.controllers')
       });
     }
 
-    $scope.goBack = function () {
-      var backView = $ionicHistory.backView();
-
-      if(backView) {
-          $state.go(backView.stateName);
-      } else {
-        HnaAlert.default('操作有误, 将跳转回首页!');
-        $state.go('innovation');
+    $scope.goBack = function(){
+      if(_pageName){
+        $state.go(_pageName)
+      }
+      else{
+        $window.history.back();
       }
     }
 
