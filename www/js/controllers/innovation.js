@@ -98,23 +98,23 @@ angular.module('starter.controllers')
         };
 
         $scope.goPopularInnovation = function() {
+          $ionicViewSwitcher.nextDirection('forward');
           $state.go('popular-innovation');
-          $ionicViewSwitcher.nextDirection('forwoard');
         };
 
         $scope.goPopularResources = function() {
           $state.go('popular-resources');
-          $ionicViewSwitcher.nextDirection('forwoard');
+          $ionicViewSwitcher.nextDirection('forward');
         };
 
         $scope.goLastInnovation = function() {
           $state.go('last-innovation');
-          $ionicViewSwitcher.nextDirection("forwoard");
+          $ionicViewSwitcher.nextDirection("forward");
         };
 
         $scope.goInnovationStars = function() {
           $state.go('innovation-stars');
-          $ionicViewSwitcher.nextDirection("forwoard");
+          $ionicViewSwitcher.nextDirection("forward");
         };
 
         Services.getTags(function (data) {

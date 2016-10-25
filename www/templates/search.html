@@ -6,7 +6,7 @@
                     <i class="icon ion-ios-search placeholder-icon color-red"></i>
                     <input type="search" ng-model="keyword" placeholder="搜索..." autofocus="autofocus" class="bg-ff">
                 </label>
-                <a href="#innovation" class="color-white pd-l15">取消</a>
+                <a ui-sref="innovation" nav-direction="back" class="color-white pd-l15">取消</a>
             </div>
         </form>
         <div ng-show="isResultTextShown && searchResults.length === 0" class="color-pink pd-15">
