@@ -1,7 +1,7 @@
 #user-header{
     height:140px;
     padding: 0 12px;
-	background:url(../img/user/title_bg_mine.png) no-repeat center;
+	background:url(../../img/user/title_bg_mine.png) no-repeat center;
     background-size: cover;
     overflow: hidden;
 }
@@ -71,7 +71,7 @@
 	padding-right: 2px;
 	line-height: 26px;
 	text-align: center;
-	background:url(../img/user/svg-chat.svg) no-repeat center;
+	background:url(../../img/user/svg-chat.svg) no-repeat center;
 	background-size: 100%;
 	font-weight: 400;
 	color: #e17877;
@@ -168,11 +168,11 @@
 	overflow: hidden;
 }
 .bg-img-left{
-	background: url(../img/icon-left.svg) no-repeat 10px center;
+	background: url(../../img/icon-left.svg) no-repeat 10px center;
 	background-size: 22px;
 }
 .bg-img-reomve{
-	background: url(../img/icon-remove.svg) no-repeat 12px center;
+	background: url(../../img/icon-remove.svg) no-repeat 12px center;
 	background-size: 18px;
 }
 .comment{
@@ -358,7 +358,7 @@
   background-color: #fcfcfc;
 }
 .user-edit-cancel {
-  background: url(../img/close.png) no-repeat 0px center;
+  background: url(../../img/close.png) no-repeat 0px center;
   background-size: 18px;
   height: 100%;
   display: inline-block;
@@ -367,7 +367,7 @@
   margin-left: 10px;
 }
 .user-edit-save {
-  background: url(../img/save.png) no-repeat 0px center;
+  background: url(../../img/save.png) no-repeat 0px center;
   background-size: 25px;
   height: 100%;
   display: inline-block;
