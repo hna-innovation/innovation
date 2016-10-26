@@ -12,12 +12,12 @@ angular.module('starter.services')
         if (topNumber == "0px") {
           jQuery(".detail-footer-share").animate({
             top: "-60px"
-          })
+          },500)
         }
         if (topNumber == "-60px") {
           jQuery(".detail-footer-share").animate({
             top: "0px"
-          })
+          }, 500)
         }
       })
     }
