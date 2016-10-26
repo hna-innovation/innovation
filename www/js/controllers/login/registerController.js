@@ -39,6 +39,9 @@ angular.module('starter.controllers')
           $scope.EXISTED_EMAIL_MSG = "邮箱已存在";
           $scope.registerForm.$setPristine();
           $scope.registerLoading = false;
+        } else {
+          HnaAlert.defaultError(result.message);
+          $scope.registerLoading = false;
         }
       });
     }
