@@ -8,17 +8,17 @@
         </a>
     </div>
     <ul class='detail-footer-nav pd-l15'>
-        <li><i class='if' ng-class="{true:'i-aixinhover',false:'i-collect'}[detail.hasLiked]" ng-click='hasLiked(detail)'></i>
+        <li><i class='expand-touch-area if' ng-class="{true:'i-aixinhover',false:'i-collect'}[detail.hasLiked]" ng-click='hasLiked(detail)'></i>
           <sapn ng-bind="detail.likeCount"></sapn>
         </li>
-        <li><i class='if' ng-class="{true:'i-star1',false:'i-star'}[detail.hasFavorited]" ng-click='hasFavorited(detail)'></i>
+        <li><i class='expand-touch-area if' ng-class="{true:'i-star1',false:'i-star'}[detail.hasFavorited]" ng-click='hasFavorited(detail)'></i>
           <sapn ng-bind="detail.favoriteCount"></sapn>
         </li>
         <li ui-sref="detail-page-comments({ projectid: detail.id})" nav-direction="forward">
-        	<i class='if i-xiaoxi'></i>
+        	<i class='if i-xiaoxi expand-touch-area'></i>
         </li>
         <li>
-        	<i class='if i-fenxiang' id='share'></i>
+        	<i class='if i-fenxiang expand-touch-area' id='share'></i>
         </li>
     </ul>
 </div>
