@@ -33,7 +33,7 @@ function AppCtrl($scope, AuthEvent, ModalServices, Services, $state, HnaAlert, m
     switch (getMobileType()) {
       case 'ios':
         url = 'bim://bimwork/joinTeam?inviteUrl=http://54.222.202.92:7001/account/invite/9252c2001a&teamId=57e4beeacc5bd33301c054c3';
-        downloadUrl = 'https://beta.bugly.qq.com/bble';
+        downloadUrl = 'https://beta.bugly.qq.com/mpmd';
         break;
       case 'android':
         url = 'intent://bim/home#Intent;scheme=bim;package=com.pactera.hnabim;end';
