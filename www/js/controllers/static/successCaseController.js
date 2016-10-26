@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('SuccessCaseCtrl', SuccessCaseCtrl);
 
-function SuccessCaseCtrl($scope) {
+function SuccessCaseCtrl($scope, PageService) {
   'use strict';
 
   $scope.successCases = [
@@ -44,4 +44,5 @@ function SuccessCaseCtrl($scope) {
     }
   ];
 
+  PageService.setTitle('成功案例');
 }

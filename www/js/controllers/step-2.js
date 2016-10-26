@@ -2,9 +2,9 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, $window, $state, Upload, $ionicViewSwitcher) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, $window, PageService, Upload, $ionicViewSwitcher) {
     // set title
-    // Page.setTitle('创意编辑');
+    PageService.setTitle('编辑创意');
 
     // 获取创意详情
     $scope.getDetail = function () {

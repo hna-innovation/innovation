@@ -1,12 +1,14 @@
 angular.module('starter.controllers')
   .controller('UserCommentsCtrl', UserCommentsCtrl);
 
-function UserCommentsCtrl($scope, CommentService, Content, UtilityService) {
+function UserCommentsCtrl($scope, CommentService, Content, UtilityService, PageService) {
 
   $scope.NO_COMMENTS = Content.comment.NO_COMMENTS;
 
   $scope.comments = [];
   $scope.hasMoreData = true;
+
+  PageService.setTitle('我的评论');
 
   var getCommentsByPage = function() {
     var offset = 0;

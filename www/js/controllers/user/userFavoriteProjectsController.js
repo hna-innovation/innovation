@@ -1,12 +1,14 @@
 angular.module('starter.controllers')
   .controller('UserFavoriteProjectsCtrl', UserFavoriteProjectsCtrl);
 
-function UserFavoriteProjectsCtrl($scope, UserService, Content, UtilityService) {
+function UserFavoriteProjectsCtrl($scope, UserService, Content, UtilityService, PageService) {
 
   $scope.NO_FAVORITE = Content.user.NO_FAVORITE;
 
   $scope.favoriteProjects = [];
   $scope.hasMoreData = true;
+
+  PageService.setTitle('我的收藏');
 
   var getProjectsByPage = function() {
     var offset = 0;

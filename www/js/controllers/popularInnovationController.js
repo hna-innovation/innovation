@@ -1,12 +1,14 @@
 angular.module('starter.controllers')
   .controller('PopularInnovationCtrl', PopularInnovationCtrl);
 
-function PopularInnovationCtrl($scope, ProjectsService, UtilityService) {
+function PopularInnovationCtrl($scope, ProjectsService, UtilityService, PageService) {
   'use strict';
 
   // Get Projects
   $scope.projects = [];
   $scope.hasMoreData = true;
+
+  PageService.setTitle('热门创意');
 
   var getProductsByType = function() {
     var offset = 0;

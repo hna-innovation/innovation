@@ -1,8 +1,10 @@
 angular.module('starter.controllers')
   .controller('InnovationStarsCtrl', InnovationStarsCtrl);
 
-function InnovationStarsCtrl($scope, UserService, Content) {
+function InnovationStarsCtrl($scope, UserService, Content, PageService) {
   'use strict';
+
+  PageService.setTitle("创新明星");
 
   UserService.getInnovationStarUsers(function(result) {
 

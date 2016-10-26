@@ -1,8 +1,9 @@
 angular.module('starter.controllers')
   .controller('LastInnovationCtrl', LastInnovationCtrl);
 
-function LastInnovationCtrl($scope, ProjectsService, UtilityService) {
+function LastInnovationCtrl($scope, ProjectsService, UtilityService, PageService) {
   'use strict';
+  PageService.setTitle("最新创意");
 
   // Get Projects
   $scope.projects = [];

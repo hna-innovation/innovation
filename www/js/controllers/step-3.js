@@ -2,10 +2,10 @@ angular.module('starter.controllers')
 
     .controller('StepThirdCtrl', StepThirdCtrl)
 
-function StepThirdCtrl($scope, $timeout, Services, $stateParams, $state, $ionicViewSwitcher, $window) {
+function StepThirdCtrl($scope, $timeout, Services, $stateParams, $state, $ionicViewSwitcher, $window, PageService) {
     var _parentPage = $stateParams.parentPage;
     // set title
-    // Page.setTitle('创意预览');
+    PageService.setTitle('创意预览');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step', {

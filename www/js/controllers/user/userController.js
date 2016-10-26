@@ -1,12 +1,14 @@
 angular.module('starter.controllers')
-  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, $translate, Services, $window, AuthEvent, UserService, HnaAlert, LANGUAGE, Content) {
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, $translate, Services, $window, AuthEvent, UserService, HnaAlert, LANGUAGE, Content, PageService) {
 
     var resourcesType = $location.search()['type'];
+
+    PageService.setTitle('个人中心');
 
     //Set the language
     var languageKeys = Object.keys(LANGUAGE.languages);
     var currentLanguageKey = $translate.use();
-    
+
     var languages = [];
     var currentLanguage = null;
 

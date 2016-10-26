@@ -1,7 +1,8 @@
 angular.module('starter.controllers')
   .controller('UserLikedProjectsCtrl', UserLikedProjectsCtrl);
 
-function UserLikedProjectsCtrl($scope, UserService, Content) {
+function UserLikedProjectsCtrl($scope, UserService, Content, PageService) {
+  PageService.setTitle("我的获赞");
 
   UserService.getUserLikedProjects(function(result) {
 

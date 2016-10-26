@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('DetailPageResourceCtrl', function ($scope, ResourceService, $stateParams, Content, RESOURCE) {
+  .controller('DetailPageResourceCtrl', function ($scope, ResourceService, $stateParams, Content, RESOURCE, PageService) {
     'use strict';
 
     $scope.detail = {
@@ -32,6 +32,8 @@ angular.module('starter.controllers')
       likeCount: 123,
       banner: "../img/resources/tech/resource-1.jpg"
     };
+
+    PageService.setTitle($scope.detail.title);
 
     setTimeout(function () {
       Swiper('#swiper-resource', {

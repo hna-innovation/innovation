@@ -2,9 +2,9 @@ angular.module('starter.controllers')
 
     .controller('StepFourthCtrl', StepFourthCtrl)
 
-function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicViewSwitcher) {
+function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicViewSwitcher, PageService) {
     // set title
-    // Page.setTitle('编辑完善创意');
+    PageService.setTitle('编辑完善创意');
     // 轮播图
     $timeout(function () {
         Swiper('#swiper-step2', {
@@ -28,10 +28,8 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicView
             $scope.ItemContent = result.data;
             $scope.formdata.description = result.data.description
         } else {
-            // console.log(result);
         }
     }, function (error) {
-        // console.log(error);
     });
 
     // 状态切换
@@ -69,7 +67,6 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicView
             })
         })
     }, function (error) {
-        // console.log(error);
     });
 
     // 获取标签数组
@@ -80,7 +77,6 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicView
         } else {
             $scope.tags.splice($scope.tags.indexOf(id), 1);
         }
-        // console.log($scope.tags);
     };
 
     // 创意发布

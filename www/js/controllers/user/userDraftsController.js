@@ -1,9 +1,11 @@
 angular.module('starter.controllers')
   .controller('UserDraftsCtrl', UserDraftsCtrl);
 
-function UserDraftsCtrl($scope, UserService, Content, $state, $ionicViewSwitcher) {
+function UserDraftsCtrl($scope, UserService, Content, $state, $ionicViewSwitcher, PageService) {
 
   $scope.NO_DRAFTS = Content.draft.NO_DRAFTS;
+
+  PageService.setTitle('草稿箱');
 
   UserService.getUserDrafts(function (result) {
     if (result.data && result.data.content && result.data.content.length) {

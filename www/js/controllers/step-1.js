@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('StepFirstCtrl', StepFirstCtrl);
 
-function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, Page, $state, ModalServices, Upload, $ionicViewSwitcher) {
+function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, PageService, $state, ModalServices, Upload, $ionicViewSwitcher) {
   // set title
   // Page.setTitle('记录新创意');
   // 初始化表单数据
@@ -11,6 +11,8 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
   $scope.beforeChange = function(file) {
     $scope.loading = true;
   };
+
+  PageService.setTitle('记录新创意');
 
   // 图片上传接口
   $scope.uploadFiles = function(file, errFiles) {

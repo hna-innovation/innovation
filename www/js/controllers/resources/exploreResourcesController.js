@@ -1,8 +1,9 @@
 angular.module('starter.controllers')
-  .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE) {
+  .controller('ExploreResourcesCtrl', function($scope, $state, Content, RESOURCE, PageService) {
     'use strict';
 
     // $state.transitionTo('explore-resources.experts');
+    PageService.setTitle('资源库');
 
     $scope.resources = [
         {
