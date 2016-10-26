@@ -1,5 +1,5 @@
 <div class="row stastitics-show bg-ff border-b">
-    <div class="col stastitics_item stastitics_innovation" ui-sref="last-innovation" >
+    <div class="col stastitics_item stastitics_innovation" ui-sref="last-innovation" nav-direction="forward">
         <div class="stastitics_number center pd-tb5" >
             <span class="stastitics_total color-6d font-18 bold" count-to="{{innovationsCount}}" duration="1" value=0 ></span>
             <span class="stastitics_new bg-pink color-white" count-to="{{newCount}}" duration="1" value=0 ng-if="newCount > 0"></span>
@@ -8,7 +8,7 @@
             <span class="color-6d">{{'stastitics.innovation' | translate }}</span>
         </div>
     </div>
-    <div class="col stastitics_item stastitics_resources" ui-sref="explore-resources.experts" >
+    <div class="col stastitics_item stastitics_resources" ui-sref="explore-resources.experts" nav-direction="forward">
         <div class="stastitics_number center pd-tb5" >
             <span class="stastitics_total color-6d font-18 bold" count-to="38" duration="1" value=0 ></span>
             <span class="stastitics_new bg-pink color-white" count-to="5" duration="1" value=0 ></span>

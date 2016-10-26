@@ -117,7 +117,7 @@ function StepFourthCtrl($scope, $state, $timeout, Services, HnaAlert, $ionicView
                 HnaAlert.default('创意发布成功！');
                 localStorage.removeItem('draftId');
                 $state.go('detail', {projectId: result.data.id, pageName: 'innovation'});
-                $ionicViewSwitcher.nextDirection("forwoard");
+                $ionicViewSwitcher.nextDirection("forward");
 
             } else {
               if (result.code == 500) {

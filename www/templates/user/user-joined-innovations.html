@@ -6,9 +6,8 @@
 		</div>
 
 		<ul class="creative-list pd-10">
-			<li ng-repeat="project in projects"
-				ui-sref="detail({ projectId: project.id})" nav-direction="forward">
-				<div>
+			<li ng-repeat="project in projects">
+				<div ui-sref="detail({ projectId: project.id})" nav-direction="forward">
 					<div>
 						<a>
 							<img ng-src="{{ ::project.images[0] }}"/>

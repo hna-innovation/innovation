@@ -43,7 +43,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
                     if (status) {
                         $window.history.back();
                         HnaAlert.default('创意已保存至草稿箱!');
-                        $ionicViewSwitcher.nextDirection("forwoard");
+                        $ionicViewSwitcher.nextDirection("forward");
 
                     } else {
                         HnaAlert.default(msg);

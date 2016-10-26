@@ -5,7 +5,7 @@
     <div class="panel_body">
       <ion-scroll direction="x" >
         <ul class="poker-list sroll-x-wrapper" ng-if="incubation.MENTOR.length > 0" >
-          <li class="poker-card" ng-repeat="team in incubation.MENTOR" nav-direction="forward">
+          <li class="poker-card" ng-repeat="team in incubation.MENTOR">
             <div class="poker_img">
               <img class="radius" ng-src="{{::team.img}}" alt="创业导师">
             </div>
@@ -21,16 +21,18 @@
       <div class="panel_title">孵化资源</div>
     </div>
     <ul class="">
-      <li class="border-b1 clearfix pd-10" ng-repeat="service in incubation.SERVICES" nav-direction="forward" ui-sref="incubation-resource-detail({detailId: $index})" ng-if="incubation.SERVICES.length > 0">
-        <img class="left mg-r15" ng-src="{{ ::service.img }}" width="130" height="90"/>
-        <div>
-          <p class="color-3d font-16 bold text-ellipsis text-title">
-            {{ ::service.name }}
-          </p>
-          <div class="tag-list">
-            <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in service.tags" >
-              {{ tag }}
-            </a>
+      <li class="border-b1 clearfix pd-10" ng-repeat="service in incubation.SERVICES" ng-if="incubation.SERVICES.length > 0">
+        <div ui-sref="incubation-resource-detail({detailId: $index})" nav-direction="forward">
+          <img class="left mg-r15" ng-src="{{ ::service.img }}" width="130" height="90"/>
+          <div>
+            <p class="color-3d font-16 bold text-ellipsis text-title">
+              {{ ::service.name }}
+            </p>
+            <div class="tag-list">
+              <a class="font-10 tag tag-lan mg-b0" ng-repeat="tag in service.tags" >
+                {{ tag }}
+              </a>
+            </div>
           </div>
         </div>
       </li>

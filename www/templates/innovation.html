@@ -21,7 +21,7 @@
         <!-- Additional required wrapper -->
         <div id="home-slide" class="swiper-wrapper">
           <!-- Slides -->
-          <a class="swiper-slide" href="#/banner-detail">
+          <a class="swiper-slide" href="#/banner-detail" nav-direction="forward">
             <img src="../img/banner/banner-1.jpg?v_02" alt="">
           </a>
           <a class="swiper-slide" href="">
@@ -52,50 +52,51 @@
           <li ng-click="goPopularResources()" >
             <img src="../img/nav/nav-3.png" alt=""> {{'innovation.popular-resources' | translate }}
           </li>
-          <li ng-click="goInnovationStars()" ∫>
+          <li ng-click="goInnovationStars()" >
             <img src="../img/nav/nav-4.png" alt=""> {{'innovation.innovation-stars' | translate }}
           </li>
         </ul>
       </div>
       <div class="innovation">
-        <div class="list card" ng-repeat="project in projects" ui-sref="detail({projectId: project.id, pageName: 'innovation'})" nav-direction="forward">
+        <section class="list card" ng-repeat="project in projects">
+          <div ui-sref="detail({projectId: project.id, pageName: 'innovation'})" nav-direction="forward">
+            <div class="item item-avatar">
+              <img ng-src="{{project.creator.headerIcon}}">
+              <h2 class="pd-r80">
+                <span class="color-3d" ng-bind="project.creator.nickName"></span>
+                <span ng-show="project.creator.company">&middot;</span>
+                <span class="font-12 color-88" ng-bind="project.creator.company"></span>
+              </h2>
+              <div class="process">
+                <span ng-class="{active: project.status >=2 }"></span>
+                <span ng-class="{active: project.status >=3 }"></span>
+                <span ng-class="{active: project.status ==4 }"></span>
+              </div>
+            </div>
 
-          <div class="item item-avatar">
-            <img ng-src="{{project.creator.headerIcon}}">
-            <h2 class="pd-r80">
-              <span class="color-3d" ng-bind="project.creator.nickName"></span>
-              <span ng-show="project.creator.company">&middot;</span>
-              <span class="font-12 color-88" ng-bind="project.creator.company"></span>
+            <div class="item item-image">
+              <a class="vertical-align-img" >
+                <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
+              </a>
+            </div>
+            <h2 class="color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
             </h2>
-            <div class="process">
-              <span ng-class="{active: project.status >=2 }"></span>
-              <span ng-class="{active: project.status >=3 }"></span>
-              <span ng-class="{active: project.status ==4 }"></span>
+            <p class="description color-88" ng-bind="project.description"></p>
+            <div class="info clearfix">
+              <div class="label-list">
+                <span ng-repeat="tag in project.tags">
+              <i>＃</i><span ng-bind="tag"></span>
+            </span>
+              </div>
+              <div class="action">
+                <span class="color-88" ng-class="{true:'like-hover',false:'like-collect'}[project.hasLiked]">
+                  <i class="if" ></i>{{project.likeCount}}
+                </span>
+                <span class="color-88"><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
+              </div>
             </div>
           </div>
-
-          <div class="item item-image">
-            <a class="vertical-align-img" >
-              <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
-            </a>
-          </div>
-          <h2 class="color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
-          </h2>
-          <p class="description color-88" ng-bind="project.description"></p>
-          <div class="info clearfix">
-            <div class="label-list">
-              <span ng-repeat="tag in project.tags">
-            <i>＃</i><span ng-bind="tag"></span>
-          </span>
-            </div>
-            <div class="action">
-              <span class="color-88" ng-class="{true:'like-hover',false:'like-collect'}[project.hasLiked]">
-                <i class="if" ></i>{{project.likeCount}}
-              </span>
-              <span class="color-88"><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
-            </div>
-          </div>
-        </div>
+        </section>
 
         <load-more
           on-load-more="getProjects()"

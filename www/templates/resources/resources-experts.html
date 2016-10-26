@@ -51,14 +51,16 @@
     <div class="panel_body">
       <ion-scroll direction="x" >
         <ul class="poker-list sroll-x-wrapper" ng-if="tech.TEAMS.length > 0" >
-          <li class="poker-card" ng-repeat="team in tech.TEAMS" ui-sref="{{team.url}}" nav-direction="forward">
-            <div class="poker_img">
-              <img class="radius" ng-src="{{::team.img}}" alt="创意成员">
-            </div>
-            <div class="poker_title color-3d" ng-bind="::team.name"></div>
-            <!--<div class="poker_description color-6d" ng-bind="::team.leader"></div>-->
-            <div>
-              <button class="button-init button-red">查看详情</button>
+          <li class="poker-card" ng-repeat="team in tech.TEAMS">
+            <div ui-sref="{{team.url}}" nav-direction="forward">
+              <div class="poker_img">
+                <img class="radius" ng-src="{{::team.img}}" alt="创意成员">
+              </div>
+              <div class="poker_title color-3d" ng-bind="::team.name"></div>
+              <!--<div class="poker_description color-6d" ng-bind="::team.leader"></div>-->
+              <div>
+                <button class="button-init button-red">查看详情</button>
+              </div>
             </div>
           </li>
         </ul>

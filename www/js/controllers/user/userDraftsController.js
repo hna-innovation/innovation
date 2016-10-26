@@ -20,7 +20,7 @@ function UserDraftsCtrl($scope, UserService, Content, $state, $ionicViewSwitcher
   $scope.goStep3 = function(draftId) {
     localStorage.draftId = draftId;
     $state.go('step-3', {parentPage: 'user-draft'});
-    $ionicViewSwitcher.nextDirection("forwoard");
+    $ionicViewSwitcher.nextDirection("forward");
 
   };
 

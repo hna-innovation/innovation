@@ -97,7 +97,7 @@ function StepFirstCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert,
       if (result.code == 0) {
         localStorage.draftId = result.data.id;
         $state.go('step-3', {parentPage: 'step-1'});
-        $ionicViewSwitcher.nextDirection("forwoard");
+        $ionicViewSwitcher.nextDirection("forward");
         HnaAlert.default('创意已保存至草稿箱!');
 
       } else {
