@@ -44,14 +44,14 @@
   display: none;
 }
 
-.bar .button-img img:nth-child(1) {
+.bar .button-img a:nth-child(1) img{
   width: 20px;
   vertical-align: top;
   padding: 5px 0;
   margin-right: 12px;
 }
 
-.bar.bar-header .button-img img:nth-child(2) {
+.bar.bar-header .button-img a:nth-child(2) img{
   width: 18px;
   margin-right: 0;
   padding: 4px 0;

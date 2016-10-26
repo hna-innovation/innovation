@@ -1,12 +1,10 @@
-<ion-scroll zooming="true" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}" ng-if="slideStatus">
+<ion-scroll zooming="false" direction="y" class="personal-like" ng-class="{'slide-animation': slideStatus}" ng-if="slideStatus">
     <div>
         <div class="header">
-            <div class="btn-action">
-                <div class="user-edit-cancel" ng-click="slideDownInterest()">
-                    <!--<img src="../img/close.png" alt="">-->
+            <div class="personal-like-operate">
+                <div class="user-edit-cancel expand-touch-area" ng-click="slideDownInterest()">
                 </div>
-                <div class="user-edit-save" ng-click="saveInterest()">
-                    <!--<img src="../img/save.png" alt="">-->
+                <div class="user-edit-save expand-touch-area" ng-click="saveInterest()">
                 </div>
             </div>
             <div class="title">

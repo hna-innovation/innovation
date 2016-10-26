@@ -51,25 +51,9 @@
   padding: 12px;
 }
 
-.personal-like .header .btn-action {
-  height: 18px;
-}
 
-.personal-like .header .close,
-.personal-like .header .save {
-  display: inline-block;
-}
-
-.personal-like .header .close img {
-  width: 14px;
-}
-
-.personal-like .header .save img {
-  width: 20px;
-}
-
-.personal-like .header .save {
-  float: right;
+.personal-like .personal-like-operate {
+  height: 20px;
 }
 
 .personal-like .header .title div:nth-child(1) {
@@ -203,3 +187,4 @@
   font-size: 0.9em;
   padding: 2px 0 0 5px;
 }
+
