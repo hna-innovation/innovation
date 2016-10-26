@@ -42,6 +42,28 @@ gulp.task('style-css', function (done) {
         .on('end', done);
 });
 
+gulp.task('style-global', function (done) {
+    gulp.src('www/css/global/**/*.css')
+        .pipe(concat('global.min.css'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+         }))
+        .pipe(rev())
+        .pipe(gulp.dest(path.join(buildDir, 'css/global')))
+        .on('end', done);
+});
+
+gulp.task('style-innovations', function (done) {
+    gulp.src('www/css/innovations/**/*.css')
+        .pipe(concat('innovations.min.css'))
+        .pipe(minifyCss({
+          keepSpecialComments: 0
+         }))
+        .pipe(rev())
+        .pipe(gulp.dest(path.join(buildDir, 'css/innovations')))
+        .on('end', done);
+});
+
 gulp.task('style-resources', function (done) {
     gulp.src('www/css/resources/**/*.css')
         .pipe(concat('resources.min.css'))
@@ -133,6 +155,8 @@ gulp.task('inject-index', function (done) {
 
   gulp.src('www/index.html')
     .pipe(_inject(gulp.src("css/css*", { cwd: buildDir, read: false }), 'style-css'))
+    .pipe(_inject(gulp.src("css/global/global*", { cwd: buildDir, read: false }), 'style-global'))
+    .pipe(_inject(gulp.src("css/innovations/innovations*", { cwd: buildDir, read: false }), 'style-innovations'))
     .pipe(_inject(gulp.src("css/resources/resources*", { cwd: buildDir, read: false }), 'style-resources'))
     .pipe(_inject(gulp.src("css/vendor/vendor*", { cwd: buildDir, read: false }), 'style-vendor'))
     .pipe(_inject(gulp.src("js/vendor/vendor*", { cwd: buildDir, read: false }), 'script-vendor'))
@@ -147,7 +171,7 @@ gulp.task('build', function(done) {
   'clean',
   [
     // css files
-    'style-copy-icon', 'style-copy-lib', 'style-css', 'style-resources', 'style-vendor',
+    'style-copy-icon', 'style-copy-lib', 'style-css', 'style-global', 'style-innovations', 'style-resources', 'style-vendor',
 
     //js files
     'js-vendor-concat', 'script-template', 'js-mini',

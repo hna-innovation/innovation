@@ -22,16 +22,16 @@
 }
 
 .stastitics-show .stastitics_innovation .stastitics_title span {
-    background: url(../img/innovation.svg) no-repeat left center;
+    background: url(../../img/innovation.svg) no-repeat left center;
     background-size: 16px;
 }
 
 .stastitics-show .stastitics_resources .stastitics_title span {
-    background: url(../img/resource.svg) no-repeat left center;
+    background: url(../../img/resource.svg) no-repeat left center;
     background-size: 16px;
 }
 
 .stastitics-show .stastitics_success .stastitics_title span {
-    background: url(../img/diamond.svg) no-repeat left center;
+    background: url(../../img/diamond.svg) no-repeat left center;
     background-size: 16px;
 }

@@ -15,7 +15,7 @@
 
 .edit-introduction span:before {
   content: "";
-  background: url(../img/user/edit.png) no-repeat;
+  background: url(../../img/user/edit.png) no-repeat;
   display: block;
   float: left;
   width: 12px;
