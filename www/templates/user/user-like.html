@@ -8,14 +8,13 @@
       <div ng-if="likedProjects.length > 0">
         <ul class="user-list2 bg-f9">
           <li class="bg-ff" ng-repeat="likedProject in likedProjects">
-            <div ui-sref="detail({ projectId: likedProject.targetId })" nav-direction="forward">
               <div>
                 <div class="user-list2-img">
                   <a ng-href="#" class="left">
                     <img ng-src="{{ likedProject.images[0] }}" width="42" height="42"/>
                   </a>
                 </div>
-                <div class="user-list2-text">
+                <div class="user-list2-text" ui-sref="detail({ projectId: likedProject.targetId })" nav-direction="forward">
                   <p class="color-3d mg-b0 text-title2" ng-bind="likedProject.name"></p>
                   <p class="color-88 text-bottom2 mg-b0 font-12" ng-bind="likedProject.latestCreatedDate"></p>
                 </div>
@@ -27,7 +26,6 @@
                        ng-if="likedProject.unreadLikeCount"></small>
                 <p class="text-center mg-b0 color-6d font-14" ng-bind="likedProject.likeCount"></p>
               </div>
-            </div>
           </li>
         </ul>
       </div>

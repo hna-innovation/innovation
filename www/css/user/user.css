@@ -310,7 +310,7 @@
 	position: relative;
 	float: left;
 	width: 50%;
-	height: 200px;
+	height: 162px;
 	box-sizing: border-box;
 	background-color: #fff;
 	margin-bottom: 10px;
@@ -331,11 +331,12 @@
 }
 .creative-list>li>div>div:nth-child(1){
 	width: 100%;
-	height: 120px;
+	height: 85px;
 	overflow: hidden;
 }
 .creative-list>li>div>div:nth-child(1) img{
 	width: 100%;
+  height: 100%;
 	vertical-align: middle;
 }
 .creative-list .info{
@@ -435,4 +436,5 @@ label.user-language select {
 
 .user-draft-img img{
   width: 100%;
+  height: 100%;
 }
