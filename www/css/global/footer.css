@@ -69,6 +69,18 @@
 }
 
 /*home footer*/
+.index-footer.bar {
+  height: 38px;
+}
+.index-footer.bar-footer {
+  color: #de6262;
+}
+.index-footer.bar-footer .btn-add {
+  font-size: 40px;
+  position: relative;
+  top: -4px;
+}
+
 .home-footer .button {
   z-index: 3;
 }
@@ -87,7 +99,6 @@
   top: -10px;
   background-color: #fff;
 }
-
 
 .home-footer:before {
   content: "";
@@ -164,11 +175,4 @@
 
 .detail-special .go-back {
   line-height: 28px !important;
-}
-
-.index-footer.bar {
-  height: 38px;
-}
-.index-footer.bar-footer {
-  color: #de6262;
 }
