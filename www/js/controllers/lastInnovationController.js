@@ -3,8 +3,8 @@ angular.module('starter.controllers')
 
 function LastInnovationCtrl($scope, ProjectsService, UtilityService, PageService) {
   'use strict';
-  PageService.setTitle("最新创意");
-
+  // PageService.setTitle("最新创意");
+    $scope.viewTitle = '最新创意';
   // Get Projects
   $scope.projects = [];
   $scope.hasMoreData = true;
