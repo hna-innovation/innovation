@@ -171,9 +171,12 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
-.bg-img-left{
-	background: url(../../img/icon-left.svg) no-repeat 10px center;
-	background-size: 22px;
+.btn-back-arrow {
+  float: left;
+  font-size: 34px;
+  color: white;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 .bg-img-reomve{
 	background: url(../../img/icon-remove.svg) no-repeat 12px center;
