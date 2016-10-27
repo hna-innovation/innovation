@@ -1,5 +1,3 @@
-angular.module('configuration', []);
-
 angular.module('starter', [
     'ionic',
     'starter.controllers',
@@ -12,11 +10,11 @@ angular.module('starter', [
     'ngFileUpload'
     ]);
 
+angular.module('configuration', []);
+
 angular.module('starter.controllers', []);
 
-angular.module('starter.services', ['configuration']);
-
-angular.module('starter.modalServices', []);
+angular.module('starter.services', []);
 
 angular.module('starter')
 
