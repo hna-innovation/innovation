@@ -1,10 +1,12 @@
 
 <ion-view cache-view="false" view-title="我参与的创意">
-	<ion-content class="bg-fb">
-		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
-			<span class="font-18">我参与的创意</span>
-		</div>
+  <ion-header-bar>
+    <div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
+      <span class="font-18">我参与的创意</span>
+    </div>
+  </ion-header-bar>
 
+	<ion-content class="bg-fb">
 		<ul class="creative-list pd-10">
 			<li ng-repeat="project in projects">
 				<div ui-sref="detail({ projectId: project.id})" nav-direction="forward">

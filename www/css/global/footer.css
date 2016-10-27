@@ -26,6 +26,8 @@
 
 .bar-footer .button.button-left {
   left: 20px;
+  top: 5px;
+  height: 33px;
 }
 
 .bar .title + .button:last-child {
@@ -164,3 +166,9 @@
   line-height: 28px !important;
 }
 
+.index-footer.bar {
+  height: 38px;
+}
+.index-footer.bar-footer {
+  color: #de6262;
+}

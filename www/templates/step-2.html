@@ -1,10 +1,10 @@
 <ion-view cache-view="false" view-title="编辑创意">
-    <header class="bar bar-header bg-pink step-header">
+    <ion-header-bar class="bg-pink step-header">
         <a ng-click="cancel()" class="ion-android-close color-white expand-touch-area" nav-direction="back"></a>
         <h1 class="title color-white">编辑创意</h1>
-    </header>
+    </ion-header-bar>
     <ion-content>
-        <main id="step-2" class="content has-header">
+        <main id="step-2" class="content">
             <!-- <input id="photoUpload2" type="file" accept="image/*" ng-show="true" nv-file-select uploader="uploader"> -->
 
             <button id="photoUpload2" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-before-model-change="beforeChange($files)" ngf-fix-orientation="true" ngf-resize="{width: 1024, quality: .8}"  ngf-resize-if="$width > 1024" ngf-max-size="5MB"></button>

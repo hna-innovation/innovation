@@ -156,11 +156,15 @@
 	line-height: 13px;
 }
 .user-list-title{
-	height: 50px;
-	line-height: 50px;
+	height: 100%;
+  width: 100%;
+	line-height: 44px;
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
+}
+.bar {
+  padding: 0;
 }
 .text-ellipsis{
 	white-space:nowrap;
@@ -361,7 +365,7 @@
 .user-edit-cancel {
   background: url(../../img/close.png) no-repeat 0px center;
   background-size: 18px;
-  height: 100%;
+  height: 42px;
   display: inline-block;
   width: 18px;
   float: left;
@@ -370,7 +374,7 @@
 .user-edit-save {
   background: url(../../img/save.png) no-repeat 0px center;
   background-size: 25px;
-  height: 100%;
+  height: 42px;
   display: inline-block;
   width: 25px;
   float: right;

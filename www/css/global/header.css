@@ -1,57 +1,57 @@
-.bar {
+.index-header.bar {
   height: 38px;
 }
 
-.bar-header {
+.index-header.bar-header {
   background-color: #fff;
 }
 
-.bar-header .user-header-icon-default {
+.index-header.bar-header .user-header-icon-default {
   width: 21px;
   padding-top: 4px
 }
 
-.bar-header .user-header-icon {
+.index-header.bar-header .user-header-icon {
   width: 27px;
   padding-top: 0;
 }
 
-.bar-header div:nth-child(1).button {
+.index-header.bar-header div:nth-child(1).button {
   padding: 4px 5px;
   background-color: transparent;
 }
 
-.bar-header .bar-user-header {
-  z-index: 1;
+.index-header .bar-user-header {
+  z-index: 10;
 }
 
-.bar .title {
+.index-header .bar .title {
   height: 38px;
   line-height: 38px;
 }
 
-.bar .title .logo img {
+.index-header.bar .title .logo img {
   width: 100px;
   margin-top: 6px;
 }
 
-.bar .button-img {
+.index-header.bar .button-img {
   background-color: transparent;
   border-color: transparent;
 }
 
-.bar .button-img:after {
+.index-header.bar .button-img:after {
   display: none;
 }
 
-.bar .button-img a:nth-child(1) img{
+.index-header.bar .button-img a:nth-child(1) img{
   width: 20px;
   vertical-align: top;
   padding: 5px 0;
   margin-right: 12px;
 }
 
-.bar.bar-header .button-img a:nth-child(2) img{
+.index-header.bar.bar-header .button-img a:nth-child(2) img{
   width: 18px;
   margin-right: 0;
   padding: 4px 0;
@@ -61,6 +61,6 @@
   margin-top: 38px;
 }
 
-.bar.bar-header .title + .button:last-child {
+.index-header.bar.bar-header .title + .button:last-child {
   right: 4px;
 }

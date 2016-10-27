@@ -1,8 +1,11 @@
 <ion-view view-title="创新明星">
+  <ion-header-bar>
+    <div class="user-list-title bg-pink bg-img-left" ui-sref="innovation" nav-direction="back">
+      <span class="font-18">创新明星</span>
+    </div>
+  </ion-header-bar>
+
     <ion-content class="bg-f9">
-        <div class="user-list-title bg-pink bg-img-left" ui-sref="innovation" nav-direction="back">
-            <span class="font-18">创新明星</span>
-        </div>
         <section>
             <div class="border-b" ng-repeat="star in ::stars" ng-if="stars.length > 0">
                 <div class="box-table bg-ff">

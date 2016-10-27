@@ -1,10 +1,12 @@
 
 <ion-view cache-view="false" view-title="我的收藏">
-	<ion-content class="bg-f9">
-		<div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
-			<span class="font-18">我的收藏</span>
-		</div>
+  <ion-header-bar>
+    <div class="user-list-title bg-pink bg-img-left" ui-sref="user" nav-direction="back">
+      <span class="font-18">我的收藏</span>
+    </div>
+  </ion-header-bar>
 
+  <ion-content class="bg-f9">
         <section>
           <div class="border-tb mg-b10" ng-repeat="favoriteProject in favoriteProjects">
             <ul class="box-table bg-ff">
