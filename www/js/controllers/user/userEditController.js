@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, UserService, Content) {
+	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, UserService, Content, $ionicViewSwitcher) {
       $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, mulitline: $stateParams.mulitline, required: $stateParams.required};
 
 			$scope.getUserInfo = function() {
@@ -13,7 +13,8 @@ angular.module('starter.controllers')
 	    }
 
       $scope.cancel = function() {
-        $state.go('user');
+        $ionicViewSwitcher.nextDirection('back');
+        $state.go('user-edit');
       }
 
       $scope.save = function() {
@@ -33,7 +34,9 @@ angular.module('starter.controllers')
 				}).success(function(result){
 					if(result.code == 0) {
 						//HnaAlert.default(Content.user.LOAD_DATA_SUCCESS);
-            $state.go('user', {}, {reload: true});
+            $ionicViewSwitcher.nextDirection('back');
+            $state.go('user-edit', {}, {reload: true});
+
 					}
 					else{
 						HnaAlert.default(Content.user.UPDATE_ERROR);

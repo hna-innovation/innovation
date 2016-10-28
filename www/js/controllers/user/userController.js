@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, $translate, Services, $window, AuthEvent, UserService, HnaAlert, LANGUAGE, Content, PageService) {
+  .controller('UserCtrl', function($scope, $stateParams, $location, $ionicPopup, $state, $translate, Services, $window, AuthEvent, UserService, HnaAlert, LANGUAGE, Content, PageService, $ionicViewSwitcher) {
 
     var resourcesType = $location.search()['type'];
 
@@ -51,6 +51,7 @@ angular.module('starter.controllers')
     }
 
     $scope.goEditUserInfo = function(target) {
+      $ionicViewSwitcher.nextDirection('forward');
       $state.go('user-edit-info', target);
     }
 
