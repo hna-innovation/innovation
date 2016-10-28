@@ -2,12 +2,57 @@ angular.module('starter.controllers')
 
     .controller('StepSecondCtrl', StepSecondCtrl)
 
-function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, $window, PageService, Upload, $ionicViewSwitcher) {
+function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert, $window, PageService, $ionicViewSwitcher, ImageUploadService) {
     // set title
     PageService.setTitle('编辑创意');
 
+    // 初始化表单数据
+    $scope.formdata = {};
+
+    // 触发上传图片控件
+    $scope.photoUpload = function () {
+        jQuery('#photoUpload2').trigger('click');
+    };
+
+    // 图片从本地选择完成后
+    $scope.beforeChange = function(file) {
+      $scope.loading = true;
+    };
+
+    // 图片上传接口
+    $scope.uploadFiles = uploadImage;
+
     // 获取创意详情
-    $scope.getDetail = function () {
+    $scope.getDetail = getDianziDetail;
+    
+    // 更新创意
+    $scope.ItemUpdate = itemUpdate;
+
+    // 创意报错
+    $scope.create = function () {
+        if($scope.loading == true) return;
+        if ($scope.images == undefined || $scope.images.length == 0) {
+            HnaAlert.default('图片不能为空！');
+            return;
+        }
+
+        if ($scope.formdata.description == undefined || $scope.formdata.description == '') {
+            HnaAlert.default('记录不能为空！');
+            return;
+        }
+        $scope.ItemUpdate(1);
+    };
+
+    $scope.cancel = function() {
+      $window.history.back();
+    };
+
+    // 图片删除
+    $scope.del = deleteImage;
+
+    $scope.getDetail();
+
+    function getDianziDetail() {
         Services.dianziDetail(localStorage.draftId, function (result) {
             if (result.code == 0) {
                 // $scope.ItemContent = result.data.photos;
@@ -25,10 +70,8 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
             // console.log(error);
         });
     };
-    $scope.getDetail();
-
-    // 更新创意
-    $scope.ItemUpdate = function (status, msg, msg2) {
+    
+    function itemUpdate(status, msg, msg2) {
         var images = $scope.images.map(function(img){
             return img.id;
         });
@@ -56,20 +99,10 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
                 HnaAlert.default(msg2);
             });
     }
-    // 初始化表单数据
-    $scope.formdata = {};
-
-    // 触发file input
-    $scope.photoUpload = function () {
-        jQuery('#photoUpload2').trigger('click');
-    };
-
-    $scope.beforeChange = function(file) {
-      $scope.loading = true;
-    };
-
-    // 图片上传接口
-    $scope.uploadFiles = function(file, errFiles) {
+    
+    
+    
+    function uploadImage(file, errFiles) {
       $scope.errFile = errFiles && errFiles[0];
 
       if ($scope.errFile) {
@@ -78,12 +111,9 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
       }
 
       if (file) {
-        file.upload = Upload.upload({
-          url: '/api/media/image',
-          data: { file: file }
-        });
-
-        file.upload.then(function(result) {
+        ImageUploadService
+        .upload(file)
+        .then(function(result) {
           $scope.loading = false;
           var response = result.data;
 
@@ -134,8 +164,7 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
       }
     }
 
-    // 图片删除
-    $scope.del = function (imgId) {
+    function deleteImage(imgId) {
         var confirmPopup = $ionicPopup.confirm({
             template: '<div class="confirm-msg">你确定要删除吗？</div>',
             cancelText: '取消',
@@ -152,23 +181,5 @@ function StepSecondCtrl($scope, $http, $ionicPopup, $timeout, Services, HnaAlert
             }
         });
     };
-
-    // 创意创建
-    $scope.create = function () {
-        if($scope.loading == true) return;
-        if ($scope.images == undefined || $scope.images.length == 0) {
-            HnaAlert.default('图片不能为空！');
-            return;
-        }
-
-        if ($scope.formdata.description == undefined || $scope.formdata.description == '') {
-            HnaAlert.default('记录不能为空！');
-            return;
-        }
-        $scope.ItemUpdate(1);
-    };
-
-  $scope.cancel = function() {
-    $window.history.back();
-  }
+    
 };
