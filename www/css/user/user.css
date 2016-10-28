@@ -366,22 +366,22 @@
   background-color: #fcfcfc;
 }
 .user-edit-cancel {
-  background: url(../../img/close.png) no-repeat 0px center;
-  background-size: 18px;
   height: 42px;
   display: inline-block;
   width: 18px;
   float: left;
   margin-left: 10px;
+  font-size: 30px;
+  color: white;
 }
 .user-edit-save {
-  background: url(../../img/save.png) no-repeat 0px center;
-  background-size: 25px;
   height: 42px;
   display: inline-block;
   width: 25px;
   float: right;
   margin-right: 10px;
+  font-size: 30px;
+  color: white;
 }
 .user-edit-text-part-title{
   color: #333;

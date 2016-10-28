@@ -2,9 +2,13 @@
 <ion-view view-title="编辑个人中心">
 	<ion-content class="user-edit-container">
 		<div class="user-list-title bg-pink">
-			<div class="user-edit-cancel expand-touch-area" ng-click="cancel()"></div>
+			<div class="user-edit-cancel expand-touch-area" ng-click="cancel()">
+        <i class="ion ion-android-close"></i>
+      </div>
 			<span class="font-18">编辑个人中心</span>
-			<div class="user-edit-save expand-touch-area" ng-click="save()"></div>
+			<div class="user-edit-save expand-touch-area" ng-click="save()">
+        <i class="ion ion-android-done"></i>
+      </div>
 		</div>
 		<div class="pd-tb">
 			<span class="user-edit-text-part-title">{{::info.text}}</span>
