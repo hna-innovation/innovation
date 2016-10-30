@@ -19,7 +19,8 @@ angular.module('starter')
         };
 
         function scrollToTop() {
-          $ionicScrollDelegate.scrollTop();
+          var shouldScrollAnimate = true;
+          $ionicScrollDelegate.scrollTop(shouldScrollAnimate);
         }
 
       }
