@@ -1,6 +1,73 @@
 
-<ion-view view-title="马涛的个人主页">
-	<ion-content class="bg-fb">
-		<div></div>
-	</ion-content>
+<ion-view cache-view="false" view-title="个人主页">
+	<ion-content class="look-user bg-fb">
+    <header class="user-header">
+      <div id="user-bar">
+        <div id="user-bar-left" class="mg-t10">
+          <a class="expand-touch-area" hna-goback nav-direction="back">
+            <i class="if i-fa-angle-left font-24 color-white"></i>
+          </a>
+        </div>
+      </div>
+          <div class="user-header-icon">
+            <img ng-src="{{userInfo.headerIcon}}" alt="头像" width="80" height="80" class="user-img">
+          </div>
+    </header>
+
+    <div class="user-info color-3d font-12">
+      <div>
+        <strong class="font-16" ng-bind="userInfo.nickName"></strong>
+        <span id="user-company"  ng-bind="userInfo.company" ng-if="userInfo.company"></span>
+      </div>
+      <div ng-if="userInfo.hobby">爱好:<span  class="pd-l5" ng-bind="userInfo.hobby"></span></div>
+      <div ng-if="userInfo.speciality">能力:<sapn  class="pd-l5" ng-bind="userInfo.speciality"></sapn></div>
+    </div>
+
+
+    <main>
+      <div class="font-16 pd-l15 pd-tb bg-ff">发布动态</div>
+      <div class="swiper-container" id="swiper">
+        <ul class="tab-nav" id="swiper-nav"></ul>
+        <ul class="swiper-wrapper tab-list">
+          <li class="swiper-slide pd-lr pd-tb introduction bg-fb">
+            <ul class="mg-t10">
+              <li class="user-common-list border-solid clearfix mg-b10 bg-ff" ng-repeat="project in ::userInfo.projects">
+                  <img ng-src="{{ ::project.images[0] }}" alt="" width="130" height="90" class="left mg-r15">
+                  <div class="detail font-14" ui-sref="detail({ projectId: project.id})" nav-direction="forward">
+                    <div class="title mg-t5" ng-bind="::project.name">
+                    </div>
+                    <p class="text-description font-12 color-88">
+                      d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事
+                    </p>
+                    <span class="color-88 right pd-r10 mg-b5">
+                      <span><i class="ion ion-ios-heart-outline"></i><small class="pd-l5" ng-bind="project.likeCount"></small></span>
+                      <span><i class="if i-xiaoxi"></i><small class="pd-l5" ng-bind="project.commentCount"></small></span>
+                    </span>
+                  </div>
+              </li>
+            </ul>
+          </li>
+          <li class="swiper-slide pd-lr pd-tb introduction bg-fb">
+            <ul class="mg-t10">
+              <!--资源页数据为假数据-->
+              <li class="user-common-list border-solid clearfix mg-b10 bg-ff" ng-repeat="project in ::userInfo.projects">
+                <img ng-src="{{ ::project.images[0] }}" alt="" width="130" height="90" class="left mg-r15">
+                <div class="detail font-14">
+                  <div class="title mg-t5" ng-bind="::project.name">
+                  </div>
+                  <p class="text-description font-12 color-88">
+                    d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事
+                  </p>
+                  <span class="color-88 right pd-r10 mg-b5">
+                      <span><i class="ion ion-ios-heart-outline"></i><small class="pd-l5" ng-bind="project.likeCount"></small></span>
+                      <span><i class="if i-xiaoxi"></i><small class="pd-l5" ng-bind="project.commentCount"></small></span>
+                    </span>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </ion-content>
 </ion-view>

@@ -1,0 +1,59 @@
+.look-user{
+
+}
+
+.user-header{
+  height: 127px;
+  padding: 0 12px;
+  background:url(../../img/user/title_bg_mine.png) no-repeat center;
+  background-size: 100% 127px;
+  position: relative;
+}
+
+.user-bar{
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #F8E1E1;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.text-description {
+  height: 34px;
+  padding: 5px 5px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 15px;
+}
+
+.user-common-list {
+  height: 90px;
+  box-sizing: content-box;
+}
+
+.look-user .user-header-icon {
+  width: 80px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.user-info{
+  z-index: -1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 106px;
+  padding: 26px 12px 0 20px;
+  background:url(../../img/user/title_bg_mine.png) no-repeat center;
+  background-size: 94% 106px;
+  position: relative;
+}
+
+.user-info:after {
+  content: '';
+  background-color: rgba(1,2,1,0.6);
+}

@@ -144,11 +144,12 @@ angular.module('starter.controllers')
 
     $scope.goBack = function(){
       if(_pageName){
-        $state.go(_pageName)
+        $state.go(_pageName);
         $ionicViewSwitcher.nextDirection("back");
       }
       else{
         $window.history.back();
+        $ionicViewSwitcher.nextDirection("back");
       }
     }
 

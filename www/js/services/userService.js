@@ -77,5 +77,11 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
       .error(error);
   }
 
+  userService.getLookUserResume = function (userID, success, error) {
+    return $http.get(getUrl('/api/user/' + userID + '/resume'))
+      .success(success)
+      .error(error);
+  }
+
   return userService;
 }

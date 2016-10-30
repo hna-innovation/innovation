@@ -257,7 +257,7 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
 
     })
     .state('lookuser', {
-      url: '/lookuser',
+      url: '/lookuser/:userId',
       templateUrl: 'templates/user/lookuser.html',
       controller: 'LookUserCtrl'
 

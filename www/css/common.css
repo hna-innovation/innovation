@@ -269,6 +269,10 @@ img {
   border-bottom: #e5e5e5 solid 1px;
 }
 
+.border-solid {
+  border: #dedede solid 1px;
+}
+
 .border-0 {
   border: 0 !important;
 }
