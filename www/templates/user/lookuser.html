@@ -34,11 +34,8 @@
               <li class="user-common-list border-solid clearfix mg-b10 bg-ff" ng-repeat="project in ::userInfo.projects">
                   <img ng-src="{{ ::project.images[0] }}" alt="" width="130" height="90" class="left mg-r15">
                   <div class="detail font-14" ui-sref="detail({ projectId: project.id})" nav-direction="forward">
-                    <div class="title mg-t5" ng-bind="::project.name">
-                    </div>
-                    <p class="text-description font-12 color-88">
-                      d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事
-                    </p>
+                    <div class="mg-t5 text-ellipsis" ng-bind="::project.name"></div>
+                    <p class="text-description font-12 color-88" ng-bind="project.description"></p>
                     <span class="color-88 right pd-r10 mg-b5">
                       <span><i class="ion ion-ios-heart-outline"></i><small class="pd-l5" ng-bind="project.likeCount"></small></span>
                       <span><i class="if i-xiaoxi"></i><small class="pd-l5" ng-bind="project.commentCount"></small></span>
@@ -53,11 +50,9 @@
               <li class="user-common-list border-solid clearfix mg-b10 bg-ff" ng-repeat="project in ::userInfo.projects">
                 <img ng-src="{{ ::project.images[0] }}" alt="" width="130" height="90" class="left mg-r15">
                 <div class="detail font-14">
-                  <div class="title mg-t5" ng-bind="::project.name">
+                  <div class="text-ellipsis mg-t5" ng-bind="::project.name">
                   </div>
-                  <p class="text-description font-12 color-88">
-                    d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事 d这是一个神奇的故事
-                  </p>
+                  <p class="text-description font-12 color-88" ng-bind="project.description"></p>
                   <span class="color-88 right pd-r10 mg-b5">
                       <span><i class="ion ion-ios-heart-outline"></i><small class="pd-l5" ng-bind="project.likeCount"></small></span>
                       <span><i class="if i-xiaoxi"></i><small class="pd-l5" ng-bind="project.commentCount"></small></span>

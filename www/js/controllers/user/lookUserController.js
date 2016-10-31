@@ -1,10 +1,10 @@
 angular.module('starter.controllers')
 
-	.controller('LookUserCtrl', function($scope, $stateParams, $timeout, UserService, PageService, Content) {
+	.controller('LookUserCtrl', function($scope, $stateParams, $timeout, UserService, PageService, $ionicViewSwitcher) {
 
 	  var _userID = $stateParams.userId;
 
-    UserService.getLookUserResume(_userID, function (result) {
+    UserService.getOtherUserResume(_userID, function (result) {
 
       if (result.code == 0) {
         $scope.userInfo = result.data;

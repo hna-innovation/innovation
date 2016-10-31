@@ -142,6 +142,15 @@ angular.module('starter.controllers')
       });
     }
 
+    $scope.goUserInfoPage = function (otherUserId) {
+      if(_userId) {
+        _userId == otherUserId ? $state.go('user') : $state.go('lookuser', {userId:otherUserId});
+      } else {
+        $state.go('lookuser', {userId:otherUserId})
+      }
+      $ionicViewSwitcher.nextDirection("forward");
+    }
+
     $scope.goBack = function(){
       if(_pageName){
         $state.go(_pageName);

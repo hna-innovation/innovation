@@ -12,7 +12,7 @@
 			</div>
 
 			<div class="detail-special-info pd-lr pd-b15 bg-ff border-b">
-				<div class="border-b1 pd-tb text1 text-word" ui-sref="lookuser({userId:detail.creator.id})" nav-direction="forward">
+				<div class="border-b1 pd-tb text1 text-word" ng-click="goUserInfoPage(detail.creator.id)" nav-direction="forward">
 					<img ng-src="{{ ::detail.creator.headerIcon}}" width="30" height="30" class="radius mg-r15 left"/>
 					<div class="left color-88">
 						<span ng-bind="::detail.creator.nickName"></span>
