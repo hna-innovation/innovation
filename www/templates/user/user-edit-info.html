@@ -12,7 +12,13 @@
 		</div>
 		<div class="pd-tb">
 			<span class="user-edit-text-part-title">{{::info.text}}</span>
-			<div class="user-edit-text-part">
+      <div class="user-edit-text-part" ng-if="info.target == 'gender'">
+        <ion-list>
+          <ion-radio ng-model="userInfo[info.target]" ng-value="'男'">男</ion-radio>
+          <ion-radio ng-model="userInfo[info.target]" ng-value="'女'">女</ion-radio>
+        </ion-list>
+      </div>
+			<div class="user-edit-text-part" ng-if="info.target !== 'gender'">
 				<input ng-show="!info.mulitline" placeholder="在此输入您的{{::info.text}}..."
 						maxlength="{{::info.length}}"
 				 		ng-model="userInfo[info.target]"
@@ -24,7 +30,7 @@
 						ng-trim="true">
 				</textarea>
 		  </div>
-			<span class="user-edit-text-part-max">最大长度为{{::info.length}}个字</span>
+			<span class="user-edit-text-part-max" ng-if="info.length">最大长度为{{::info.length}}个字</span>
 		</div>
 	</ion-content>
 </ion-view>

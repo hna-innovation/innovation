@@ -9,6 +9,10 @@
 				<div>姓名：</div>
 				<input type="text" value="{{::userInfo.nickName}}" class="input-edit" placeholder="未填写" readonly />
 			</li>
+      <li ng-click="goEditUserInfo({target: 'gender', text: '性别', mulitline:false})">
+        <div>性别：</div>
+        <input type="text" value="{{::userInfo.gender}}" class="input-edit" placeholder="未填写" readonly />
+      </li>
 			<li ng-click="goEditUserInfo({target: 'company', text: '公司', length: 20, mulitline:true, required: false})">
 				<div>公司：</div>
 				<input type="text" value="{{::userInfo.company}}" class="input-edit" placeholder="未填写" readonly />

@@ -28,6 +28,7 @@ angular.module('starter.controllers')
 
 				UserService.setUserProfile({
 					nickName: $scope.userInfo.nickName,
+          gender: $scope.userInfo.gender,
 					company: $scope.userInfo.company,
 					hobby: $scope.userInfo.hobby,
 					speciality: $scope.userInfo.speciality
