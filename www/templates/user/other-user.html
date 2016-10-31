@@ -1,6 +1,6 @@
 
 <ion-view cache-view="false" view-title="个人主页">
-	<ion-content class="look-user bg-fb">
+	<ion-content class="other-user bg-fb">
     <header class="user-header">
       <div id="user-bar">
         <div id="user-bar-left" class="mg-t10">
@@ -14,9 +14,9 @@
           </div>
     </header>
 
-    <div class="user-info color-6d font-12">
+    <div class="user-info color-3d font-12">
       <div>
-        <span class="font-16 color-3d" ng-bind="userInfo.nickName"></span>
+        <span class="font-16" ng-bind="userInfo.nickName"></span>
         <span id="user-company"  ng-bind="userInfo.company" ng-if="userInfo.company"></span>
       </div>
       <div ng-if="userInfo.hobby">爱好:<span  class="pd-l5" ng-bind="userInfo.hobby"></span></div>
@@ -25,7 +25,7 @@
 
 
     <main>
-      <div class="font-16 pd-l15 pd-tb bg-ff">发布动态</div>
+      <div class="font-16 pd-l15 pd-t10 pd-b5 bg-ff color-3d">发布动态</div>
       <div class="swiper-container" id="swiper">
         <ul class="tab-nav" id="swiper-nav"></ul>
         <ul class="swiper-wrapper tab-list">
@@ -34,7 +34,7 @@
               <li class="user-common-list border-solid clearfix mg-b10 bg-ff" ng-repeat="project in ::userInfo.projects">
                   <img ng-src="{{ ::project.images[0] }}" alt="" width="130" height="90" class="left mg-r15">
                   <div class="detail font-14" ui-sref="detail({ projectId: project.id})" nav-direction="forward">
-                    <div class="mg-t5 text-ellipsis" ng-bind="::project.name"></div>
+                    <div class="mg-t5 text-ellipsis color-3d" ng-bind="::project.name"></div>
                     <p class="text-description font-12 color-88" ng-bind="project.description"></p>
                     <span class="color-88 right pd-r10 mg-b5">
                       <span><i class="ion ion-ios-heart-outline"></i><small class="pd-l5" ng-bind="project.likeCount"></small></span>

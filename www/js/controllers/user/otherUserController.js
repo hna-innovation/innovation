@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('LookUserCtrl', function($scope, $stateParams, $timeout, UserService, PageService, $ionicViewSwitcher) {
+	.controller('OtherUserCtrl', function($scope, $stateParams, $timeout, UserService, PageService) {
 
 	  var _userID = $stateParams.userId;
 

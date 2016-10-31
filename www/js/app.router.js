@@ -256,10 +256,10 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       }
 
     })
-    .state('lookuser', {
-      url: '/lookuser/:userId',
-      templateUrl: 'templates/user/lookuser.html',
-      controller: 'LookUserCtrl'
+    .state('other-user', {
+      url: '/other-user/:userId',
+      templateUrl: 'templates/user/other-user.html',
+      controller: 'OtherUserCtrl'
 
     })
     .state('step-1', {

@@ -144,9 +144,9 @@ angular.module('starter.controllers')
 
     $scope.goUserInfoPage = function (otherUserId) {
       if(_userId) {
-        _userId == otherUserId ? $state.go('user') : $state.go('lookuser', {userId:otherUserId});
+        _userId == otherUserId ? $state.go('user') : $state.go('other-user', {userId:otherUserId});
       } else {
-        $state.go('lookuser', {userId:otherUserId})
+        $state.go('other-user', {userId:otherUserId})
       }
       $ionicViewSwitcher.nextDirection("forward");
     }
