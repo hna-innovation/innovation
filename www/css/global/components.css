@@ -13,7 +13,6 @@
 }
 
 /*scroll to top button*/
-
 .btn-scroll-to-top-wrapper {
     padding: 10px;
     position: fixed;
@@ -32,4 +31,332 @@
 
 .btn-scroll-to-top i {
     color: #bebebe;
+}
+
+/* tag */
+.tag {
+  display: inline-block;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  box-sizing: content-box;
+}
+
+.tag:before {
+  content: "#";
+  margin-right: 3px;
+}
+
+.tag-juhuang {
+  color: #ff9541;
+  border: #ff9541 solid 1px;
+  background-color: #fffbf8;
+}
+
+.tag-lan {
+  color: #4188da;
+  border: #4188da solid 1px;
+  background-color: #f5f9fc;
+}
+
+.tag-lv {
+  color: #61ad0c;
+  border: #61ad0c solid 1px;
+  background-color: #f9fcf6;
+}
+
+.tag-hong {
+  color: #ff6469;
+  border: #ff6469 solid 1px;
+  background-color: #fff9f9;
+}
+
+/* tab */
+.tab-nav {
+  border-bottom: #e5e5e5 solid 1px;
+  border-top: #e5e5e5 solid 1px;
+  background-color: #fff;
+  height: 40px;
+  color: #666;
+}
+
+.tab-nav > li {
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  margin: 0 !important;
+  border-radius: inherit !important;
+  background-color: #fff;
+  opacity: 1;
+}
+
+.tab-nav > li > span {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  border-bottom: transparent solid 2px;
+}
+
+.tab-nav .active:after {
+  content: "";
+  display: block;
+  border-bottom: #e16a68 solid 1px;
+  color: #e16a68;
+  font-size: 16px;
+}
+
+.tab-list {
+  border-bottom: #e5e5e5 solid 1px;
+}
+
+.tab-menu {
+  border-bottom: #e5e5e5 solid 1px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.tab-menu > li {
+  float: left;
+  height: 100%;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+/* icons */
+.icons-list {
+  line-height: 16px;
+}
+
+/* panels */
+.panel-section {
+  border-top: #e5e5e5 solid 1px;
+  border-bottom: #e5e5e5 solid 1px;
+  background-color: #fff;
+
+}
+
+.panel-section .panel_header {
+  padding: 10px 10px;
+  border-bottom: #e5e5e5 solid 1px;
+}
+
+.panel-section .panel_title {
+  border-left: #e16a68 solid 3px;
+  line-height: 1;
+  padding-left: 10px;
+}
+
+.panel-section .panel_body {
+  padding: 15px;
+}
+
+/* poker-list */
+.poker-list {
+  overflow: hidden;
+}
+
+.poker-list li {
+  float: left;
+  margin-right: 15px;
+}
+
+.poker-card {
+  border: #e5e5e5 solid 1px;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+.poker-card .poker_img img {
+  width: 72px;
+  height: 72px;
+}
+
+.poker-card .poker_title {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.poker-card .poker_description {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* swiper */
+.swiper-container-horizontal > .swiper-pagination {
+  display: inline !important;
+  width: auto;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  left: auto;
+  right: 10px;
+  padding: 0 5px;
+}
+
+#swiper1 .swiper-slide,
+#swiper-step .swiper-slide,
+#swiper-step2 .swiper-slide {
+  height: 200px;
+  overflow: hidden;
+}
+
+#swiper2 .swiper-slide {
+  min-height: 200px;
+}
+
+.swiper-slide > img {
+  width: 100%;
+  min-height: 100%;
+  vertical-align: middle;
+}
+
+.swiper-item {
+  overflow: hidden;
+}
+
+#home-slide .swiper-slide {
+  height: 170px !important;
+}
+
+#swiper-step {
+  height: auto;
+}
+
+/* box-table */
+.box-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.box-table > .box-table-row {
+  display: table-row;
+}
+
+.box-table > .box-table-row > .box-table-cell {
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* ionic popup override*/
+.popup-head {
+  display: none;
+}
+
+.popup-body {
+  padding: 0;
+  background-color: #fff;
+}
+
+.popup-body .banner {
+  height: 105px;
+  overflow: hidden;
+}
+
+.popup-body .banner img {
+  width: 100%;
+}
+
+.popup-body input {
+  font-size: 12px;
+  padding-left: 10%;
+  width: 85%;
+  margin: 15px auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.popup-body .form-group {
+  position: relative;
+}
+
+.popup-body .placeholder-icon {
+  font-size: 26px;
+  position: absolute;
+  left: 8%;
+  color: #A7A7A7;
+}
+
+.popup-body .ion-ios-email-outline {
+  top: 4px;
+}
+
+.popup-container .popup {
+  width: 320px;
+  margin: 0 30px;
+  position: relative;
+}
+
+.popup-body .btn-action {
+  text-align: center;
+  width: 85%;
+  margin: 30px auto 10px;
+}
+
+.popup-body .btn-action span {
+  font-size: 14px;
+  padding: 20px;
+  display: inline-block;
+}
+
+.popup-body .btn-action span a {
+  color: #2561E4;
+}
+
+.popup-body .btn-action button {
+  font-size: 16px;
+  height: 40px;
+  width: 100%;
+  color: #7d7d7d;
+  border: none;
+  border-radius: 3px;
+}
+
+.popup-body .btn-action button.active {
+  background-color: #de6262;
+  color: #fff;
+}
+
+.popup-body .close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  top: -15px;
+  right: -15px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 99999;
+}
+
+.popup-body .btn-action button[disabled] {
+  background-color: #e08e8e;
+}
+
+/* user edit */
+.user-edit {
+  overflow: hidden;
+}
+
+.user-edit li {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  overflow: hidden;
+}
+
+.user-edit li div {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  color: #666;
+  z-index: 1;
 }
