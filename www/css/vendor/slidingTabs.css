@@ -1,0 +1,33 @@
+.slider-slide {
+  padding: 0 10px;
+}
+
+.slidingTabs {
+    height: 42px;
+}
+
+.slidingTabs .scroll {
+    height: auto;
+    min-width: 100%;
+}
+
+.slidingTabs ul{
+  border-bottom: #e5e5e5 solid 1px;
+  border-top: #e5e5e5 solid 1px;
+  background-color: #fff;
+  height: 42px;
+  color: #666;
+}
+
+.slidingTabs ul li {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    padding: 0 12px 20px 12px;
+    font-size: 14px;
+}
+
+.slidingTabs ul li.tab-active {
+    border-bottom: #e16a68 solid 1px;
+}
+
