@@ -9,4 +9,3 @@ plugins/
 www/.DS_Store
 www/img/.DS_Store
 build/
-www/js/config.js
