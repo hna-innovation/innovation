@@ -270,7 +270,7 @@ img {
 }
 
 .border-solid {
-  border: #dedede solid 1px;
+  border: #e5e5e5 solid 1px;
 }
 
 .border-0 {
@@ -278,8 +278,8 @@ img {
 }
 
 .border-tb {
-  border-bottom: #dedede solid 1px;
-  border-top: #dedede solid 1px;
+  border-bottom: #e5e5e5 solid 1px;
+  border-top: #e5e5e5 solid 1px;
 }
 
 /* button */

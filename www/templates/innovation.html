@@ -39,7 +39,7 @@
 
       <hna-stastitics></hna-stastitics>
 
-      <div class="nav-list">
+      <div class="nav-list color-6d">
         <ul>
           <li ng-click="goPopularInnovation()" >
             <img src="../img/nav/nav-1.png" alt=""> {{'innovation.popular-innovation' | translate }}
@@ -58,7 +58,7 @@
         </ul>
       </div>
       <div class="innovation">
-        <section class="list card" ng-repeat="project in projects">
+        <section class="list card border-tb" ng-repeat="project in projects">
           <div ui-sref="detail({projectId: project.id, pageName: 'innovation'})" nav-direction="forward">
             <div class="item item-avatar">
               <img ng-src="{{project.creator.headerIcon}}">
