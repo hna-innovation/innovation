@@ -9,7 +9,7 @@
   min-height: 100%;
   padding-left: 42px;
   padding-top: 14px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .item-avatar img:first-child {
@@ -72,6 +72,10 @@
   font-size: 12px;
   line-height: 16px;
   margin-top: 4px;
+}
+
+.card .card-title {
+  margin-top: 10px;
 }
 
 .card .info .label-list {

@@ -79,7 +79,7 @@
                 <img ng-src="{{project.images[0] || '/static/image/874121084768961409.jpg'}}">
               </a>
             </div>
-            <h2 class="color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
+            <h2 class="card-title color-3d font-16 pd-l10 pd-r10" ng-bind="project.name">
             </h2>
             <p class="description color-88" ng-bind="project.description"></p>
             <div class="info clearfix">
@@ -89,10 +89,10 @@
             </span>
               </div>
               <div class="action">
-                <span class="color-88" ng-class="{true:'like-hover',false:'like-collect'}[project.hasLiked]">
+                <span class="color-a9" ng-class="{true:'like-hover',false:'like-collect'}[project.hasLiked]">
                   <i class="if" ></i>{{project.likeCount}}
                 </span>
-                <span class="color-88"><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
+                <span class="color-a9"><i class="if i-xiaoxi"></i>{{project.commentCount}}</span>
               </div>
             </div>
           </div>
