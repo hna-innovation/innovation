@@ -11,7 +11,8 @@ angular.module('configuration')
       'LOAD_DATA_ERROR': '获取用户信息出错！',
       'NO_EMPTY': '不能为空！',
       'LOAD_DATA_SUCCESS': '用户信息更新成功！',
-      'UPDATE_ERROR': '用户信息更新失败！'
+      'UPDATE_ERROR': '用户信息更新失败！',
+      'UPDATE_AVATOR_ERROR': '头像更新失败！'
     },
 
     comment: {

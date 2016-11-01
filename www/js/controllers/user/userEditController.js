@@ -66,7 +66,19 @@ angular.module('starter.controllers')
 			}
 
 			function saveAvator() {
-				// Todo
+				UserService.setUserAvator({
+					mediaId: $scope.userAvatorId
+				}).success(function(result){
+					if(result.code == 0) {
+            $ionicViewSwitcher.nextDirection('back');
+            $state.go('user-edit', {}, {reload: true});
+					}
+					else{
+						HnaAlert.default(Content.user.UPDATE_AVATOR_ERROR);
+					}
+				}).error(function(error){
+					HnaAlert.default(Content.user.UPDATE_AVATOR_ERROR);
+				})
 			}
 
 			function uploadImage(file, errFiles) {
@@ -88,15 +100,15 @@ angular.module('starter.controllers')
 		          $timeout(function() {
 		            if (response.code == 0) {
 		              _imageUploadSuccess(response);
-		              HnaAlert.default('图片上传成功！');
+		              HnaAlert.default('头像上传成功！');
 		            } else {
-		              HnaAlert.default('图片上传失败！');
+		              HnaAlert.default('头像上传失败！');
 		            }
 		          });
 
 		        },function() {
 		          $scope.loading = false;
-		          HnaAlert.default('图片上传失败！');
+		          HnaAlert.default('头像上传失败！');
 		        });
 		    } else {
 		      $scope.loading = false;
@@ -106,8 +118,7 @@ angular.module('starter.controllers')
 			function _imageUploadSuccess(response) {
 		    if (response.data) {
 		      $scope.userAvatorId = response.data[0].id;
-		      $scope.picURL = response.data[0].url;
-		      jQuery('#img-view').attr('src', $scope.picURL)
+		      $scope.userInfo.headerIcon = response.data[0].url;
 		    }
 		  }
 

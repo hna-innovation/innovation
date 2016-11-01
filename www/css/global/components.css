@@ -363,10 +363,11 @@
 
 .user-edit .user-edit-list-avator img {
   position: absolute;
-  top: 0;
+  top: -1px;
   right: 20px;
   z-index: 1;
   width: 40px;
+  height: 40px;
 }
 
 .user-edit-container .btn-user-avator-upload {
@@ -380,10 +381,12 @@
 
 .user-edit-container .user-edit-avator {
   width: 180px;
+  height: 180px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .user-edit-container .user-edit-avator img {
   width: 100%;
+  height: 100%;
 }

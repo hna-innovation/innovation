@@ -26,10 +26,10 @@
 			</span>
       <div class="user-edit-text-part padding" ng-if="info.target == 'headerIcon'">
 				<div class="spinners" ng-show="loading">
-						<ion-spinner icon="ios"></ion-spinner>
+						<ion-spinner class="step-loading" icon="ios"></ion-spinner>
 				</div>
-				<div class="center user-edit-avator">
-					<img id="img-view" ng-src="{{ userInfo[info.target] }}" alt="">
+				<div class="center user-edit-avator radius">
+					<img ng-src="{{ userInfo[info.target] }}" >
 				</div>
       </div>
       <div class="user-edit-text-part" ng-if="info.target == 'gender'">
