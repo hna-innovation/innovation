@@ -12,15 +12,15 @@
                             <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="35" height="35" class="user-img border-0">
                         </div>
                         <div class="box-table-cell pd-l10 pd-r15 pd-tb color-88">
-                            <div class="clearfix" ng-click="goUserInfoPage(comment.creator.id)" nav-direction="forward">
-                                <div class="left">
+                            <div class="clearfix">
+                                <div class="left" ng-click="goUserInfoPage(comment.creator.id)" nav-direction="forward">
                                   <a href="" class="font-14 color-3d" ng-bind="comment.creator.nickName" ></a>
                                   <small class="font-12 display-block" ng-bind="comment.createdDate" ></small>
                                 </div>
-                                  <span class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward"><i class="if i-xiaoxi"></i> 回复</span>
+                                  <span ng-if="!isCurrentUser(comment.creator.id)" class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward"><i class="if i-xiaoxi"></i> 回复</span>
                             </div>
                           <p>
-                            <span ng-if="comment.replyTo.nickName" ng-click="goUserInfoPage(comment.replyTo.userId)" nav-direction="forward" >{{comment.creator.nickName}} 回复 <a>@{{::comment.replyTo.nickName}}</a></span>
+                            <span ng-if="comment.replyTo.nickName" ng-click="goUserInfoPage(comment.replyTo.userId)" nav-direction="forward" >{{comment.creator.nickName}} 回复 <a>@{{::comment.replyTo.nickName}}:</a></span>
                             <span class="mg-t5 font-14" ng-bind="comment.content">
                             </span>
                           </p>

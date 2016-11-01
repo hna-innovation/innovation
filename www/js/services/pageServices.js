@@ -4,7 +4,6 @@ angular.module('starter.services')
     // var description='平台嫁接海航庞大的资源，使创意激素与资源对接，让十八万人为您的创意努力。';
     var title = '';
     var description = '';
-    var parentPage = '';
     return {
       title: function () {
         return title;
@@ -30,12 +29,6 @@ angular.module('starter.services')
       setSeo: function (newTitle, newDescription) {
         title = newTitle;
         description = newDescription;
-      },
-      setParentPage: function (pageName) {
-        parentPage = pageName;
-      },
-      getParentPage: function () {
-        return parentPage;
       }
     }
   });

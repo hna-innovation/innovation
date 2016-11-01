@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, PageService) {
+function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
@@ -10,9 +10,11 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
 
 
   $scope.projectId = _projectId;
-  $scope.userId = _userId;
+  $scope.currentUserId = _userId;
 
-  PageService.setParentPage(_parentPage);
+  $scope.isCurrentUser = function (userId) {
+    return _userId === userId;
+  }
 
   $scope.submitComment = function(content) {
 

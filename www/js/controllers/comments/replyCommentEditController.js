@@ -1,14 +1,13 @@
 angular.module('starter.controllers')
   .controller('ReplyCommentEditCtrl', ReplyCommentEditCtrl);
 
-function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, PageService) {
+function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, $window) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
   var _replyUser = $stateParams.replyUser;
   var _commentId = $stateParams.commentId;
 
-  var _parentPage = PageService.getParentPage();
 
   $scope.replyComment = {
     replyUser: _replyUser,
@@ -17,7 +16,7 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
 
   $scope.cancel = function() {
     $ionicViewSwitcher.nextDirection('back');
-    $state.go('detail-page-comments', {projectId: _projectId, parentPage: _parentPage}, {reload: false});
+    $window.history.back();
   }
 
   $scope.save = function() {
@@ -35,7 +34,7 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
     CommentService.addProjectComment(comment, function(result){
         if(result.code == 0) {
           $ionicViewSwitcher.nextDirection('back');
-          $state.go('detail-page-comments', {projectId: _projectId, parentPage: _parentPage}, {reload: true});
+          $window.history.back();
           HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
         }
         else{
