@@ -12,13 +12,26 @@
 		</div>
 		<div class="pd-tb">
 			<span class="user-edit-text-part-title">{{::info.text}}</span>
+			<span class="right">
+				<button ng-if="info.target == 'headerIcon'" class="btn-user-avator-upload" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-before-model-change="beforeChange($files)" ngf-fix-orientation="true" ngf-resize="{width: 300, quality: .8}"  ngf-resize-if="$width > 300" ngf-max-size="3MB">
+					<i class="icon ion-ios-camera-outline color-6d"></i>
+				</button>
+			</span>
+      <div class="user-edit-text-part padding" ng-if="info.target == 'headerIcon'">
+				<div class="spinners" ng-show="loading">
+						<ion-spinner icon="ios"></ion-spinner>
+				</div>
+				<div class="center user-edit-avator">
+					<img id="img-view" ng-src="{{ userInfo[info.target] }}" alt="">
+				</div>
+      </div>
       <div class="user-edit-text-part" ng-if="info.target == 'gender'">
         <ion-list>
           <ion-radio ng-model="userInfo[info.target]" ng-value="'男'">男</ion-radio>
           <ion-radio ng-model="userInfo[info.target]" ng-value="'女'">女</ion-radio>
         </ion-list>
       </div>
-			<div class="user-edit-text-part" ng-if="info.target !== 'gender'">
+			<div class="user-edit-text-part" ng-if="info.target !== 'gender' && info.target !== 'headerIcon'">
 				<input ng-show="!info.mulitline" placeholder="在此输入您的{{::info.text}}..."
 						maxlength="{{::info.length}}"
 				 		ng-model="userInfo[info.target]"
@@ -30,7 +43,7 @@
 						ng-trim="true">
 				</textarea>
 		  </div>
-			<span class="user-edit-text-part-max" ng-if="info.length > 0">最大长度为{{::info.length}}个字</span>
+			<span class="user-edit-text-part-max" ng-if="info.length > 0 && info.target !== 'headerIcon'">最大长度为{{::info.length}}个字</span>
 		</div>
 	</ion-content>
 </ion-view>
