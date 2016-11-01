@@ -42,10 +42,10 @@
   z-index: -1;
   margin-top: 10px;
   margin-bottom: 10px;
-  height: 106px;
-  padding: 26px 12px 0 20px;
+  min-height: 106px;
+  padding: 26px 12px 5px 20px;
   background:url(../../img/user/title_bg_info.png) no-repeat center;
-  background-size: 94% 106px;
+  background-size: 94% 100%;
   position: relative;
 }
 
