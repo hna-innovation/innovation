@@ -16,7 +16,7 @@ describe('Innovation API', () => {
     const server = wrapper.createServer({
         port: port,
         log: path.resolve(process.cwd(), 'logs', 'mockserver-integration.log'),
-        dir: path.resolve(process.cwd(), 'pacts'),
+        dir: path.resolve(process.cwd(), 'test/pacts'),
         spec: 2,
         consumer: 'mobile-site',
         provider: 'innovation-api'
@@ -29,8 +29,6 @@ describe('Innovation API', () => {
         server.delete().then(() => {
             done()
         })
-
-
     })
 
     before(done => {
