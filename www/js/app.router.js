@@ -345,9 +345,19 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
   })
 
   .state('detail-page-comments', {
-    url: '/detail-page-comments/:projectid',
+    url: '/detail-page-comments/:projectId',
     cache: true,
     templateUrl: 'templates/comments/detail-page-comments.html',
+    controller: 'DetailPageCommentsCtrl',
+    data: {
+      requireAuth: true
+    }
+  })
+
+  .state('reply-comment-edit', {
+    url: '/reply-comment-edit/:projectId/:replyUser/:commentId',
+    cache: true,
+    templateUrl: 'templates/comments/reply-comment-edit.html',
     controller: 'DetailPageCommentsCtrl',
     data: {
       requireAuth: true

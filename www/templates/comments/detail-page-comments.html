@@ -11,12 +11,15 @@
                         <div class="box-table-cell pd-l15 pd-tb" style="width: 50px;">
                             <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="35" height="35" class="user-img border-0">
                         </div>
-                        <div class="box-table-cell pd-l10 pd-r15 pd-tb line-30">
-                            <div>
-                                <span class="font-14 color-3d" ng-bind="comment.creator.nickName" ></span>
-                                <span class="font-12 color-88 right" ng-bind="comment.createdDate" ></span>
+                        <div class="box-table-cell pd-l10 pd-r15 pd-tb color-88">
+                            <div class="clearfix">
+                                <div class="left">
+                                  <a href="" class="font-14 color-3d" ng-bind="comment.creator.nickName" ></a>
+                                  <small class="font-12 display-block" ng-bind="comment.createdDate" ></small>
+                                </div>
+                                  <span class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: comment.projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward"><i class="if i-xiaoxi"></i> 回复</span>
                             </div>
-                            <p class="font-16 color-88" ng-bind="comment.content" >
+                            <p class="mg-t5 font-14" ng-bind="comment.content" >
                             </p>
                         </div>
                     </li>

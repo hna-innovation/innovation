@@ -571,3 +571,6 @@ label.has-error {
   left:-10px;
   bottom:-10px;
 }
+.display-block {
+  display: block;
+}
