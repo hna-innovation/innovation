@@ -1,17 +1,18 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, $window) {
+function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, PageService) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
-  var _replyUser = $stateParams.replyUser;
-  var _commentId = $stateParams.commentId;
+  var _parentPage = $stateParams.parentPage;
+  var _userId = localStorage.userId;
 
-  $scope.replyComment = {
-    replyUser: _replyUser,
-    content: ''
-  };
+
+  $scope.projectId = _projectId;
+  $scope.userId = _userId;
+
+  PageService.setParentPage(_parentPage);
 
   $scope.submitComment = function(content) {
 
@@ -42,37 +43,17 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
   }
   $scope.getProjectComments();
 
-  $scope.cancel = function() {
+  $scope.goUserInfoPage = function (otherUserId) {
+    if(_userId) {
+      _userId == otherUserId ? $state.go('user') : $state.go('other-user', {userId:otherUserId});
+    } else {
+      $state.go('other-user', {userId:otherUserId})
+    }
+    $ionicViewSwitcher.nextDirection("forward");
+  }
+
+  $scope.goBack = function(){
     $ionicViewSwitcher.nextDirection('back');
-    $window.history.back();
+    $state.go('detail', {projectId: $scope.projectId, pageName: _parentPage}, {reload: false});
   }
-
-  $scope.save = function() {
-    var comment = {
-      content: $scope.replyComment.content,
-      targetId: _projectId,
-      parentId: _commentId
-    };
-
-    if (!comment.content) {
-        HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
-        return;
-      };
-
-    CommentService.addProjectComment(comment, function(result){
-      debugger
-        if(result.code == 0) {
-          $ionicViewSwitcher.nextDirection('back');
-          $window.history.back();
-          HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
-          $scope.getProjectComments();
-        }
-        else{
-          HnaAlert.default(Content.comment.UPDATE_ERROR);
-        }
-      }, function(error){
-        HnaAlert.default(Content.comment.UPDATE_ERROR);
-      })
-  }
-
 }

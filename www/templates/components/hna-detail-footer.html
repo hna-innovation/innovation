@@ -14,7 +14,7 @@
         <li><i class='expand-touch-area if' ng-class="{true:'i-star1',false:'i-star'}[detail.hasFavorited]" ng-click='hasFavorited(detail)'></i>
           <sapn ng-bind="detail.favoriteCount"></sapn>
         </li>
-        <li ui-sref="detail-page-comments({ projectId: detail.id})" nav-direction="forward">
+        <li ui-sref="detail-page-comments({ projectId: detail.id, parentPage: parentPage})" nav-direction="forward">
         	<i class='if i-xiaoxi expand-touch-area'></i>
         </li>
         <li>
