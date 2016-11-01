@@ -13,7 +13,14 @@
 		<div class="pd-tb">
 			<span class="user-edit-text-part-title">{{::info.text}}</span>
 			<span class="right">
-				<button ng-if="info.target == 'headerIcon'" class="btn-user-avator-upload" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-before-model-change="beforeChange($files)" ngf-fix-orientation="true" ngf-resize="{width: 300, quality: .8}"  ngf-resize-if="$width > 300" ngf-max-size="3MB">
+				<button ng-if="info.target == 'headerIcon'" class="btn-user-avator-upload" type="file"
+					ngf-select="uploadFiles($file, $invalidFiles)"
+					accept="image/*" ngf-pattern="'image/*'"
+					ngf-before-model-change="beforeChange($files)"
+					ngf-fix-orientation="true"
+					ngf-resize="{width: 300, quality: .8}"
+					ngf-resize-if="$width > 300"
+					ngf-max-size="3MB">
 					<i class="icon ion-ios-camera-outline color-6d"></i>
 				</button>
 			</span>

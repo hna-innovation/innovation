@@ -73,7 +73,8 @@ angular.module('starter.controllers')
 		    var errFile = errFiles && errFiles[0];
 
 		    if (errFile) {
-		      _validateImgFile(errFile.$error);
+		      ImageUploadService.validateImgFile(errFile.$error);
+					$scope.loading = false;
 		      return;
 		    }
 
@@ -110,18 +111,4 @@ angular.module('starter.controllers')
 		    }
 		  }
 
-			function _validateImgFile(errType) {
-		    // 限制上传类型和文件大小
-		    if ( errType === 'pattern') {
-		      HnaAlert.default('请选择正确的图片类型！');
-		      jQuery('#photoUpload').val('');
-		      return;
-		    }
-
-		    if ( errType === 'maxSize') {
-		      HnaAlert.default('图片大小不能超过3M！');
-		      jQuery('#photoUpload').val('');
-		      return;
-		    }
-		  }
 	})
