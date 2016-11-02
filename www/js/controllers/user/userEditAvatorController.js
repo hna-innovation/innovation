@@ -2,23 +2,11 @@ angular.module('starter.controllers')
 
 	.controller('UserEditAvatorCtrl', function($scope, HnaAlert, $state, UserService, Content, $ionicViewSwitcher, $timeout, ImageUploadService, Upload) {
 
-			$scope.getUserInfo = function() {
-	      UserService.getUserInfo(function(result) {
-	        $scope.userInfo = result.data;
-	      }, function() {
-          //出错信息统一在app.js处理,包括错误码401、404、504
-          // HnaAlert.default(Content.user.LOAD_DATA_ERROR);
-	      });
-	    }
+			getUserInfo();
 
 			$scope.saveAvator = saveAvator;
 
-			$scope.cancel = function() {
-				$ionicViewSwitcher.nextDirection('back');
-				$state.go('user-edit');
-			}
-
-			$scope.getUserInfo();
+			$scope.cancel = cancel;
 
 			// 头像上传
 			$scope.selectFiles = selectFiles;
@@ -34,7 +22,26 @@ angular.module('starter.controllers')
         $scope.showPreview = false;
       }
 
+			function getUserInfo() {
+				UserService.getUserInfo(function(result) {
+					$scope.userInfo = result.data;
+				}, function() {
+					//出错信息统一在app.js处理,包括错误码401、404、504
+					// HnaAlert.default(Content.user.LOAD_DATA_ERROR);
+				});
+			}
+
+			function cancel() {
+				$ionicViewSwitcher.nextDirection('back');
+				$state.go('user-edit');
+			}
+
 			function saveAvator() {
+				if (!$scope.userAvatorId) {
+					cancel();
+					return;
+				}
+
 				UserService.setUserAvator({
 					mediaId: $scope.userAvatorId
 				}).success(function(result){
