@@ -54,9 +54,9 @@ describe('Innovation API', () => {
               marchers.somethingLike("节能环保")
             ),
             "description":marchers.somethingLike("基本描述"),
-            "images":[
+            "images":marchers.eachLike(
               marchers.somethingLike("/static/image/1610/1477042598151.jpg")
-            ],
+            ),
             "introduction":marchers.somethingLike("<p>基本介绍</p>"),
             "marketAnalysis":marchers.somethingLike("<p>市场分析</p>"),
             "resourceRequired":marchers.somethingLike("<p>资源需求</p>"),
