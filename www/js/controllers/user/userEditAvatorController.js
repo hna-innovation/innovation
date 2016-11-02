@@ -13,6 +13,8 @@ angular.module('starter.controllers')
 	// 头像上传
 	$scope.selectFiles = selectFiles;
 
+	$scope.triggerSelectFiles = triggerSelectFiles;
+
 	// 头像从本地选择完成后
 	$scope.beforeChange = function(file) {
 		$scope.showPreview = true;
@@ -32,6 +34,13 @@ angular.module('starter.controllers')
 			// HnaAlert.default(Content.user.LOAD_DATA_ERROR);
 		});
 	}
+
+	function triggerSelectFiles() {
+		$timeout(function() {
+			// angular.element('#btn-user-avator-upload').triggerHandler('click');
+			jQuery('#btn-user-avator-upload').trigger('click');
+		});
+	};
 
 	function cancel() {
 		$ionicViewSwitcher.nextDirection('back');

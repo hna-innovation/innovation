@@ -13,7 +13,8 @@
 		<div class="pd-tb">
 			<span class="user-edit-text-part-title">头像</span>
 			<span class="right">
-				<button class="btn-user-avator-upload" type="file"
+				<button id="btn-user-avator-upload" type="file"
+					class="btn-user-avator-upload"
 					ngf-select="selectFiles($file, $invalidFiles)"
 					accept="image/*" ngf-pattern="'image/*'"
 					ngf-before-model-change="beforeChange($files)"
@@ -30,7 +31,7 @@
 						<ion-spinner class="step-loading" icon="ios"></ion-spinner>
 				</div>
 				<div class="center user-edit-avator radius border-solid bg-fb">
-					<img ng-src="{{ userInfo.headerIcon }}" >
+					<img ng-src="{{ userInfo.headerIcon }}" ng-click="triggerSelectFiles()" >
 				</div>
 				<div class="show-preview" ng-show="showPreview" >
 					<div class="show-preview-header">
