@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, UserService, Content, $ionicViewSwitcher, $timeout, ImageUploadService) {
+	.controller('UserEditCtrl', function($scope, $stateParams, HnaAlert, $ionicHistory, $location, $ionicPopup, $state, UserService, Content, $ionicViewSwitcher) {
       $scope.info = {target: $stateParams.target, text: $stateParams.text, length: $stateParams.length, mulitline: $stateParams.mulitline, required: $stateParams.required};
 
 			$scope.getUserInfo = function() {
@@ -12,26 +12,12 @@ angular.module('starter.controllers')
 	      });
 	    }
 
-			// 头像从本地选择完成后
-		  $scope.beforeChange = function(file) {
-		    $scope.loading = true;
-		  };
+			$scope.save = saveProfile;
 
-		  // 头像上传
-		  $scope.uploadFiles = uploadImage;
-
-      $scope.cancel = function() {
-        $ionicViewSwitcher.nextDirection('back');
-        $state.go('user-edit');
-      }
-
-      $scope.save = function() {
-				if($scope.info.target === 'headerIcon') {
-					saveAvator();
-				} else {
-					saveProfile();
-				}
-      }
+			$scope.cancel = function() {
+				$ionicViewSwitcher.nextDirection('back');
+				$state.go('user-edit');
+			}
 
 			$scope.getUserInfo();
 
@@ -64,62 +50,5 @@ angular.module('starter.controllers')
 					HnaAlert.default(Content.user.UPDATE_ERROR);
 				})
 			}
-
-			function saveAvator() {
-				UserService.setUserAvator({
-					mediaId: $scope.userAvatorId
-				}).success(function(result){
-					if(result.code == 0) {
-            $ionicViewSwitcher.nextDirection('back');
-            $state.go('user-edit', {}, {reload: true});
-					}
-					else{
-						HnaAlert.default(Content.user.UPDATE_AVATOR_ERROR);
-					}
-				}).error(function(error){
-					HnaAlert.default(Content.user.UPDATE_AVATOR_ERROR);
-				})
-			}
-
-			function uploadImage(file, errFiles) {
-		    var errFile = errFiles && errFiles[0];
-
-		    if (errFile) {
-		      ImageUploadService.validateImgFile(errFile.$error);
-					$scope.loading = false;
-		      return;
-		    }
-
-		    if (file) {
-		      ImageUploadService
-		        .upload(file)
-		        .then(function(result) {
-		          $scope.loading = false;
-		          var response = result.data;
-
-		          $timeout(function() {
-		            if (response.code == 0) {
-		              _imageUploadSuccess(response);
-		              HnaAlert.default('头像上传成功！');
-		            } else {
-		              HnaAlert.default('头像上传失败！');
-		            }
-		          });
-
-		        },function() {
-		          $scope.loading = false;
-		          HnaAlert.default('头像上传失败！');
-		        });
-		    } else {
-		      $scope.loading = false;
-		    }
-		  }
-
-			function _imageUploadSuccess(response) {
-		    if (response.data) {
-		      $scope.userAvatorId = response.data[0].id;
-		      $scope.userInfo.headerIcon = response.data[0].url;
-		    }
-		  }
 
 	})

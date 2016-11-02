@@ -55,6 +55,11 @@ angular.module('starter.controllers')
       $state.go('user-edit-info', target);
     }
 
+    $scope.goEditUserAvator = function() {
+      $ionicViewSwitcher.nextDirection('forward');
+      $state.go('user-edit-avator');
+    }
+
     $scope.logout = function() {
       $scope.$emit(AuthEvent.LOGOUT);
     }

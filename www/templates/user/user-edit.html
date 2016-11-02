@@ -5,7 +5,7 @@
 			<span class="font-18">编辑个人中心</span>
 		</div>
 		<ul class="pd-10 user-edit">
-			<li ng-click="goEditUserInfo({target: 'headerIcon', text: '头像', required: true})" class="user-edit-list-avator" >
+			<li ng-click="goEditUserAvator()" class="user-edit-list-avator" >
 				<div>头像：</div>
 				<img ng-src="{{::userInfo.headerIcon}}" alt="">
 				<input type="text" class="input-edit" readonly />

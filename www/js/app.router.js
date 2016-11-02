@@ -234,7 +234,15 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       data: {
         requireAuth: true
       }
-
+    })
+    .state('user-edit-avator', {
+      url: '/user-edit-avator',
+      cache: false,
+      templateUrl: 'templates/user/user-edit-avator.html',
+      controller: 'UserEditAvatorCtrl',
+      data: {
+        requireAuth: true
+      }
     })
     .state('user-innovations', {
       url: '/user-innovations',

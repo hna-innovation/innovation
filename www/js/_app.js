@@ -7,7 +7,8 @@ angular.module('starter', [
     'ngCookies',
     'pascalprecht.translate',
     'configuration',
-    'ngFileUpload'
+    'ngFileUpload',
+    'ngImgCrop'
     ]);
 
 angular.module('configuration', []);

@@ -1,0 +1,52 @@
+
+<ion-view view-title="编辑个人中心">
+	<ion-content class="user-edit-container">
+		<div class="user-list-title bg-pink">
+			<div class="user-edit-cancel expand-touch-area" ng-click="cancel()">
+        <i class="ion ion-android-close"></i>
+      </div>
+			<span class="font-18">编辑个人中心</span>
+			<div class="user-edit-save expand-touch-area" ng-click="saveAvator()">
+        <i class="ion ion-android-done"></i>
+      </div>
+		</div>
+		<div class="pd-tb">
+			<span class="user-edit-text-part-title">头像</span>
+			<span class="right">
+				<button class="btn-user-avator-upload" type="file"
+					ngf-select="selectFiles($file, $invalidFiles)"
+					accept="image/*" ngf-pattern="'image/*'"
+					ngf-before-model-change="beforeChange($files)"
+					ngf-fix-orientation="true"
+					ngf-resize="{width: 280, quality: .9}"
+					ngf-resize-if="$width > 280"
+					ng-model="picFile"
+					ngf-max-size="3MB">
+					<i class="icon ion-ios-camera-outline color-6d"></i>
+				</button>
+			</span>
+      <div class="user-edit-text-part padding" >
+				<div class="spinners" ng-show="loading">
+						<ion-spinner class="step-loading" icon="ios"></ion-spinner>
+				</div>
+				<div class="center user-edit-avator radius">
+					<img ng-src="{{ userInfo.headerIcon }}" >
+				</div>
+				<div class="show-preview" ng-show="showPreview" >
+          <div class="show-preview-cancel expand-touch-area" ng-click="canelPreview()">
+		        <i class="ion ion-android-close"></i>
+		      </div>
+          <div class="show-preview-save expand-touch-area" ng-click="savePreview(croppedDataUrl, picFile.name)">
+		        <i class="ion ion-android-done"></i>
+		      </div>
+					<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+							class="cropArea">
+							<img-crop image="picFile  | ngfDataUrl"
+							result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+						</img-crop>
+					</div>
+				</div>
+      </div>
+		</div>
+	</ion-content>
+</ion-view>
