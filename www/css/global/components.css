@@ -349,11 +349,12 @@
   z-index: 10;
 }
 
+
 .show-preview .show-preview-cancel {
   position: absolute;
   color: #fff;
   left: 20px;
-  top: 30px;
+  top: 25px;
   font-size: 24px;
   z-index: 11;
 }
@@ -362,8 +363,15 @@
   position: absolute;
   color: #fff;
   right: 20px;
-  top: 30px;
+  top: 25px;
   font-size: 24px;
+  z-index: 11;
+}
+
+.show-preview .show-preview-notice {
+  position: absolute;
+  left: 20px;
+  top: 70px;
   z-index: 11;
 }
 
