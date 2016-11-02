@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher) {
+function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, UtilityService) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
@@ -33,16 +33,34 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
     });
   }
 
-  $scope.getProjectComments = function() {
+  $scope.comments = [];
+  $scope.hasMoreData = true;
 
-    CommentService.getProjectComments(_projectId, function(res) {
-      if(res.data && res.data.content){
-        $scope.comments = res.data.content;
-      }
-    }, function() {
-      // TODO
-    });
-  }
+  var getProjectComments = function() {
+    var offset = 0;
+
+    return function() {
+      CommentService.getProjectComments(offset, _projectId, function(res) {
+
+        if (res.data.content && res.data.content.length) {
+          $scope.comments = UtilityService.concatArray($scope.comments, res.data.content);
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        } else {
+          $scope.attentionMsg = Content.EMPTY_CONTENT;
+          $scope.hasMoreData = false;
+        }
+
+      }, function(error) {
+        $scope.attentionMsg = Content.TIME_OUT;
+        $scope.hasMoreData = false;
+      });
+
+      offset++;
+    };
+  };
+
+  $scope.getProjectComments = getProjectComments();
+
   $scope.getProjectComments();
 
   $scope.goUserInfoPage = function (otherUserId) {

@@ -4,7 +4,12 @@
             <i class="ion ion-ios-arrow-left btn-back-arrow"></i>
             <span class="font-18">评论</span>
         </div>
-        <section>
+      <div class="center mg-t20" ng-if="!comments || comments.length === 0">
+        <img src="../img/empty.svg">
+        <div class="mg-t10" ng-bind="attentionMsg"></div>
+      </div>
+
+      <section ng-if="comments.length > 0">
             <div class="border-b" ng-repeat="comment in comments">
                 <div class="box-table bg-ff">
                     <li class="box-table-row">
@@ -28,6 +33,12 @@
                     </li>
                 </div>
             </div>
+
+          <load-more
+            on-load-more="getProjectComments()"
+            has-more-data="hasMoreData">
+          </load-more>
+
         </section>
     </ion-content>
     <form ng-submit="submitComment(newComment)" novalidate >

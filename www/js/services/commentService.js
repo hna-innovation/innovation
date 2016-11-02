@@ -21,9 +21,9 @@ angular.module('starter.services')
           .error(error);
       },
 
-      getProjectComments: function(productId, success, error) {
+      getProjectComments: function(offset, productId, success, error) {
 
-        return $http.get(getUrl('/api/projects') + '/' + productId + '/comments?sort=createdDate,desc')
+        return $http.get(getUrl(Api.PROJECT_COMMENT_API + '/' + productId + '/comments?sort=createdDate,desc&page='+ offset +'&size=10'))
           .success(success)
           .error(error);
       },
