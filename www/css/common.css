@@ -574,3 +574,6 @@ label.has-error {
 .display-block {
   display: block;
 }
+.font-border-bold {
+  -webkit-text-stroke-width: 0.8px;
+}
