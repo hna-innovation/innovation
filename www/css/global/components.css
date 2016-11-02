@@ -348,11 +348,12 @@
   width: 100%;
   z-index: 10;
 }
+
 .show-preview .show-preview-cancel {
   position: absolute;
   color: #fff;
   left: 20px;
-  top: 20px;
+  top: 30px;
   font-size: 24px;
   z-index: 11;
 }
@@ -361,9 +362,15 @@
   position: absolute;
   color: #fff;
   right: 20px;
-  top: 20px;
+  top: 30px;
   font-size: 24px;
   z-index: 11;
+}
+
+.show-preview .show-preview-cancel span,
+.show-preview .show-preview-save span {
+  position: relative;
+  top: -3px;
 }
 
 .show-preview .cropArea {

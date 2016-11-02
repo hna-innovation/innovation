@@ -35,9 +35,11 @@
 				<div class="show-preview" ng-show="showPreview" >
           <div class="show-preview-cancel expand-touch-area" ng-click="canelPreview()">
 		        <i class="ion ion-android-close"></i>
+						<span class="font-16" >取消</span>
 		      </div>
           <div class="show-preview-save expand-touch-area" ng-click="savePreview(croppedDataUrl, picFile.name)">
 		        <i class="ion ion-android-done"></i>
+						<span class="font-16" >选取</span>
 		      </div>
 					<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
 							class="cropArea">

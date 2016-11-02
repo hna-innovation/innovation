@@ -9,3 +9,6 @@ plugins/
 www/.DS_Store
 www/img/.DS_Store
 build/
+logs/
+npm-debug.log
+test/pacts/
