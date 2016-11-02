@@ -1,4 +1,4 @@
-<ion-view cache-view="false" view-title="我的评论">
+<ion-view cache-view="false" view-title="我的评论" class="user-comments">
   <ion-header-bar>
     <div class="user-list-title bg-pink" ui-sref="user" nav-direction="back">
       <i class="ion ion-ios-arrow-left btn-back-arrow"></i>
@@ -6,51 +6,15 @@
     </div>
   </ion-header-bar>
 
-    <ion-content class="bg-f9">
-        <div class="center mg-t20" ng-if="!comments || comments.length === 0">
-          <img src="../img/empty.svg">
-          <div class="mg-t10" ng-bind="attentionMsg"></div>
-        </div>
-
-        <div ng-if="comments.length > 0">
-            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in comments">
-                <ul class="box-table">
-                    <li class="box-table-row" id="user-photo">
-                        <div class="box-table-cell">
-                            <img ng-src="{{ comment.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
-                        </div>
-                        <div class="box-table-cell pd-l10 pd-tb5">
-                            <div id="user-name">
-                                <span class="color-3d font-16" ng-bind="comment.userName" ></span>
-                            </div>
-                            <div class="color-a9" ng-bind="comment.createdDate" ></div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="comment bg-f9 mg-b15">
-                    <div class="triangle-up"></div>
-                    <span class="color-6d" ng-bind="comment.content"></span>
-                </div>
-                <ul class="user-list">
-                    <li class="border-0" ui-sref="detail({ projectId: comment.projectId })" >
-                        <div>
-                            <a>
-                                <img ng-src="{{ comment.images[0] }}" width="110" height="75" />
-                            </a>
-                        </div>
-                        <div class="bg-f9">
-                            <p class="color-3d font-16 text-ellipsis text-title" ng-bind="comment.projectName" ></p>
-                            <p class="color-88 text-row2" ng-bind="comment.description">
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-          <load-more
-            on-load-more="getComments()"
-            has-more-data="hasMoreData">
-          </load-more>
-
-        </div>
-    </ion-content>
+  <ion-content class="bg-fb">
+    <div class="swiper-container-nav">
+      <ul class="tab-menu color-3d swiper-wrapper">
+        <li class="swiper-slide" ui-sref="user-comment.received" ui-sref-active="active">收到的评论</li>
+        <li class="swiper-slide" ui-sref="user-comment.sent" ui-sref-active="active">发出的评论</li>
+      </ul>
+    </div>
+    <div class="content">
+      <div ui-view></div>
+    </div>
+  </ion-content>
 </ion-view>

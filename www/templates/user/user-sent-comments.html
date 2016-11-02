@@ -1,0 +1,50 @@
+<div class="center mg-t20" ng-if="!comments || comments.length === 0">
+  <img src="../img/empty.svg">
+  <div class="mg-t10" ng-bind="comments.attentionMsg"></div>
+</div>
+<div ng-if="comments.length > 0">
+  <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in comments">
+    <ul class="box-table">
+      <li class="box-table-row">
+        <div class="box-table-cell comments-list-headerIcon">
+          <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
+        </div>
+        <div class="box-table-cell pd-l10 pd-tb5">
+          <div >
+            <span class="color-3d font-16" ng-bind="comment.creator.nickName" ></span>
+          </div>
+          <div class="color-a9" ng-bind="comment.createdDate" ></div>
+        </div>
+      </li>
+    </ul>
+    <div class="bg-f9 mg-b15">
+      <span ng-if="comment.replyTo.content" class="color-6d">回复
+        <a ng-click="goUserInfoPage(comment.replyTo.userId)" nav-direction="forward">@{{::comment.replyTo.nickName}}:&nbsp; </a>
+      </span>
+      <span class="color-6d" ng-bind="comment.content"></span>
+    </div>
+    <div class="comment bg-f9 mg-b15" ng-if="comment.replyTo.content">
+      <!--<span class="color-6d">@{{::comment.replyTo.nickName}}: &nbsp;</span>-->
+      <a ng-click="goUserInfoPage(comment.replyTo.userId)" nav-direction="forward">{{::comment.replyTo.nickName}}:&nbsp; </a>
+      <span class="color-6d" ng-bind="comment.replyTo.content"></span>
+    </div>
+    <ul class="user-list">
+      <li class="border-0" ui-sref="detail({ projectId: comment.project.projectId })" >
+        <div>
+          <a>
+            <img ng-src="{{ comment.project.images[0] }}" width="110" height="75" />
+          </a>
+        </div>
+        <div class="bg-f9">
+          <p class="color-3d font-14 text-ellipsis text-title" ng-bind="comment.project.projectName" ></p>
+          <p class="color-88 text-row2 font-12" ng-bind="comment.project.description">
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <load-more
+    on-load-more="getComments()"
+    has-more-data="hasMoreData">
+  </load-more>
+</div>

@@ -176,8 +176,28 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       data: {
         requireAuth: true
       }
-
     })
+
+    .state('user-comment.received', {
+      url: '/received',
+      cache: true,
+      templateUrl: 'templates/user/user-received-comments.html',
+      controller: 'UserReceivedCommentsCtrl',
+      data: {
+        requireAuth: true
+      }
+    })
+
+    .state('user-comment.sent', {
+      url: '/sent',
+      cache: true,
+      templateUrl: 'templates/user/user-sent-comments.html',
+      controller: 'UserSentCommentsCtrl',
+      data: {
+        requireAuth: true
+      }
+    })
+
     .state('user-comment2', {
       url: '/user-comment2',
       cache: false,
