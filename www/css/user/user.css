@@ -1,20 +1,19 @@
 #user-header{
-    height:140px;
-    padding: 0 12px;
-	background:url(../../img/user/title_bg_mine.png) no-repeat center;
+    min-height: 145px;
+    padding: 0 12px 5px;
+	  background: url(../../img/user/title_bg_mine.png) no-repeat center;
     background-size: cover;
-    overflow: hidden;
 }
 
 #user-bar{
-    height: 35px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #F8E1E1;
     font-size: 12px;
     margin-bottom: 5px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 #user-bar .user-edit-link img {

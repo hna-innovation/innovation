@@ -1,17 +1,17 @@
 
 <ion-view cache-view="false" view-title="个人中心">
 	<ion-content class="bg-fb">
-		<header id="user-header">
+		<header id="user-header" >
 		    <div id="user-bar">
 		        <div id="user-bar-left">
 		        		<a class="expand-touch-area" ui-sref="innovation" nav-direction="back">
-                  <i class="if ion-ios-home-outline font-30 color-white"></i>
+                  <i class="if ion-ios-home-outline font-24 color-white"></i>
 		        		</a>
 		        </div>
 
 		        <div id="user-bar-right">
 						<a ui-sref="user-edit" class="user-edit-link expand-touch-area" nav-direction="forward">
-              <i class="if i-bianji2 font-14 color-white"></i>
+              <i class="if i-bianji2 font-16 color-white pd-r5"></i>
 			            <span class="color-white">编辑个人中心</span>
 		        		</a>
 		        </div>
@@ -22,7 +22,7 @@
 						<img ng-src="{{userHeaderIcon || userDefaultHeader }}" alt="头像" width="80" height="80" class="user-img">
 					</div>
 					<div class="box-table-cell pd-l10 color-white">
-			            <div id="user-name" style="color: white;" ng-bind="userInfo.nickName" ng-if="userInfo.nickName">
+			            <div id="user-name" class="font-16 bold" ng-bind="userInfo.nickName" ng-if="userInfo.nickName">
 			            </div>
 			            <div id="user-company"  ng-bind="userInfo.company" ng-if="userInfo.company">
 			            </div>
