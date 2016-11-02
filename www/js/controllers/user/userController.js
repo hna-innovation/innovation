@@ -29,6 +29,7 @@ angular.module('starter.controllers')
     $scope.getUserInfo = function() {
       UserService.getUserInfo(function(result) {
         $scope.userInfo = result.data;
+        $scope.userHeaderIcon = localStorage.userHeaderIcon || result.data.headerIcon;
         //UserInfo成功返回后再去请求ExtensionInfo
         $scope.getUserExtensionInfo();
       }, function(result) {

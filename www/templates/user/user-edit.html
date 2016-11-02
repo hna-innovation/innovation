@@ -7,7 +7,7 @@
 		<ul class="pd-10 user-edit">
 			<li ng-click="goEditUserAvator()" class="user-edit-list-avator" >
 				<div>头像：</div>
-				<img ng-src="{{::userInfo.headerIcon}}" >
+				<img ng-src="{{::userHeaderIcon}}" >
 				<input type="text" class="input-edit" readonly />
 			</li>
 			<li ng-click="goEditUserInfo({target: 'nickName', text: '姓名', length: 10, mulitline:false, required: true})">

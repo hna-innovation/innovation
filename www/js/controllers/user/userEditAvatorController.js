@@ -83,7 +83,6 @@ angular.module('starter.controllers')
 		          $timeout(function() {
 		            if (response.code == 0) {
 		              _imageUploadSuccess(response);
-		              HnaAlert.default('头像上传成功！');
 		            } else {
 		              HnaAlert.default('头像上传失败！');
 		            }
@@ -103,8 +102,11 @@ angular.module('starter.controllers')
 
 			function _imageUploadSuccess(response) {
 		    if (response.data) {
-		      $scope.userAvatorId = response.data[0].id;
-		      $scope.userInfo.headerIcon = response.data[0].url;
+					var avator = response.data[0];
+
+		      $scope.userAvatorId = avator.id;
+		      $scope.userInfo.headerIcon = avator.url;
+					localStorage.userHeaderIcon = avator.url;
 		    }
 		  }
 
