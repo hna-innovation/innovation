@@ -41,11 +41,48 @@ describe('Innovation API', () => {
     describe('should return details json if project exist', () => {
         let project_id = '57ff24160269653b81b1b900'
         let response_body = {
-            "code":"0",
-            "data":{ "name": marchers.somethingLike("projectName")}
+          "code":0,
+          "data":{
+            "creator":{
+              "nickName":marchers.somethingLike("Maria"),
+              "headerIcon":marchers.somethingLike("img/face/4.png"),
+              "id":marchers.somethingLike("58042cc37e18f8205177ce2a"),
+              "company":marchers.somethingLike("海航生态科技")
+            },
+            "name":marchers.somethingLike("基于大数据和人工智能的公众健康管理平台"),
+            "tags":marchers.eachLike(
+              marchers.somethingLike("节能环保")
+            ),
+            "description":marchers.somethingLike("基本描述"),
+            "images":[
+              marchers.somethingLike("/static/image/1610/1477042598151.jpg")
+            ],
+            "introduction":marchers.somethingLike("<p>基本介绍</p>"),
+            "marketAnalysis":marchers.somethingLike("<p>市场分析</p>"),
+            "resourceRequired":marchers.somethingLike("<p>资源需求</p>"),
+            "id":"57ff24160269653b81b1b900",
+            "sid":marchers.somethingLike("161021173755720"),
+            "favoriteCount":marchers.somethingLike(2),
+            "likeCount":marchers.somethingLike(2),
+            "commentCount":marchers.somethingLike(3),
+            "members":
+              marchers.eachLike(
+                {
+                  "nickName":marchers.somethingLike("Maria"),
+                  "headerIcon":marchers.somethingLike("img/face/5.png"),
+                  "id":marchers.somethingLike("5806fcf87e18f84fdf0a1ba3")
+                }
+              ),
+            "createdDate":marchers.somethingLike("2016-10-21 17:37"),
+            "status":marchers.somethingLike(2),
+            "canEdit":marchers.somethingLike(false),
+            "hasLiked":marchers.somethingLike(false),
+            "hasFavorited":marchers.somethingLike(false)
+          }
         }
 
-        beforeEach(done => {
+
+      beforeEach(done => {
             const interaction = {
                 state: 'project exist',
                 uponReceiving: 'a request for project details',
@@ -79,7 +116,7 @@ describe('Innovation API', () => {
     describe('should return not exist', () => {
         let project_id = '57ff24160269653b81b1b901'
         let response_body = {
-            "code":"1",
+            "code": 1,
             "message": marchers.somethingLike("not exist")
         }
 
