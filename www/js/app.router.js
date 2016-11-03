@@ -198,6 +198,16 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       }
     })
 
+    .state('user-messages', {
+      url: '/user-messages',
+      cache: true,
+      templateUrl: 'templates/user/user-messages.html',
+      controller: 'UserMessagesCtrl',
+      data: {
+        requireAuth: true
+      }
+    })
+
     .state('user-comment2', {
       url: '/user-comment2',
       cache: false,
