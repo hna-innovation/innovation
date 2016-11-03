@@ -28,10 +28,11 @@
 			</span>
       <div class="user-edit-text-part padding" >
 				<div class="spinners" ng-show="loading">
-						<ion-spinner class="step-loading" icon="ios"></ion-spinner>
+						<ion-spinner class="spinner-loading" class="color-white" icon="ios"></ion-spinner>
 				</div>
 				<div class="center user-edit-avator radius border-solid bg-fb">
-					<img ng-src="{{ userInfo.headerIcon }}" ng-click="triggerSelectFiles()" >
+					<i class="ion ion-person color-a9" ng-show="!userInfo.headerIcon" ></i>
+					<img ng-src="{{ userInfo.headerIcon }}" ng-click="triggerSelectFiles()" ng-show="userInfo.headerIcon" >
 				</div>
 				<div class="show-preview" ng-show="showPreview" >
 					<div class="show-preview-header">
@@ -46,6 +47,9 @@
 						<p class="show-preview-notice font-12 color-6d">
 							提示：请拖动圆圈区域右上方的按钮选择裁剪区域。
 						</p>
+					</div>
+					<div ng-show="showPreview && !picFile" >
+						<p class="spinner-message color-a9" >请稍后...</p>
 					</div>
 					<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
 							class="cropArea">

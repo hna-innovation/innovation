@@ -17,7 +17,11 @@ angular.module('starter.controllers')
 
 	// 头像从本地选择完成后
 	$scope.beforeChange = function(file) {
-		$scope.showPreview = true;
+		if (file) {
+			$scope.showPreview = true;
+		} else {
+			$scope.showPreview = false;
+		}
 	};
 
 	$scope.savePreview = uploadFiles;
@@ -37,8 +41,7 @@ angular.module('starter.controllers')
 
 	function triggerSelectFiles() {
 		$timeout(function() {
-			// angular.element('#btn-user-avator-upload').triggerHandler('click');
-			jQuery('#btn-user-avator-upload').trigger('click');
+			angular.element('#btn-user-avator-upload').triggerHandler('click');
 		});
 	};
 
@@ -48,6 +51,7 @@ angular.module('starter.controllers')
 	}
 
 	function saveAvator() {
+		$scope.showPreview = false;
 		if (!$scope.userAvatorId) {
 			cancel();
 			return;
