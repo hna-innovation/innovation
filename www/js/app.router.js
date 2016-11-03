@@ -208,6 +208,16 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       }
     })
 
+    .state('user-edit-message', {
+      url: '/user-edit-message/:toUserId/:toUserName/:messageId',
+      cache: true,
+      templateUrl: 'templates/user/user-edit-message.html',
+      controller: 'UserEditMessagesCtrl',
+      data: {
+        requireAuth: true
+      }
+    })
+
     .state('user-comment2', {
       url: '/user-comment2',
       cache: false,

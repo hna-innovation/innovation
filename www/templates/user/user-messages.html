@@ -20,9 +20,9 @@
                             <img ng-src="{{ ::message.creator.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
                         </div>
                         <div class="box-table-cell pd-l10 pd-tb5">
-                            <div ng-click="goUserInfoPage(message.creator.id)">
-                                <span class="color-3d font-16" ng-bind="::message.creator.nickName" ></span>
-                                <span ng-if="!isCurrentUser(message.creator.id)" class="font-12 right color-3d">
+                            <div>
+                                <span class="color-3d font-16" ng-bind="::message.creator.nickName" ng-click="goUserInfoPage(message.creator.id)"></span>
+                                <span ng-if="!isCurrentUser(message.creator.id)" class="font-12 right color-3d" ui-sref="user-edit-message({toUserId: message.creator.id, messageId: message.commentId, toUserName: message.creator.nickName})" nav-direction="forward">
                                     <i class="if i-xiaoxi"></i> 回复
                                 </span>
                             </div>
@@ -32,8 +32,8 @@
                 </ul>
                 <div class="mg-b15 bg-fb color-6d">
                     <span ng-if="isCurrentUser(message.creator.id)">
-                        <span ng-if="!message.replyTo.userId">我给<a ng-click="goUserInfoPage(message.creator.id)">@{{::message.toUserName}}</a>留言: </span>
-                        <span ng-if="message.replyTo.userId">我回复<a ng-click="goUserInfoPage(message.creator.id)">@{{::message.toUserName}}: </a></span>
+                        <span ng-if="!message.replyTo.userId">我给<a ng-click="goUserInfoPage(message.toUserId)">@{{::message.toUserName}}</a>留言: </span>
+                        <span ng-if="message.replyTo.userId">我回复<a ng-click="goUserInfoPage(message.toUserId)">@{{::message.toUserName}}: </a></span>
                     </span>
                     <span ng-if="!isCurrentUser(message.creator.id)">
                         <span ng-if="message.replyTo.userId"><a ng-click="goUserInfoPage(message.creator.id)" ng-bind="message.creator.nickName"></a>回复我: </span>
