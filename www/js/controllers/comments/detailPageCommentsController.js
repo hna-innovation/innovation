@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, UtilityService) {
+function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, UtilityService, $window) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
@@ -73,7 +73,11 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
   }
 
   $scope.goBack = function(){
+    if(_parentPage) {
+      $state.go('detail', {projectId: $scope.projectId, pageName: _parentPage}, {reload: false});
+    } else {
+      $window.history.back();
+    }
     $ionicViewSwitcher.nextDirection('back');
-    $state.go('detail', {projectId: $scope.projectId, pageName: _parentPage}, {reload: false});
   }
 }
