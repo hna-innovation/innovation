@@ -2,7 +2,7 @@ angular.module('starter.controllers')
 
 .controller('UserEditAvatorCtrl', function($scope, HnaAlert, $state,
 	UserService, Content, $ionicViewSwitcher, $timeout, ImageUploadService,
-	Upload) {
+	Upload, $ionicLoading) {
 
 	getUserInfo();
 
@@ -17,11 +17,7 @@ angular.module('starter.controllers')
 
 	// 头像从本地选择完成后
 	$scope.beforeChange = function(file) {
-		if (file) {
-			$scope.showPreview = true;
-		} else {
-			$scope.showPreview = false;
-		}
+		$ionicLoading.show();
 	};
 
 	$scope.savePreview = uploadFiles;
@@ -79,20 +75,28 @@ angular.module('starter.controllers')
 
 		if (errFile) {
 			ImageUploadService.validateImgFile(errFile.$error);
-			$scope.loading = false;
+			$ionicLoading.hide();
 			return;
 		}
+
+		if (file) {
+			$scope.showPreview = true;
+		} else {
+			$scope.showPreview = false;
+		}
+
+		$ionicLoading.hide();
 	}
 
 	function uploadFiles(dataUrl, name) {
-		$scope.loading = true;
+		$ionicLoading.show();
 		var file = Upload.dataUrltoBlob(dataUrl, name);
 
 		if (file) {
 			ImageUploadService
 				.upload(file)
 				.then(function(result) {
-					$scope.loading = false;
+					$ionicLoading.hide();
 					$scope.showPreview = false;
 
 					var response = result.data;
@@ -106,13 +110,13 @@ angular.module('starter.controllers')
 					});
 
 				}, function() {
-					$scope.loading = false;
+					$ionicLoading.hide();
 					$scope.showPreview = false;
 
 					HnaAlert.default('头像上传失败！');
 				});
 		} else {
-			$scope.loading = false;
+			$ionicLoading.hide();
 			$scope.showPreview = false;
 		}
 	}
