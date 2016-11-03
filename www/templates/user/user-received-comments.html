@@ -7,13 +7,15 @@
                 <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="comment in comments">
                   <ul class="box-table">
                     <li class="box-table-row">
-                      <div class="box-table-cell comments-list-headerIcon">
+                      <div class="box-table-cell comments-list-headerIcon" ng-click="goUserInfoPage(comment.creator.id)" nav-direction="forward">
                         <img ng-src="{{ comment.creator.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
                       </div>
                       <div class="box-table-cell pd-l10 pd-tb5">
                         <div >
-                          <span class="color-3d font-16" ng-bind="comment.creator.nickName" ></span>
-                          <span ng-if="!isCurrentUser(comment.creator.id)" class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: comment.project.projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward"><i class="if i-xiaoxi"></i> 回复</span>
+                          <span class="color-3d font-16" ng-bind="comment.creator.nickName" ng-click="goUserInfoPage(comment.creator.id)" nav-direction="forward" ></span>
+                          <span ng-if="!isCurrentUser(comment.creator.id)" class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: comment.project.projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward">
+                              <i class="if i-xiaoxi"></i> 回复
+                          </span>
                         </div>
                         <div class="color-a9" ng-bind="comment.createdDate" ></div>
                       </div>
