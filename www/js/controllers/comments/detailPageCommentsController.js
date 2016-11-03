@@ -16,7 +16,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
     return _userId === userId;
   }
 
-  $scope.submitComment = function(content) {
+  $scope.submitComment = function() {
 
     var comment = {
       content: $scope.newComment,
@@ -25,7 +25,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
 
     CommentService.addProjectComment(comment, function() {
       HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
-      $scope.getProjectComments();
+      $state.reload($state.current);
       $scope.newComment = '';
 
     }, function() {
@@ -36,7 +36,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
   $scope.comments = [];
   $scope.hasMoreData = true;
 
-  var getProjectComments = function() {
+  var getProjectCommentsByPage = function() {
     var offset = 0;
 
     return function() {
@@ -50,7 +50,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
           $scope.hasMoreData = false;
         }
 
-      }, function(error) {
+      }, function() {
         $scope.attentionMsg = Content.TIME_OUT;
         $scope.hasMoreData = false;
       });
@@ -59,7 +59,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
     };
   };
 
-  $scope.getProjectComments = getProjectComments();
+  $scope.getProjectComments = getProjectCommentsByPage();
 
   $scope.getProjectComments();
 
