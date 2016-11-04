@@ -8,35 +8,35 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
   var _parentPage = $stateParams.parentPage;
   var _userId = localStorage.userId;
 
-
-  $scope.projectId = _projectId;
-  $scope.currentUserId = _userId;
-
-  $scope.isCurrentUser = function (userId) {
-    return _userId === userId;
-  }
-
-  $scope.submitComment = function() {
-
-    var comment = {
-      content: $scope.newComment,
-      targetId: _projectId
-    };
-
-    CommentService.addProjectComment(comment, function() {
-      HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
-      $state.reload($state.current);
-      $scope.newComment = '';
-
-    }, function() {
-      // TODO
-    });
-  }
-
   $scope.comments = [];
   $scope.hasMoreData = true;
+  $scope.getProjectComments = getProjectCommentsByPage();
+  $scope.getProjectComments();
 
-  var getProjectCommentsByPage = function() {
+  $scope.submitComment = submitComment;
+  $scope.isCurrentUser = isCurrentUser;
+  $scope.goUserInfoPage = goUserInfoPage;
+  $scope.goBack = goBack;
+
+  function submitComment(){
+      var comment = {
+        content: $scope.newComment
+      };
+
+      CommentService.addProjectComment(_projectId, comment, function(result) {
+        if (result.code === 0) {
+        HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
+        $state.reload($state.current);
+        $scope.newComment = '';
+        } else{
+          HnaAlert.default(Content.comment.UPDATE_ERROR);
+        }
+      }, function() {
+        HnaAlert.default(Content.comment.UPDATE_ERROR);
+      });
+    };
+
+  function getProjectCommentsByPage() {
     var offset = 0;
 
     return function() {
@@ -59,25 +59,25 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
     };
   };
 
-  $scope.getProjectComments = getProjectCommentsByPage();
-
-  $scope.getProjectComments();
-
-  $scope.goUserInfoPage = function (otherUserId) {
-    if(_userId) {
-      _userId == otherUserId ? $state.go('user') : $state.go('other-user', {userId:otherUserId});
-    } else {
-      $state.go('other-user', {userId:otherUserId})
+  function goUserInfoPage(otherUserId){
+      if(_userId) {
+        _userId == otherUserId ? $state.go('user') : $state.go('other-user', {userId:otherUserId});
+      } else {
+        $state.go('other-user', {userId:otherUserId})
+      }
+      $ionicViewSwitcher.nextDirection("forward");
     }
-    $ionicViewSwitcher.nextDirection("forward");
-  }
 
-  $scope.goBack = function(){
+  function goBack(){
     if(_parentPage) {
-      $state.go('detail', {projectId: $scope.projectId, pageName: _parentPage}, {reload: false});
+      $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: false});
     } else {
       $window.history.back();
     }
     $ionicViewSwitcher.nextDirection('back');
+  }
+
+  function isCurrentUser(userId) {
+    return _userId === userId;
   }
 }

@@ -9,14 +9,14 @@ angular.module('starter.services')
     return {
       getUrl: getUrl,
 
-      addProjectComment: function(comment, success, error) {
+      addProjectComment: function(projectId, comment, success, error) {
 
         if (!comment || !comment.content) {
           HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
           return;
         }
 
-        return $http.post(getUrl(Api.USER_COMMENTS_API), comment)
+        return $http.post(getUrl(Api.PROJECT_COMMENT_API + '/' + projectId + '/comments'), comment)
           .success(success)
           .error(error);
       },

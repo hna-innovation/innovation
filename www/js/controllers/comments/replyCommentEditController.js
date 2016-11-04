@@ -22,7 +22,6 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
   $scope.save = function() {
     var comment = {
       content: $scope.replyComment.content,
-      targetId: _projectId,
       parentId: _commentId
     };
 
@@ -31,7 +30,7 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
         return;
       };
 
-    CommentService.addProjectComment(comment, function(result){
+    CommentService.addProjectComment(_projectId, comment, function(result){
         if(result.code == 0) {
           $ionicViewSwitcher.nextDirection('back');
           $window.history.back();
