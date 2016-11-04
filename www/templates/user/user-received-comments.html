@@ -31,7 +31,7 @@
                     <span>我:&nbsp;</span><span class="color-6d" ng-bind="comment.replyTo.content"></span>
                   </div>
                   <ul class="user-list">
-                    <li class="border-0" ui-sref="detail({ projectId: comment.project.projectId })" >
+                    <li class="border-0" ui-sref="detail({ projectId: comment.project.projectId })" nav-direction="forward">
                       <div>
                           <img ng-src="{{ comment.project.images[0] }}" width="110" height="75" />
                       </div>
