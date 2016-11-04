@@ -108,10 +108,11 @@
 			    <a ui-sref="user-messages" nav-direction="forward" ui-sref-active="active">
 					<i class="if ion-ios-chatbubble-outline font-24 color-3d"></i>
 					<strong class="color-3d">我的私信</strong>
-                        <span ng-if="userExtensionInfo.unreadMessageCount > 0 ">
-                             <small class="color-red font-24 small-radio">&bull;</small>
-                             <span class="color-88 pd-l10">你有 <span ng-bind="::userExtensionInfo.unreadMessageCount"> </span> 条未读消息</span>
-                        </span>
+                    <span ng-if="userExtensionInfo.unreadMessageCount > 0 ">
+                         <small class="color-red font-24 small-radio">&bull;</small>
+                         <span class="color-88 pd-l10">你有 <span ng-bind="::userExtensionInfo.unreadMessageCount"> </span> 条未读消息</span>
+                    </span>
+                    <span class="color-88 pd-l10" ng-if="userExtensionInfo.unreadMessageCount == 0">查看你的所有私信</span>
 				</a>
 		    </div>
 

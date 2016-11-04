@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('UserEditMessagesCtrl', UserEditMessagesCtrl);
 
-function UserEditMessagesCtrl($scope, MessageService, Content, $stateParams, PageService, $state, HnaAlert, $ionicViewSwitcher) {
+function UserEditMessagesCtrl($scope, MessageService, Content, $stateParams, PageService, $state, HnaAlert, $ionicViewSwitcher, $window) {
 
   PageService.setTitle('编辑私信');
   $scope.replyMessage = {
@@ -11,7 +11,7 @@ function UserEditMessagesCtrl($scope, MessageService, Content, $stateParams, Pag
 
   $scope.cancel = function() {
     $ionicViewSwitcher.nextDirection('back');
-    $state.go('user-messages',{}, {reload: false});
+    $window.history.back();
   }
 
   $scope.save = function() {
@@ -29,7 +29,7 @@ function UserEditMessagesCtrl($scope, MessageService, Content, $stateParams, Pag
     MessageService.addUserMessage(message, function(result){
       if(result.code == 0) {
         $ionicViewSwitcher.nextDirection('back');
-        $state.go('user-messages',{}, {reload: true});
+        $window.history.back();
         HnaAlert.default(Content.message.SUCCESS_MESSAGE_ADDED_COMMENT);
       }
       else{

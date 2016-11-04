@@ -33,7 +33,7 @@ angular.module('starter.controllers')
           $scope.closePopup();
           HnaAlert.defaultSuccess('登录成功!');
           $ionicViewSwitcher.nextDirection('none');
-          $state.reload($state.current);
+          $state.current.name == 'other-user' ? $state.go('user') : $state.reload($state.current);
         } else if (result.code == 1) {
           HnaAlert.defaultError('登录信息不正确!');
           $scope.loginLoading = false;
