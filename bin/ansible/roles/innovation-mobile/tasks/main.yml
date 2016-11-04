@@ -1,0 +1,4 @@
+---
+
+- name: upload files
+  unarchive: src="/usr/local/innovative-ci/innovation_mobile/innovation-mobile-{{VERSION}}.tar.gz" dest=/usr/local/innovative-ci/ mode=0755
