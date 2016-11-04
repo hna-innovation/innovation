@@ -1,5 +1,6 @@
 angular.module('starter.services')
-  .factory('ImageUploadService', function(Upload, Api, HelperService, HnaAlert) {
+  .factory('ImageUploadService', function(Upload, Api, HelperService, HnaAlert,
+    Content) {
     'use strict';
 
     var imageUploadService = {};
@@ -7,7 +8,9 @@ angular.module('starter.services')
     imageUploadService.upload = function(file) {
       file.upload = Upload.upload({
         url: HelperService.getUrl(Api.IMAGE_UPLOAD_API),
-        data: { file: file }
+        data: {
+          file: file
+        }
       });
 
       return file.upload;
@@ -15,13 +18,13 @@ angular.module('starter.services')
 
     imageUploadService.validateImgFile = function(errType) {
       // 限制上传类型和文件大小
-      if ( errType === 'pattern') {
-        HnaAlert.default('请选择正确的图片类型！');
+      if (errType === 'pattern') {
+        HnaAlert.default(Content.image.ERROR_MESSAGE_TYPE);
         return;
       }
 
-      if ( errType === 'maxSize') {
-        HnaAlert.default('图片大小不能超过3M！');
+      if (errType === 'maxSize') {
+        HnaAlert.default(Content.image.ERROR_MESSAGE_MAXSIZE);
         return;
       }
     }

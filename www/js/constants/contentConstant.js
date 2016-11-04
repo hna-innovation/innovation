@@ -27,7 +27,9 @@ angular.module('configuration')
     },
 
     image: {
-      'DEFAULT_HEADER': '../img/face/4.png'
+      'DEFAULT_HEADER': '../img/face/4.png',
+      'ERROR_MESSAGE_MAXSIZE': '图片大小不能超过3M，请重新上传！',
+      'ERROR_MESSAGE_TYPE': '请选择正确的图片类型！'
     },
 
     project: {
