@@ -1,9 +1,11 @@
 <ion-view view-title="评论">
-    <ion-content class="bg-f9 mg-b40">
+    <ion-header-bar>
         <div class="user-list-title bg-pink" ng-click="goBack()">
             <i class="ion ion-ios-arrow-left btn-back-arrow"></i>
             <span class="font-18">评论</span>
         </div>
+    </ion-header-bar>
+    <ion-content class="bg-f9 mg-b40">
       <div class="center mg-t20" ng-if="!comments || comments.length === 0">
         <img src="../img/empty.svg">
         <div class="mg-t10" ng-bind="attentionMsg"></div>
