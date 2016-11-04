@@ -1,10 +1,10 @@
 angular.module('starter.controllers')
   .controller('UserEditMessagesCtrl', UserEditMessagesCtrl);
 
-function UserEditMessagesCtrl($scope, CommentService, Content, $stateParams, PageService, $state, $window, HnaAlert, $ionicViewSwitcher) {
+function UserEditMessagesCtrl($scope, MessageService, Content, $stateParams, PageService, $state, HnaAlert, $ionicViewSwitcher) {
 
   PageService.setTitle('编辑私信');
-  $scope.replyComment = {
+  $scope.replyMessage = {
     replyUser: $stateParams.toUserName,
     content: ''
   };
@@ -15,28 +15,28 @@ function UserEditMessagesCtrl($scope, CommentService, Content, $stateParams, Pag
   }
 
   $scope.save = function() {
-    var comment = {
-      content: $scope.replyComment.content,
+    var message = {
+      content: $scope.replyMessage.content,
       toUserId: $stateParams.toUserId,
-      parentId: $stateParams.messageId
+      replyMessageId: $stateParams.messageId
     };
 
-    if (!comment.content) {
-      HnaAlert.default(Content.comment.ERROR_MESSAGE_EMPTY);
+    if (!message || !message.content) {
+      HnaAlert.default(Content.message.ERROR_MESSAGE_EMPTY);
       return;
     };
 
-    CommentService.addProjectComment(comment, function(result){
+    MessageService.addUserMessage(message, function(result){
       if(result.code == 0) {
         $ionicViewSwitcher.nextDirection('back');
         $state.go('user-messages',{}, {reload: true});
-        HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
+        HnaAlert.default(Content.message.SUCCESS_MESSAGE_ADDED_COMMENT);
       }
       else{
-        HnaAlert.default(Content.comment.UPDATE_ERROR);
+        HnaAlert.default(Content.message.UPDATE_ERROR);
       }
     }, function(error){
-      HnaAlert.default(Content.comment.UPDATE_ERROR);
+      HnaAlert.default(Content.message.UPDATE_ERROR);
     })
   }
 

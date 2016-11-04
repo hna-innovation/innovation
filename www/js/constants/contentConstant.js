@@ -22,6 +22,13 @@ angular.module('configuration')
       'UPDATE_ERROR': '未能成功发表评论！'
     },
 
+    message: {
+      'ERROR_MESSAGE_EMPTY': '您的私信内容不能为空。',
+      'SUCCESS_MESSAGE_ADDED_COMMENT': '发送成功。',
+      'NO_MESSAGES': '暂无私信信息。',
+      'UPDATE_ERROR': '未能成功发送私信！'
+    },
+
     draft: {
       'NO_DRAFTS': '你的草稿箱为空。'
     },

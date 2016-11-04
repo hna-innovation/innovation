@@ -42,15 +42,6 @@ angular.module('starter.services')
           .success(success)
           .error(error);
 
-      },
-
-      getUserMessages: function(offset, success, error) {
-
-        return $http.get(getUrl(Api.USER_MESSAGES_API + '?sort=createdDate,desc&page='+ offset +'&size=20'))
-          .success(success)
-          .error(error);
-
       }
-
     }
   });

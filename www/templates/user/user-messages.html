@@ -22,7 +22,7 @@
                         <div class="box-table-cell pd-l10 pd-tb5">
                             <div>
                                 <span class="color-3d font-16" ng-bind="::message.creator.nickName" ng-click="goUserInfoPage(message.creator.id)"></span>
-                                <span ng-if="!isCurrentUser(message.creator.id)" class="font-12 right color-3d" ui-sref="user-edit-message({toUserId: message.creator.id, messageId: message.commentId, toUserName: message.creator.nickName})" nav-direction="forward">
+                                <span ng-if="!isCurrentUser(message.creator.id)" class="font-12 right color-3d" ui-sref="user-edit-message({toUserId: message.creator.id, messageId: message.messageId, toUserName: message.creator.nickName})" nav-direction="forward">
                                     <i class="if i-xiaoxi"></i> 回复
                                 </span>
                             </div>

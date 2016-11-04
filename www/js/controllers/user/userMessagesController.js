@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
   .controller('UserMessagesCtrl', UserMessagesCtrl);
 
-function UserMessagesCtrl($scope, CommentService, Content, UtilityService, PageService, $state, $ionicViewSwitcher) {
+function UserMessagesCtrl($scope, MessageService, Content, UtilityService, PageService, $state, $ionicViewSwitcher) {
 
   PageService.setTitle('我的私信');
   var _userId = localStorage.userId;
@@ -14,7 +14,7 @@ function UserMessagesCtrl($scope, CommentService, Content, UtilityService, PageS
     var offset = 0;
 
     return function() {
-      CommentService.getUserMessages(offset, function(result) {
+      MessageService.getUserMessages(offset, function(result) {
 
         if (result.data.content && result.data.content.length) {
           $scope.messages = UtilityService.concatArray($scope.messages, result.data.content);
