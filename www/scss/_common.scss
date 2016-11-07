@@ -330,21 +330,22 @@ img {
 }
 
 /* color */
+.color-pink {
+  color: map-get($colors, pink);
+}
+
 .color-88 {
-  color: #888;
+  color: map-get($colors, gray);
 }
 
 .color-3d {
-  color: #3d3d3d;
+  color: map-get($colors, black-gray);
 }
 
 .color-6d {
-  color: #6D6D6D;
+  color: map-get($colors, dark-gray);
 }
 
-.color-pink {
-  color: #e16a68;
-}
 
 .color-white {
   color: #fff;
