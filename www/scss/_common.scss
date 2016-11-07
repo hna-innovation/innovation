@@ -1,7 +1,34 @@
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+/* color */
+.color-pink {
+  color: map-get($colors, pink);
+}
+
+.color-red {
+  color: map-get($colors, red);
+}
+
+.color-3d {
+  color: map-get($colors, black-gray);
+}
+
+.color-6d {
+  color: map-get($colors, dark-gray);
+}
+
+.color-88 {
+  color: map-get($colors, gray);
+}
+
+.color-grey {
+  color: map-get($colors, lightest-gray);
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-a9 {
+  color: #a9a9a9;
 }
 
 /* init */
@@ -28,6 +55,12 @@ img {
 
 .radius {
   border-radius: 50%;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .a-btn {
@@ -327,44 +360,6 @@ img {
 .button-reds {
   background-color: #E0615F;
   color: #fff;
-}
-
-/* color */
-.color-pink {
-  color: map-get($colors, pink);
-}
-
-.color-88 {
-  color: map-get($colors, gray);
-}
-
-.color-3d {
-  color: map-get($colors, black-gray);
-}
-
-.color-6d {
-  color: map-get($colors, dark-gray);
-}
-
-
-.color-white {
-  color: #fff;
-}
-
-.color-grey {
-  color: #F8E1E1;
-}
-
-.color-red {
-  color: #e06968;
-}
-
-.color-a9 {
-  color: #a9a9a9;
-}
-
-.color-dark-pink {
-  color: #de6262;
 }
 
 /* background-color */
