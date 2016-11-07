@@ -1,13 +1,12 @@
 angular.module('starter.controllers')
   .controller('ReplyCommentEditCtrl', ReplyCommentEditCtrl);
 
-function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, $window) {
+function ReplyCommentEditCtrl($scope, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, $window) {
   'use strict';
 
   var _projectId = $stateParams.projectId;
   var _replyUser = $stateParams.replyUser;
   var _commentId = $stateParams.commentId;
-
 
   $scope.replyComment = {
     replyUser: _replyUser,
@@ -17,7 +16,7 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
   $scope.cancel = function() {
     $ionicViewSwitcher.nextDirection('back');
     $window.history.back();
-  }
+  };
 
   $scope.save = function() {
     var comment = {
@@ -42,7 +41,6 @@ function ReplyCommentEditCtrl($scope, $state, $stateParams, Content, CommentServ
       }, function(error){
         HnaAlert.default(Content.comment.UPDATE_ERROR);
       })
-  }
-
+  };
 
 }
