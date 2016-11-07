@@ -15,15 +15,14 @@ var templateCache = require('gulp-angular-templatecache');
 var annotate = require('gulp-ng-annotate');
 var buildDir = path.resolve('build');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function(done) {
   gulp.src('./www/scss/main.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });

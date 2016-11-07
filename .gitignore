@@ -12,3 +12,7 @@ build/
 logs/
 npm-debug.log
 test/pacts/
+
+# css files
+www/css/main.css
+www/css/main.css.map
