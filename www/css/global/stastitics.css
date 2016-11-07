@@ -11,27 +11,10 @@
 }
 
 .stastitics-show .stastitics_item .stastitics_title span {
-    padding-left: 19px;
     display: inline-block;
 }
 
 .stastitics-show .stastitics_item .stastitics_new {
     position: relative;
     top: -8px;
-    padding: 0px 2px;
-}
-
-.stastitics-show .stastitics_innovation .stastitics_title span {
-    background: url(../../img/innovation.svg) no-repeat left center;
-    background-size: 16px;
-}
-
-.stastitics-show .stastitics_resources .stastitics_title span {
-    background: url(../../img/resource.svg) no-repeat left center;
-    background-size: 16px;
-}
-
-.stastitics-show .stastitics_success .stastitics_title span {
-    background: url(../../img/diamond.svg) no-repeat left center;
-    background-size: 16px;
 }

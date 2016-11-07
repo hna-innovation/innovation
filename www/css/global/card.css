@@ -129,10 +129,6 @@
   margin-right: 5px;
 }
 
-.card .info .action span.like-hover {
-  color: #EB7D84;
-}
-
 .card .info .action span i.i-xiaoxi {
   -webkit-text-stroke-width: 0.5px;
 }
@@ -142,15 +138,9 @@
   position: absolute;
   content: "\e668";
   color: #F7DFDC;
-  font-size: 13px;
-}
-
-.card .info .action span.like-hover i:after{
-  content: "\e665";
-  color: #EB7D84;
   font-size: 14px;
-  position: absolute;
-  right: 0;
+  -webkit-text-stroke-color: #EB7D84;
+  -webkit-text-stroke-width: 1.1px;
 }
 
 .card .info .action span.like-collect i:before{

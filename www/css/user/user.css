@@ -428,7 +428,7 @@
 label.user-language {
   font-size: 14px;
   border: none;
-  padding: 12px 0;
+  padding: 12px 0 12px 5px;
 }
 
 label.user-language select {
