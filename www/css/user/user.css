@@ -178,10 +178,6 @@
   margin-left: 10px;
   margin-top: 5px;
 }
-.bg-img-reomve{
-	background: url(../../img/icon-remove.svg) no-repeat 12px center;
-	background-size: 18px;
-}
 .comment{
 	position: relative;
 	border: #ededed solid 1px;
