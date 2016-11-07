@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-  .controller('LoginCtrl', function ($scope, $state, ModalServices, LoginService, HnaAlert, $ionicViewSwitcher) {
+  .controller('LoginCtrl', function ($scope, $state, $stateParams, ModalServices, LoginService, HnaAlert, $ionicViewSwitcher) {
     'use strict';
     $scope.goToRegister = function () {
       ModalServices.goToRegister();
@@ -33,7 +33,7 @@ angular.module('starter.controllers')
           $scope.closePopup();
           HnaAlert.defaultSuccess('登录成功!');
           $ionicViewSwitcher.nextDirection('none');
-          $state.reload($state.current);
+          $stateParams.userId === result.data.id ? $state.go('user') : $state.reload($state.current);
         } else if (result.code == 1) {
           HnaAlert.defaultError('登录信息不正确!');
           $scope.loginLoading = false;

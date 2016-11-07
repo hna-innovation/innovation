@@ -8,6 +8,7 @@ function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentSe
   var _parentPage = $stateParams.parentPage;
   var _userId = localStorage.userId;
 
+  $scope.projectId = _projectId;
   $scope.comments = [];
   $scope.hasMoreData = true;
   $scope.getProjectComments = getProjectCommentsByPage();

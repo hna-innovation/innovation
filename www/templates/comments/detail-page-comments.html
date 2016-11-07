@@ -24,7 +24,9 @@
                                   <a href="" class="font-14 color-3d" ng-bind="comment.creator.nickName" ></a>
                                   <small class="font-12 display-block" ng-bind="comment.createdDate" ></small>
                                 </div>
-                                  <span ng-if="!isCurrentUser(comment.creator.id)" class="font-12 right color-3d" ui-sref="reply-comment-edit({commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward"><i class="if i-xiaoxi"></i> 回复</span>
+                                  <span ng-if="!isCurrentUser(comment.creator.id)" class="font-12 right color-3d" ui-sref="reply-comment-edit({projectId: projectId, commentId: comment.commentId, replyUser: comment.creator.nickName})" nav-direction="forward">
+                                      <i class="if i-xiaoxi"></i> 回复
+                                  </span>
                             </div>
                           <p>
                             <span ng-if="comment.replyTo.nickName" ng-click="goUserInfoPage(comment.replyTo.userId)" nav-direction="forward" >{{comment.creator.nickName}} 回复 <a>@{{::comment.replyTo.nickName}}:</a></span>
