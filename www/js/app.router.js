@@ -11,7 +11,7 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('innovation', {
+    .state('innovation', {
     url: '/innovation',
     cache: false,
     templateUrl: 'templates/innovation.html',
@@ -178,54 +178,47 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
       }
     })
 
-    .state('user-comment.received', {
-      url: '/received',
-      cache: true,
-      templateUrl: 'templates/user/user-received-comments.html',
-      controller: 'UserReceivedCommentsCtrl',
-      data: {
-        requireAuth: true
-      }
-    })
+  .state('user-comment.received', {
+    url: '/received',
+    cache: true,
+    templateUrl: 'templates/user/user-received-comments.html',
+    controller: 'UserReceivedCommentsCtrl',
+    data: {
+      requireAuth: true
+    }
+  })
 
-    .state('user-comment.sent', {
-      url: '/sent',
-      cache: true,
-      templateUrl: 'templates/user/user-sent-comments.html',
-      controller: 'UserSentCommentsCtrl',
-      data: {
-        requireAuth: true
-      }
-    })
+  .state('user-comment.sent', {
+    url: '/sent',
+    cache: true,
+    templateUrl: 'templates/user/user-sent-comments.html',
+    controller: 'UserSentCommentsCtrl',
+    data: {
+      requireAuth: true
+    }
+  })
 
-    .state('user-messages', {
-      url: '/user-messages',
-      cache: true,
-      templateUrl: 'templates/user/user-messages.html',
-      controller: 'UserMessagesCtrl',
-      data: {
-        requireAuth: true
-      }
-    })
+  .state('user-messages', {
+    url: '/user-messages',
+    cache: true,
+    templateUrl: 'templates/user/user-messages.html',
+    controller: 'UserMessagesCtrl',
+    data: {
+      requireAuth: true
+    }
+  })
 
-    .state('user-edit-message', {
-      url: '/user-edit-message/:toUserId/:toUserName/:messageId',
-      cache: true,
-      templateUrl: 'templates/user/user-edit-message.html',
-      controller: 'UserEditMessagesCtrl',
-      data: {
-        requireAuth: true
-      }
-    })
+  .state('user-edit-message', {
+    url: '/user-edit-message/:toUserId/:toUserName/:messageId',
+    cache: true,
+    templateUrl: 'templates/user/user-edit-message.html',
+    controller: 'UserEditMessagesCtrl',
+    data: {
+      requireAuth: true
+    }
+  })
 
-    .state('user-comment2', {
-      url: '/user-comment2',
-      cache: false,
-      templateUrl: 'templates/user/user-comment2.html',
-      controller: 'UserCtrl'
-
-    })
-    .state('user-like', {
+  .state('user-like', {
       url: '/user-like',
       cache: false,
       templateUrl: 'templates/user/user-like.html',
@@ -268,7 +261,13 @@ function router($stateProvider, $urlRouterProvider, $httpProvider) {
     .state('user-edit-info', {
       url: '/user-edit-info/:target/:text/:length/:mulitline/:required',
       cache: false,
-      params: { target: null, text: '', length: 0, mulitline: false, required: false },
+      params: {
+        target: null,
+        text: '',
+        length: 0,
+        mulitline: false,
+        required: false
+      },
       templateUrl: 'templates/user/user-edit-info.html',
       controller: 'UserEditCtrl',
       data: {
