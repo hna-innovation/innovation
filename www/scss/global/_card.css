@@ -1,0 +1,159 @@
+.card {
+  margin: 10px 0 0 0;
+  padding-bottom: 10px;
+  box-shadow: none;
+}
+
+.item-avatar {
+  padding: 0;
+  min-height: 100%;
+  padding-left: 42px;
+  padding-top: 14px;
+  padding-bottom: 5px;
+}
+
+.item-avatar img:first-child {
+  top: 10px;
+  left: 13px;
+  max-width: 22px;
+  max-height: 22px;
+}
+
+.item h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.item-avatar .process {
+  position: absolute;
+  right: 11px;
+  top: 8px;
+  font-size: 0;
+}
+
+.item-avatar .process span {
+  width: 14px;
+  height: 3px;
+  display: inline-block;
+  background-color: #ebebeb;
+}
+
+.item-avatar .process span:not(:last-child) {
+  margin-right: 2px;
+}
+
+.item-avatar .process span.active {
+  background-color: #de6262;
+}
+
+.item-image {
+  border: none;
+}
+
+.item-image a {
+  width: 94%;
+  display: inline-block;
+  height: 190px;
+  overflow: hidden;
+}
+
+.item-image img:first-child {
+  margin-top: 3px;
+}
+
+.item.item-title {
+  font-size: 14px;
+  padding: 9px 11px 0;
+  border: none;
+}
+
+.card .description {
+  padding: 0 11px;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+
+.card .card-title {
+  margin-top: 10px;
+}
+
+.card .info .label-list {
+  padding: 5px 11px;
+}
+
+.card .info .label-list > span {
+  background-color: #fdf9f5;
+  color: #cdabaa;
+  border: 1px solid #cdabaa;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 0px 2px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+.card .info .label-list {
+  float: left;
+}
+
+.card .info .action {
+  float: right;
+  margin-top: 4px;
+  margin-right: 11px;
+  line-height: 25px;
+}
+
+.card .info .action span img {
+  width: 12px;
+  margin-right: 3px;
+  margin-top: 4px;
+  vertical-align: top;
+
+}
+
+.card .info .action span:first-child {
+  margin-right: 12px;
+}
+
+.card .info .action span {
+  font-size: 12px;
+  line-height: 22px;
+  margin-right: 5px;
+}
+
+.card .info .action span i {
+  position: relative;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.card .info .action span.like-hover {
+  color: #EB7D84;
+}
+
+.card .info .action span i.i-xiaoxi {
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.card .info .action span.like-hover i:before{
+  right: 1px;
+  position: absolute;
+  content: "\e668";
+  color: #F7DFDC;
+  font-size: 13px;
+}
+
+.card .info .action span.like-hover i:after{
+  content: "\e665";
+  color: #EB7D84;
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+}
+
+.card .info .action span.like-collect i:before{
+  content: "\e665";
+  font-size: 14px;
+}

@@ -54,50 +54,6 @@ gulp.task('style-css', function(done) {
     .on('end', done);
 });
 
-gulp.task('style-global', function(done) {
-  gulp.src('www/css/global/**/*.css')
-    .pipe(concat('global.min.css'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rev())
-    .pipe(gulp.dest(path.join(buildDir, 'css/global')))
-    .on('end', done);
-});
-
-gulp.task('style-innovations', function(done) {
-  gulp.src('www/css/innovations/**/*.css')
-    .pipe(concat('innovations.min.css'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rev())
-    .pipe(gulp.dest(path.join(buildDir, 'css/innovations')))
-    .on('end', done);
-});
-
-gulp.task('style-resources', function(done) {
-  gulp.src('www/css/resources/**/*.css')
-    .pipe(concat('resources.min.css'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rev())
-    .pipe(gulp.dest(path.join(buildDir, 'css/resources')))
-    .on('end', done);
-});
-
-gulp.task('style-user', function(done) {
-  gulp.src('www/css/user/**/*.css')
-    .pipe(concat('user.min.css'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rev())
-    .pipe(gulp.dest(path.join(buildDir, 'css/user')))
-    .on('end', done);
-});
-
 gulp.task('style-vendor', function(done) {
   gulp.src('www/css/vendor/**/*.css')
     .pipe(concat('vendor.min.css'))
@@ -185,22 +141,6 @@ gulp.task('inject-index', function(done) {
       cwd: buildDir,
       read: false
     }), 'style-css'))
-    .pipe(_inject(gulp.src("css/global/global*", {
-      cwd: buildDir,
-      read: false
-    }), 'style-global'))
-    .pipe(_inject(gulp.src("css/innovations/innovations*", {
-      cwd: buildDir,
-      read: false
-    }), 'style-innovations'))
-    .pipe(_inject(gulp.src("css/resources/resources*", {
-      cwd: buildDir,
-      read: false
-    }), 'style-resources'))
-    .pipe(_inject(gulp.src("css/user/user*", {
-      cwd: buildDir,
-      read: false
-    }), 'style-user'))
     .pipe(_inject(gulp.src("css/vendor/vendor*", {
       cwd: buildDir,
       read: false
@@ -225,8 +165,7 @@ gulp.task('build', function(done) {
   runSequence(
     'clean', [
       // css files
-      'style-copy-icon', 'style-copy-lib', 'style-css', 'style-global',
-      'style-innovations', 'style-resources', 'style-user',
+      'style-copy-icon', 'style-copy-lib', 'style-css',
       'style-vendor',
 
       //js files

@@ -1,0 +1,44 @@
+.list-img {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.list-img > li {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border: #dedede solid 1px;
+    margin-bottom: 10px;
+}
+
+.list-img-medium > li > div:nth-child(1) {
+    position: relative;
+    width: 110px;
+    z-index: 2;
+    padding: 5px;
+}
+
+.list-img-medium > li > div:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 7px 10px 7px 140px;
+    z-index: 1;
+    height: 100%;
+}
+
+.list-img-medium > li > div:nth-child(2) p {
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.list-img-medium > li > div:nth-child(2) .text-title {
+    height: 24px;
+    line-height: 18px;
+}
+
+.list-img-medium > li > div:nth-child(2) .text-row2 {
+    height: 36px;
+}

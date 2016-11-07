@@ -1,0 +1,69 @@
+.index-header.bar {
+  height: 42px;
+}
+
+.index-header.bar-header {
+  background-color: #fff;
+}
+
+.index-header.bar-header .user-header-icon-default {
+  width: 23px;
+  padding-top: 5px
+}
+
+.index-header .bar-user-header {
+  z-index: 10;
+  padding-top: 6px;
+}
+
+.index-header.bar-header .user-header-icon {
+  width: 30px;
+  height: 30px;
+  padding-top: 0;
+}
+
+.index-header.bar-header div:nth-child(1).button {
+  padding: 4px 5px;
+  background-color: transparent;
+}
+
+.index-header .bar .title {
+  height: 42px;
+  line-height: 42px;
+}
+
+.index-header.bar .title .logo img {
+  width: 100px;
+  margin-top: 8px;
+}
+
+.index-header.bar .button-img {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.index-header.bar .button-img:after {
+  display: none;
+}
+
+.index-header.bar .button-img a:nth-child(1) img{
+  width: 20px;
+  vertical-align: top;
+  padding: 5px 0;
+  margin-right: 14px;
+}
+
+.index-header.bar.bar-header .button-img a:nth-child(2) img{
+  width: 18px;
+  margin-right: 0;
+  padding: 4px 0;
+}
+
+.content-header {
+  margin-top: 42px;
+}
+
+.index-header.bar.bar-header .title + .button:last-child {
+  right: 4px;
+  top: 8px;
+}

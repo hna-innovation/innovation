@@ -1,0 +1,13 @@
+/*
+ * Search Page
+ */
+
+/*bar form search input*/
+.bar-header-search .ion-ios-search {
+	font-size: 18px;
+	padding-top: 2px;
+}
+
+.bar.bar-header.bar-header-search {
+  padding: 10px;
+}
