@@ -1,175 +1,175 @@
 #user-header{
-    min-height: 145px;
-    padding: 0 12px 5px;
-	  background: url(../../img/user/title_bg_mine.png) no-repeat center;
-    background-size: cover;
+  min-height: 145px;
+  padding: 0 12px 5px;
+  background: url(../../img/user/title_bg_mine.png) no-repeat center;
+  background-size: cover;
 }
 
 #user-bar{
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #F8E1E1;
-    font-size: 12px;
-    margin-bottom: 5px;
-    padding-top: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #F8E1E1;
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding-top: 10px;
 }
 
 #user-bar .user-edit-link img {
-	padding-top: 3px;
+  padding-top: 3px;
 }
 
 #user-main{
-	height: 100%;
+  height: 100%;
 }
 .user-logout {
-	padding-top: 10px;
-	text-align: center;
+  padding-top: 10px;
+  text-align: center;
 }
 .user-img{
-	border-radius: 50%;
-	border: 4px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.5);
 }
 .user-row{
-	padding-top: 10px;
-	border-bottom: #ededed solid 1px;
-	padding: 0;
+  padding-top: 10px;
+  border-bottom: #ededed solid 1px;
+  padding: 0;
 }
 .user-row li{
-	border-right: #f3f3f3 solid 1px;
-	padding-top: 12px;
-	padding-bottom: 3px;
+  border-right: #f3f3f3 solid 1px;
+  padding-top: 12px;
+  padding-bottom: 3px;
 }
 .user-row li:last-child{
-	border-right: 0;
+  border-right: 0;
 }
 .user-row li p{
-	position: relative;
-	height: 22px;
-	line-height: 22px !important;
-	margin-bottom: 0;
-	overflow: hidden;
+  position: relative;
+  height: 22px;
+  line-height: 22px !important;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 .user-row li p:nth-child(1){
-	line-height: 16px;
+  line-height: 16px;
 }
 .user-row li p:nth-child(3){
-	height: 30px;
-	line-height: 30px !important;
+  height: 30px;
+  line-height: 30px !important;
 }
 .user-row li p strong{
-	position: relative;
+  position: relative;
 }
 .user-row li p strong small{
-	position: absolute;
-	display: inline-block;
-	top: -11px;
-	left: 13px;
-	width: 28px;
-	height: 28px;
-	padding-right: 2px;
-	line-height: 26px;
-	text-align: center;
-	background:url(../../img/user/svg-chat.svg) no-repeat center;
-	background-size: 100%;
-	font-weight: 400;
-	color: #e17877;
+  position: absolute;
+  display: inline-block;
+  top: -11px;
+  left: 13px;
+  width: 28px;
+  height: 28px;
+  padding-right: 2px;
+  line-height: 26px;
+  text-align: center;
+  background:url(../../img/user/svg-chat.svg) no-repeat center;
+  background-size: 100%;
+  font-weight: 400;
+  color: #e17877;
 }
 .business-row{
-	height: 65px;
-	line-height: 55px;
-	border-top: #ededed solid 1px;
-	border-bottom: #ededed solid 1px;
-	overflow: hidden;
+  height: 65px;
+  line-height: 55px;
+  border-top: #ededed solid 1px;
+  border-bottom: #ededed solid 1px;
+  overflow: hidden;
 }
 .business-row .if {
   vertical-align: sub;
 }
 .small-radio{
-	position: relative;
-	top: 2px;
+  position: relative;
+  top: 2px;
 }
 .type-row{
-	border-top: #ededed solid 1px;
-	overflow: hidden;
+  border-top: #ededed solid 1px;
+  overflow: hidden;
 }
 .type-row li{
-	float: left;
-	width: 50%;
-	height: 65px;
-	padding-left: 15px;
-	padding-top: 8px;
-	border-bottom: #ededed solid 1px;
+  float: left;
+  width: 50%;
+  height: 65px;
+  padding-left: 15px;
+  padding-top: 8px;
+  border-bottom: #ededed solid 1px;
 }
 .type-row li:nth-child(odd){
-	border-right: #ededed solid 1px;
+  border-right: #ededed solid 1px;
 }
 .type-row li p{
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .user-list{
-	width: 100%;
-	overflow: hidden;
-	box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .user-list>li{
-	position: relative;
-	width: 100%;
-	min-height: 75px;
-	background-color: #fff;
-	border: #dedede solid 1px;
-	margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  min-height: 75px;
+  background-color: #fff;
+  border: #dedede solid 1px;
+  margin-bottom: 10px;
 }
 .user-list>li>div:nth-child(1) {
-	position: relative;
-	width: 110px;
-	height: 75px;
-	z-index: 2;
+  position: relative;
+  width: 110px;
+  height: 75px;
+  z-index: 2;
 }
 .user-list>li>div:nth-child(2) {
-	position: absolute;
-	width: 100%;
-	height: 75px;
-	left: 0;
-	top: 0;
-	padding: 7px 10px 7px 120px;
-	z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 75px;
+  left: 0;
+  top: 0;
+  padding: 7px 10px 7px 120px;
+  z-index: 1;
 }
 .user-list>li>div:nth-child(2) p{
-	margin-bottom: 0;
-	overflow: hidden;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 .user-list>li>div:nth-child(2) .text-title{
-	height: 24px;
-	line-height: 18px;
+  height: 24px;
+  line-height: 18px;
 }
 .user-list>li>div:nth-child(2) .text-row2{
-	height: 36px;
+  height: 36px;
 }
 
 .text-bottom{
-	position: absolute;
-	bottom: 5px;
-	height: 14px;
-	line-height: 13px;
+  position: absolute;
+  bottom: 5px;
+  height: 14px;
+  line-height: 13px;
 }
 .user-list-title{
-	height: 100%;
+  height: 100%;
   width: 100%;
-	line-height: 44px;
-	text-align: center;
-	color: #fff;
-	font-size: 16px;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
 }
 .bar {
   padding: 0;
 }
 .text-ellipsis{
-	white-space:nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .btn-back-arrow {
   float: left;
@@ -179,14 +179,14 @@
   margin-top: 5px;
 }
 .bg-img-reomve{
-	background: url(../../img/icon-remove.svg) no-repeat 12px center;
-	background-size: 18px;
+  background: url(../../img/icon-remove.svg) no-repeat 12px center;
+  background-size: 18px;
 }
 .comment{
-	position: relative;
-	border: #ededed solid 1px;
-	border-radius: 4px;
-	padding: 4px 5px;
+  position: relative;
+  border: #ededed solid 1px;
+  border-radius: 4px;
+  padding: 4px 5px;
 }
 .triangle-up {
   position: absolute;
@@ -210,157 +210,157 @@
   border-color: transparent transparent #f9f9f9 transparent;
 }
 .btn-position{
-	position: absolute;
-	width: 60px;height: 40px;
-	line-height: 40px;
-	right: 0;
-	top: 0;
+  position: absolute;
+  width: 60px;height: 40px;
+  line-height: 40px;
+  right: 0;
+  top: 0;
 }
 .small-radio2{
-	position: absolute;
-	top: -5px;
-	left: -8px;
+  position: absolute;
+  top: -5px;
+  left: -8px;
 }
 
 .user-list2{
-	overflow: hidden;
+  overflow: hidden;
 }
 .user-list2>li{
-	margin-bottom: 10px;
-	position: relative;
-	overflow: hidden;
-	border: #dedede solid 1px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  border: #dedede solid 1px;
 }
 .user-list2>li>div:nth-child(1){
-	position: absolute;
-	width: 100%;
-	height: 68px;
-	padding: 12px 80px 12px 10px;
+  position: absolute;
+  width: 100%;
+  height: 68px;
+  padding: 12px 80px 12px 10px;
 }
 .user-list2>li>div:nth-child(2){
-	position: relative;
-	float: right;
-	width: 60px;
-	height: 68px;
-	padding-top: 15px;
-	text-align: center;
-	right: 0;
-	border-left: #dedede solid 1px;
-	z-index: 3;
+  position: relative;
+  float: right;
+  width: 60px;
+  height: 68px;
+  padding-top: 15px;
+  text-align: center;
+  right: 0;
+  border-left: #dedede solid 1px;
+  z-index: 3;
 }
 .user-list2 .user-list2-img{
-	position: relative;
-	width: 42px;
-	height: 42px;
-	z-index: 2;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  z-index: 2;
 }
 .user-list2 .user-list2-text{
-	position: absolute;
-	width: 100%;
-	height: 45px;
-	top: 12px;
-	left: 0;
-	line-height: 14px;
-	padding-left: 62px;
-	padding-right: 70px;
-	z-index: 1;
-	overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 45px;
+  top: 12px;
+  left: 0;
+  line-height: 14px;
+  padding-left: 62px;
+  padding-right: 70px;
+  z-index: 1;
+  overflow: hidden;
 }
 .text-bottom2{
-	position: absolute;
-	bottom: 0px;
-	height: 12px;
-	line-height: 12px;
+  position: absolute;
+  bottom: 0px;
+  height: 12px;
+  line-height: 12px;
 }
 .text-title2{
-	height: 28px;
-	overflow : hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
+  height: 28px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .newlike{
-	position: absolute;
-	top: 0;
-	right: 3px;
-	font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 3px;
+  font-size: 12px;
 }
 .user-list3{
-	overflow: hidden;
+  overflow: hidden;
 }
 .user-list3>li{
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .user-list3>li>div:nth-child(1){
-	position: relative;
-	width: 42px;
-	height: 42px;
+  position: relative;
+  width: 42px;
+  height: 42px;
 }
 .user-list3>li>div:nth-child(2){
-	position: absolute;
-	width: 100%;
-	height: 42px;
-	padding-left: 52px;
-	top: 0;
-	line-height: 20px;
-	padding-right: 30px;
+  position: absolute;
+  width: 100%;
+  height: 42px;
+  padding-left: 52px;
+  top: 0;
+  line-height: 20px;
+  padding-right: 30px;
 }
 .line-30{
-	line-height: 30px !important;
+  line-height: 30px !important;
 }
 .creative-list{
-	overflow: hidden;
+  overflow: hidden;
 }
 .creative-list>li{
-	position: relative;
-	float: left;
-	width: 50%;
-	height: 162px;
-	box-sizing: border-box;
-	background-color: #fff;
-	margin-bottom: 10px;
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 162px;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 10px;
 }
 .creative-list>li div{
-	position: relative;
+  position: relative;
 }
 .creative-list>li:nth-child(odd){
-	padding-right: 5px;
+  padding-right: 5px;
 }
 .creative-list>li:nth-child(even){
-	padding-left: 5px;
+  padding-left: 5px;
 }
 .creative-list>li>div{
-	height: 100%;
-	border: #dedede solid 1px;
-	overflow: hidden;
+  height: 100%;
+  border: #dedede solid 1px;
+  overflow: hidden;
 }
 .creative-list>li>div>div:nth-child(1){
-	width: 100%;
-	height: 85px;
-	overflow: hidden;
+  width: 100%;
+  height: 85px;
+  overflow: hidden;
 }
 .creative-list>li>div>div:nth-child(1) img{
-	width: 100%;
+  width: 100%;
   height: 100%;
-	vertical-align: middle;
+  vertical-align: middle;
 }
 .creative-list .info{
-	width: 100%;
-	height: 80px;
-	padding: 4px;
+  width: 100%;
+  height: 80px;
+  padding: 4px;
 }
 .creative-list .info p{
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .creative-list .info p:nth-child(1){
-	height: 44px;
-	line-height: 20px;
+  height: 44px;
+  line-height: 20px;
 }
 .creative-list .info p:nth-child(2){
-	text-align: center;
-	line-height: 25px;
+  text-align: center;
+  line-height: 25px;
 }
 .user-edit-container {
   background-color: #fcfcfc;
@@ -428,7 +428,7 @@
 label.user-language {
   font-size: 14px;
   border: none;
-  padding: 12px 0;
+  padding: 12px 0 12px 5px;
 }
 
 label.user-language select {
