@@ -1,0 +1,62 @@
+.step-header a{
+    display: block;
+    padding: 8px 15px;
+    font-size: 24px;
+    line-height: 28px;
+    width: 28px;
+    z-index: 20;
+}
+
+.step-footer{
+    height: 40px;
+    border-top: 1px solid #e16a68;
+    line-height: 40px;
+}
+
+.step-footer .color-88{
+    color: #888 !important;
+}
+
+.step-footer:after{
+    display: none;
+}
+
+.step-footer img{
+    width: 18px!important;
+    height: 18px!important;
+    vertical-align: -3px;
+}
+
+#step-1{
+    margin: 0 15px;
+    margin-top: 9px;
+    background: none;
+}
+
+#step-1 .dianzi-description {
+    min-height: 200px;
+    overflow: visible;
+}
+
+#step-1 .dianzi-description label {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+#step-1 textarea {
+    min-height: 100px;
+    height: auto;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+#photoUpload{
+    display: none;
+}
+
+#imgUpload{
+    position: relative;
+}
