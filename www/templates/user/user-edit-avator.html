@@ -1,0 +1,61 @@
+
+<ion-view view-title="编辑个人中心">
+	<ion-content class="user-edit-container">
+		<div class="user-list-title bg-pink">
+			<div class="user-edit-cancel expand-touch-area" ng-click="cancel()">
+        <i class="ion ion-android-close"></i>
+      </div>
+			<span class="font-18">编辑个人中心</span>
+			<div class="user-edit-save expand-touch-area" ng-click="saveAvator()">
+        <i class="ion ion-android-done"></i>
+      </div>
+		</div>
+		<div class="pd-tb">
+			<span class="user-edit-text-part-title">头像</span>
+			<span class="right">
+				<button id="btn-user-avator-upload" type="file"
+					class="btn-user-avator-upload"
+					ngf-select="selectFiles($file, $invalidFiles)"
+					accept="image/*" ngf-pattern="'image/*'"
+					ngf-before-model-change="beforeChange($files)"
+					ngf-fix-orientation="true"
+					ngf-resize="{width: 280, quality: .9}"
+					ngf-resize-if="$width > 280"
+					ng-model="picFile"
+					ngf-max-size="3MB">
+					<i class="icon ion-ios-camera-outline color-6d"></i>
+				</button>
+			</span>
+      <div class="user-edit-text-part padding" >
+				<div class="center user-edit-avator radius border-solid bg-fb">
+					<i class="ion ion-person color-a9" ng-show="!userInfo.headerIcon" ></i>
+					<img ng-src="{{ userInfo.headerIcon }}" ng-click="triggerSelectFiles()" ng-show="userInfo.headerIcon" >
+				</div>
+				<div class="show-preview" ng-show="showPreview" >
+					<div class="show-preview-header">
+						<div class="show-preview-cancel expand-touch-area" ng-click="canelPreview()">
+							<i class="ion ion-android-close"></i>
+							<span class="font-16" >取消</span>
+						</div>
+						<div class="show-preview-save expand-touch-area" ng-click="savePreview(croppedDataUrl, picFile.name)">
+							<i class="ion ion-android-done"></i>
+							<span class="font-16" >选取</span>
+						</div>
+						<p class="show-preview-notice font-12 color-6d">
+							提示：请拖动圆圈区域右上方的按钮选择裁剪区域。
+						</p>
+					</div>
+					<div ng-show="showPreview && !picFile" >
+						<p class="spinner-message color-a9" >请稍后...</p>
+					</div>
+					<div ngf-drop ng-model="picFile" ngf-pattern="image/*"
+							class="cropArea">
+							<img-crop image="picFile  | ngfDataUrl"
+							result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+						</img-crop>
+					</div>
+				</div>
+      </div>
+		</div>
+	</ion-content>
+</ion-view>

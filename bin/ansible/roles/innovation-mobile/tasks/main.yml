@@ -1,0 +1,9 @@
+---
+
+- name: upload package
+  get_url:
+    url: "{{NEXUS_URL}}/innovation-mobile-{{VERSION}}.tar.gz"
+    dest: /usr/local/innovative-ci/
+
+- name: unarchive package
+  unarchive: src="/usr/local/innovative-ci/innovation_mobile/innovation-mobile-{{VERSION}}.tar.gz" dest=/usr/local/innovative-ci/ mode=0755 remote_src=yes

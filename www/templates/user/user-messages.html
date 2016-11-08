@@ -1,0 +1,56 @@
+<ion-view cache-view="false" view-title="我的私信" class="user-comments">
+    <ion-header-bar>
+        <div class="user-list-title bg-pink" ui-sref="user" nav-direction="back">
+            <i class="ion ion-ios-arrow-left btn-back-arrow"></i>
+            <span class="font-18">我的私信</span>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="bg-fb">
+        <div class="center mg-t20" ng-if="!messages || messages.length === 0">
+            <img src="../img/empty.svg">
+            <div class="mg-t10" ng-bind="messages.attentionMsg"></div>
+        </div>
+
+        <div ng-if="messages.length > 0">
+            <section class="border-tb mg-b10 pd-15 bg-ff" ng-repeat="message in messages">
+                <ul class="box-table">
+                    <li class="box-table-row">
+                        <div class="box-table-cell comments-list-headerIcon" ng-click="goUserInfoPage(message.creator.id)">
+                            <img ng-src="{{ ::message.creator.headerIcon }}" alt="头像" width="40" height="40" class="user-img">
+                        </div>
+                        <div class="box-table-cell pd-l10 pd-tb5">
+                            <div>
+                                <span class="color-3d font-16" ng-bind="::message.creator.nickName" ng-click="goUserInfoPage(message.creator.id)"></span>
+                                <span ng-if="!isCurrentUser(message.creator.id)" class="font-12 right color-3d" ui-sref="user-edit-message({toUserId: message.creator.id, messageId: message.messageId, toUserName: message.creator.nickName})" nav-direction="forward">
+                                    <i class="if i-xiaoxi"></i> 回复
+                                </span>
+                            </div>
+                            <div class="color-a9" ng-bind="::message.createdDate" ></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mg-b15 bg-fb color-6d">
+                    <span ng-if="isCurrentUser(message.creator.id)">
+                        <span ng-if="!message.replyTo.userId">我给<a ng-click="goUserInfoPage(message.toUserId)">@{{::message.toUserName}}</a>留言: </span>
+                        <span ng-if="message.replyTo.userId">我回复<a ng-click="goUserInfoPage(message.toUserId)">@{{::message.toUserName}}: </a></span>
+                    </span>
+                    <span ng-if="!isCurrentUser(message.creator.id)">
+                        <span ng-if="message.replyTo.userId"><a ng-click="goUserInfoPage(message.creator.id)" ng-bind="message.creator.nickName"></a>回复我: </span>
+                        <span ng-if="!message.replyTo.userId"><a ng-click="goUserInfoPage(message.creator.id)" ng-bind="message.creator.nickName"></a>给我留言:</span>
+                    </span>
+                    <!--<span ng-bind="::prefix"></span>&nbsp;-->
+                    <span class="color-6d" ng-bind="::message.content"></span>
+                </div>
+                <div class="comment bg-f9 mg-b15 color-6d" ng-if="message.replyTo.content">
+                    <span ng-bind="message.replyTo.nickName"></span>:&nbsp;<span class="color-6d" ng-bind="message.replyTo.content"></span>
+                </div>
+            </section>
+            <load-more
+                on-load-more="getMessages()"
+                has-more-data="hasMoreData">
+            </load-more>
+        </div>
+
+    </ion-content>
+</ion-view>

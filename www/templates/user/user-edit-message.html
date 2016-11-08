@@ -1,0 +1,22 @@
+<ion-view view-title="私信">
+    <ion-content class="user-edit-container">
+        <div class="user-list-title bg-pink">
+            <div class="user-edit-cancel expand-touch-area" ng-click="cancel()">
+                <i class="ion ion-android-close"></i>
+            </div>
+            <span class="font-18">编辑私信</span>
+            <div class="user-edit-save expand-touch-area" ng-click="save()">
+                <i class="ion ion-android-done"></i>
+            </div>
+        </div>
+        <div class="pd-tb">
+            <div class="user-edit-text-part">
+              <textarea placeholder="给@{{::replyMessage.replyUser}}发私信: " maxlength=130 ng-model="replyMessage.content"
+                        ng-trim="true">
+                    </textarea>
+
+            </div>
+            <span class="user-edit-text-part-max">最大长度为130个字</span>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,67 @@
+/* user edit */
+.user-edit {
+  overflow: hidden;
+}
+
+.user-edit li {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  overflow: hidden;
+}
+
+.user-edit li div {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  color: #666;
+  z-index: 1;
+}
+
+.user-edit .user-edit-list-avator img {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-style:none;
+  outline:none;
+}
+
+.user-edit-container .btn-user-avator-upload {
+  border: 0;
+  background: none;
+  padding-right: 15px;
+  font-size: 30px;
+  position: relative;
+  top: -9px;
+}
+
+.user-edit-container .user-edit-avator {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.user-edit-container .user-edit-avator .ion {
+  font-size: 130px;
+  margin-top: 35px;
+  height: 185px;
+}
+
+.user-edit-container .user-edit-avator img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-edit {
+  i {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+    -webkit-text-stroke-width: 0.1px;
+  }
+}

@@ -16,10 +16,12 @@
                 <ul class="step-container clearfix">
                     <li class="step-item left" ng-repeat="item in images">
                         <img ng-src="{{item.url}}" ng-click="del(item.id)">
-                        <img class="item-del" src="img/step/step-close.png" alt="删除" ng-click="del(item.id)" width="12" height="12">
+                        <i class="if i-remove1 item-del color-white" ng-click="del(item.id)"></i>
                     </li>
                     <li class="step-item left" ng-click="photoUpload()" ng-show="addShow == true">
-                        <img src="img/step/step-add.png" width="100%" alt="添加">
+                        <div class="step-item_add border-d1-red">
+                            <i class="if i-plus color-dark-pink"></i>
+                        </div>
                     </li>
                     <li class="spinners" ng-show="loading == true">
                         <ion-spinner class="step-loading" icon="ios"></ion-spinner>
@@ -31,7 +33,7 @@
     </ion-content>
     <footer class="bar bar-footer step-footer pointer" ng-click="create()">
         <div class="title">
-            <img src="../img/step/step-save2.png" alt="保存">
+            <i class="if i-save font-20"></i>
             <span>保存我的创意</span>
         </div>
     </footer>

@@ -12,12 +12,16 @@ angular.module('starter.controllers')
 	      });
 	    }
 
-      $scope.cancel = function() {
-        $ionicViewSwitcher.nextDirection('back');
-        $state.go('user-edit');
-      }
+			$scope.save = saveProfile;
 
-      $scope.save = function() {
+			$scope.cancel = function() {
+				$ionicViewSwitcher.nextDirection('back');
+				$state.go('user-edit');
+			}
+
+			$scope.getUserInfo();
+
+			function saveProfile() {
 				if($scope.info.required) {
 					var targetValue = $scope.userInfo[$scope.info.target]
 					if (targetValue == null || targetValue.length == 0) {
@@ -45,7 +49,6 @@ angular.module('starter.controllers')
 				}).error(function(error){
 					HnaAlert.default(Content.user.UPDATE_ERROR);
 				})
-      }
+			}
 
-			$scope.getUserInfo();
 	})

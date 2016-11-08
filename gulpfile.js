@@ -14,6 +14,18 @@ var uglify = require('gulp-uglify');
 var templateCache = require('gulp-angular-templatecache');
 var annotate = require('gulp-ng-annotate');
 var buildDir = path.resolve('build');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('sass', function(done) {
+  gulp.src('./www/scss/main.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .on('error', sass.logError)
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./www/css/'))
+    .on('end', done);
+});
 
 gulp.task('clean', function(done) {
   return del([buildDir], done);
@@ -27,107 +39,65 @@ gulp.task('style-copy-icon', function(done) {
 
 gulp.task('style-copy-lib', function(done) {
   gulp.src('www/css/lib/**/*.*')
-      .pipe(gulp.dest(path.join(buildDir, 'css/lib')))
-      .on('end', done);
+    .pipe(gulp.dest(path.join(buildDir, 'css/lib')))
+    .on('end', done);
 });
 
-gulp.task('style-css', function (done) {
-    gulp.src('www/css/*.css')
-        .pipe(concat('css.min.css'))
-        .pipe(minifyCss({
-          keepSpecialComments: 0
-         }))
-        .pipe(rev())
-        .pipe(gulp.dest(path.join(buildDir, 'css')))
-        .on('end', done);
+gulp.task('style-css', function(done) {
+  gulp.src('www/css/*.css')
+    .pipe(concat('css.min.css'))
+    .pipe(minifyCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rev())
+    .pipe(gulp.dest(path.join(buildDir, 'css')))
+    .on('end', done);
 });
 
-gulp.task('style-global', function (done) {
-    gulp.src('www/css/global/**/*.css')
-        .pipe(concat('global.min.css'))
-        .pipe(minifyCss({
-          keepSpecialComments: 0
-         }))
-        .pipe(rev())
-        .pipe(gulp.dest(path.join(buildDir, 'css/global')))
-        .on('end', done);
-});
-
-gulp.task('style-innovations', function (done) {
-    gulp.src('www/css/innovations/**/*.css')
-        .pipe(concat('innovations.min.css'))
-        .pipe(minifyCss({
-          keepSpecialComments: 0
-         }))
-        .pipe(rev())
-        .pipe(gulp.dest(path.join(buildDir, 'css/innovations')))
-        .on('end', done);
-});
-
-gulp.task('style-resources', function (done) {
-    gulp.src('www/css/resources/**/*.css')
-        .pipe(concat('resources.min.css'))
-        .pipe(minifyCss({
-          keepSpecialComments: 0
-         }))
-        .pipe(rev())
-        .pipe(gulp.dest(path.join(buildDir, 'css/resources')))
-        .on('end', done);
-});
-
-gulp.task('style-user', function (done) {
-    gulp.src('www/css/user/**/*.css')
-        .pipe(concat('user.min.css'))
-        .pipe(minifyCss({
-          keepSpecialComments: 0
-         }))
-        .pipe(rev())
-        .pipe(gulp.dest(path.join(buildDir, 'css/user')))
-        .on('end', done);
-});
-
-gulp.task('style-vendor', function (done) {
+gulp.task('style-vendor', function(done) {
   gulp.src('www/css/vendor/**/*.css')
-      .pipe(concat('vendor.min.css'))
-      .pipe(minifyCss({
-        keepSpecialComments: 0
-       }))
-      .pipe(rev())
-      .pipe(gulp.dest(path.join(buildDir, 'css/vendor')))
-      .on('end', done);
+    .pipe(concat('vendor.min.css'))
+    .pipe(minifyCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rev())
+    .pipe(gulp.dest(path.join(buildDir, 'css/vendor')))
+    .on('end', done);
 });
 
-gulp.task('image-copy', function (done) {
+gulp.task('image-copy', function(done) {
   gulp.src('www/img/**/*.*')
-      .pipe(gulp.dest(path.join(buildDir, 'img')))
-      .on('end', done);
+    .pipe(gulp.dest(path.join(buildDir, 'img')))
+    .on('end', done);
 });
 
-gulp.task('favicon-copy', function (done) {
+gulp.task('favicon-copy', function(done) {
   gulp.src('www/favicon.ico')
-      .pipe(gulp.dest(buildDir))
-      .on('end', done);
+    .pipe(gulp.dest(buildDir))
+    .on('end', done);
 });
 
-gulp.task('apple-app-copy', function (done) {
+gulp.task('apple-app-copy', function(done) {
   gulp.src('www/apple-app-site-association')
-      .pipe(gulp.dest(buildDir))
-      .on('end', done);
+    .pipe(gulp.dest(buildDir))
+    .on('end', done);
 });
 
-gulp.task('js-vendor-concat', function (done) {
+gulp.task('js-vendor-concat', function(done) {
   gulp.src('www/js/vendor/**/*.js')
-      .pipe(concat('vendor.min.js'))
-      .pipe(rev())
-      .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
-      .on('end', done);
+    .pipe(concat('vendor.min.js'))
+    .pipe(rev())
+    .pipe(gulp.dest(path.join(buildDir, 'js/vendor')))
+    .on('end', done);
 });
 
-gulp.task('js-mini', function (done) {
+gulp.task('js-mini', function(done) {
   gulp.src([
-    'www/js/*.js',
-    'www/js/constants/**/*.js', 'www/js/language/**/*.js', 'www/js/controllers/**/*.js',
-    'www/js/services/**/*.js', 'www/js/directives/**/*.js'])
+      'www/js/*.js',
+      'www/js/constants/**/*.js', 'www/js/language/**/*.js',
+      'www/js/controllers/**/*.js',
+      'www/js/services/**/*.js', 'www/js/directives/**/*.js'
+    ])
     .pipe(annotate())
     .pipe(concat('app.min.js'))
     .pipe(uglify())
@@ -144,7 +114,9 @@ gulp.task('script-template', function(done) {
     removeComments: true
   };
 
-  gulp.src('**/*.html', { cwd: 'www/templates'})
+  gulp.src('**/*.html', {
+      cwd: 'www/templates'
+    })
     .pipe(templateCache('templates.js', {
       root: 'templates/',
       module: 'starter',
@@ -156,7 +128,7 @@ gulp.task('script-template', function(done) {
     .on('end', done);
 });
 
-gulp.task('inject-index', function (done) {
+gulp.task('inject-index', function(done) {
   var _inject = function(src, tag) {
     return inject(src, {
       starttag: '<!-- inject:' + tag + ':{{ext}} -->',
@@ -165,31 +137,49 @@ gulp.task('inject-index', function (done) {
   };
 
   gulp.src('www/index.html')
-    .pipe(_inject(gulp.src("css/css*", { cwd: buildDir, read: false }), 'style-css'))
-    .pipe(_inject(gulp.src("css/global/global*", { cwd: buildDir, read: false }), 'style-global'))
-    .pipe(_inject(gulp.src("css/innovations/innovations*", { cwd: buildDir, read: false }), 'style-innovations'))
-    .pipe(_inject(gulp.src("css/resources/resources*", { cwd: buildDir, read: false }), 'style-resources'))
-    .pipe(_inject(gulp.src("css/user/user*", { cwd: buildDir, read: false }), 'style-user'))
-    .pipe(_inject(gulp.src("css/vendor/vendor*", { cwd: buildDir, read: false }), 'style-vendor'))
-    .pipe(_inject(gulp.src("js/vendor/vendor*", { cwd: buildDir, read: false }), 'script-vendor'))
-    .pipe(_inject(gulp.src("js/app*", { cwd: buildDir, read: false }), 'script-app'))
-    .pipe(_inject(gulp.src("js/templates*", { cwd: buildDir, read: false }), 'script-templates'))
+    .pipe(_inject(gulp.src("css/css*", {
+      cwd: buildDir,
+      read: false
+    }), 'style-css'))
+    .pipe(_inject(gulp.src("css/vendor/vendor*", {
+      cwd: buildDir,
+      read: false
+    }), 'style-vendor'))
+    .pipe(_inject(gulp.src("js/vendor/vendor*", {
+      cwd: buildDir,
+      read: false
+    }), 'script-vendor'))
+    .pipe(_inject(gulp.src("js/app*", {
+      cwd: buildDir,
+      read: false
+    }), 'script-app'))
+    .pipe(_inject(gulp.src("js/templates*", {
+      cwd: buildDir,
+      read: false
+    }), 'script-templates'))
     .pipe(gulp.dest(buildDir))
     .on('end', done);
 });
 
 gulp.task('build', function(done) {
   runSequence(
-  'clean',
-  [
-    // css files
-    'style-copy-icon', 'style-copy-lib', 'style-css', 'style-global', 'style-innovations', 'style-resources', 'style-user', 'style-vendor',
+    'clean', [
+      // compile sass
+      'sass',
 
-    //js files
-    'js-vendor-concat', 'script-template', 'js-mini',
+      // css files
+      'style-copy-icon', 'style-copy-lib', 'style-css',
+      'style-vendor',
 
-    // image files
-    'image-copy', 'favicon-copy', 'apple-app-copy'
-  ],
-  'inject-index')
+      //js files
+      'js-vendor-concat', 'script-template', 'js-mini',
+
+      // image files
+      'image-copy', 'favicon-copy', 'apple-app-copy'
+    ],
+    'inject-index')
+});
+
+gulp.task('watch', function() {
+  gulp.watch(['www/scss/**/*.scss'], ['sass']);
 });

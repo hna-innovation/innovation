@@ -1,29 +1,41 @@
 
 <ion-view view-title="编辑个人中心">
 	<ion-content>
-		<div class="user-list-title bg-pink bg-img-reomve" ui-sref="user" nav-direction="back">
+		<div class="user-list-title bg-pink pd-lr" ui-sref="user" nav-direction="back">
+            <i class="if i-remove1 left"></i>
 			<span class="font-18">编辑个人中心</span>
 		</div>
 		<ul class="pd-10 user-edit">
+			<li ng-click="goEditUserAvator()" class="user-edit-list-avator" >
+				<div>头像：</div>
+				<img ng-src="{{::userHeaderIcon}}" class="radius" >
+				<input type="text" class="input-edit" readonly />
+                <i class="if i-fa-angle-right color-88"></i>
+            </li>
 			<li ng-click="goEditUserInfo({target: 'nickName', text: '姓名', length: 10, mulitline:false, required: true})">
 				<div>姓名：</div>
 				<input type="text" value="{{::userInfo.nickName}}" class="input-edit" placeholder="未填写" readonly />
-			</li>
-      <li ng-click="goEditUserInfo({target: 'gender', text: '性别', mulitline:false})">
-        <div>性别：</div>
-        <input type="text" value="{{::userInfo.gender}}" class="input-edit" placeholder="未填写" readonly />
-      </li>
+                <i class="if i-fa-angle-right color-88"></i>
+            </li>
+            <li ng-click="goEditUserInfo({target: 'gender', text: '性别', mulitline:false})">
+                <div>性别：</div>
+                <input type="text" value="{{::userInfo.gender}}" class="input-edit" placeholder="未填写" readonly />
+                <i class="if i-fa-angle-right color-88"></i>
+            </li>
 			<li ng-click="goEditUserInfo({target: 'company', text: '公司', length: 20, mulitline:true, required: false})">
 				<div>公司：</div>
 				<input type="text" value="{{::userInfo.company}}" class="input-edit" placeholder="未填写" readonly />
-			</li>
+                <i class="if i-fa-angle-right color-88"></i>
+            </li>
 			<li ng-click="goEditUserInfo({target: 'hobby', text: '兴趣', length: 20, mulitline:true, required: false})">
 				<div>兴趣：</div>
 				<input type="text" value="{{::userInfo.hobby}}" class="input-edit" placeholder="未填写" readonly/>
-			</li>
+                <i class="if i-fa-angle-right color-88"></i>
+            </li>
 			<li ng-click="goEditUserInfo({target: 'speciality', text: '特长', length: 20, mulitline:true, required: false})">
 				<div>特长：</div>
 				<input type="text" value="{{::userInfo.speciality}}" class="input-edit" placeholder="未填写" readonly />
+                <i class="if i-fa-angle-right color-88"></i>
 			</li>
 		</ul>
 	</ion-content>

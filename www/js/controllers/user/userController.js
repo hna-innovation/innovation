@@ -29,6 +29,7 @@ angular.module('starter.controllers')
     $scope.getUserInfo = function() {
       UserService.getUserInfo(function(result) {
         $scope.userInfo = result.data;
+        $scope.userHeaderIcon = localStorage.userHeaderIcon || result.data.headerIcon;
         //UserInfo成功返回后再去请求ExtensionInfo
         $scope.getUserExtensionInfo();
       }, function(result) {
@@ -53,6 +54,11 @@ angular.module('starter.controllers')
     $scope.goEditUserInfo = function(target) {
       $ionicViewSwitcher.nextDirection('forward');
       $state.go('user-edit-info', target);
+    }
+
+    $scope.goEditUserAvator = function() {
+      $ionicViewSwitcher.nextDirection('forward');
+      $state.go('user-edit-avator');
     }
 
     $scope.logout = function() {

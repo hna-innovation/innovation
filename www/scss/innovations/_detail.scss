@@ -1,0 +1,35 @@
+.edit-introduction {
+  text-align: center;
+  background-color: #f6f6f6;
+  color: #adadad;
+  height: 35px;
+  border: 1px dashed #adadad;
+  line-height: 35px;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.edit-introduction span {
+  display: inline-block;
+}
+
+.introduction .ql-toolbar.ql-snow {
+  display: none;
+}
+
+#detail-introduction-container {
+  border: none;
+}
+
+#detail-introduction-container img {
+  width: 100%;
+}
+
+.introduction .ql-editor {
+  height: auto;
+  padding: 0;
+}
+
+#editor-container {
+  -webkit-user-select: auto;
+}

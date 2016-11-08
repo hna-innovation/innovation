@@ -1,0 +1,16 @@
+.stastitics-show {
+  padding: 5px 10px;
+}
+
+.stastitics-show .stastitics_item:not(:last-child) {
+  border-right: 1px solid #e8e8e8;
+}
+
+.stastitics-show .stastitics_item .stastitics_title span {
+  display: inline-block;
+}
+
+.stastitics-show .stastitics_item .stastitics_new {
+  position: relative;
+  top: -8px;
+}

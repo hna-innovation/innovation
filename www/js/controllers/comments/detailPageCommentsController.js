@@ -1,37 +1,84 @@
 angular.module('starter.controllers')
   .controller('DetailPageCommentsCtrl', DetailPageCommentsCtrl);
 
-function DetailPageCommentsCtrl($scope, $stateParams, Content, CommentService, HnaAlert) {
+function DetailPageCommentsCtrl($scope, $state, $stateParams, Content, CommentService, HnaAlert, $ionicViewSwitcher, UtilityService, $window) {
   'use strict';
 
-  var _projectId = $stateParams.projectid;
+  var _projectId = $stateParams.projectId;
+  var _parentPage = $stateParams.parentPage;
+  var _userId = localStorage.userId;
 
-  $scope.submitComment = function(content) {
+  $scope.projectId = _projectId;
+  $scope.comments = [];
+  $scope.hasMoreData = true;
+  $scope.getProjectComments = getProjectCommentsByPage();
+  $scope.getProjectComments();
 
-    var comment = {
-      content: $scope.newComment,
-      targetId: _projectId
+  $scope.submitComment = submitComment;
+  $scope.isCurrentUser = isCurrentUser;
+  $scope.goUserInfoPage = goUserInfoPage;
+  $scope.goBack = goBack;
+
+  function submitComment(){
+      var comment = {
+        content: $scope.newComment
+      };
+
+      CommentService.addProjectComment(_projectId, comment, function(result) {
+        if (result.code === 0) {
+        HnaAlert.default(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
+        $state.reload($state.current);
+        $scope.newComment = '';
+        } else{
+          HnaAlert.default(Content.comment.UPDATE_ERROR);
+        }
+      }, function() {
+        HnaAlert.default(Content.comment.UPDATE_ERROR);
+      });
     };
 
-    CommentService.addProjectComment(comment, function() {
-      HnaAlert.success(Content.comment.SUCCESS_MESSAGE_ADDED_COMMENT);
-      $scope.getProjectComments();
-      $scope.newComment = '';
+  function getProjectCommentsByPage() {
+    var offset = 0;
 
-    }, function() {
-      // TODO
-    });
-  }
+    return function() {
+      CommentService.getProjectComments(offset, _projectId, function(res) {
 
-  $scope.getProjectComments = function() {
+        if (res.data.content && res.data.content.length) {
+          $scope.comments = UtilityService.concatArray($scope.comments, res.data.content);
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        } else {
+          $scope.attentionMsg = Content.EMPTY_CONTENT;
+          $scope.hasMoreData = false;
+        }
 
-    CommentService.getProjectComments(_projectId, function(res) {
-      if(res.data && res.data.content){
-        $scope.comments = res.data.content;
+      }, function() {
+        $scope.attentionMsg = Content.TIME_OUT;
+        $scope.hasMoreData = false;
+      });
+
+      offset++;
+    };
+  };
+
+  function goUserInfoPage(otherUserId){
+      if(_userId) {
+        _userId == otherUserId ? $state.go('user') : $state.go('other-user', {userId:otherUserId});
+      } else {
+        $state.go('other-user', {userId:otherUserId})
       }
-    }, function() {
-      // TODO
-    });
+      $ionicViewSwitcher.nextDirection("forward");
+    }
+
+  function goBack(){
+    if(_parentPage) {
+      $state.go('detail', {projectId: _projectId, pageName: _parentPage}, {reload: false});
+    } else {
+      $window.history.back();
+    }
+    $ionicViewSwitcher.nextDirection('back');
   }
-  $scope.getProjectComments();
+
+  function isCurrentUser(userId) {
+    return _userId === userId;
+  }
 }

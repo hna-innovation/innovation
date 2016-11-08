@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="/favicon.ico?v_02" type="image/x-icon" />
 
   <title ng-bind="Page.title()"></title>
@@ -13,39 +14,7 @@
   <link rel="stylesheet" href="css/lib/ionic/ionicons.css" />
 
   <!-- inject:style-css:css -->
-  <link rel="stylesheet" href="css/common.css">
-  <!-- endinject -->
-
-  <!-- inject:style-global:css -->
-  <link rel="stylesheet" href="css/global/common-list.css">
-  <link rel="stylesheet" href="css/global/common-form.css">
-  <link rel="stylesheet" href="css/global/header.css">
-  <link rel="stylesheet" href="css/global/footer.css">
-  <link rel="stylesheet" href="css/global/search.css">
-  <link rel="stylesheet" href="css/global/card.css">
-  <link rel="stylesheet" href="css/global/comment.css">
-  <link rel="stylesheet" href="css/global/stastitics.css">
-  <link rel="stylesheet" href="css/global/team-members.css">
-  <link rel="stylesheet" href="css/global/components.css">
-  <!-- endinject -->
-
-  <!-- inject:style-innovations:css -->
-  <link rel="stylesheet" href="css/innovations/innovation.css">
-  <link rel="stylesheet" href="css/innovations/step-1.css">
-  <link rel="stylesheet" href="css/innovations/step-2.css">
-  <link rel="stylesheet" href="css/innovations/step-3.css">
-  <link rel="stylesheet" href="css/innovations/step-4.css">
-  <link rel="stylesheet" href="css/innovations/detail.css">
-  <!-- endinject -->
-
-  <!-- inject:style-resources:css -->
-  <link rel="stylesheet" href="css/resources/open.css">
-  <link rel="stylesheet" href="css/resources/resource-detail.css">
-  <!-- endinject -->
-
-  <!-- inject:style-user:css -->
-  <link rel="stylesheet" href="css/user/user.css">
-  <link rel="stylesheet" href="css/user/other-user.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- endinject -->
 
   <!-- inject:style-vendor:css -->
@@ -53,18 +22,20 @@
   <link rel="stylesheet" href="css/vendor/quill.snow.css">
   <link rel="stylesheet" href="css/vendor/swiper.min.css">
   <link rel="stylesheet" href="css/vendor/slidingTabs.css">
+  <link rel="stylesheet" href="css/vendor/ng-img-crop.css">
   <!-- endinject -->
 
   <!-- inject:script-vendor:js -->
-  <script src="js/vendor/_ionic.bundle.min.js"></script>
+  <script src="js/vendor/1jquery.min.js"></script>
+  <script src="js/vendor/2ionic.bundle.min.js"></script>
   <script src="js/vendor/angular-base-translate.min.js" type="text/javascript"></script>
   <script src="js/vendor/angular-cookies.min.js" type="text/javascript"></script>
   <script src="js/vendor/angular-file-upload.min.js" type="text/javascript"></script>
+  <script src="js/vendor/ng-img-crop.js" type="text/javascript"></script>
   <script src="js/vendor/angular-translate-storage-cookie.min.js" type="text/javascript"></script>
   <script src="js/vendor/angular-validator.min.js"></script>
   <script src="js/vendor/file-saver.min.js" type="text/javascript"></script>
   <script src="js/vendor/ionic-close-popup.min.js"></script>
-  <script src="js/vendor/jquery.min.js"></script>
   <script src="js/vendor/quill.core.min.js" type="text/javascript"></script>
   <script src="js/vendor/swiper.min.js"></script>
   <!-- endinject -->
@@ -93,11 +64,16 @@
   <script src="js/controllers/detail/detail.js"></script>
   <script src="js/controllers/user/userController.js"></script>
   <script src="js/controllers/user/userEditController.js"></script>
+  <script src="js/controllers/user/UserEditAvatorController.js"></script>
   <script src="js/controllers/user/otherUserController.js"></script>
   <script src="js/controllers/user/userInnovationsController.js" ></script>
   <script src="js/controllers/user/userJoinedInnovationsController.js" ></script>
   <script src="js/controllers/user/userDraftsController.js" ></script>
+  <script src="js/controllers/user/userMessagesController.js" ></script>
+  <script src="js/controllers/user/userEditMessagesController.js" ></script>
   <script src="js/controllers/user/userCommentsController.js" ></script>
+  <script src="js/controllers/user/userReceivedCommentsController.js" ></script>
+  <script src="js/controllers/user/userSentCommentsController.js" ></script>
   <script src="js/controllers/user/userLikedProjectsController.js" ></script>
   <script src="js/controllers/user/userFavoriteProjectsController.js" ></script>
   <script src="js/controllers/step-1.js"></script>
@@ -118,6 +94,7 @@
   <script src="js/controllers/innovationStarsController.js" ></script>
   <script src="js/controllers/lastInnovationController.js" ></script>
   <script src="js/controllers/comments/detailPageCommentsController.js" ></script>
+  <script src="js/controllers/comments/replyCommentEditController.js" ></script>
   <script src="js/controllers/detail/detailEditIntroductionController.js" ></script>
   <script src="js/controllers/detail/detailEditResourceController.js" ></script>
   <script src="js/controllers/detail/detailEditBusinessController.js" ></script>
@@ -134,6 +111,7 @@
   <script src="js/services/pageServices.js"></script>
   <script src="js/services/utilityService.js"></script>
   <script src="js/services/commentService.js"></script>
+  <script src="js/services/messageService.js"></script>
   <script src="js/services/detailService.js"></script>
   <script src="js/services/mobileTypeDetectService.js"></script>
   <script src="js/services/cacheService.js"></script>

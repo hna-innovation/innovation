@@ -61,6 +61,10 @@ function UserService($http, LOCAL_TEST_URL, Api, Page) {
     return $http.put(getUrl(Api.USER_INFO_API), data)
   }
 
+  userService.setUserAvator = function(data) {
+    return $http.put(getUrl(Api.USER_AVATOR_API), data)
+  }
+
   userService.joinProject = function (projectId, success, error) {
     return $http.post(getUrl(Api.USER_JOIN_PROJECT + '/' + projectId))
       .success(success)
