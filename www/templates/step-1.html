@@ -9,10 +9,7 @@
                 <div class="spinners" ng-show="loading == true">
                     <ion-spinner class="step-loading" icon="ios"></ion-spinner>
                 </div>
-                <div class="step-choose-picture pointer border-d1-red bg-fb" alt="上传图片" width="100%" ng-click="photoUpload()">
-                    <i class="if i-xiangji color-dark-pink font-30" ng-show="!picURL"></i>
-                    <img id="img-view" class="pointer" alt="上传图片" width="100%" ng-show="picURL">
-                </div>
+                <img id="img-view" class="pointer" src="../img/step/step-photo.png" alt="上传图片" width="100%" ng-click="photoUpload()">
 
                 <button id="photoUpload" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-pattern="'image/*'" ngf-before-model-change="beforeChange($files)" ngf-fix-orientation="true" ngf-resize="{width: 800, quality: .8}"  ngf-resize-if="$width > 800" ngf-max-size="3MB"></button>
 
