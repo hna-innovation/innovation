@@ -71,10 +71,18 @@
   padding-right: 2px;
   line-height: 26px;
   text-align: center;
-  background:url(../../img/user/svg-chat.svg) no-repeat center;
   background-size: 100%;
   font-weight: 400;
   color: #e17877;
+  z-index: 2;
+}
+.user-like {
+  &_qipao {
+    position: absolute;
+    left: 17px;
+    top: -12PX;
+    font-size: 18px;
+  }
 }
 .business-row{
   height: 65px;

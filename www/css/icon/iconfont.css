@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1478512739009'); /* IE9*/
-  src: url('iconfont.eot?t=1478512739009#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1478512739009') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1478512739009') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1478512739009#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1478571100039'); /* IE9*/
+  src: url('iconfont.eot?t=1478571100039#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1478571100039') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1478571100039') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1478571100039#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .if {
@@ -26,6 +26,8 @@
 .i-ok:before { content: "\e619"; }
 
 .i-time:before { content: "\e65d"; }
+
+.i-chat-qipao:before { content: "\e61f"; }
 
 .i-xiaoxi:before { content: "\e663"; }
 
