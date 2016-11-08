@@ -1,6 +1,7 @@
 <div class="index-header bar bar-header">
     <div class="bar-user-header pd-l10 pd-tb5 expand-touch-area" ui-sref="user" nav-direction="forward">
-      <img ng-src="{{userHeaderIcon}}" class="user-header-icon-default radius" ng-class="{true: 'user-header-icon-default', false: 'user-header-icon'}[userHeaderIcon == userHeaderIconDefault]" >
+        <i class="if i-ren color-dark-pink font-24" ng-if="!isLogin()"></i>
+        <img ng-src="{{userHeaderIcon}}" class="user-header-icon radius" ng-if="isLogin()">
     </div>
 
     <div class="h1 title">

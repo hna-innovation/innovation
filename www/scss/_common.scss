@@ -328,6 +328,51 @@
   color: #fff;
 }
 
+/* color */
+.color-88 {
+  color: #888;
+}
+
+.color-3d {
+  color: #3d3d3d;
+}
+
+.color-6d {
+  color: #6D6D6D;
+}
+
+.color-pink {
+  color: #e16a68;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-grey {
+  color: #F8E1E1;
+}
+
+.color-red {
+  color: #e06968;
+}
+
+.color-light-pink {
+  color: #F7DFDC;
+}
+
+.color-a9 {
+  color: #a9a9a9;
+}
+
+.color-light-yellow {
+  color: #FDE9CE;
+}
+
+.color-dark-pink {
+  color: #de6262;
+}
+
 /* background-color */
 .bg-fb {
   background-color: #fbfbfb;
@@ -529,4 +574,12 @@ label.has-error {
 }
 .font-border-bold {
   -webkit-text-stroke-width: 0.8px;
+}
+.font-like-border {
+  -webkit-text-stroke-color: #EB7D84;
+  -webkit-text-stroke-width: 1.1px;
+}
+.font-star-border {
+  -webkit-text-stroke-color: #F6B75D;
+  -webkit-text-stroke-width: 1.1px;
 }

@@ -176,3 +176,6 @@
 .detail-special .go-back {
   line-height: 28px !important;
 }
+.find-resource {
+  vertical-align: super;
+}

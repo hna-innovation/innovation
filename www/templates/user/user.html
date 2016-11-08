@@ -4,16 +4,16 @@
 		<header id="user-header" >
 		    <div id="user-bar">
 		        <div id="user-bar-left">
-		        		<a class="expand-touch-area" ui-sref="innovation" nav-direction="back">
-                  <i class="if ion-ios-home-outline font-24 color-white"></i>
-		        		</a>
+                    <a class="expand-touch-area" ui-sref="innovation" nav-direction="back">
+                       <i class="if i-zhuye font-24 color-white"></i>
+                    </a>
 		        </div>
 
 		        <div id="user-bar-right">
-						<a ui-sref="user-edit" class="user-edit-link expand-touch-area" nav-direction="forward">
-              <i class="if i-bianji2 font-16 color-white pd-r5"></i>
-			            <span class="color-white">编辑个人中心</span>
-		        		</a>
+                    <a ui-sref="user-edit" class="user-edit-link expand-touch-area" nav-direction="forward">
+                        <i class="if i-edit font-16 color-white pd-r5"></i>
+                        <span class="color-white">编辑个人中心</span>
+                    </a>
 		        </div>
 		    </div>
 		    <ul class="box-table">
@@ -88,7 +88,7 @@
 
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 					<a ui-sref="user-joined-innovations" nav-direction="forward">
-					<i class="if ion-ios-heart-outline font-24 color-3d"></i>
+					<i class="if i-aixin font-24 color-3d"></i>
 					<strong class="color-3d">我参与的创意</strong>
 					<span class="color-88 pd-l10">查看你参与的创意项目</span>
 		    		</a>
@@ -104,8 +104,8 @@
 
 		    <div class="business-row mg-b10 bg-ff pd-l15">
 			    <a ui-sref="user-messages" nav-direction="forward" ui-sref-active="active">
-					<i class="if ion-ios-chatbubble-outline font-24 color-3d"></i>
-					<strong class="color-3d pd-l5">我的私信</strong>
+					<i class="if i-siliao font-24 color-3d"></i>
+					<strong class="color-3d">我的私信</strong>
                     <span ng-if="userExtensionInfo.unreadMessageCount > 0 ">
                          <small class="color-red font-24 small-radio">&bull;</small>
                          <span class="color-88 pd-l10">你有 <span ng-bind="::userExtensionInfo.unreadMessageCount"> </span> 条未读消息</span>
