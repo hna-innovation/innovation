@@ -21,13 +21,13 @@ function UserSentCommentsCtrl($scope, CommentService, Content, UtilityService, P
           $scope.comments = UtilityService.concatArray($scope.comments, result.data.content);
           $scope.$broadcast('scroll.infiniteScrollComplete');
         } else {
-          $scope.comments.attentionMsg = Content.EMPTY_CONTENT;
-          $scope.comments.hasMoreData = false;
+          $scope.attentionMsg = Content.EMPTY_CONTENT;
+          $scope.hasMoreData = false;
         }
 
       }, function(error) {
-        $scope.comments.attentionMsg = Content.TIME_OUT;
-        $scope.comments.hasMoreData = false;
+        $scope.attentionMsg = Content.TIME_OUT;
+        $scope.hasMoreData = false;
       });
 
       offset++;
