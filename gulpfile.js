@@ -164,6 +164,9 @@ gulp.task('inject-index', function(done) {
 gulp.task('build', function(done) {
   runSequence(
     'clean', [
+      // compile sass
+      'sass',
+
       // css files
       'style-copy-icon', 'style-copy-lib', 'style-css',
       'style-vendor',
