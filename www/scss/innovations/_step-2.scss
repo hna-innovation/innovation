@@ -62,3 +62,14 @@
     font-size: 16px;
     color: #666;
 }
+
+#step-2 {
+  .step-item {
+    &_add {
+      width: 86px;
+      height: 86px;
+      line-height: 86px;
+      text-align: center;
+    }
+  }
+}
