@@ -19,7 +19,9 @@
                         <i class="if i-remove1 item-del color-white" ng-click="del(item.id)"></i>
                     </li>
                     <li class="step-item left" ng-click="photoUpload()" ng-show="addShow == true">
-                        <img src="img/step/step-add.png" width="100%" alt="添加">
+                        <div class="step-item_add border-d1-red">
+                            <i class="if i-plus font-30 color-dark-pink"></i>
+                        </div>
                     </li>
                     <li class="spinners" ng-show="loading == true">
                         <ion-spinner class="step-loading" icon="ios"></ion-spinner>
