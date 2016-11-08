@@ -89,6 +89,7 @@ angular.module('starter.controllers')
           Services.setUserTags({tags: tags}, function (data) {
             $scope.slideDownInterest();
             $scope.projects = [];
+            $scope.hasMoreData = true;
             $scope.getProjects = getProductsByOffset();
             $scope.getProjects();
           }, function (error) {
