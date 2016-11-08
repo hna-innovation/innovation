@@ -239,6 +239,11 @@
   border-color: map-get($colors, red);
 }
 
+.border-d1-red {
+  border: dashed 1px;
+  border-color: map-get($colors, pink);
+}
+
 .border-t1 {
   border-top: dashed 1px;
   border-color: $border-color;
