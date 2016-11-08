@@ -19,7 +19,7 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide swiper-item" ng-repeat="item in ItemContent.images">
                         <ion-spinner class="step-loading" ng-hide="loading == false" icon="ios"></ion-spinner>
-                        <img src="../img/step/step-default2.jpg" ng-src="{{item.url}}" width="100%" />
+                        <img ng-src="{{item.url}}" width="100%" />
                     </li>
                 </ul>
                 <div class="swiper-pagination"></div>
